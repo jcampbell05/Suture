@@ -1,2 +1,2 @@
 # Suture
-Easily create sprites with iOS.
+Easily create sprites.

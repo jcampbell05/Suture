@@ -1,5 +1,5 @@
 //
-//  Document.h
+//  SUTWindow.h
 //  Suture
 //
 //  Created by James Campbell on 10/03/2015.
@@ -8,11 +8,6 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface Document : NSDocument
-
-#pragma mark - Menu Item
-
-- (IBAction)addImage:(NSMenuItem *)menuItem;
+@interface SUTWindow : NSWindow
 
 @end
-

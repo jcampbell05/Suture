@@ -14,11 +14,11 @@
 		<string>https://github.com/jcampbell05/Suture.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Suture/Suture.xcodeproj</string>
+	<string>Suture.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>96BCE550C156CE7BA2EB3F8F3D63EC94218B39B6</key>
-		<string>../../..</string>
+		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/jcampbell05/Suture.git</string>

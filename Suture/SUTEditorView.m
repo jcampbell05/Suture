@@ -70,9 +70,9 @@
     return NSDragOperationCopy;
 }
 
-- (NSDragOperation)draggingUpdated:(id<NSDraggingInfo>)sender
+- (void)draggingExited:(id <NSDraggingInfo>)sender
 {
-    return NSDragOperationCopy;
+    self.dropHighlightView.hidden = YES;
 }
 
 - (void)draggingEnded:(id<NSDraggingInfo>)sender

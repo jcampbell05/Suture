@@ -28,7 +28,7 @@
     
     if (self)
     {
-        [self registerForDraggedTypes:@[NSFilenamesPboardType]];
+         [self registerForDraggedTypes:@[NSFilenamesPboardType]];
         
         [self addSubview:self.emptySpriteView];
         [self addSubview:self.dropHighlightView];
@@ -66,8 +66,27 @@
 
 - (NSDragOperation)draggingEntered:(id<NSDraggingInfo>)sender
 {
-    self.dropHighlightView.hidden = NO;
-    return NSDragOperationCopy;
+    __block NSDragOperation operation = NSDragOperationCopy;
+
+        
+    /* When an image from one window is dragged over another, we want to resize the dragging item to
+     * preview the size of the image as it would appear if the user dropped it in. */
+    [sender enumerateDraggingItemsWithOptions:0
+                                      forView:self
+                                      classes:[NSArray arrayWithObject:[NSPasteboardItem class]]
+                                searchOptions:nil
+                                   usingBlock:^(NSDraggingItem *draggingItem, NSInteger idx, BOOL *stop) {
+                                       
+       //Only accept drag and drop of files if all of them are images.
+//       if ( ![[[draggingItem item] types] containsObject:(NSString *)kUTTypeImage] )
+//       {
+//           operation = NSDragOperationNone;
+//           *stop = YES;
+//       }
+   }];
+    
+   self.dropHighlightView.hidden = (operation == NSDragOperationNone);
+    return operation;
 }
 
 - (void)draggingExited:(id <NSDraggingInfo>)sender

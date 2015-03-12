@@ -81,6 +81,10 @@
 				<array>
 					<string>suture</string>
 				</array>
+				<key>public.mime-type</key>
+				<array>
+					<string>application/octet-stream</string>
+				</array>
 			</dict>
 		</dict>
 	</array>

@@ -18,6 +18,7 @@
 		74F0FAED1AAF5224003F9454 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74F0FAEB1AAF5224003F9454 /* MainMenu.xib */; };
 		74F0FAF91AAF5224003F9454 /* SutureTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 74F0FAF81AAF5224003F9454 /* SutureTests.m */; };
 		74F52E791AB1CB560031FE1A /* SUTOutlineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 74F52E781AB1CB560031FE1A /* SUTOutlineView.m */; };
+		74F52E7C1AB1D8A60031FE1A /* SUTSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = 74F52E7B1AB1D8A60031FE1A /* SUTSprite.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,8 @@
 		74F0FAF81AAF5224003F9454 /* SutureTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SutureTests.m; sourceTree = "<group>"; };
 		74F52E771AB1CB560031FE1A /* SUTOutlineView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUTOutlineView.h; sourceTree = "<group>"; };
 		74F52E781AB1CB560031FE1A /* SUTOutlineView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUTOutlineView.m; sourceTree = "<group>"; };
+		74F52E7A1AB1D8A60031FE1A /* SUTSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUTSprite.h; sourceTree = "<group>"; };
+		74F52E7B1AB1D8A60031FE1A /* SUTSprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUTSprite.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +112,8 @@
 				7417AB591AAFA8820063E88A /* SUTEmptySpriteView.m */,
 				74F52E771AB1CB560031FE1A /* SUTOutlineView.h */,
 				74F52E781AB1CB560031FE1A /* SUTOutlineView.m */,
+				74F52E7A1AB1D8A60031FE1A /* SUTSprite.h */,
+				74F52E7B1AB1D8A60031FE1A /* SUTSprite.m */,
 			);
 			path = Suture;
 			sourceTree = "<group>";
@@ -241,6 +246,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				74F0FAE51AAF5224003F9454 /* Document.m in Sources */,
+				74F52E7C1AB1D8A60031FE1A /* SUTSprite.m in Sources */,
 				74F0FAE21AAF5224003F9454 /* main.m in Sources */,
 				74F52E791AB1CB560031FE1A /* SUTOutlineView.m in Sources */,
 				74F0FAE01AAF5224003F9454 /* AppDelegate.m in Sources */,

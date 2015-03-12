@@ -49,10 +49,11 @@ static CGFloat USNImageViewSize = 60;
 
         
         _imageView = [[NSImageView alloc] init];
+        _imageView.autoresizingMask = NSViewMinXMargin | NSViewMaxXMargin | NSViewMinYMargin | NSViewMaxYMargin;
         _imageView.frame = imageRect;
         _imageView.image = image;
         _imageView.imageScaling = NSImageScaleProportionallyDown;
-        _imageView.autoresizingMask = NSViewMinXMargin | NSViewMaxXMargin | NSViewMinYMargin | NSViewMaxYMargin;
+        [_imageView unregisterDraggedTypes];
         
         NSPoint frameOrigin = NSMakePoint((NSWidth(self.bounds) - NSWidth(_imageView.frame)) / 2,
                                           NSMaxY(self.callToActionTextField.frame) + USNImageViewMargin);

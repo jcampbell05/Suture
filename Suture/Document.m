@@ -7,6 +7,7 @@
 //
 
 #import "Document.h"
+#import "SUTSprite.h"
 
 @interface Document ()
 
@@ -76,20 +77,55 @@
 
 #pragma mark - Read/Write
 
-- (NSData *)dataOfType:(NSString *)typeName error:(NSError **)outError
+- (NSFileWrapper *)fileWrapperOfType:(NSString *)typeName error:(NSError **)outError
 {
-    // Insert code here to write your document to data of the specified type. If outError != NULL, ensure that you create and set an appropriate error when returning nil.
-    // You can also choose to override -fileWrapperOfType:error:, -writeToURL:ofType:error:, or -writeToURL:ofType:forSaveOperation:originalContentsURL:error: instead.
-    [NSException raise:@"UnimplementedMethod" format:@"%@ is unimplemented", NSStringFromSelector(_cmd)];
-    return nil;
+    // this holds the files to be added
+    NSMutableDictionary *files = [NSMutableDictionary dictionary];
+    
+    // encode the index
+    NSData *data = [NSKeyedArchiver archivedDataWithRootObject:self.sprites];
+    NSFileWrapper *indexWrapper = [[NSFileWrapper alloc] initRegularFileWithContents:data];
+    
+    // add it to the files
+    [files setObject:indexWrapper forKey:@"index.plist"];
+    
+    // copy all other referenced files too
+//    for (SUTSprite *sprite in self.sprites)
+//    {
+//        NSString *fileName = oneItem.fileName;
+//        NSFileWrapper *existingFile = [_fileWrapper.fileWrappers objectForKey:fileName];
+//        [files setObject:existingFile forKey:fileName];
+//    }
+    
+    // create a new fileWrapper for the bundle
+    NSFileWrapper *newWrapper = [[NSFileWrapper alloc] initDirectoryWithFileWrappers:files];
+    
+    return newWrapper;
 }
 
-- (BOOL)readFromData:(NSData *)data ofType:(NSString *)typeName error:(NSError **)outError
+- (BOOL)readFromFileWrapper:(NSFileWrapper *)fileWrapper ofType:(NSString *)typeName error:(NSError **)outError
 {
-    // Insert code here to read your document from the given data of the specified type. If outError != NULL, ensure that you create and set an appropriate error when returning NO.
-    // You can also choose to override -readFromFileWrapper:ofType:error: or -readFromURL:ofType:error: instead.
-    // If you override either of these, you should also override -isEntireFileLoaded to return NO if the contents are lazily loaded.
-    [NSException raise:@"UnimplementedMethod" format:@"%@ is unimplemented", NSStringFromSelector(_cmd)];
+    if (![fileWrapper isDirectory])
+    {
+        NSDictionary *userInfo = [NSDictionary dictionaryWithObject:@"Illegal Document Format" forKey:NSLocalizedDescriptionKey];
+        *outError = [NSError errorWithDomain:@"Shoebox" code:1 userInfo:userInfo];
+        return NO;
+    }
+    
+    // store reference for later image access
+    self.fileWrapper = fileWrapper;
+    
+    // decode the index
+    NSFileWrapper *indexWrapper = [fileWrapper.fileWrappers objectForKey:@"index.plist"];
+    NSArray *array = [NSKeyedUnarchiver unarchiveObjectWithData:indexWrapper.regularFileContents];
+    
+    // set document property for all items
+    [array makeObjectsPerformSelector:@selector(setDocument:) withObject:self];
+    
+    // set the property
+    self.sprites = [array mutableCopy];
+    
+    // YES because of successful reading
     return YES;
 }
 

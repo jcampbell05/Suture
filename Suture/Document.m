@@ -14,6 +14,8 @@
 
 @implementation Document
 
+#pragma mark - Init
+
 - (instancetype)init
 {
     self = [super init];
@@ -26,6 +28,8 @@
     return self;
 }
 
+#pragma mark - Sprites
+
 - (NSMutableArray *)sprites
 {
     if (!_sprites)
@@ -35,6 +39,8 @@
     
     return _sprites;
 }
+
+#pragma mark - DocumentLifecycle
 
 - (void)windowControllerDidLoadNib:(NSWindowController *)aController
 {
@@ -53,6 +59,8 @@
     // If you need to use a subclass of NSWindowController or if your document supports multiple NSWindowControllers, you should remove this method and override -makeWindowControllers instead.
     return @"Document";
 }
+
+#pragma mark - Read/Write
 
 - (NSData *)dataOfType:(NSString *)typeName error:(NSError **)outError
 {

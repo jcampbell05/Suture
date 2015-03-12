@@ -36,15 +36,22 @@
 {
     if (!_callToActionTextField)
     {
-        _callToActionTextField = [[NSTextField alloc] initWithFrame:self.bounds];
+        _callToActionTextField = [[NSTextField alloc] init];
         
         _callToActionTextField.alignment = NSCenterTextAlignment;
+        _callToActionTextField.autoresizingMask = NSViewMinXMargin | NSViewMaxXMargin | NSViewMinYMargin | NSViewMaxYMargin;
         _callToActionTextField.bezeled = NO;
         _callToActionTextField.drawsBackground = NO;
         _callToActionTextField.editable = NO;
         _callToActionTextField.selectable = NO;
         
         _callToActionTextField.stringValue = @"Drop your images here.";
+        
+        [_callToActionTextField sizeToFit];
+
+        NSPoint frameOrigin = NSMakePoint((NSWidth(self.bounds) - NSWidth(_callToActionTextField.frame)) / 2,
+                                          (NSHeight(self.bounds) - NSHeight(_callToActionTextField.frame)) / 2);
+        [_callToActionTextField setFrameOrigin:frameOrigin];
     }
     
     return _callToActionTextField;

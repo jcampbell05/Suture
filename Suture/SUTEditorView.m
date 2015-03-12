@@ -10,7 +10,7 @@
 
 #import "SUTEmptySpriteView.h"
 
-@interface SUTEditorView ()
+@interface SUTEditorView () <NSDraggingDestination>
 
 @property (nonatomic, strong) SUTEmptySpriteView *emptySpriteView;
 
@@ -26,6 +26,10 @@
     
     if (self)
     {
+        self.wantsLayer = YES;
+        
+        [self registerForDraggedTypes:@[NSFilenamesPboardType]];
+        
         [self addSubview:self.emptySpriteView];
     }
     
@@ -42,6 +46,31 @@
     }
     
     return _emptySpriteView;
+}
+
+#pragma mark - NSDraggingDestination
+
+- (NSDragOperation)draggingEntered:(id<NSDraggingInfo>)sender
+{
+    self.layer.backgroundColor = [NSColor blueColor].CGColor;
+    return NSDragOperationCopy;
+}
+
+- (NSDragOperation)draggingUpdated:(id<NSDraggingInfo>)sender
+{
+    return NSDragOperationCopy;
+}
+
+- (void)draggingEnded:(id<NSDraggingInfo>)sender
+{
+    self.layer.backgroundColor = [NSColor clearColor].CGColor;
+}
+
+#pragma mark - Menu Item
+
+- (IBAction)addImage:(NSMenuItem *)menuItem
+{
+    
 }
 
 @end

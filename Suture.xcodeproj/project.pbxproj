@@ -17,6 +17,7 @@
 		74F0FAEA1AAF5224003F9454 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74F0FAE91AAF5224003F9454 /* Images.xcassets */; };
 		74F0FAED1AAF5224003F9454 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74F0FAEB1AAF5224003F9454 /* MainMenu.xib */; };
 		74F0FAF91AAF5224003F9454 /* SutureTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 74F0FAF81AAF5224003F9454 /* SutureTests.m */; };
+		74F52E791AB1CB560031FE1A /* SUTOutlineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 74F52E781AB1CB560031FE1A /* SUTOutlineView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,8 @@
 		74F0FAF21AAF5224003F9454 /* SutureTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SutureTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		74F0FAF71AAF5224003F9454 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		74F0FAF81AAF5224003F9454 /* SutureTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SutureTests.m; sourceTree = "<group>"; };
+		74F52E771AB1CB560031FE1A /* SUTOutlineView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUTOutlineView.h; sourceTree = "<group>"; };
+		74F52E781AB1CB560031FE1A /* SUTOutlineView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUTOutlineView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +107,8 @@
 				7417AB561AAFA8530063E88A /* SUTEditorView.m */,
 				7417AB581AAFA8820063E88A /* SUTEmptySpriteView.h */,
 				7417AB591AAFA8820063E88A /* SUTEmptySpriteView.m */,
+				74F52E771AB1CB560031FE1A /* SUTOutlineView.h */,
+				74F52E781AB1CB560031FE1A /* SUTOutlineView.m */,
 			);
 			path = Suture;
 			sourceTree = "<group>";
@@ -237,6 +242,7 @@
 			files = (
 				74F0FAE51AAF5224003F9454 /* Document.m in Sources */,
 				74F0FAE21AAF5224003F9454 /* main.m in Sources */,
+				74F52E791AB1CB560031FE1A /* SUTOutlineView.m in Sources */,
 				74F0FAE01AAF5224003F9454 /* AppDelegate.m in Sources */,
 				7417AB541AAF9EF70063E88A /* SUTWindow.m in Sources */,
 				7417AB5A1AAFA8820063E88A /* SUTEmptySpriteView.m in Sources */,

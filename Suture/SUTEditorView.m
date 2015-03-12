@@ -75,14 +75,22 @@
                                       forView:self
                                       classes:[NSArray arrayWithObject:[NSPasteboardItem class]]
                                 searchOptions:nil
-                                   usingBlock:^(NSDraggingItem *draggingItem, NSInteger idx, BOOL *stop) {
-                                       
-       //Only accept drag and drop of files if all of them are images.
-//       if ( ![[[draggingItem item] types] containsObject:(NSString *)kUTTypeImage] )
-//       {
-//           operation = NSDragOperationNone;
-//           *stop = YES;
-//       }
+                                   usingBlock:^(NSDraggingItem *draggingItem, NSInteger idx, BOOL *stop)
+    {
+        NSPasteboardItem *item = draggingItem.item;
+        NSString *path = [item stringForType: @"public.file-url"];
+        NSURL *url = [NSURL URLWithString:path];
+        
+        CFStringRef fileExtension = (__bridge CFStringRef) [url pathExtension];
+        CFStringRef fileUTI = UTTypeCreatePreferredIdentifierForTag(kUTTagClassFilenameExtension, fileExtension, NULL);
+        
+        if (!UTTypeConformsTo(fileUTI, kUTTypeImage))
+        {
+            operation = NSDragOperationNone;
+            *stop = YES;
+        }
+        
+        CFRelease(fileUTI);
    }];
     
    self.dropHighlightView.hidden = (operation == NSDragOperationNone);

@@ -75,16 +75,14 @@
     self.dropHighlightView.hidden = YES;
 }
 
-- (void)draggingEnded:(id<NSDraggingInfo>)sender
+- (BOOL)performDragOperation:(id <NSDraggingInfo>)sender
 {
-    self.dropHighlightView.hidden = YES;
+    return YES;
 }
 
-#pragma mark - Menu Item
-
-- (IBAction)addImage:(NSMenuItem *)menuItem
+- (void)concludeDragOperation:(id <NSDraggingInfo>)sender
 {
-    
+    self.dropHighlightView.hidden = YES;
 }
 
 @end

@@ -6,8 +6,11 @@
 //  Copyright (c) 2015 James Campbell. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+@import Foundation;
+@class Document;
 
 @interface SUTSprite : NSObject
+
+@property (nonatomic, weak) Document *document;
 
 @end

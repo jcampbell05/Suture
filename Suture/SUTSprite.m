@@ -18,7 +18,7 @@
     
     if (self)
     {
-        self.fileName = [aDecoder decodeObjectForKey:@"fileName"];
+       // self.fileName = [aDecoder decodeObjectForKey:@"fileName"];
     }
     
     return self;
@@ -26,7 +26,7 @@
 
 - (void)encodeWithCoder:(NSCoder *)aCoder
 {
-    [aCoder encodeObject:self.fileName forKey:@"fileName"];
+    //[aCoder encodeObject:self.fileName forKey:@"fileName"];
 }
 
 @end

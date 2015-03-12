@@ -10,6 +10,8 @@
 
 @interface Document ()
 
+@property (nonatomic, strong) NSFileWrapper *fileWrapper;
+
 @end
 
 @implementation Document
@@ -38,6 +40,16 @@
     }
     
     return _sprites;
+}
+
+- (NSFileWrapper *)fileWrapper
+{
+    if (!_fileWrapper)
+    {
+        _fileWrapper = [[NSFileWrapper alloc] initDirectoryWithFileWrappers:nil];
+    }
+    
+    return _fileWrapper;
 }
 
 #pragma mark - DocumentLifecycle

@@ -10,6 +10,8 @@
 
 @interface Document : NSDocument
 
+@property (nonatomic, strong) NSMutableArray *sprites;
+
 #pragma mark - Menu Item
 
 - (IBAction)addImage:(NSMenuItem *)menuItem;

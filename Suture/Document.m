@@ -26,6 +26,16 @@
     return self;
 }
 
+- (NSMutableArray *)sprites
+{
+    if (!_sprites)
+    {
+        _sprites = [[NSMutableArray alloc] init];
+    }
+    
+    return _sprites;
+}
+
 - (void)windowControllerDidLoadNib:(NSWindowController *)aController
 {
     [super windowControllerDidLoadNib:aController];

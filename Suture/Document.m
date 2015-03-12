@@ -42,6 +42,8 @@
     return _sprites;
 }
 
+#pragma mark - FileWrapper
+
 - (NSFileWrapper *)fileWrapper
 {
     if (!_fileWrapper)

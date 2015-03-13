@@ -119,7 +119,7 @@
         if (_document)
         {
             [self.spriteArrayController bind:NSStringFromSelector(@selector(arrangedObjects))
-                                    toObject:document
+                                    toObject:_document
                                  withKeyPath:NSStringFromSelector(@selector(sprites))
                                      options:nil];
         }
@@ -170,6 +170,7 @@
 {
     [self.document.sprites addObject:[[SUTSprite alloc] init]];
     self.spriteCollectionView.hidden = NO;
+    
     return YES;
 }
 

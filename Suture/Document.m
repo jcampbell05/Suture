@@ -117,7 +117,7 @@
 {
     if (fileURL)
     {
-        [self willChangeValueForKey:@"sprites"];
+        [self willChangeValueForKey:NSStringFromSelector(@selector(sprites))];
         
         SUTSprite *sprite = [[SUTSprite alloc] init];
         sprite.fileURL = fileURL;
@@ -127,10 +127,9 @@
                                                                   error:NULL];
         
         [self.fileWrapper addFileWrapper:fileWrapper];
-        [self.sprites addObject: sprite];
+        [self.sprites addObject:sprite];
         
-        [self didChangeValueForKey:@"sprites"];
-        [self updateChangeCount:NSChangeDone];
+        [self didChangeValueForKey:NSStringFromSelector(@selector(sprites))];
     }
 }
 

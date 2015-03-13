@@ -120,7 +120,7 @@
         {
             [self.spriteArrayController bind:NSStringFromSelector(@selector(arrangedObjects))
                                     toObject:_document
-                                 withKeyPath:@"sprites"
+                                 withKeyPath:NSStringFromSelector(@selector(sprites))
                                      options:nil];
         }
     }
@@ -165,6 +165,8 @@
 
 - (BOOL)performDragOperation:(id <NSDraggingInfo>)sender
 {
+    NSMutableArray *newSprites = [[NSMutableArray alloc] init];
+    
     [sender enumerateDraggingItemsWithOptions:0
                                       forView:self
                                       classes:[NSArray arrayWithObject:[NSPasteboardItem class]]

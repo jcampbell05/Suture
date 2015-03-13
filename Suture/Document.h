@@ -14,8 +14,7 @@
 @property (nonatomic, strong, readonly) NSArray *sprites;
 
 - (void)addSprite:(SUTSprite *)sprite;
-- (void)insertObject:(SUTSprite *)sprite
-    inSpritesAtIndex:(NSUInteger)index;
+- (void)insertObject:(SUTSprite *)sprite inSpritesAtIndex:(NSUInteger)index;
 - (void)removeObjectFromSpritesAtIndex:(NSUInteger)index;
 
 @end

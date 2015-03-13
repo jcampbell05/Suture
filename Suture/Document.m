@@ -14,28 +14,11 @@
 @interface Document ()
 
 @property (nonatomic, strong) NSFileWrapper *fileWrapper;
-@property (nonatomic, strong) NSMutableArray *mutableSprites;
+@property (nonatomic, readwrite) NSArray *sprites;
 
 @end
 
 @implementation Document
-
-#pragma mark - Sprites
-
-- (NSMutableArray *)mutableSprites
-{
-    if (!_mutableSprites)
-    {
-        _mutableSprites = [[NSMutableArray alloc] init];
-    }
-    
-    return _mutableSprites;
-}
-
-- (NSArray *)sprites
-{
-    return [self.mutableSprites copy];
-}
 
 #pragma mark - FileWrapper
 
@@ -111,7 +94,7 @@
     [array makeObjectsPerformSelector:@selector(setDocument:) withObject:self];
     
     // set the property
-    self.mutableSprites = [array mutableCopy];
+    _sprites = [array mutableCopy];
     
     // YES because of successful reading
     return YES;
@@ -122,7 +105,7 @@
 - (void)addSprite:(SUTSprite *)sprite
 {
     [self insertObject:sprite
-      inSpritesAtIndex:self.mutableSprites.count];
+      inSpritesAtIndex:_sprites.count];
 }
 
 - (void)insertObject:(SUTSprite *)sprite
@@ -133,12 +116,16 @@
                                                               error:NULL];
     [self.fileWrapper addFileWrapper:fileWrapper];
     
-    self.mutableSprites[index] = sprite;
+    NSMutableArray *newSprites = [self.sprites mutableCopy];
+    newSprites[index] = sprite;
+    self.sprites = newSprites;
 }
 
 - (void)removeObjectFromSpritesAtIndex:(NSUInteger)index
 {
-    [self.mutableSprites removeObjectAtIndex:index];
+    NSMutableArray *newSprites = [self.sprites mutableCopy];
+    [newSprites removeObjectAtIndex:index];
+    self.sprites = newSprites;
 }
 
 - (void)addSpriteForFileURL:(NSURL *)fileURL
@@ -149,9 +136,7 @@
         
         SUTSprite *sprite = [[SUTSprite alloc] init];
         sprite.fileURL = fileURL;
-        
-        
-        
+
         [self didChangeValueForKey:NSStringFromSelector(@selector(sprites))];
     }
 }

@@ -118,7 +118,7 @@
         
         if (_document)
         {
-            [self.spriteArrayController bind:NSStringFromSelector(@selector(arrangedObjects))
+            [self.spriteArrayController bind:@"contentArray"
                                     toObject:_document
                                  withKeyPath:NSStringFromSelector(@selector(sprites))
                                      options:nil];
@@ -177,6 +177,7 @@
          
          SUTSprite *sprite = [[SUTSprite alloc] init];
          sprite.fileURL = url;
+         
          [self.document addSprite:sprite];
      }];
     

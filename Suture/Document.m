@@ -111,4 +111,27 @@
     return YES;
 }
 
+#pragma mark - Sprite Stuff
+
+- (void)addSpriteForFileURL:(NSURL *)fileURL
+{
+    if (fileURL)
+    {
+        [self willChangeValueForKey:@"sprites"];
+        
+        SUTSprite *sprite = [[SUTSprite alloc] init];
+        sprite.fileURL = fileURL;
+        
+        NSFileWrapper *fileWrapper = [[NSFileWrapper alloc] initWithURL:fileURL
+                                                                options:0
+                                                                  error:NULL];
+        
+        [self.fileWrapper addFileWrapper:fileWrapper];
+        [self.sprites addObject: sprite];
+        
+        [self didChangeValueForKey:@"sprites"];
+        [self updateChangeCount:NSChangeDone];
+    }
+}
+
 @end

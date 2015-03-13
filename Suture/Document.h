@@ -13,5 +13,7 @@
 
 @property (nonatomic, strong) NSMutableArray *sprites;
 
+- (void)addSpriteForFileURL:(NSURL *)fileURL;
+
 @end
 

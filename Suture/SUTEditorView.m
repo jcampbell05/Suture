@@ -109,12 +109,7 @@
     {
         if (_document)
         {
-            [_document unbind:NSStringFromSelector(@selector(sprites))];
-            
-            NSRange range = NSMakeRange(0,
-                                        [self.spriteArrayController.arrangedObjects count]);
-            NSIndexSet *indexSet = [NSIndexSet indexSetWithIndexesInRange:range];
-            [self.spriteArrayController removeObjectsAtArrangedObjectIndexes:indexSet];
+            [self.spriteArrayController unbind:NSStringFromSelector(@selector(arrangedObjects))];
         }
         
         [self willChangeValueForKey:NSStringFromSelector(@selector(document))];
@@ -123,12 +118,10 @@
         
         if (_document)
         {
-            [self.spriteArrayController addObjects:_document.sprites];
-            
-            [_document bind:NSStringFromSelector(@selector(sprites))
-                   toObject:self.spriteArrayController
-                withKeyPath:NSStringFromSelector(@selector(arrangedObjects))
-                    options:nil];
+            [self.spriteArrayController bind:NSStringFromSelector(@selector(arrangedObjects))
+                                    toObject:_document
+                                 withKeyPath:@"sprites"
+                                     options:nil];
         }
     }
 }
@@ -172,8 +165,6 @@
 
 - (BOOL)performDragOperation:(id <NSDraggingInfo>)sender
 {
-    NSMutableArray *newSprites = [[NSMutableArray alloc] init];
-    
     [sender enumerateDraggingItemsWithOptions:0
                                       forView:self
                                       classes:[NSArray arrayWithObject:[NSPasteboardItem class]]
@@ -184,12 +175,8 @@
          NSString *path = [item stringForType: @"public.file-url"];
          NSURL *url = [NSURL URLWithString:path];
          
-         SUTSprite *sprite = [[SUTSprite alloc] init];
-         sprite.fileURL = url;
-         [newSprites addObject: sprite];
+         [self.document addSpriteForFileURL:url];
      }];
-    
-    [self.spriteArrayController addObjects:[newSprites copy]];
     
     return YES;
 }

@@ -19,9 +19,15 @@
 
 #pragma mark - Init
 
-- (instancetype)init
+- (instancetype)initWithContentRect:(NSRect)contentRect
+                          styleMask:(NSUInteger)aStyle
+                            backing:(NSBackingStoreType)bufferingType
+                              defer:(BOOL)flag
 {
-    self = [super init];
+    self = [super initWithContentRect:contentRect
+                            styleMask:aStyle
+                              backing:bufferingType
+                                defer:flag];
     
     if (self)
     {
@@ -37,7 +43,7 @@
 {
     if (!_editorView)
     {
-        _editorView = [[SUTEditorView alloc] initWithFrame:self.contentLayoutRect];
+        _editorView = [[SUTEditorView alloc] initWithFrame:((NSView*)self.contentView).bounds];
         _editorView.autoresizingMask = NSViewWidthSizable | NSViewHeightSizable;
     }
     

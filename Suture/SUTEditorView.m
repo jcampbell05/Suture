@@ -24,9 +24,9 @@
 
 #pragma mark - Init
 
-- (instancetype)initWithCoder:(NSCoder *)coder
+- (instancetype)initWithFrame:(NSRect)frameRect
 {
-    self = [super initWithCoder:coder];
+    self = [super initWithFrame:(NSRect)frameRect];
     
     if (self)
     {

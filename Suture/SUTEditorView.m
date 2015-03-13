@@ -37,10 +37,10 @@
         [self registerForDraggedTypes:@[NSFilenamesPboardType]];
         
         [self addSubview:self.emptySpriteView];
-        [self addSubview:self.dropHighlightView];
         [self addSubview:self.spriteCollectionView];
+        [self addSubview:self.dropHighlightView];
         
-        [self.spriteCollectionView bind:NSStringFromSelector(@selector(content))
+        [self.spriteCollectionView bind:NSContentBinding
                                toObject:self.spriteArrayController
                             withKeyPath:NSStringFromSelector(@selector(arrangedObjects))
                                 options:nil];
@@ -181,14 +181,14 @@
 - (void)draggingEnded:(id <NSDraggingInfo>)sender
 {
     self.spriteCollectionView.hidden = NO;
-    self.spriteCollectionView.content = self.document.sprites;
+   // self.spriteCollectionView.content = self.document.sprites;
 }
 
 #pragma mark - Dealloc
 
 - (void)dealloc
 {
-    [self.spriteCollectionView unbind:NSStringFromSelector(@selector(content))];
+    [self.spriteCollectionView unbind:NSContentBinding];
     [self.spriteCollectionView unbind:NSStringFromSelector(@selector(selectionIndexes))];
 }
 

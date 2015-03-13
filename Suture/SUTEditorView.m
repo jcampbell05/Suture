@@ -40,9 +40,6 @@
         [self addSubview:self.dropHighlightView];
         [self addSubview:self.spriteCollectionView];
         
-        self.spriteCollectionView.hidden = NO;
-        self.spriteCollectionView.content = @[[[SUTSprite alloc] init]];
-        
         [self.spriteCollectionView bind:NSStringFromSelector(@selector(content))
                                toObject:self.spriteArrayController
                             withKeyPath:NSStringFromSelector(@selector(arrangedObjects))
@@ -134,6 +131,7 @@
 - (NSDragOperation)draggingEntered:(id<NSDraggingInfo>)sender
 {
     __block NSDragOperation operation = NSDragOperationCopy;
+
         
     /* When an image from one window is dragged over another, we want to resize the dragging item to
      * preview the size of the image as it would appear if the user dropped it in. */
@@ -172,8 +170,7 @@
 {
     [self.document.sprites addObject:[[SUTSprite alloc] init]];
     self.spriteCollectionView.hidden = NO;
-    self.spriteCollectionView.content = @[[[SUTSprite alloc] init]];
-    
+
     return YES;
 }
 

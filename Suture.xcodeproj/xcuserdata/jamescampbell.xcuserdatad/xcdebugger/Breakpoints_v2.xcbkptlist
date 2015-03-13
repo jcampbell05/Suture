@@ -24,11 +24,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Suture/SUTSpriteView.m"
-            timestampString = "447975146.001576"
+            timestampString = "447978718.004086"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "30"
-            endingLineNumber = "30"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
             landmarkName = "-setSelected:"
             landmarkType = "5">
          </BreakpointContent>
@@ -39,13 +39,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Suture/SUTSpriteView.m"
-            timestampString = "447975146.764043"
+            filePath = "Suture/SUTSpriteItem.m"
+            timestampString = "447979024.655213"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34"
-            landmarkName = "-setSelected:"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "-setRepresentedObject:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

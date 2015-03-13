@@ -44,8 +44,8 @@
                                toObject:self.spriteArrayController
                             withKeyPath:NSStringFromSelector(@selector(arrangedObjects))
                                 options:nil];
-        [self.spriteCollectionView bind:NSStringFromSelector(@selector(selectionIndexes))
-                               toObject:self.spriteArrayController
+        [self.spriteArrayController bind:NSStringFromSelector(@selector(selectionIndexes))
+                               toObject:self.spriteCollectionView
                             withKeyPath:NSStringFromSelector(@selector(selectionIndexes))
                                 options:nil];
         

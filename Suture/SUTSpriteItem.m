@@ -8,15 +8,25 @@
 
 #import "SUTSpriteItem.h"
 
+#import "SUTSpriteView.h"
+
 @interface SUTSpriteItem ()
 
 @end
 
 @implementation SUTSpriteItem
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do view setup here.
+- (void)loadView
+{
+    SUTSpriteView *spriteView = [[SUTSpriteView alloc] init];
+    spriteView.bounds = (NSRect){NSZeroPoint, (NSSize){50.0f, 50.0f}};
+    
+    self.view = spriteView;
+}
+
+- (void)setRepresentedObject:(id)representedObject
+{
+    [super setRepresentedObject:representedObject];
 }
 
 @end

@@ -10,10 +10,15 @@
 
 @implementation SUTSpriteView
 
-- (void)drawRect:(NSRect)dirtyRect {
-    [super drawRect:dirtyRect];
-    
-    // Drawing code here.
+- (instancetype)init
+{
+    self = [super init];
+    if (self)
+    {
+        self.wantsLayer = YES;
+        self.layer.backgroundColor = [NSColor redColor].CGColor;
+    }
+    return self;
 }
 
 @end

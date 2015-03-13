@@ -11,6 +11,7 @@
 #import "Document.h"
 
 #import "SUTSprite.h"
+#import "SUTSpriteItem.h"
 #import "SUTEmptySpriteView.h"
 #import "SUTOutlineView.h"
 
@@ -94,6 +95,7 @@
         _spriteCollectionView = [[NSCollectionView alloc] initWithFrame:self.bounds];
         _spriteCollectionView.hidden = YES;
         _spriteCollectionView.autoresizingMask = NSViewWidthSizable | NSViewHeightSizable;
+        _spriteCollectionView.itemPrototype = [SUTSpriteItem new];
     }
     
     return _spriteCollectionView;
@@ -101,7 +103,7 @@
 
 #pragma mark - Documents
 
-- (void)setDocument:(NSDocument *)document
+- (void)setDocument:(Document *)document
 {
     if (![_document isEqualTo:document])
     {
@@ -167,6 +169,7 @@
 - (BOOL)performDragOperation:(id <NSDraggingInfo>)sender
 {
     [self.document.sprites addObject:[[SUTSprite alloc] init]];
+    self.spriteCollectionView.hidden = NO;
     return YES;
 }
 

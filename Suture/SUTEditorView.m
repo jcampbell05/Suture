@@ -13,8 +13,10 @@
 
 @interface SUTEditorView () <NSDraggingDestination>
 
-@property (nonatomic, strong) SUTEmptySpriteView *emptySpriteView;
 @property (nonatomic, strong) SUTOutlineView *dropHighlightView;
+@property (nonatomic, strong) SUTEmptySpriteView *emptySpriteView;
+@property (nonatomic, strong) NSArrayController *spriteArrayController;
+@property (nonatomic, strong) NSCollectionView *spriteCollectionView;
 
 @end
 
@@ -32,12 +34,25 @@
         
         [self addSubview:self.emptySpriteView];
         [self addSubview:self.dropHighlightView];
+        [self addSubview:self.spriteCollectionView];
     }
     
     return self;
 }
 
 #pragma mark - emptySpriteView
+
+- (SUTOutlineView *)dropHighlightView
+{
+    if (!_dropHighlightView)
+    {
+        _dropHighlightView = [[SUTOutlineView alloc] initWithFrame:self.bounds];
+        _dropHighlightView.hidden = YES;
+        _dropHighlightView.autoresizingMask = NSViewWidthSizable | NSViewHeightSizable;
+    }
+    
+    return _dropHighlightView;
+}
 
 - (SUTEmptySpriteView *)emptySpriteView
 {
@@ -50,16 +65,26 @@
     return _emptySpriteView;
 }
 
-- (SUTOutlineView *)dropHighlightView
+- (NSArrayController *)spriteArrayController
 {
-    if (!_dropHighlightView)
+    if (!_spriteArrayController)
     {
-        _dropHighlightView = [[SUTOutlineView alloc] initWithFrame:self.bounds];
-        _dropHighlightView.hidden = YES;
-        _dropHighlightView.autoresizingMask = NSViewWidthSizable | NSViewHeightSizable;
+        _spriteArrayController = [[NSArrayController alloc] init];
     }
     
-    return _dropHighlightView;
+    return _spriteArrayController;
+}
+
+- (NSCollectionView *)spriteCollectionView
+{
+    if (!_spriteCollectionView)
+    {
+        _spriteCollectionView = [[NSCollectionView alloc] initWithFrame:self.bounds];
+        _spriteCollectionView.hidden = YES;
+        _spriteCollectionView.autoresizingMask = NSViewWidthSizable | NSViewHeightSizable;
+    }
+    
+    return _spriteCollectionView;
 }
 
 #pragma mark - NSDraggingDestination

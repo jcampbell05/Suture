@@ -18,9 +18,7 @@
 
 - (void)loadView
 {
-    SUTSpriteView *spriteView = [[SUTSpriteView alloc] init];
-    spriteView.bounds = (NSRect){NSZeroPoint, (NSSize){50.0f, 50.0f}};
-    
+    SUTSpriteView *spriteView = [[SUTSpriteView alloc] initWithFrame:(NSRect){NSZeroPoint, (NSSize){50.0f, 50.0f}}];
     self.view = spriteView;
 }
 

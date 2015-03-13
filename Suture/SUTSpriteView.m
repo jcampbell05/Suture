@@ -10,9 +10,9 @@
 
 @implementation SUTSpriteView
 
-- (instancetype)init
+- (instancetype)initWithFrame:(NSRect)frameRect
 {
-    self = [super init];
+    self = [super initWithFrame:frameRect];
     if (self)
     {
         self.wantsLayer = YES;

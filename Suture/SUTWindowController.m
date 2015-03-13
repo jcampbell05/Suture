@@ -43,6 +43,15 @@
     return self;
 }
 
+#pragma mark - Document
+
+- (void)setDocument:(id)document
+{
+    [super setDocument:document];
+    
+    self.editorView.document = document;
+}
+
 #pragma mark - EditorView
 
 - (SUTEditorView *)editorView

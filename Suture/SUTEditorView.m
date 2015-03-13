@@ -36,6 +36,15 @@
         [self addSubview:self.emptySpriteView];
         [self addSubview:self.dropHighlightView];
         [self addSubview:self.spriteCollectionView];
+        
+        [self.spriteCollectionView bind:NSStringFromSelector(@selector(content))
+                               toObject:self.spriteArrayController
+                            withKeyPath:NSStringFromSelector(@selector(arrangedObjects))
+                                options:nil];
+        [self.spriteCollectionView bind:NSStringFromSelector(@selector(selectionIndexes))
+                               toObject:self.spriteArrayController
+                            withKeyPath:NSStringFromSelector(@selector(selectionIndexes))
+                                options:nil];
     }
     
     return self;
@@ -145,7 +154,7 @@
    }];
     
    self.dropHighlightView.hidden = (operation == NSDragOperationNone);
-    return operation;
+   return operation;
 }
 
 - (void)draggingExited:(id <NSDraggingInfo>)sender
@@ -161,6 +170,14 @@
 - (void)concludeDragOperation:(id <NSDraggingInfo>)sender
 {
     self.dropHighlightView.hidden = YES;
+}
+
+#pragma mark - Dealloc
+
+- (void)dealloc
+{
+    [self.spriteCollectionView unbind:NSStringFromSelector(@selector(content))];
+    [self.spriteCollectionView unbind:NSStringFromSelector(@selector(selectionIndexes))];
 }
 
 @end

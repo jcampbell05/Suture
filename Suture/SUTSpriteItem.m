@@ -28,6 +28,7 @@
     [super setRepresentedObject:sprite];
     
     SUTSpriteView *spriteView = (SUTSpriteView *)self.view;
+    spriteView.selected = self.selected;
     spriteView.imageView.image = sprite.image;
 }
 

@@ -10,6 +10,7 @@
 
 @interface SUTSpriteView : NSView
 
+@property (nonatomic, assign) BOOL selected;
 @property (nonatomic, strong) NSImageView *imageView;
 
 @end

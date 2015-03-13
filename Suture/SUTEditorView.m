@@ -33,7 +33,7 @@
     
     if (self)
     {
-         [self registerForDraggedTypes:@[NSFilenamesPboardType]];
+        [self registerForDraggedTypes:@[NSFilenamesPboardType]];
         
         [self addSubview:self.emptySpriteView];
         [self addSubview:self.dropHighlightView];

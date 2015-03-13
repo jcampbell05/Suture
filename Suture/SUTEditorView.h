@@ -10,4 +10,6 @@
 
 @interface SUTEditorView : NSView
 
+@property (nonatomic, weak) NSDocument *document;
+
 @end

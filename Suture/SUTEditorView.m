@@ -118,7 +118,7 @@
         
         if (_document)
         {
-            [self.spriteArrayController bind:@"contentArray"
+            [self.spriteArrayController bind:NSContentArrayBinding
                                     toObject:_document
                                  withKeyPath:NSStringFromSelector(@selector(sprites))
                                      options:nil];

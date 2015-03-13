@@ -13,5 +13,6 @@
 
 @property (nonatomic, weak) Document *document;
 @property (nonatomic, strong) NSURL *fileURL;
+@property (nonatomic, readonly) NSImage *image;
 
 @end

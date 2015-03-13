@@ -14,11 +14,12 @@
 @interface Document ()
 
 @property (nonatomic, strong) NSFileWrapper *fileWrapper;
-@property (nonatomic, readwrite) NSArray *sprites;
 
 @end
 
 @implementation Document
+
+@synthesize sprites = _sprites;
 
 #pragma mark - FileWrapper
 
@@ -30,6 +31,16 @@
     }
     
     return _fileWrapper;
+}
+
+- (NSArray *)sprites
+{
+    if (!_sprites)
+    {
+        _sprites = [[NSArray alloc] init];
+    }
+    
+    return _sprites;
 }
 
 #pragma mark - DocumentLifecycle
@@ -100,6 +111,14 @@
     return YES;
 }
 
+#pragma mark - Image
+
+- (NSImage *)imageForURL:(NSURL *)url
+{
+    NSFileWrapper *imageFileWrapper = [self.fileWrapper.fileWrappers objectForKey:[url absoluteString]];
+    return [[NSImage alloc] initWithData:imageFileWrapper.regularFileContents];
+}
+
 #pragma mark - Sprites
 
 - (void)addSprite:(SUTSprite *)sprite
@@ -111,34 +130,24 @@
 - (void)insertObject:(SUTSprite *)sprite
     inSpritesAtIndex:(NSUInteger)index
 {
+    sprite.document = self;
+    
     NSFileWrapper *fileWrapper = [[NSFileWrapper alloc] initWithURL:sprite.fileURL
                                                             options:0
                                                               error:NULL];
+    fileWrapper.preferredFilename = [sprite.fileURL absoluteString];
     [self.fileWrapper addFileWrapper:fileWrapper];
     
     NSMutableArray *newSprites = [self.sprites mutableCopy];
     newSprites[index] = sprite;
-    self.sprites = newSprites;
+    _sprites = newSprites;
 }
 
 - (void)removeObjectFromSpritesAtIndex:(NSUInteger)index
 {
     NSMutableArray *newSprites = [self.sprites mutableCopy];
     [newSprites removeObjectAtIndex:index];
-    self.sprites = newSprites;
-}
-
-- (void)addSpriteForFileURL:(NSURL *)fileURL
-{
-    if (fileURL)
-    {
-        [self willChangeValueForKey:NSStringFromSelector(@selector(sprites))];
-        
-        SUTSprite *sprite = [[SUTSprite alloc] init];
-        sprite.fileURL = fileURL;
-
-        [self didChangeValueForKey:NSStringFromSelector(@selector(sprites))];
-    }
+    _sprites = newSprites;
 }
 
 @end

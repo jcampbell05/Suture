@@ -11,7 +11,11 @@
 
 @interface Document : NSDocument
 
-@property (nonatomic, strong, readonly) NSArray *sprites;
+@property (nonatomic, strong) NSArray *sprites;
+
+- (NSImage *)imageForURL:(NSURL *)url;
+
+#pragma mark - Sprite
 
 - (void)addSprite:(SUTSprite *)sprite;
 - (void)insertObject:(SUTSprite *)sprite inSpritesAtIndex:(NSUInteger)index;

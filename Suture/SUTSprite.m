@@ -8,6 +8,8 @@
 
 #import "SUTSprite.h"
 
+#import "Document.h"
+
 @implementation SUTSprite
 
 #pragma mark NSCoding
@@ -28,6 +30,13 @@
 {
     [aCoder encodeObject:self.fileURL
                   forKey:NSStringFromSelector(@selector(fileURL))];
+}
+
+#pragma mark - Image
+
+- (NSImage *)image
+{
+    return  [self.document imageForURL:self.fileURL];
 }
 
 @end

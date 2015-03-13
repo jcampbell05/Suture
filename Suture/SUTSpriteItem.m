@@ -28,9 +28,7 @@
     [super setRepresentedObject:sprite];
     
     SUTSpriteView *spriteView = (SUTSpriteView *)self.view;
-    
-    NSImage *image = [[NSImage alloc] initWithContentsOfFile:[sprite.fileURL absoluteString]];
-    spriteView.imageView.image = image;
+    spriteView.imageView.image = sprite.image;
 }
 
 @end

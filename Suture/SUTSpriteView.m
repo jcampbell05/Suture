@@ -8,6 +8,7 @@
 
 #import "SUTSpriteView.h"
 
+
 @implementation SUTSpriteView
 
 - (instancetype)initWithFrame:(NSRect)frameRect
@@ -15,10 +16,22 @@
     self = [super initWithFrame:frameRect];
     if (self)
     {
-        self.wantsLayer = YES;
-        self.layer.backgroundColor = [NSColor redColor].CGColor;
+        [self addSubview:self.imageView];
     }
     return self;
+}
+
+#pragma mark - Image View
+
+- (NSImageView *)imageView
+{
+    if (!_imageView)
+    {
+        _imageView = [[NSImageView alloc] initWithFrame:self.bounds];
+        _imageView.autoresizingMask = NSViewWidthSizable | NSViewHeightSizable;
+    }
+    
+    return _imageView;
 }
 
 @end

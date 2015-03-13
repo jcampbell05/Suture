@@ -10,4 +10,6 @@
 
 @interface SUTSpriteView : NSView
 
+@property (nonatomic, strong) NSImageView *imageView;
+
 @end

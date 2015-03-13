@@ -65,4 +65,11 @@
     return _editorView;
 }
 
+#pragma mark - Menu Items
+
+- (IBAction)addImage:(NSMenuItem *)menuItem
+{
+    
+}
+
 @end

@@ -139,9 +139,6 @@
 {
     __block NSDragOperation operation = NSDragOperationCopy;
 
-        
-    /* When an image from one window is dragged over another, we want to resize the dragging item to
-     * preview the size of the image as it would appear if the user dropped it in. */
     [sender enumerateDraggingItemsWithOptions:0
                                       forView:self
                                       classes:[NSArray arrayWithObject:[NSPasteboardItem class]]
@@ -175,7 +172,24 @@
 
 - (BOOL)performDragOperation:(id <NSDraggingInfo>)sender
 {
+    NSMutableArray *newSprites = [[NSMutableArray alloc] init];
     
+    [sender enumerateDraggingItemsWithOptions:0
+                                      forView:self
+                                      classes:[NSArray arrayWithObject:[NSPasteboardItem class]]
+                                searchOptions:nil
+                                   usingBlock:^(NSDraggingItem *draggingItem, NSInteger idx, BOOL *stop)
+     {
+         NSPasteboardItem *item = draggingItem.item;
+         NSString *path = [item stringForType: @"public.file-url"];
+         NSURL *url = [NSURL URLWithString:path];
+         
+         SUTSprite *sprite = [[SUTSprite alloc] init];
+         sprite.fileURL = url;
+         [newSprites addObject: sprite];
+     }];
+    
+    [self.spriteArrayController addObjects:[newSprites copy]];
     
     return YES;
 }
@@ -188,7 +202,6 @@
 - (void)draggingEnded:(id <NSDraggingInfo>)sender
 {
     self.spriteCollectionView.hidden = NO;
-    [self.spriteArrayController addObject:[[SUTSprite alloc] init]];
 }
 
 #pragma mark - Dealloc

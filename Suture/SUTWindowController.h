@@ -10,4 +10,8 @@
 
 @interface SUTWindowController : NSWindowController
 
+#pragma mark - Menu Items
+
+- (IBAction)addImage:(NSMenuItem *)menuItem;
+
 @end

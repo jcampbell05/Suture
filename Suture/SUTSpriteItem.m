@@ -8,6 +8,7 @@
 
 #import "SUTSpriteItem.h"
 
+#import "SUTSprite.h"
 #import "SUTSpriteView.h"
 
 @interface SUTSpriteItem ()
@@ -22,9 +23,12 @@
     self.view = spriteView;
 }
 
-- (void)setRepresentedObject:(id)representedObject
+- (void)setRepresentedObject:(SUTSprite *)sprite
 {
-    [super setRepresentedObject:representedObject];
+    [super setRepresentedObject:sprite];
+    
+    SUTSpriteView *spriteView = (SUTSpriteView *)self.view;
+    spriteView.imageView.image = [[NSImage alloc] initWithContentsOfFile:[sprite.fileURL absoluteString]];
 }
 
 @end

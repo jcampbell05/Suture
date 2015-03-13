@@ -8,6 +8,7 @@
 
 #import "SUTEditorView.h"
 
+#import "Document.h"
 #import "SUTEmptySpriteView.h"
 #import "SUTOutlineView.h"
 
@@ -85,6 +86,31 @@
     }
     
     return _spriteCollectionView;
+}
+
+#pragma mark - Documents
+
+- (void)setDocument:(NSDocument *)document
+{
+    if (![_document isEqualTo:document])
+    {
+        if (_document)
+        {
+            [self.spriteArrayController unbind:NSStringFromSelector(@selector(arrangedObjects))];
+        }
+        
+        [self willChangeValueForKey:NSStringFromSelector(@selector(document))];
+        _document = document;
+        [self didChangeValueForKey:NSStringFromSelector(@selector(document))];
+        
+        if (_document)
+        {
+            [self.spriteArrayController bind:NSStringFromSelector(@selector(arrangedObjects))
+                                    toObject:document
+                                 withKeyPath:NSStringFromSelector(@selector(sprites))
+                                     options:nil];
+        }
+    }
 }
 
 #pragma mark - NSDraggingDestination

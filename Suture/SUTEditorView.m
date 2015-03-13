@@ -23,6 +23,8 @@
 @property (nonatomic, strong) NSArrayController *spriteArrayController;
 @property (nonatomic, strong) NSCollectionView *spriteCollectionView;
 
+@property (nonatomic, strong) JNWCollectionView *spriteCollectionView2;
+
 @end
 
 @implementation SUTEditorView
@@ -39,6 +41,7 @@
         
         [self addSubview:self.emptySpriteView];
         [self addSubview:self.spriteCollectionView];
+        [self addSubview:self.spriteCollectionView2];
         [self addSubview:self.dropHighlightView];
         
         [self.spriteCollectionView bind:NSContentBinding
@@ -69,6 +72,7 @@
     if ([object isEqual:self.spriteArrayController])
     {
         self.spriteCollectionView.hidden = ![self.spriteArrayController.arrangedObjects count];
+        self.spriteCollectionView2.hidden = ![self.spriteArrayController.arrangedObjects count];
     }
 }
 
@@ -118,6 +122,16 @@
     }
     
     return _spriteCollectionView;
+}
+
+- (JNWCollectionView *)spriteCollectionView2
+{
+    if (!_spriteCollectionView2)
+    {
+        _spriteCollectionView2 = [[JNWCollectionView alloc] initWithFrame:self.bounds];
+    }
+    
+    return _spriteCollectionView2;
 }
 
 #pragma mark - Documents
@@ -220,6 +234,7 @@
     sprite.fileURL = url;
     
     [self.document addSprite:sprite];
+    [self.spriteCollectionView2 reloadData];
 }
 
 #pragma mark - Dealloc

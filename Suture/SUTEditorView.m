@@ -165,8 +165,6 @@
 
 - (BOOL)performDragOperation:(id <NSDraggingInfo>)sender
 {
-    NSMutableArray *newSprites = [[NSMutableArray alloc] init];
-    
     [sender enumerateDraggingItemsWithOptions:0
                                       forView:self
                                       classes:[NSArray arrayWithObject:[NSPasteboardItem class]]
@@ -177,7 +175,9 @@
          NSString *path = [item stringForType: @"public.file-url"];
          NSURL *url = [NSURL URLWithString:path];
          
-         [self.document addSpriteForFileURL:url];
+         SUTSprite *sprite = [[SUTSprite alloc] init];
+         sprite.fileURL = url;
+         [self.document addSprite:sprite];
      }];
     
     return YES;

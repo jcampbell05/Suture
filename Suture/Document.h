@@ -11,9 +11,12 @@
 
 @interface Document : NSDocument
 
-@property (nonatomic, strong) NSMutableArray *sprites;
+@property (nonatomic, strong, readonly) NSArray *sprites;
 
-- (void)addSpriteForFileURL:(NSURL *)fileURL;
+- (void)addSprite:(SUTSprite *)sprite;
+- (void)insertObject:(SUTSprite *)sprite
+    inSpritesAtIndex:(NSUInteger)index;
+- (void)removeObjectFromSpritesAtIndex:(NSUInteger)index;
 
 @end
 

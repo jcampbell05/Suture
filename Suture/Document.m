@@ -14,6 +14,7 @@
 @interface Document ()
 
 @property (nonatomic, strong) NSFileWrapper *fileWrapper;
+@property (nonatomic, strong) NSMutableArray *mutableSprites;
 
 @end
 
@@ -21,14 +22,19 @@
 
 #pragma mark - Sprites
 
-- (NSMutableArray *)sprites
+- (NSMutableArray *)mutableSprites
 {
-    if (!_sprites)
+    if (!_mutableSprites)
     {
-        _sprites = [[NSMutableArray alloc] init];
+        _mutableSprites = [[NSMutableArray alloc] init];
     }
     
-    return _sprites;
+    return _mutableSprites;
+}
+
+- (NSArray *)sprites
+{
+    return [self.mutableSprites copy];
 }
 
 #pragma mark - FileWrapper
@@ -105,13 +111,35 @@
     [array makeObjectsPerformSelector:@selector(setDocument:) withObject:self];
     
     // set the property
-    self.sprites = [array mutableCopy];
+    self.mutableSprites = [array mutableCopy];
     
     // YES because of successful reading
     return YES;
 }
 
-#pragma mark - Sprite Stuff
+#pragma mark - Sprites
+
+- (void)addSprite:(SUTSprite *)sprite
+{
+    [self insertObject:sprite
+      inSpritesAtIndex:self.mutableSprites.count];
+}
+
+- (void)insertObject:(SUTSprite *)sprite
+    inSpritesAtIndex:(NSUInteger)index
+{
+    NSFileWrapper *fileWrapper = [[NSFileWrapper alloc] initWithURL:sprite.fileURL
+                                                            options:0
+                                                              error:NULL];
+    [self.fileWrapper addFileWrapper:fileWrapper];
+    
+    self.mutableSprites[index] = sprite;
+}
+
+- (void)removeObjectFromSpritesAtIndex:(NSUInteger)index
+{
+    [self.mutableSprites removeObjectAtIndex:index];
+}
 
 - (void)addSpriteForFileURL:(NSURL *)fileURL
 {
@@ -122,12 +150,7 @@
         SUTSprite *sprite = [[SUTSprite alloc] init];
         sprite.fileURL = fileURL;
         
-        NSFileWrapper *fileWrapper = [[NSFileWrapper alloc] initWithURL:fileURL
-                                                                options:0
-                                                                  error:NULL];
         
-        [self.fileWrapper addFileWrapper:fileWrapper];
-        [self.sprites addObject:sprite];
         
         [self didChangeValueForKey:NSStringFromSelector(@selector(sprites))];
     }

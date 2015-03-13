@@ -48,9 +48,27 @@
                                toObject:self.spriteArrayController
                             withKeyPath:NSStringFromSelector(@selector(selectionIndexes))
                                 options:nil];
+        
+        [self.spriteArrayController addObserver:self
+                                     forKeyPath:@"arrangedObjects.@count"
+                                        options:NSKeyValueObservingOptionNew
+                                        context:NULL];
     }
     
     return self;
+}
+
+#pragma mark - KVO
+
+- (void)observeValueForKeyPath:(NSString *)keyPath
+                      ofObject:(id)object
+                        change:(NSDictionary *)change
+                       context:(void *)context
+{
+    if ([object isEqual:self.spriteArrayController])
+    {
+        self.spriteCollectionView.hidden = ![self.spriteArrayController.arrangedObjects count];
+    }
 }
 
 #pragma mark - emptySpriteView
@@ -115,6 +133,8 @@
         [self willChangeValueForKey:NSStringFromSelector(@selector(document))];
         _document = document;
         [self didChangeValueForKey:NSStringFromSelector(@selector(document))];
+        
+        self.spriteArrayController.content = _document.sprites;
         
         if (_document)
         {
@@ -189,17 +209,14 @@
     self.dropHighlightView.hidden = YES;
 }
 
-- (void)draggingEnded:(id <NSDraggingInfo>)sender
-{
-    self.spriteCollectionView.hidden = NO;
-}
-
 #pragma mark - Dealloc
 
 - (void)dealloc
 {
     [self.spriteCollectionView unbind:NSContentBinding];
     [self.spriteCollectionView unbind:NSStringFromSelector(@selector(selectionIndexes))];
+    [self.spriteArrayController removeObserver:self
+                                    forKeyPath:@"arrangedObjects.@count"];
 }
 
 @end

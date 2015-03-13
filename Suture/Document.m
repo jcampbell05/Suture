@@ -15,6 +15,8 @@
 
 @property (nonatomic, strong) NSFileWrapper *fileWrapper;
 
+- (NSString *)sanatizeFilePath:(NSString *)path;
+
 @end
 
 @implementation Document
@@ -57,6 +59,11 @@
     [windowController window];
 }
 
+- (NSString *)defaultDraftName
+{
+    return @"New Sprite Sheet";
+}
+
 #pragma mark - Read/Write
 
 - (NSFileWrapper *)fileWrapperOfType:(NSString *)typeName error:(NSError **)outError
@@ -71,13 +78,13 @@
     // add it to the files
     [files setObject:indexWrapper forKey:@"index.plist"];
     
-    // copy all other referenced files too
-//    for (SUTSprite *sprite in self.sprites)
-//    {
-//        NSString *fileName = oneItem.fileName;
-//        NSFileWrapper *existingFile = [_fileWrapper.fileWrappers objectForKey:fileName];
-//        [files setObject:existingFile forKey:fileName];
-//    }
+    for (SUTSprite *sprite in self.sprites)
+    {
+        NSString *fileName = [self sanatizeFilePath:[sprite.fileURL path]];
+        NSFileWrapper *existingFile = [self.fileWrapper.fileWrappers objectForKey:fileName];
+        [files setObject:existingFile
+                  forKey:fileName];
+    }
     
     // create a new fileWrapper for the bundle
     NSFileWrapper *newWrapper = [[NSFileWrapper alloc] initDirectoryWithFileWrappers:files];
@@ -105,7 +112,7 @@
     [array makeObjectsPerformSelector:@selector(setDocument:) withObject:self];
     
     // set the property
-    _sprites = [array mutableCopy];
+    self.sprites = [array mutableCopy];
     
     // YES because of successful reading
     return YES;
@@ -115,8 +122,16 @@
 
 - (NSImage *)imageForURL:(NSURL *)url
 {
-    NSFileWrapper *imageFileWrapper = [self.fileWrapper.fileWrappers objectForKey:[url absoluteString]];
-    return [[NSImage alloc] initWithData:imageFileWrapper.regularFileContents];
+    NSString *path = [self sanatizeFilePath:[url path]];
+    NSFileWrapper *imageFileWrapper = [self.fileWrapper.fileWrappers objectForKey:path];
+    NSImage *image = nil;
+    
+    if (imageFileWrapper)
+    {
+        image = [[NSImage alloc] initWithData:imageFileWrapper.regularFileContents];
+    }
+    
+    return image;
 }
 
 #pragma mark - Sprites
@@ -135,7 +150,7 @@
     NSFileWrapper *fileWrapper = [[NSFileWrapper alloc] initWithURL:sprite.fileURL
                                                             options:0
                                                               error:NULL];
-    fileWrapper.preferredFilename = [sprite.fileURL absoluteString];
+    fileWrapper.preferredFilename = [self sanatizeFilePath:[sprite.fileURL path]];
     [self.fileWrapper addFileWrapper:fileWrapper];
     
     NSMutableArray *newSprites = [self.sprites mutableCopy];
@@ -148,6 +163,14 @@
     NSMutableArray *newSprites = [self.sprites mutableCopy];
     [newSprites removeObjectAtIndex:index];
     _sprites = newSprites;
+}
+
+#pragma mark - Sanaity
+
+- (NSString *)sanatizeFilePath:(NSString *)path
+{
+    NSCharacterSet* illegalFileNameCharacters = [NSCharacterSet characterSetWithCharactersInString:@"/\\?%*|\"<>"];
+    return [[path componentsSeparatedByCharactersInSet:illegalFileNameCharacters] componentsJoinedByString:@""];
 }
 
 @end

@@ -169,14 +169,19 @@
 - (BOOL)performDragOperation:(id <NSDraggingInfo>)sender
 {
     [self.document.sprites addObject:[[SUTSprite alloc] init]];
-    self.spriteCollectionView.hidden = NO;
-
+    
     return YES;
 }
 
 - (void)concludeDragOperation:(id <NSDraggingInfo>)sender
 {
     self.dropHighlightView.hidden = YES;
+}
+
+- (void)draggingEnded:(id <NSDraggingInfo>)sender
+{
+    self.spriteCollectionView.hidden = NO;
+    self.spriteCollectionView.content = self.document.sprites;
 }
 
 #pragma mark - Dealloc

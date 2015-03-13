@@ -7,11 +7,11 @@
 //
 
 @import Cocoa;
-@class Document;
+@class SUTDocument;
 
 @interface SUTEditorView : NSView
 
-@property (nonatomic, weak) Document *document;
+@property (nonatomic, weak) SUTDocument *document;
 
 - (void)addSpriteForURL:(NSURL *)url;
 

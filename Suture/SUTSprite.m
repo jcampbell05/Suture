@@ -8,7 +8,7 @@
 
 #import "SUTSprite.h"
 
-#import "Document.h"
+#import "SUTDocument.h"
 
 @implementation SUTSprite
 

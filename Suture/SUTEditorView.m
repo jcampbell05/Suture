@@ -8,7 +8,7 @@
 
 #import "SUTEditorView.h"
 
-#import "Document.h"
+#import "SUTDocument.h"
 
 #import "SUTSprite.h"
 #import "SUTSpriteItem.h"
@@ -121,7 +121,7 @@
 
 #pragma mark - Documents
 
-- (void)setDocument:(Document *)document
+- (void)setDocument:(SUTDocument *)document
 {
     if (![_document isEqualTo:document])
     {

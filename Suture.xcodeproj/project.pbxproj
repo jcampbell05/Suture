@@ -15,7 +15,7 @@
 		7465C5311AB2FE490058AC8A /* SUTSpriteItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 7465C5301AB2FE490058AC8A /* SUTSpriteItem.m */; };
 		74F0FAE01AAF5224003F9454 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 74F0FADF1AAF5224003F9454 /* AppDelegate.m */; };
 		74F0FAE21AAF5224003F9454 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 74F0FAE11AAF5224003F9454 /* main.m */; };
-		74F0FAE51AAF5224003F9454 /* Document.m in Sources */ = {isa = PBXBuildFile; fileRef = 74F0FAE41AAF5224003F9454 /* Document.m */; };
+		74F0FAE51AAF5224003F9454 /* SUTDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 74F0FAE41AAF5224003F9454 /* SUTDocument.m */; };
 		74F0FAEA1AAF5224003F9454 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74F0FAE91AAF5224003F9454 /* Images.xcassets */; };
 		74F0FAED1AAF5224003F9454 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74F0FAEB1AAF5224003F9454 /* MainMenu.xib */; };
 		74F0FAF91AAF5224003F9454 /* SutureTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 74F0FAF81AAF5224003F9454 /* SutureTests.m */; };
@@ -50,8 +50,8 @@
 		74F0FADE1AAF5224003F9454 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		74F0FADF1AAF5224003F9454 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		74F0FAE11AAF5224003F9454 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		74F0FAE31AAF5224003F9454 /* Document.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Document.h; sourceTree = "<group>"; };
-		74F0FAE41AAF5224003F9454 /* Document.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Document.m; sourceTree = "<group>"; };
+		74F0FAE31AAF5224003F9454 /* SUTDocument.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SUTDocument.h; sourceTree = "<group>"; };
+		74F0FAE41AAF5224003F9454 /* SUTDocument.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SUTDocument.m; sourceTree = "<group>"; };
 		74F0FAE91AAF5224003F9454 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		74F0FAEC1AAF5224003F9454 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		74F0FAF21AAF5224003F9454 /* SutureTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SutureTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -104,8 +104,8 @@
 			children = (
 				74F0FADE1AAF5224003F9454 /* AppDelegate.h */,
 				74F0FADF1AAF5224003F9454 /* AppDelegate.m */,
-				74F0FAE31AAF5224003F9454 /* Document.h */,
-				74F0FAE41AAF5224003F9454 /* Document.m */,
+				74F0FAE31AAF5224003F9454 /* SUTDocument.h */,
+				74F0FAE41AAF5224003F9454 /* SUTDocument.m */,
 				74F0FAE91AAF5224003F9454 /* Images.xcassets */,
 				74F0FAEB1AAF5224003F9454 /* MainMenu.xib */,
 				74F0FADC1AAF5224003F9454 /* Supporting Files */,
@@ -255,7 +255,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				74F0FAE51AAF5224003F9454 /* Document.m in Sources */,
+				74F0FAE51AAF5224003F9454 /* SUTDocument.m in Sources */,
 				7465C52E1AB2FE3B0058AC8A /* SUTSpriteView.m in Sources */,
 				74F52E7C1AB1D8A60031FE1A /* SUTSprite.m in Sources */,
 				74F0FAE21AAF5224003F9454 /* main.m in Sources */,

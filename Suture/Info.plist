@@ -28,7 +28,7 @@
 			<key>LSTypeIsPackage</key>
 			<integer>1</integer>
 			<key>NSDocumentClass</key>
-			<string>Document</string>
+			<string>SUTDocument</string>
 		</dict>
 	</array>
 	<key>CFBundleExecutable</key>

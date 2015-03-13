@@ -7,11 +7,11 @@
 //
 
 @import Foundation;
-@class Document;
+@class SUTDocument;
 
 @interface SUTSprite : NSObject
 
-@property (nonatomic, weak) Document *document;
+@property (nonatomic, weak) SUTDocument *document;
 @property (nonatomic, strong) NSURL *fileURL;
 @property (nonatomic, readonly) NSImage *image;
 

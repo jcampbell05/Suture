@@ -1,17 +1,17 @@
 //
-//  Document.m
+//  SUTDocument.m
 //  Suture
 //
 //  Created by James Campbell on 10/03/2015.
 //  Copyright (c) 2015 James Campbell. All rights reserved.
 //
 
-#import "Document.h"
+#import "SUTDocument.h"
 
 #import "SUTSprite.h"
 #import "SUTWindowController.h"
 
-@interface Document ()
+@interface SUTDocument ()
 
 @property (nonatomic, strong) NSFileWrapper *fileWrapper;
 
@@ -19,7 +19,7 @@
 
 @end
 
-@implementation Document
+@implementation SUTDocument
 
 @synthesize sprites = _sprites;
 

@@ -1,5 +1,5 @@
 //
-//  Document.h
+//  SUTDocument.h
 //  Suture
 //
 //  Created by James Campbell on 10/03/2015.
@@ -9,7 +9,7 @@
 @import Cocoa;
 @class SUTSprite;
 
-@interface Document : NSDocument
+@interface SUTDocument : NSDocument
 
 @property (nonatomic, strong) NSArray *sprites;
 

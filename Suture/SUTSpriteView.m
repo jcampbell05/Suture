@@ -16,9 +16,23 @@
     self = [super initWithFrame:frameRect];
     if (self)
     {
+        self.wantsLayer = YES;
+        
         [self addSubview:self.imageView];
     }
     return self;
+}
+
+- (void)setSelected:(BOOL)selected
+{
+    if (selected)
+    {
+        self.layer.backgroundColor = [NSColor blueColor].CGColor;
+    }
+    else
+    {
+        self.layer.backgroundColor = [NSColor clearColor].CGColor;
+    }
 }
 
 #pragma mark - Image View

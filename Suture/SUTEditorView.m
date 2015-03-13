@@ -111,8 +111,8 @@
     if (!_spriteCollectionView)
     {
         _spriteCollectionView = [[NSCollectionView alloc] initWithFrame:self.bounds];
-        _spriteCollectionView.hidden = YES;
         _spriteCollectionView.autoresizingMask = NSViewWidthSizable | NSViewHeightSizable;
+        _spriteCollectionView.hidden = YES;
         _spriteCollectionView.itemPrototype = [SUTSpriteItem new];
     }
     

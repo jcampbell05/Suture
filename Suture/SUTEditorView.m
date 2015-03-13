@@ -9,6 +9,8 @@
 #import "SUTEditorView.h"
 
 #import "Document.h"
+
+#import "SUTSprite.h"
 #import "SUTEmptySpriteView.h"
 #import "SUTOutlineView.h"
 
@@ -164,6 +166,7 @@
 
 - (BOOL)performDragOperation:(id <NSDraggingInfo>)sender
 {
+    [self.document.sprites addObject:[[SUTSprite alloc] init]];
     return YES;
 }
 

@@ -6,10 +6,11 @@
 //  Copyright (c) 2015 James Campbell. All rights reserved.
 //
 
-#import <Cocoa/Cocoa.h>
+@import Cocoa;
+@class Document;
 
 @interface SUTEditorView : NSView
 
-@property (nonatomic, weak) NSDocument *document;
+@property (nonatomic, weak) Document *document;
 
 @end

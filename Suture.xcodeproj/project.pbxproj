@@ -10,6 +10,8 @@
 		7417AB571AAFA8530063E88A /* SUTEditorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7417AB561AAFA8530063E88A /* SUTEditorView.m */; };
 		7417AB5A1AAFA8820063E88A /* SUTEmptySpriteView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7417AB591AAFA8820063E88A /* SUTEmptySpriteView.m */; };
 		7465C52B1AB2E5C20058AC8A /* SUTWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7465C52A1AB2E5C20058AC8A /* SUTWindowController.m */; };
+		7465C52E1AB2FE3B0058AC8A /* SUTSpriteView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7465C52D1AB2FE3B0058AC8A /* SUTSpriteView.m */; };
+		7465C5311AB2FE490058AC8A /* SUTSpriteItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 7465C5301AB2FE490058AC8A /* SUTSpriteItem.m */; };
 		74F0FAE01AAF5224003F9454 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 74F0FADF1AAF5224003F9454 /* AppDelegate.m */; };
 		74F0FAE21AAF5224003F9454 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 74F0FAE11AAF5224003F9454 /* main.m */; };
 		74F0FAE51AAF5224003F9454 /* Document.m in Sources */ = {isa = PBXBuildFile; fileRef = 74F0FAE41AAF5224003F9454 /* Document.m */; };
@@ -37,6 +39,10 @@
 		7417AB591AAFA8820063E88A /* SUTEmptySpriteView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUTEmptySpriteView.m; sourceTree = "<group>"; };
 		7465C5291AB2E5C20058AC8A /* SUTWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUTWindowController.h; sourceTree = "<group>"; };
 		7465C52A1AB2E5C20058AC8A /* SUTWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUTWindowController.m; sourceTree = "<group>"; };
+		7465C52C1AB2FE3B0058AC8A /* SUTSpriteView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUTSpriteView.h; sourceTree = "<group>"; };
+		7465C52D1AB2FE3B0058AC8A /* SUTSpriteView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUTSpriteView.m; sourceTree = "<group>"; };
+		7465C52F1AB2FE490058AC8A /* SUTSpriteItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUTSpriteItem.h; sourceTree = "<group>"; };
+		7465C5301AB2FE490058AC8A /* SUTSpriteItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUTSpriteItem.m; sourceTree = "<group>"; };
 		74F0FAD91AAF5224003F9454 /* Suture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Suture.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		74F0FADD1AAF5224003F9454 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		74F0FADE1AAF5224003F9454 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -111,6 +117,10 @@
 				74F52E7B1AB1D8A60031FE1A /* SUTSprite.m */,
 				7465C5291AB2E5C20058AC8A /* SUTWindowController.h */,
 				7465C52A1AB2E5C20058AC8A /* SUTWindowController.m */,
+				7465C52C1AB2FE3B0058AC8A /* SUTSpriteView.h */,
+				7465C52D1AB2FE3B0058AC8A /* SUTSpriteView.m */,
+				7465C52F1AB2FE490058AC8A /* SUTSpriteItem.h */,
+				7465C5301AB2FE490058AC8A /* SUTSpriteItem.m */,
 			);
 			path = Suture;
 			sourceTree = "<group>";
@@ -242,12 +252,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				74F0FAE51AAF5224003F9454 /* Document.m in Sources */,
+				7465C52E1AB2FE3B0058AC8A /* SUTSpriteView.m in Sources */,
 				74F52E7C1AB1D8A60031FE1A /* SUTSprite.m in Sources */,
 				74F0FAE21AAF5224003F9454 /* main.m in Sources */,
 				74F52E791AB1CB560031FE1A /* SUTOutlineView.m in Sources */,
 				74F0FAE01AAF5224003F9454 /* AppDelegate.m in Sources */,
 				7465C52B1AB2E5C20058AC8A /* SUTWindowController.m in Sources */,
 				7417AB5A1AAFA8820063E88A /* SUTEmptySpriteView.m in Sources */,
+				7465C5311AB2FE490058AC8A /* SUTSpriteItem.m in Sources */,
 				7417AB571AAFA8530063E88A /* SUTEditorView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

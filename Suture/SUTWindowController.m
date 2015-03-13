@@ -69,7 +69,22 @@
 
 - (IBAction)addImage:(NSMenuItem *)menuItem
 {
+    NSOpenPanel *openPanel = [NSOpenPanel openPanel];
     
+    openPanel.allowsMultipleSelection = YES;
+    openPanel.allowedFileTypes = [NSImage imageTypes];
+    
+    [openPanel beginSheetModalForWindow:self.window
+                      completionHandler:^(NSInteger result)
+    {
+        if (result == NSFileHandlingPanelOKButton)
+        {
+            for (NSURL *url in openPanel.URLs)
+            {
+                [self.editorView addSpriteForURL:url];
+            }
+        }
+    }];
 }
 
 @end

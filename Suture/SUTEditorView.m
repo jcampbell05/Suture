@@ -195,10 +195,7 @@
          NSString *path = [item stringForType: @"public.file-url"];
          NSURL *url = [NSURL URLWithString:path];
          
-         SUTSprite *sprite = [[SUTSprite alloc] init];
-         sprite.fileURL = url;
-         
-         [self.document addSprite:sprite];
+         [self addSpriteForURL:url];
      }];
     
     return YES;
@@ -207,6 +204,21 @@
 - (void)concludeDragOperation:(id <NSDraggingInfo>)sender
 {
     self.dropHighlightView.hidden = YES;
+}
+
+- (void)draggingEnded:(id <NSDraggingInfo>)sender
+{
+    self.spriteCollectionView.hidden = NO;
+}
+
+#pragma mark - Sprite 
+
+- (void)addSpriteForURL:(NSURL *)url
+{
+    SUTSprite *sprite = [[SUTSprite alloc] init];
+    sprite.fileURL = url;
+    
+    [self.document addSprite:sprite];
 }
 
 #pragma mark - Dealloc

@@ -13,4 +13,6 @@
 
 @property (nonatomic, weak) Document *document;
 
+- (void)addSpriteForURL:(NSURL *)url;
+
 @end

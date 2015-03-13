@@ -76,7 +76,8 @@ static CGFloat USNImageViewSize = 60;
         _callToActionTextField.editable = NO;
         _callToActionTextField.selectable = NO;
         
-        _callToActionTextField.stringValue = @"Drop your images here.";
+        _callToActionTextField.stringValue = NSLocalizedString(@"empty_nav",
+                                                               nil);
         
         [_callToActionTextField sizeToFit];
 

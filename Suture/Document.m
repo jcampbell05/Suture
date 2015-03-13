@@ -61,7 +61,8 @@
 
 - (NSString *)defaultDraftName
 {
-    return @"New Sprite Sheet";
+    return NSLocalizedString(@"new_document_nav",
+                             nil);
 }
 
 #pragma mark - Read/Write

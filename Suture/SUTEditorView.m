@@ -109,7 +109,12 @@
     {
         if (_document)
         {
-            [self.spriteArrayController unbind:NSStringFromSelector(@selector(arrangedObjects))];
+            [_document unbind:NSStringFromSelector(@selector(sprites))];
+            
+            NSRange range = NSMakeRange(0,
+                                        [self.spriteArrayController.arrangedObjects count]);
+            NSIndexSet *indexSet = [NSIndexSet indexSetWithIndexesInRange:range];
+            [self.spriteArrayController removeObjectsAtArrangedObjectIndexes:indexSet];
         }
         
         [self willChangeValueForKey:NSStringFromSelector(@selector(document))];
@@ -118,10 +123,12 @@
         
         if (_document)
         {
-            [self.spriteArrayController bind:NSStringFromSelector(@selector(arrangedObjects))
-                                    toObject:_document
-                                 withKeyPath:NSStringFromSelector(@selector(sprites))
-                                     options:nil];
+            [self.spriteArrayController addObjects:_document.sprites];
+            
+            [_document bind:NSStringFromSelector(@selector(sprites))
+                   toObject:self.spriteArrayController
+                withKeyPath:NSStringFromSelector(@selector(arrangedObjects))
+                    options:nil];
         }
     }
 }
@@ -168,7 +175,7 @@
 
 - (BOOL)performDragOperation:(id <NSDraggingInfo>)sender
 {
-    [self.document.sprites addObject:[[SUTSprite alloc] init]];
+    
     
     return YES;
 }
@@ -181,7 +188,7 @@
 - (void)draggingEnded:(id <NSDraggingInfo>)sender
 {
     self.spriteCollectionView.hidden = NO;
-   // self.spriteCollectionView.content = self.document.sprites;
+    [self.spriteArrayController addObject:[[SUTSprite alloc] init]];
 }
 
 #pragma mark - Dealloc

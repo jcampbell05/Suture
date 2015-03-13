@@ -111,11 +111,4 @@
     return YES;
 }
 
-#pragma mark - Menu Item
-
-- (IBAction)addImage:(NSMenuItem *)menuItem
-{
-    
-}
-
 @end

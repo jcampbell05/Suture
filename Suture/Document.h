@@ -6,15 +6,12 @@
 //  Copyright (c) 2015 James Campbell. All rights reserved.
 //
 
-#import <Cocoa/Cocoa.h>
+@import Cocoa;
+@class SUTSprite;
 
 @interface Document : NSDocument
 
 @property (nonatomic, strong) NSMutableArray *sprites;
-
-#pragma mark - Menu Item
-
-- (IBAction)addImage:(NSMenuItem *)menuItem;
 
 @end
 

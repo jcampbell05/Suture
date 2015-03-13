@@ -23,7 +23,17 @@
     
     if (self)
     {
-        self.window = [[SUTWindow alloc] init];
+        CGSize windowSize = CGSizeMake(550.0f,
+                                       450.0f);
+        self.window = [[SUTWindow alloc] initWithContentRect:(NSRect){NSZeroPoint, windowSize}
+                                                   styleMask:(NSTitledWindowMask |
+                                                              NSClosableWindowMask |
+                                                              NSMiniaturizableWindowMask |
+                                                              NSResizableWindowMask)
+                                                     backing:NSBackingStoreBuffered
+                                                       defer:NO];
+        
+        [self.window center];
     }
     
     return self;

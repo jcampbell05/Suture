@@ -32,7 +32,7 @@
                                                               NSResizableWindowMask)
                                                      backing:NSBackingStoreBuffered
                                                        defer:NO];
-        
+        self.window.contentMinSize = windowSize;
         [self.window center];
     }
     

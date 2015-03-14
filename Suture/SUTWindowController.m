@@ -9,6 +9,7 @@
 #import "SUTWindowController.h"
 
 #import "SUTEditorView.h"
+#import "SUTExportAccessoryView.h"
 
 @interface SUTWindowController ()
 
@@ -121,6 +122,11 @@
 - (IBAction)export:(NSMenuItem *)menuItem
 {
     NSSavePanel *savePanel = [NSSavePanel savePanel];
+    
+    SUTExportAccessoryView *accessoryView = [[SUTExportAccessoryView alloc] init];
+    accessoryView.frame = NSMakeRect(0.0f, 0.0f, 400.0f, 100.0f);
+    
+    savePanel.accessoryView = accessoryView;
     
     [savePanel beginSheetModalForWindow:self.window
                       completionHandler:^(NSInteger result)

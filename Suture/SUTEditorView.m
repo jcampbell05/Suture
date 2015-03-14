@@ -9,21 +9,20 @@
 #import "SUTEditorView.h"
 
 #import <JNWCollectionView/JNWCollectionView.h>
+#import <JNWCollectionView/JNWCollectionViewGridLayout.h>
 
 #import "SUTDocument.h"
 #import "SUTSprite.h"
-#import "SUTSpriteItem.h"
+#import "SUTSpriteCollectionViewCell.h"
 #import "SUTEmptySpriteView.h"
 #import "SUTOutlineView.h"
 
-@interface SUTEditorView () <NSDraggingDestination>
+@interface SUTEditorView () <NSDraggingDestination, JNWCollectionViewDataSource>
 
 @property (nonatomic, strong) SUTOutlineView *dropHighlightView;
 @property (nonatomic, strong) SUTEmptySpriteView *emptySpriteView;
-@property (nonatomic, strong) NSArrayController *spriteArrayController;
-@property (nonatomic, strong) NSCollectionView *spriteCollectionView;
-
-@property (nonatomic, strong) JNWCollectionView *spriteCollectionView2;
+@property (nonatomic, strong) JNWCollectionView *spriteCollectionView;
+@property (nonatomic, strong) JNWCollectionViewGridLayout *spriteCollectionViewGridLayout;
 
 @end
 
@@ -41,39 +40,10 @@
         
         [self addSubview:self.emptySpriteView];
         [self addSubview:self.spriteCollectionView];
-        [self addSubview:self.spriteCollectionView2];
         [self addSubview:self.dropHighlightView];
-        
-        [self.spriteCollectionView bind:NSContentBinding
-                               toObject:self.spriteArrayController
-                            withKeyPath:NSStringFromSelector(@selector(arrangedObjects))
-                                options:nil];
-        [self.spriteArrayController bind:NSStringFromSelector(@selector(selectionIndexes))
-                               toObject:self.spriteCollectionView
-                            withKeyPath:NSStringFromSelector(@selector(selectionIndexes))
-                                options:nil];
-        
-        [self.spriteArrayController addObserver:self
-                                     forKeyPath:@"arrangedObjects.@count"
-                                        options:NSKeyValueObservingOptionNew
-                                        context:NULL];
     }
     
     return self;
-}
-
-#pragma mark - KVO
-
-- (void)observeValueForKeyPath:(NSString *)keyPath
-                      ofObject:(id)object
-                        change:(NSDictionary *)change
-                       context:(void *)context
-{
-    if ([object isEqual:self.spriteArrayController])
-    {
-        self.spriteCollectionView.hidden = ![self.spriteArrayController.arrangedObjects count];
-        self.spriteCollectionView2.hidden = ![self.spriteArrayController.arrangedObjects count];
-    }
 }
 
 #pragma mark - emptySpriteView
@@ -101,37 +71,32 @@
     return _emptySpriteView;
 }
 
-- (NSArrayController *)spriteArrayController
-{
-    if (!_spriteArrayController)
-    {
-        _spriteArrayController = [[NSArrayController alloc] init];
-    }
-    
-    return _spriteArrayController;
-}
-
-- (NSCollectionView *)spriteCollectionView
+- (JNWCollectionView *)spriteCollectionView
 {
     if (!_spriteCollectionView)
     {
-        _spriteCollectionView = [[NSCollectionView alloc] initWithFrame:self.bounds];
+        _spriteCollectionView = [[JNWCollectionView alloc] initWithFrame:self.bounds];
+        _spriteCollectionView.backgroundColor = [NSColor clearColor];
+        _spriteCollectionView.collectionViewLayout = self.spriteCollectionViewGridLayout;
+        _spriteCollectionView.dataSource = self;
         _spriteCollectionView.autoresizingMask = NSViewWidthSizable | NSViewHeightSizable;
-        _spriteCollectionView.hidden = YES;
-        _spriteCollectionView.itemPrototype = [SUTSpriteItem new];
+        
+        [_spriteCollectionView registerClass:[SUTSpriteCollectionViewCell class]
+                  forCellWithReuseIdentifier:[SUTSpriteCollectionViewCell identifier]];
     }
     
     return _spriteCollectionView;
 }
 
-- (JNWCollectionView *)spriteCollectionView2
+- (JNWCollectionViewGridLayout *)spriteCollectionViewGridLayout
 {
-    if (!_spriteCollectionView2)
+    if (!_spriteCollectionViewGridLayout)
     {
-        _spriteCollectionView2 = [[JNWCollectionView alloc] initWithFrame:self.bounds];
+        _spriteCollectionViewGridLayout = [[JNWCollectionViewGridLayout alloc] init];
+        _spriteCollectionViewGridLayout.verticalSpacing = 10.f;
     }
-    
-    return _spriteCollectionView2;
+
+    return _spriteCollectionViewGridLayout;
 }
 
 #pragma mark - Documents
@@ -140,24 +105,11 @@
 {
     if (![_document isEqualTo:document])
     {
-        if (_document)
-        {
-            [self.spriteArrayController unbind:NSStringFromSelector(@selector(arrangedObjects))];
-        }
-        
         [self willChangeValueForKey:NSStringFromSelector(@selector(document))];
         _document = document;
         [self didChangeValueForKey:NSStringFromSelector(@selector(document))];
         
-        self.spriteArrayController.content = _document.sprites;
-        
-        if (_document)
-        {
-            [self.spriteArrayController bind:NSContentArrayBinding
-                                    toObject:_document
-                                 withKeyPath:NSStringFromSelector(@selector(sprites))
-                                     options:nil];
-        }
+        [self.spriteCollectionView reloadData];
     }
 }
 
@@ -234,17 +186,32 @@
     sprite.fileURL = url;
     
     [self.document addSprite:sprite];
-    [self.spriteCollectionView2 reloadData];
+    [self.spriteCollectionView reloadData];
 }
 
-#pragma mark - Dealloc
+#pragma mark - JNWCollectionViewDataSource
 
-- (void)dealloc
+- (NSUInteger)collectionView:(JNWCollectionView *)collectionView
+      numberOfItemsInSection:(NSInteger)section
 {
-    [self.spriteCollectionView unbind:NSContentBinding];
-    [self.spriteCollectionView unbind:NSStringFromSelector(@selector(selectionIndexes))];
-    [self.spriteArrayController removeObserver:self
-                                    forKeyPath:@"arrangedObjects.@count"];
+    collectionView.hidden = (self.document.sprites.count == 0);
+    return self.document.sprites.count;
+}
+
+- (JNWCollectionViewCell *)collectionView:(JNWCollectionView *)collectionView
+                   cellForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    SUTSpriteCollectionViewCell *cell = (SUTSpriteCollectionViewCell *)[collectionView dequeueReusableCellWithIdentifier:[SUTSpriteCollectionViewCell identifier]];
+    
+    cell.sprite = self.document.sprites[indexPath.jnw_item];
+    
+    return cell;
+}
+
+- (CGSize)sizeForItemInCollectionView:(JNWCollectionView *)collectionView
+{
+    return CGSizeMake(50,
+                      50);
 }
 
 @end

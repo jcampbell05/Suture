@@ -1,15 +1,31 @@
 //
-//  SUTSpriteView.m
+//  SUTSpriteCollectionViewCell.m
 //  Suture
 //
 //  Created by James Campbell on 13/03/2015.
 //  Copyright (c) 2015 James Campbell. All rights reserved.
 //
 
-#import "SUTSpriteView.h"
+#import "SUTSpriteCollectionViewCell.h"
 
+#import "SUTSprite.h"
 
-@implementation SUTSpriteView
+@interface SUTSpriteCollectionViewCell ()
+
+@property (nonatomic, strong) NSImageView *imageView;
+
+@end
+
+@implementation SUTSpriteCollectionViewCell
+
+#pragma mark - Identifier
+
++ (NSString *)identifier
+{
+    return NSStringFromClass(self.class);
+}
+
+#pragma mark - Init
 
 - (instancetype)initWithFrame:(NSRect)frameRect
 {
@@ -22,6 +38,18 @@
     }
     return self;
 }
+
+#pragma mark - Model
+
+- (void)setSprite:(SUTSprite *)sprite
+{
+    if (![_sprite isEqual:sprite])
+    {
+        self.imageView.image = sprite.image;
+    }
+}
+
+#pragma mark - Selection
 
 - (void)setSelected:(BOOL)selected
 {

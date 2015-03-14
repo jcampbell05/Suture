@@ -15,6 +15,8 @@
 		744A71F01AB4421C00077AA7 /* GeneratePreviewForURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 744A71EF1AB4421C00077AA7 /* GeneratePreviewForURL.m */; };
 		744A71F21AB4421C00077AA7 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 744A71F11AB4421C00077AA7 /* main.c */; };
 		744A71F71AB444B400077AA7 /* SutureQuickLook.qlgenerator in CopyFiles */ = {isa = PBXBuildFile; fileRef = 744A71E91AB4421C00077AA7 /* SutureQuickLook.qlgenerator */; };
+		744A71FA1AB4491900077AA7 /* SutureQuickLook.qlgenerator in CopyFiles */ = {isa = PBXBuildFile; fileRef = 744A71E91AB4421C00077AA7 /* SutureQuickLook.qlgenerator */; };
+		744A71FC1AB4493F00077AA7 /* Suture.app in CopyFiles */ = {isa = PBXBuildFile; fileRef = 74F0FAD91AAF5224003F9454 /* Suture.app */; };
 		7465C52B1AB2E5C20058AC8A /* SUTWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7465C52A1AB2E5C20058AC8A /* SUTWindowController.m */; };
 		7465C52E1AB2FE3B0058AC8A /* SUTSpriteCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7465C52D1AB2FE3B0058AC8A /* SUTSpriteCollectionViewCell.m */; };
 		74F0FAE01AAF5224003F9454 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 74F0FADF1AAF5224003F9454 /* AppDelegate.m */; };
@@ -45,6 +47,26 @@
 			dstSubfolderSpec = 0;
 			files = (
 				744A71F71AB444B400077AA7 /* SutureQuickLook.qlgenerator in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		744A71F91AB448FD00077AA7 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "${SRCROOT}/bin";
+			dstSubfolderSpec = 0;
+			files = (
+				744A71FA1AB4491900077AA7 /* SutureQuickLook.qlgenerator in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		744A71FB1AB4492E00077AA7 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(SRCROOT)/bin";
+			dstSubfolderSpec = 0;
+			files = (
+				744A71FC1AB4493F00077AA7 /* Suture.app in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -245,6 +267,7 @@
 				744A71E61AB4421C00077AA7 /* Headers */,
 				744A71E71AB4421C00077AA7 /* Resources */,
 				744A71F61AB4449500077AA7 /* CopyFiles */,
+				744A71F91AB448FD00077AA7 /* CopyFiles */,
 				744A71F81AB446AC00077AA7 /* ShellScript */,
 			);
 			buildRules = (
@@ -265,6 +288,7 @@
 				74F0FAD61AAF5224003F9454 /* Frameworks */,
 				74F0FAD71AAF5224003F9454 /* Resources */,
 				9DC4EEA31B38D6E037655F0E /* Copy Pods Resources */,
+				744A71FB1AB4492E00077AA7 /* CopyFiles */,
 			);
 			buildRules = (
 			);

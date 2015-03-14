@@ -167,6 +167,12 @@
 
 - (void)removeObjectFromSpritesAtIndex:(NSUInteger)index
 {
+    SUTSprite *sprite = self.sprites[index];
+    
+    NSString *path = [self sanatizeFilePath:[sprite.fileURL path]];
+    NSFileWrapper *imageFileWrapper = [self.fileWrapper.fileWrappers objectForKey:path];
+    [self.fileWrapper removeFileWrapper:imageFileWrapper];
+    
     NSMutableArray *newSprites = [self.sprites mutableCopy];
     [newSprites removeObjectAtIndex:index];
     _sprites = newSprites;

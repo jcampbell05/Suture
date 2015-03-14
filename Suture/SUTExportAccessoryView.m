@@ -51,7 +51,7 @@
                                                                                  0.0f,
                                                                                  100.0f,
                                                                                  30.0f)];
-        [_formatPopUpButtonView addItemsWithTitles:@[@"Item 1", @"Item 2", @"Item 3"]];
+        [_formatPopUpButtonView addItemsWithTitles:@[@"Image", @"CSS", @"UIKit"]];
     }
     
     return _formatPopUpButtonView;

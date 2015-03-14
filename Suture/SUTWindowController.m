@@ -13,6 +13,8 @@
 @interface SUTWindowController ()
 
 @property (nonatomic, strong) SUTEditorView *editorView;
+@property (nonatomic, strong) NSView *inspectorView;
+@property (nonatomic, strong) NSSplitView *splitView;
 
 @end
 
@@ -64,6 +66,30 @@
     
     return _editorView;
 }
+
+- (NSView *)inspectorView
+{
+    if (!_inspectorView)
+    {
+        _inspectorView = [[NSView alloc] initWithFrame:((NSView*)self.window.contentView).bounds];
+        _inspectorView.autoresizingMask = NSViewWidthSizable | NSViewHeightSizable;
+    }
+    
+    return _inspectorView;
+}
+
+- (NSSplitView *)splitView
+{
+    if (!_splitView)
+    {
+        _splitView = [[NSSplitView alloc] initWithFrame:((NSView*)self.window.contentView).bounds];
+        _splitView.autoresizingMask = NSViewWidthSizable | NSViewHeightSizable;
+    }
+    
+    return _splitView;
+}
+
+
 
 #pragma mark - Menu Items
 

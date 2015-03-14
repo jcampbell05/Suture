@@ -11,6 +11,9 @@
 		7405F5C41AB38AF4006694F1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7405F5C31AB38AF4006694F1 /* Localizable.strings */; };
 		7417AB571AAFA8530063E88A /* SUTEditorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7417AB561AAFA8530063E88A /* SUTEditorView.m */; };
 		7417AB5A1AAFA8820063E88A /* SUTEmptySpriteView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7417AB591AAFA8820063E88A /* SUTEmptySpriteView.m */; };
+		744A71EE1AB4421C00077AA7 /* GenerateThumbnailForURL.c in Sources */ = {isa = PBXBuildFile; fileRef = 744A71ED1AB4421C00077AA7 /* GenerateThumbnailForURL.c */; };
+		744A71F01AB4421C00077AA7 /* GeneratePreviewForURL.c in Sources */ = {isa = PBXBuildFile; fileRef = 744A71EF1AB4421C00077AA7 /* GeneratePreviewForURL.c */; };
+		744A71F21AB4421C00077AA7 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 744A71F11AB4421C00077AA7 /* main.c */; };
 		7465C52B1AB2E5C20058AC8A /* SUTWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7465C52A1AB2E5C20058AC8A /* SUTWindowController.m */; };
 		7465C52E1AB2FE3B0058AC8A /* SUTSpriteCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7465C52D1AB2FE3B0058AC8A /* SUTSpriteCollectionViewCell.m */; };
 		74F0FAE01AAF5224003F9454 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 74F0FADF1AAF5224003F9454 /* AppDelegate.m */; };
@@ -41,6 +44,11 @@
 		7417AB561AAFA8530063E88A /* SUTEditorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUTEditorView.m; sourceTree = "<group>"; };
 		7417AB581AAFA8820063E88A /* SUTEmptySpriteView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUTEmptySpriteView.h; sourceTree = "<group>"; };
 		7417AB591AAFA8820063E88A /* SUTEmptySpriteView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUTEmptySpriteView.m; sourceTree = "<group>"; };
+		744A71E91AB4421C00077AA7 /* SutureQuickLook.qlgenerator */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SutureQuickLook.qlgenerator; sourceTree = BUILT_PRODUCTS_DIR; };
+		744A71EC1AB4421C00077AA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		744A71ED1AB4421C00077AA7 /* GenerateThumbnailForURL.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = GenerateThumbnailForURL.c; sourceTree = "<group>"; };
+		744A71EF1AB4421C00077AA7 /* GeneratePreviewForURL.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = GeneratePreviewForURL.c; sourceTree = "<group>"; };
+		744A71F11AB4421C00077AA7 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		7465C5291AB2E5C20058AC8A /* SUTWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUTWindowController.h; sourceTree = "<group>"; };
 		7465C52A1AB2E5C20058AC8A /* SUTWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUTWindowController.m; sourceTree = "<group>"; };
 		7465C52C1AB2FE3B0058AC8A /* SUTSpriteCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUTSpriteCollectionViewCell.h; sourceTree = "<group>"; };
@@ -65,6 +73,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		744A71E51AB4421C00077AA7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		74F0FAD61AAF5224003F9454 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -91,11 +106,31 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		744A71EA1AB4421C00077AA7 /* SutureQuickLook */ = {
+			isa = PBXGroup;
+			children = (
+				744A71ED1AB4421C00077AA7 /* GenerateThumbnailForURL.c */,
+				744A71EF1AB4421C00077AA7 /* GeneratePreviewForURL.c */,
+				744A71F11AB4421C00077AA7 /* main.c */,
+				744A71EB1AB4421C00077AA7 /* Supporting Files */,
+			);
+			path = SutureQuickLook;
+			sourceTree = "<group>";
+		};
+		744A71EB1AB4421C00077AA7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				744A71EC1AB4421C00077AA7 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		74F0FAD01AAF5224003F9454 = {
 			isa = PBXGroup;
 			children = (
 				74F0FADB1AAF5224003F9454 /* Suture */,
 				74F0FAF51AAF5224003F9454 /* SutureTests */,
+				744A71EA1AB4421C00077AA7 /* SutureQuickLook */,
 				74F0FADA1AAF5224003F9454 /* Products */,
 				75480BA0D6BFD9160E6AC0A8 /* Pods */,
 				47FCD93DB7A7332A0D546D8B /* Frameworks */,
@@ -107,6 +142,7 @@
 			children = (
 				74F0FAD91AAF5224003F9454 /* Suture.app */,
 				74F0FAF21AAF5224003F9454 /* SutureTests.xctest */,
+				744A71E91AB4421C00077AA7 /* SutureQuickLook.qlgenerator */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -175,7 +211,35 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		744A71E61AB4421C00077AA7 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
+		744A71E81AB4421C00077AA7 /* SutureQuickLook */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 744A71F51AB4421C00077AA7 /* Build configuration list for PBXNativeTarget "SutureQuickLook" */;
+			buildPhases = (
+				744A71E41AB4421C00077AA7 /* Sources */,
+				744A71E51AB4421C00077AA7 /* Frameworks */,
+				744A71E61AB4421C00077AA7 /* Headers */,
+				744A71E71AB4421C00077AA7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SutureQuickLook;
+			productName = SutureQuickLook;
+			productReference = 744A71E91AB4421C00077AA7 /* SutureQuickLook.qlgenerator */;
+			productType = "com.apple.product-type.bundle";
+		};
 		74F0FAD81AAF5224003F9454 /* Suture */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 74F0FAFC1AAF5224003F9454 /* Build configuration list for PBXNativeTarget "Suture" */;
@@ -223,6 +287,9 @@
 				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = "James Campbell";
 				TargetAttributes = {
+					744A71E81AB4421C00077AA7 = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
 					74F0FAD81AAF5224003F9454 = {
 						CreatedOnToolsVersion = 6.1.1;
 					};
@@ -247,11 +314,19 @@
 			targets = (
 				74F0FAD81AAF5224003F9454 /* Suture */,
 				74F0FAF11AAF5224003F9454 /* SutureTests */,
+				744A71E81AB4421C00077AA7 /* SutureQuickLook */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		744A71E71AB4421C00077AA7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		74F0FAD71AAF5224003F9454 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -305,6 +380,16 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		744A71E41AB4421C00077AA7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				744A71EE1AB4421C00077AA7 /* GenerateThumbnailForURL.c in Sources */,
+				744A71F01AB4421C00077AA7 /* GeneratePreviewForURL.c in Sources */,
+				744A71F21AB4421C00077AA7 /* main.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		74F0FAD51AAF5224003F9454 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -351,6 +436,32 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		744A71F31AB4421C00077AA7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = SutureQuickLook/Info.plist;
+				INSTALL_PATH = /Library/QuickLook;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = qlgenerator;
+			};
+			name = Debug;
+		};
+		744A71F41AB4421C00077AA7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = SutureQuickLook/Info.plist;
+				INSTALL_PATH = /Library/QuickLook;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = qlgenerator;
+			};
+			name = Release;
+		};
 		74F0FAFA1AAF5224003F9454 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -490,6 +601,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		744A71F51AB4421C00077AA7 /* Build configuration list for PBXNativeTarget "SutureQuickLook" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				744A71F31AB4421C00077AA7 /* Debug */,
+				744A71F41AB4421C00077AA7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		74F0FAD41AAF5224003F9454 /* Build configuration list for PBXProject "Suture" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

@@ -9,9 +9,19 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>SutureQuickLook.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>4</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>744A71E81AB4421C00077AA7</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>74F0FAD81AAF5224003F9454</key>
 		<dict>
 			<key>primary</key>

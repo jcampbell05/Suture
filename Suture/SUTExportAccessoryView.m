@@ -67,6 +67,15 @@
                                                                          0.0f,
                                                                          100.0f,
                                                                          30.0f)];
+        
+        _formatTitleView.alignment = NSCenterTextAlignment;
+        _formatTitleView.bezeled = NO;
+        _formatTitleView.drawsBackground = NO;
+        _formatTitleView.editable = NO;
+        _formatTitleView.selectable = NO;
+        
+        _formatTitleView.stringValue = NSLocalizedString(@"format_nav",
+                                                         nil);
     }
     
     return _formatTitleView;

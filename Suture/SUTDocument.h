@@ -18,6 +18,7 @@
 #pragma mark - Sprite
 
 - (void)addSprite:(SUTSprite *)sprite;
+- (void)removeSprite:(SUTSprite *)sprite;
 - (void)insertObject:(SUTSprite *)sprite inSpritesAtIndex:(NSUInteger)index;
 - (void)removeObjectFromSpritesAtIndex:(NSUInteger)index;
 

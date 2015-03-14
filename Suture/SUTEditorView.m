@@ -173,11 +173,6 @@
     self.dropHighlightView.hidden = YES;
 }
 
-- (void)draggingEnded:(id <NSDraggingInfo>)sender
-{
-    self.spriteCollectionView.hidden = NO;
-}
-
 #pragma mark - Sprite 
 
 - (void)addSpriteForURL:(NSURL *)url
@@ -186,6 +181,16 @@
     sprite.fileURL = url;
     
     [self.document addSprite:sprite];
+    [self.spriteCollectionView reloadData];
+}
+
+- (void)removeSelectedSprite
+{
+    for (NSIndexPath *indexPath in self.spriteCollectionView.indexPathsForSelectedItems)
+    {
+        [self.document removeObjectFromSpritesAtIndex:indexPath.jnw_item];
+    }
+    
     [self.spriteCollectionView reloadData];
 }
 

@@ -13,5 +13,6 @@
 #pragma mark - Menu Items
 
 - (IBAction)addImage:(NSMenuItem *)menuItem;
+- (IBAction)delete:(NSMenuItem *)menuItem;
 
 @end

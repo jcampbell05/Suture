@@ -14,5 +14,6 @@
 @property (nonatomic, weak) SUTDocument *document;
 
 - (void)addSpriteForURL:(NSURL *)url;
+- (void)removeSelectedSprite;
 
 @end

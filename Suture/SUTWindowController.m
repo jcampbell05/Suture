@@ -113,4 +113,9 @@
     }];
 }
 
+- (IBAction)delete:(NSMenuItem *)menuItem
+{
+    [self.editorView removeSelectedSprite];
+}
+
 @end

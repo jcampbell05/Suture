@@ -143,6 +143,12 @@
       inSpritesAtIndex:_sprites.count];
 }
 
+- (void)removeSprite:(SUTSprite *)sprite
+{
+    NSInteger indexOfSprite = [self.sprites indexOfObject:sprite];
+    [self removeObjectFromSpritesAtIndex:indexOfSprite];
+}
+
 - (void)insertObject:(SUTSprite *)sprite
     inSpritesAtIndex:(NSUInteger)index
 {

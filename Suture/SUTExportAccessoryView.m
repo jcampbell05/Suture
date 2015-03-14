@@ -38,8 +38,7 @@
 {
     [super drawRect:dirtyRect];
     
-    self.wantsLayer = YES;
-    self.layer.backgroundColor = [NSColor redColor].CGColor;
+
 }
 
 @end

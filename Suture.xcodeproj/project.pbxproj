@@ -10,7 +10,7 @@
 		6E161129761A7158BAFDD4E7 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6376226A7E16A3DFC4595580 /* libPods.a */; };
 		7405F5C41AB38AF4006694F1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7405F5C31AB38AF4006694F1 /* Localizable.strings */; };
 		7417AB571AAFA8530063E88A /* SUTEditorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7417AB561AAFA8530063E88A /* SUTEditorView.m */; };
-		7417AB5A1AAFA8820063E88A /* SUTEmptySpriteView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7417AB591AAFA8820063E88A /* SUTEmptySpriteView.m */; };
+		7417AB5A1AAFA8820063E88A /* SUTEmptySpriteSheetView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7417AB591AAFA8820063E88A /* SUTEmptySpriteSheetView.m */; };
 		74290D9C1AB4B7FF008B9527 /* SUTExportAccessoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 74290D9B1AB4B7FF008B9527 /* SUTExportAccessoryView.m */; };
 		744A71EE1AB4421C00077AA7 /* GenerateThumbnailForURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 744A71ED1AB4421C00077AA7 /* GenerateThumbnailForURL.m */; };
 		744A71F01AB4421C00077AA7 /* GeneratePreviewForURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 744A71EF1AB4421C00077AA7 /* GeneratePreviewForURL.m */; };
@@ -80,8 +80,8 @@
 		7405F5C31AB38AF4006694F1 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		7417AB551AAFA8530063E88A /* SUTEditorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUTEditorView.h; sourceTree = "<group>"; };
 		7417AB561AAFA8530063E88A /* SUTEditorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUTEditorView.m; sourceTree = "<group>"; };
-		7417AB581AAFA8820063E88A /* SUTEmptySpriteView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUTEmptySpriteView.h; sourceTree = "<group>"; };
-		7417AB591AAFA8820063E88A /* SUTEmptySpriteView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUTEmptySpriteView.m; sourceTree = "<group>"; };
+		7417AB581AAFA8820063E88A /* SUTEmptySpriteSheetView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUTEmptySpriteSheetView.h; sourceTree = "<group>"; };
+		7417AB591AAFA8820063E88A /* SUTEmptySpriteSheetView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUTEmptySpriteSheetView.m; sourceTree = "<group>"; };
 		74290D9A1AB4B7FF008B9527 /* SUTExportAccessoryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUTExportAccessoryView.h; sourceTree = "<group>"; };
 		74290D9B1AB4B7FF008B9527 /* SUTExportAccessoryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUTExportAccessoryView.m; sourceTree = "<group>"; };
 		744A71E91AB4421C00077AA7 /* SutureQuickLook.qlgenerator */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SutureQuickLook.qlgenerator; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -201,8 +201,8 @@
 				74F0FADC1AAF5224003F9454 /* Supporting Files */,
 				7417AB551AAFA8530063E88A /* SUTEditorView.h */,
 				7417AB561AAFA8530063E88A /* SUTEditorView.m */,
-				7417AB581AAFA8820063E88A /* SUTEmptySpriteView.h */,
-				7417AB591AAFA8820063E88A /* SUTEmptySpriteView.m */,
+				7417AB581AAFA8820063E88A /* SUTEmptySpriteSheetView.h */,
+				7417AB591AAFA8820063E88A /* SUTEmptySpriteSheetView.m */,
 				74F52E771AB1CB560031FE1A /* SUTOutlineView.h */,
 				74F52E781AB1CB560031FE1A /* SUTOutlineView.m */,
 				74F52E7A1AB1D8A60031FE1A /* SUTSprite.h */,
@@ -466,7 +466,7 @@
 				744A71FF1AB44F1300077AA7 /* SUTCollectionViewSpriteLayout.m in Sources */,
 				74290D9C1AB4B7FF008B9527 /* SUTExportAccessoryView.m in Sources */,
 				7465C52B1AB2E5C20058AC8A /* SUTWindowController.m in Sources */,
-				7417AB5A1AAFA8820063E88A /* SUTEmptySpriteView.m in Sources */,
+				7417AB5A1AAFA8820063E88A /* SUTEmptySpriteSheetView.m in Sources */,
 				7417AB571AAFA8530063E88A /* SUTEditorView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

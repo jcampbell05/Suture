@@ -14,13 +14,13 @@
 #import "SUTDocument.h"
 #import "SUTSprite.h"
 #import "SUTSpriteCollectionViewCell.h"
-#import "SUTEmptySpriteView.h"
+#import "SUTEmptySpriteSheetView.h"
 #import "SUTOutlineView.h"
 
 @interface SUTEditorView () <NSDraggingDestination, JNWCollectionViewDataSource>
 
 @property (nonatomic, strong) SUTOutlineView *dropHighlightView;
-@property (nonatomic, strong) SUTEmptySpriteView *emptySpriteView;
+@property (nonatomic, strong) SUTEmptySpriteSheetView *emptySpriteView;
 @property (nonatomic, strong) JNWCollectionView *spriteCollectionView;
 @property (nonatomic, strong) JNWCollectionViewGridLayout *spriteCollectionViewGridLayout;
 
@@ -60,11 +60,11 @@
     return _dropHighlightView;
 }
 
-- (SUTEmptySpriteView *)emptySpriteView
+- (SUTEmptySpriteSheetView *)emptySpriteView
 {
     if (!_emptySpriteView)
     {
-        _emptySpriteView = [[SUTEmptySpriteView alloc] initWithFrame:self.bounds];
+        _emptySpriteView = [[SUTEmptySpriteSheetView alloc] initWithFrame:self.bounds];
         _emptySpriteView.autoresizingMask = NSViewWidthSizable | NSViewHeightSizable;
     }
     

@@ -1,24 +1,24 @@
 //
-//  SUTEmptySpriteView.m
+//  SUTEmptySpriteSheetSheetView.m
 //  Suture
 //
 //  Created by James Campbell on 10/03/2015.
 //  Copyright (c) 2015 James Campbell. All rights reserved.
 //
 
-#import "SUTEmptySpriteView.h"
+#import "SUTEmptySpriteSheetView.h"
 
 static CGFloat USNImageViewMargin = 25;
 static CGFloat USNImageViewSize = 60;
 
-@interface SUTEmptySpriteView ()
+@interface SUTEmptySpriteSheetView ()
 
 @property (nonatomic, strong) NSImageView *imageView;
 @property (nonatomic, strong) NSTextField *callToActionTextField;
 
 @end
 
-@implementation SUTEmptySpriteView
+@implementation SUTEmptySpriteSheetView
 
 #pragma mark - Init
 

@@ -8,6 +8,6 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface SUTEmptySpriteView : NSView
+@interface SUTEmptySpriteSheetView : NSView
 
 @end

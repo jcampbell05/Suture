@@ -11,10 +11,14 @@
 @interface SUTExportAccessoryView ()
 
 @property (nonatomic, strong, readwrite) NSSavePanel *savePanel;
+@property (nonatomic, strong) NSPopUpButton *formatPopUpButtonView;
+@property (nonatomic, strong) NSTextField *formatTitleView;
 
 @end
 
 @implementation SUTExportAccessoryView
+
+#pragma mark - Init
 
 - (instancetype)initWithSavePanel:(NSSavePanel *)savePanel
 {
@@ -29,16 +33,43 @@
         
         self.savePanel = savePanel;
         self.savePanel.accessoryView = self;
+        
+        [self addSubview:self.formatTitleView];
+        [self addSubview:self.formatPopUpButtonView];
     }
     
     return self;
 }
 
-- (void)drawRect:(NSRect)dirtyRect
-{
-    [super drawRect:dirtyRect];
-    
+#pragma mark - Format Combo View
 
+- (NSPopUpButton *)formatPopUpButtonView
+{
+    if (!_formatPopUpButtonView)
+    {
+        _formatPopUpButtonView = [[NSPopUpButton alloc] initWithFrame:NSMakeRect(100.0f,
+                                                                                 0.0f,
+                                                                                 100.0f,
+                                                                                 30.0f)];
+        [_formatPopUpButtonView addItemsWithTitles:@[@"Item 1", @"Item 2", @"Item 3"]];
+    }
+    
+    return _formatPopUpButtonView;
+}
+
+#pragma mark - Format Title View
+
+- (NSTextField *)formatTitleView
+{
+    if (!_formatTitleView)
+    {
+        _formatTitleView = [[NSTextField alloc] initWithFrame:NSMakeRect(0.0f,
+                                                                         0.0f,
+                                                                         100.0f,
+                                                                         30.0f)];
+    }
+    
+    return _formatTitleView;
 }
 
 @end

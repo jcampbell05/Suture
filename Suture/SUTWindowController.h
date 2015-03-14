@@ -14,5 +14,6 @@
 
 - (IBAction)addImage:(NSMenuItem *)menuItem;
 - (IBAction)delete:(NSMenuItem *)menuItem;
+- (IBAction)export:(NSMenuItem *)menuItem;
 
 @end

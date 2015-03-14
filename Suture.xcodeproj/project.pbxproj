@@ -17,6 +17,7 @@
 		744A71F71AB444B400077AA7 /* SutureQuickLook.qlgenerator in CopyFiles */ = {isa = PBXBuildFile; fileRef = 744A71E91AB4421C00077AA7 /* SutureQuickLook.qlgenerator */; };
 		744A71FA1AB4491900077AA7 /* SutureQuickLook.qlgenerator in CopyFiles */ = {isa = PBXBuildFile; fileRef = 744A71E91AB4421C00077AA7 /* SutureQuickLook.qlgenerator */; };
 		744A71FC1AB4493F00077AA7 /* Suture.app in CopyFiles */ = {isa = PBXBuildFile; fileRef = 74F0FAD91AAF5224003F9454 /* Suture.app */; };
+		744A71FF1AB44F1300077AA7 /* SUTCollectionViewSpriteLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 744A71FE1AB44F1300077AA7 /* SUTCollectionViewSpriteLayout.m */; };
 		7465C52B1AB2E5C20058AC8A /* SUTWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7465C52A1AB2E5C20058AC8A /* SUTWindowController.m */; };
 		7465C52E1AB2FE3B0058AC8A /* SUTSpriteCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7465C52D1AB2FE3B0058AC8A /* SUTSpriteCollectionViewCell.m */; };
 		74F0FAE01AAF5224003F9454 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 74F0FADF1AAF5224003F9454 /* AppDelegate.m */; };
@@ -85,6 +86,8 @@
 		744A71ED1AB4421C00077AA7 /* GenerateThumbnailForURL.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GenerateThumbnailForURL.m; sourceTree = "<group>"; };
 		744A71EF1AB4421C00077AA7 /* GeneratePreviewForURL.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GeneratePreviewForURL.m; sourceTree = "<group>"; };
 		744A71F11AB4421C00077AA7 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		744A71FD1AB44F1300077AA7 /* SUTCollectionViewSpriteLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUTCollectionViewSpriteLayout.h; sourceTree = "<group>"; };
+		744A71FE1AB44F1300077AA7 /* SUTCollectionViewSpriteLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUTCollectionViewSpriteLayout.m; sourceTree = "<group>"; };
 		7465C5291AB2E5C20058AC8A /* SUTWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUTWindowController.h; sourceTree = "<group>"; };
 		7465C52A1AB2E5C20058AC8A /* SUTWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUTWindowController.m; sourceTree = "<group>"; };
 		7465C52C1AB2FE3B0058AC8A /* SUTSpriteCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUTSpriteCollectionViewCell.h; sourceTree = "<group>"; };
@@ -205,6 +208,8 @@
 				7465C52A1AB2E5C20058AC8A /* SUTWindowController.m */,
 				7465C52C1AB2FE3B0058AC8A /* SUTSpriteCollectionViewCell.h */,
 				7465C52D1AB2FE3B0058AC8A /* SUTSpriteCollectionViewCell.m */,
+				744A71FD1AB44F1300077AA7 /* SUTCollectionViewSpriteLayout.h */,
+				744A71FE1AB44F1300077AA7 /* SUTCollectionViewSpriteLayout.m */,
 			);
 			path = Suture;
 			sourceTree = "<group>";
@@ -453,6 +458,7 @@
 				74F0FAE21AAF5224003F9454 /* main.m in Sources */,
 				74F52E791AB1CB560031FE1A /* SUTOutlineView.m in Sources */,
 				74F0FAE01AAF5224003F9454 /* AppDelegate.m in Sources */,
+				744A71FF1AB44F1300077AA7 /* SUTCollectionViewSpriteLayout.m in Sources */,
 				7465C52B1AB2E5C20058AC8A /* SUTWindowController.m in Sources */,
 				7417AB5A1AAFA8820063E88A /* SUTEmptySpriteView.m in Sources */,
 				7417AB571AAFA8530063E88A /* SUTEditorView.m in Sources */,

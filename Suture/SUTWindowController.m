@@ -118,4 +118,14 @@
     [self.editorView removeSelectedSprite];
 }
 
+- (IBAction)export:(NSMenuItem *)menuItem
+{
+    NSSavePanel *savePanel = [NSSavePanel savePanel];
+    
+    [savePanel beginSheetModalForWindow:self.window
+                      completionHandler:^(NSInteger result)
+    {
+    }];
+}
+
 @end

@@ -114,7 +114,11 @@
                                     <action selector="revertDocumentToSaved:" target="-1" id="iJ3-Pv-kwq"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Export..." keyEquivalent="e" id="0wR-rp-Gsg"/>
+                            <menuItem title="Export..." keyEquivalent="e" id="0wR-rp-Gsg">
+                                <connections>
+                                    <action selector="export:" target="-1" id="3Jw-OY-qyK"/>
+                                </connections>
+                            </menuItem>
                         </items>
                     </menu>
                 </menuItem>

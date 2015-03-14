@@ -51,7 +51,7 @@
                                                                                  0.0f,
                                                                                  100.0f,
                                                                                  30.0f)];
-        [_formatPopUpButtonView addItemsWithTitles:@[@"Image", @"CSS", @"UIKit"]];
+        [_formatPopUpButtonView addItemsWithTitles:@[@"Image Only", @"For Web", @"For iOS"]];
     }
     
     return _formatPopUpButtonView;

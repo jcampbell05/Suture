@@ -9,7 +9,7 @@
 #import "SUTEditorView.h"
 
 #import <JNWCollectionView/JNWCollectionView.h>
-#import <JNWCollectionView/JNWCollectionViewGridLayout.h>
+#import "JNWCollectionViewFlowLayout.h"
 
 #import "SUTDocument.h"
 #import "SUTSprite.h"
@@ -17,12 +17,12 @@
 #import "SUTEmptySpriteSheetView.h"
 #import "SUTOutlineView.h"
 
-@interface SUTEditorView () <NSDraggingDestination, JNWCollectionViewDataSource>
+@interface SUTEditorView () <NSDraggingDestination, JNWCollectionViewDataSource, JNWCollectionViewFlowLayoutDelegate>
 
 @property (nonatomic, strong) SUTOutlineView *dropHighlightView;
 @property (nonatomic, strong) SUTEmptySpriteSheetView *emptySpriteView;
 @property (nonatomic, strong) JNWCollectionView *spriteCollectionView;
-@property (nonatomic, strong) JNWCollectionViewGridLayout *spriteCollectionViewGridLayout;
+@property (nonatomic, strong) JNWCollectionViewFlowLayout *spriteCollectionViewFlowLayout;
 
 @end
 
@@ -77,7 +77,7 @@
     {
         _spriteCollectionView = [[JNWCollectionView alloc] initWithFrame:self.bounds];
         _spriteCollectionView.backgroundColor = [NSColor clearColor];
-        _spriteCollectionView.collectionViewLayout = self.spriteCollectionViewGridLayout;
+        _spriteCollectionView.collectionViewLayout = self.spriteCollectionViewFlowLayout;
         _spriteCollectionView.dataSource = self;
         _spriteCollectionView.autoresizingMask = NSViewWidthSizable | NSViewHeightSizable;
         
@@ -88,15 +88,15 @@
     return _spriteCollectionView;
 }
 
-- (JNWCollectionViewGridLayout *)spriteCollectionViewGridLayout
+- (JNWCollectionViewFlowLayout *)spriteCollectionViewFlowLayout
 {
-    if (!_spriteCollectionViewGridLayout)
+    if (!_spriteCollectionViewFlowLayout)
     {
-        _spriteCollectionViewGridLayout = [[JNWCollectionViewGridLayout alloc] init];
-        _spriteCollectionViewGridLayout.verticalSpacing = 10.f;
+        _spriteCollectionViewFlowLayout = [[JNWCollectionViewFlowLayout alloc] init];
+        _spriteCollectionViewFlowLayout.delegate = self;
     }
 
-    return _spriteCollectionViewGridLayout;
+    return _spriteCollectionViewFlowLayout;
 }
 
 #pragma mark - Documents
@@ -213,10 +213,23 @@
     return cell;
 }
 
-- (CGSize)sizeForItemInCollectionView:(JNWCollectionView *)collectionView
+#pragma mark - JNWCollectionViewFlowLayoutDelegate
+
+- (CGSize)collectionView:(JNWCollectionView *)collectionView
+  sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    return CGSizeMake(50,
-                      50);
+    SUTSprite *sprite = self.document.sprites[indexPath.jnw_item];
+    return sprite.image.size;
+}
+
+- (CGFloat)collectionView:(JNWCollectionView *)collectionView heightForHeaderInSection:(NSInteger)index
+{
+    return 0.0f;
+}
+
+- (CGFloat)collectionView:(JNWCollectionView *)collectionView heightForFooterInSection:(NSInteger)index
+{
+    return 0.0f;
 }
 
 @end

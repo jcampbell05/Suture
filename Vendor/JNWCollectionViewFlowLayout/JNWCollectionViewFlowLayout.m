@@ -26,7 +26,7 @@ typedef struct
 } JNWCollectionViewFlowLayoutRowInfo;
 
 @interface JNWCollectionViewFlowLayoutSection : NSObject
-- (instancetype)initWithNumberOfItems:(NSInteger)numberOfItems;
+
 @property (nonatomic, assign) CGFloat offset; // items' cached frames are relative to this
 @property (nonatomic, assign) CGFloat height; // as per JNW's grid layout, this is height excluding header/footer
 
@@ -34,6 +34,9 @@ typedef struct
 @property (nonatomic, assign) CGFloat footerHeight;
 @property (nonatomic, assign) NSInteger numberOfItems;
 @property (nonatomic, assign) JNWCollectionViewFlowLayoutItemInfo *itemInfo;
+
+- (instancetype)initWithNumberOfItems:(NSInteger)numberOfItems;
+
 @end
 
 @implementation JNWCollectionViewFlowLayoutSection

@@ -18,6 +18,7 @@ typedef struct
 {
 	CGPoint origin;
 	CGSize size;
+    
 } JNWCollectionViewFlowLayoutItemInfo;
 
 typedef struct
@@ -25,6 +26,7 @@ typedef struct
     CGFloat height;
     CGFloat cursor;
     NSRange itemsRange;
+    
 } JNWCollectionViewFlowLayoutRowInfo;
 
 @interface JNWCollectionViewFlowLayoutSection : NSObject

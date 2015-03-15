@@ -12,8 +12,8 @@
 
 #import "JNWCollectionViewLayout.h"
 
-extern NSString * const JNWCollectionViewFlowLayoutFooterKind;
-extern NSString * const JNWCollectionViewFlowLayoutHeaderKind;
+extern NSString * const SUTCollectionViewFlowLayoutFooterKind;
+extern NSString * const SUTCollectionViewFlowLayoutHeaderKind;
 
 typedef NS_ENUM(NSInteger, JNWCollectionViewFlowLayoutAlignment)
 {

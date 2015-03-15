@@ -14,7 +14,8 @@
 extern NSString * const JNWCollectionViewFlowLayoutFooterKind;
 extern NSString * const JNWCollectionViewFlowLayoutHeaderKind;
 
-typedef NS_ENUM(NSInteger, JNWCollectionViewFlowLayoutAlignment) {
+typedef NS_ENUM(NSInteger, JNWCollectionViewFlowLayoutAlignment)
+{
     JNWCollectionViewFlowLayoutAlignmentTop,
     JNWCollectionViewFlowLayoutAlignmentCentre,
     JNWCollectionViewFlowLayoutAlignmentBottom

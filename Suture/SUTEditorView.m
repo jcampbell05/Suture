@@ -9,8 +9,8 @@
 #import "SUTEditorView.h"
 
 #import <JNWCollectionView/JNWCollectionView.h>
-#import "JNWCollectionViewFlowLayout.h"
 
+#import "JNWCollectionViewFlowLayout.h"
 #import "SUTDocument.h"
 #import "SUTSprite.h"
 #import "SUTSpriteCollectionViewCell.h"

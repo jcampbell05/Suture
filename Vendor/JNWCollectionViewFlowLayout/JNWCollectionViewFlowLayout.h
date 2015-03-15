@@ -5,6 +5,7 @@
 //  Created by Jonathan Willing on 4/11/13.
 //  Copyright (c) 2013 AppJon. All rights reserved.
 //
+//  Copyright (tweaks for suture) 2015 James Campbell. All rights reserved.
 
 // NB: this was jWilling's initial approach which he decided not to include in the release
 // But it might be a useful starting point

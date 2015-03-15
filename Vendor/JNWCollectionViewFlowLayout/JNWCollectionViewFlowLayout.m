@@ -6,6 +6,8 @@
 //  Copyright (c) 2013 AppJon. All rights reserved.
 //
 //  Copyright (modifications and additions) 2014 Crispin Bennett
+//
+//  Copyright (tweaks for suture) 2015 James Campbell. All rights reserved.
 
 #import "JNWCollectionViewFlowLayout.h"
 

@@ -1,5 +1,5 @@
 //
-//  JNWCollectionViewFlowLayout.m
+//  SUTCollectionViewFlowLayout.m
 //  JNWCollectionView
 //
 //  Created by Jonathan Willing on 4/11/13.
@@ -9,7 +9,7 @@
 //
 //  Copyright (tweaks for suture) 2015 James Campbell. All rights reserved.
 
-#import "JNWCollectionViewFlowLayout.h"
+#import "SUTCollectionViewFlowLayout.h"
 
 NSString * const JNWCollectionViewFlowLayoutFooterKind = @"JNWCollectionViewFlowLayoutFooterKind";
 NSString * const JNWCollectionViewFlowLayoutHeaderKind = @"JNWCollectionViewFlowLayoutHeaderKind";
@@ -68,11 +68,11 @@ typedef struct
 
 @end
 
-@interface JNWCollectionViewFlowLayout ()
+@interface SUTCollectionViewFlowLayout ()
 @property (nonatomic, strong) NSMutableArray *sections;
 @end
 
-@implementation JNWCollectionViewFlowLayout
+@implementation SUTCollectionViewFlowLayout
 
 - (instancetype)init
 {

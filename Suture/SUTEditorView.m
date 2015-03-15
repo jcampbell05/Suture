@@ -10,7 +10,7 @@
 
 #import <JNWCollectionView/JNWCollectionView.h>
 
-#import "JNWCollectionViewFlowLayout.h"
+#import "SUTCollectionViewFlowLayout.h"
 #import "SUTDocument.h"
 #import "SUTSprite.h"
 #import "SUTSpriteCollectionViewCell.h"
@@ -22,7 +22,7 @@
 @property (nonatomic, strong) SUTOutlineView *dropHighlightView;
 @property (nonatomic, strong) SUTEmptySpriteSheetView *emptySpriteView;
 @property (nonatomic, strong) JNWCollectionView *spriteCollectionView;
-@property (nonatomic, strong) JNWCollectionViewFlowLayout *spriteCollectionViewFlowLayout;
+@property (nonatomic, strong) SUTCollectionViewFlowLayout *spriteCollectionViewFlowLayout;
 
 @end
 
@@ -88,11 +88,11 @@
     return _spriteCollectionView;
 }
 
-- (JNWCollectionViewFlowLayout *)spriteCollectionViewFlowLayout
+- (SUTCollectionViewFlowLayout *)spriteCollectionViewFlowLayout
 {
     if (!_spriteCollectionViewFlowLayout)
     {
-        _spriteCollectionViewFlowLayout = [[JNWCollectionViewFlowLayout alloc] init];
+        _spriteCollectionViewFlowLayout = [[SUTCollectionViewFlowLayout alloc] init];
         _spriteCollectionViewFlowLayout.delegate = self;
     }
 

@@ -1,5 +1,5 @@
 //
-//  JNWCollectionViewFlowLayout.h
+//  SUTCollectionViewFlowLayout.h
 //  JNWCollectionView
 //
 //  Created by Jonathan Willing on 4/11/13.
@@ -32,7 +32,7 @@ typedef NS_ENUM(NSInteger, JNWCollectionViewFlowLayoutAlignment)
 
 @end
 
-@interface JNWCollectionViewFlowLayout : JNWCollectionViewLayout
+@interface SUTCollectionViewFlowLayout : JNWCollectionViewLayout
 
 @property (nonatomic, weak) id<JNWCollectionViewFlowLayoutDelegate> delegate;
 @property (nonatomic, assign) CGFloat minimumLineSpacing;

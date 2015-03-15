@@ -159,7 +159,8 @@ typedef struct
 	}
 }
 
-- (void)adjustVerticalAlignmentForRow:(SUTCollectionViewFlowLayoutRowInfo)row inSection:(SUTCollectionViewFlowLayoutSection *)sectionInfo
+- (void)adjustVerticalAlignmentForRow:(SUTCollectionViewFlowLayoutRowInfo)row
+                            inSection:(SUTCollectionViewFlowLayoutSection *)sectionInfo
 {
     if(self.alignment != JNWCollectionViewFlowLayoutAlignmentTop)
     {
@@ -286,7 +287,8 @@ typedef struct
 
 #pragma mark - Headers and Footers
 
-- (JNWCollectionViewLayoutAttributes *)layoutAttributesForSupplementaryItemInSection:(NSInteger)idx kind:(NSString *)kind
+- (JNWCollectionViewLayoutAttributes *)layoutAttributesForSupplementaryItemInSection:(NSInteger)idx
+                                                                                kind:(NSString *)kind
 {
 	SUTCollectionViewFlowLayoutSection *section = self.sections[idx];
 	CGFloat width = self.collectionView.visibleSize.width;

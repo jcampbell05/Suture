@@ -12,12 +12,14 @@
 NSString * const JNWCollectionViewFlowLayoutFooterKind = @"JNWCollectionViewFlowLayoutFooterKind";
 NSString * const JNWCollectionViewFlowLayoutHeaderKind = @"JNWCollectionViewFlowLayoutHeaderKind";
 
-typedef struct {
+typedef struct
+{
 	CGPoint origin;
 	CGSize size;
 } JNWCollectionViewFlowLayoutItemInfo;
 
-typedef struct {
+typedef struct
+{
     CGFloat height;
     CGFloat cursor;
     NSRange itemsRange;
@@ -39,9 +41,13 @@ typedef struct {
 - (instancetype)initWithNumberOfItems:(NSInteger)numberOfItems
 {
 	self = [super init];
-	if (self == nil) {return nil;}
-	_numberOfItems = numberOfItems;
-	self.itemInfo = calloc(numberOfItems, sizeof(JNWCollectionViewFlowLayoutItemInfo));
+	
+    if (self)
+    {
+        _numberOfItems = numberOfItems;
+        self.itemInfo = calloc(numberOfItems, sizeof(JNWCollectionViewFlowLayoutItemInfo));
+    }
+	
 	return self;
 }
 
@@ -85,8 +91,8 @@ typedef struct {
 	return _sections;
 }
 
-- (void)prepareLayout {
-
+- (void)prepareLayout
+{
 	NSParameterAssert(self.delegate);
 	if (![self.delegate conformsToProtocol:@protocol(JNWCollectionViewFlowLayoutDelegate)])
     {
@@ -148,12 +154,14 @@ typedef struct {
 
 - (void)adjustVerticalAlignmentForRow:(JNWCollectionViewFlowLayoutRowInfo)row inSection:(JNWCollectionViewFlowLayoutSection *)sectionInfo
 {
-    if(self.alignment == JNWCollectionViewFlowLayoutAlignmentTop) {return;}
-
-    for (NSUInteger idx = row.itemsRange.location; idx < row.itemsRange.location + row.itemsRange.length; idx++) {
-        CGFloat alignmentShift = row.height - sectionInfo.itemInfo[idx].size.height;
-        alignmentShift = (self.alignment == JNWCollectionViewFlowLayoutAlignmentBottom) ? alignmentShift : alignmentShift / 2.0f;
-        sectionInfo.itemInfo[idx].origin.y += alignmentShift;
+    if(self.alignment != JNWCollectionViewFlowLayoutAlignmentTop)
+    {
+        for (NSUInteger idx = row.itemsRange.location; idx < row.itemsRange.location + row.itemsRange.length; idx++)
+        {
+            CGFloat alignmentShift = row.height - sectionInfo.itemInfo[idx].size.height;
+            alignmentShift = (self.alignment == JNWCollectionViewFlowLayoutAlignmentBottom) ? alignmentShift : alignmentShift / 2.0f;
+            sectionInfo.itemInfo[idx].origin.y += alignmentShift;
+        }
     }
 }
 
@@ -164,7 +172,6 @@ typedef struct {
 
 - (JNWCollectionViewLayoutAttributes *)layoutAttributesForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-
 	NSParameterAssert(indexPath);
 
 	JNWCollectionViewFlowLayoutSection *section = self.sections[[indexPath indexAtPosition:0]];
@@ -196,6 +203,7 @@ typedef struct {
             NSIndexPath *itemIndexPath = [NSIndexPath jnw_indexPathForItem:itemIndex inSection:sectionIndex];
             JNWCollectionViewFlowLayoutItemInfo item = section.itemInfo[itemIndex];
             NSRect itemRect = NSMakeRect(item.origin.x, item.origin.y + section.offset, item.size.width, item.size.height);
+            
             if (NSIntersectsRect(rect, itemRect))
             {
                 [indexPaths addObject:itemIndexPath];
@@ -228,30 +236,42 @@ typedef struct {
     switch (direction)
     {
         case JNWCollectionViewDirectionLeft:
+        {
             newIndexPath = [self.collectionView indexPathForNextSelectableItemBeforeIndexPath:currentIndexPath];
             break;
+        }
         case JNWCollectionViewDirectionRight:
+        {
             newIndexPath = [self.collectionView indexPathForNextSelectableItemAfterIndexPath:currentIndexPath];
             break;
+        }
         case JNWCollectionViewDirectionUp:
+        {
             currentItemFrame = [self.collectionView rectForItemAtIndexPath:currentIndexPath];
             candidateFrame = CGRectApplyAffineTransform(currentItemFrame, CGAffineTransformMakeTranslation(0, -currentItemFrame.size.height));
             candidateIndexPaths = [self.collectionView indexPathsForItemsInRect:candidateFrame];
-            if(candidateIndexPaths.count > 0){
+            if(candidateIndexPaths.count > 0)
+            {
                 newIndexPath = candidateIndexPaths[0];
             }
             break;
+        }
         case JNWCollectionViewDirectionDown:
+        {
             currentItemFrame = [self.collectionView rectForItemAtIndexPath:currentIndexPath];
             candidateFrame = CGRectApplyAffineTransform(currentItemFrame, CGAffineTransformMakeTranslation(0, currentItemFrame.size.height));
             candidateIndexPaths = [self.collectionView indexPathsForItemsInRect:candidateFrame];
-            if(candidateIndexPaths.count > 0){
+            if(candidateIndexPaths.count > 0)
+            {
                 newIndexPath = candidateIndexPaths[0];
             }
             break;
+        }
         default:
+        {
             assert(NO);
             break;
+        }
     }
 
     return newIndexPath;
@@ -265,9 +285,12 @@ typedef struct {
 	CGFloat width = self.collectionView.visibleSize.width;
 	CGRect frame = CGRectZero;
 	
-	if ([kind isEqualToString:JNWCollectionViewFlowLayoutHeaderKind]) {
+	if ([kind isEqualToString:JNWCollectionViewFlowLayoutHeaderKind])
+    {
 		frame = CGRectMake(0, section.offset - section.headerHeight, width, section.headerHeight);
-	} else if ([kind isEqualToString:JNWCollectionViewFlowLayoutFooterKind]) {
+	}
+    else if ([kind isEqualToString:JNWCollectionViewFlowLayoutFooterKind])
+    {
 		frame = CGRectMake(0, section.offset + section.height, width, section.footerHeight);
 	}
 	

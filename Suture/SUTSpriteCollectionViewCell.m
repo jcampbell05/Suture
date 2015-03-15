@@ -71,6 +71,8 @@
     {
         _imageView = [[NSImageView alloc] initWithFrame:self.bounds];
         _imageView.autoresizingMask = NSViewWidthSizable | NSViewHeightSizable;
+        
+        [_imageView unregisterDraggedTypes];
     }
     
     return _imageView;

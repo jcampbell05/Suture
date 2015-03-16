@@ -7,44 +7,6 @@
 
 #import "SUTCollectionViewSpriteLayout.h"
 
-#pragma mark - Row
-
-@interface SUTCollectionViewSpriteLayoutRow : NSObject
-
-@property (nonatomic, assign) CGRect frame;
-
-@end
-
-@implementation SUTCollectionViewSpriteLayoutRow
-
-@end
-
-#pragma mark - Section
-
-@interface SUTCollectionViewSpriteLayoutSection : NSObject
-
-@property (nonatomic, strong) NSMutableArray *rows;
-
-@end
-
-@implementation SUTCollectionViewSpriteLayoutSection
-
-#pragma mark - Section Rows
-
-- (NSMutableArray *)rows
-{
-    if (!_rows)
-    {
-        _rows = [[NSMutableArray alloc] init];
-    }
-    
-    return _rows;
-}
-
-@end
-
-#pragma mark - Layout
-
 @interface SUTCollectionViewSpriteLayout ()
 
 @property (nonatomic, strong) NSMutableArray *sections;

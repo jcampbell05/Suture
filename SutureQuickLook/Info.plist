@@ -11,7 +11,7 @@
 			<string>QLGenerator</string>
 			<key>LSItemContentTypes</key>
 			<array>
-				<string>com.unii.suture.spritesheet</string>
+				<string>com.unii.suture.project</string>
 			</array>
 		</dict>
 	</array>
@@ -69,7 +69,7 @@
 				<string>pubic.item</string>
 			</array>
 			<key>UTTypeIdentifier</key>
-			<string>com.unii.suture.spritesheet</string>
+			<string>com.unii.suture.project</string>
 			<key>UTTypeTagSpecification</key>
 			<dict/>
 		</dict>

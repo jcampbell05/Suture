@@ -14,7 +14,7 @@
 			<key>CFBundleTypeIconFile</key>
 			<string></string>
 			<key>CFBundleTypeName</key>
-			<string>Suture Sprite Sheet</string>
+			<string>Suture Project</string>
 			<key>CFBundleTypeOSTypes</key>
 			<array>
 				<string>????</string>
@@ -23,7 +23,7 @@
 			<string>Editor</string>
 			<key>LSItemContentTypes</key>
 			<array>
-				<string>com.unii.suture.spritesheet</string>
+				<string>com.unii.suture.project</string>
 			</array>
 			<key>LSTypeIsPackage</key>
 			<integer>1</integer>
@@ -68,9 +68,9 @@
 				<string>public.item</string>
 			</array>
 			<key>UTTypeDescription</key>
-			<string>Suture sprite</string>
+			<string>Suture Project</string>
 			<key>UTTypeIdentifier</key>
-			<string>com.unii.suture.spritesheet</string>
+			<string>com.unii.suture.project</string>
 			<key>UTTypeTagSpecification</key>
 			<dict>
 				<key>com.apple.nspboard-type</key>

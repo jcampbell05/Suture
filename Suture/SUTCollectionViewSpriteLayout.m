@@ -7,13 +7,23 @@
 
 #import "SUTCollectionViewSpriteLayout.h"
 
-@interface SUTCollectionViewSpriteLayoutSection : NSObject
+#pragma mark - Row
 
-@property (nonatomic, assign) NSInteger numberOfRows;
-@property (nonatomic, assign) CGRect *rowFrames;
+@interface SUTCollectionViewSpriteLayoutRow : NSObject
+
 @property (nonatomic, assign) CGRect frame;
 
-- (instancetype)initWithNumberOfRows:(NSInteger)numberOfRows;
+@end
+
+@implementation SUTCollectionViewSpriteLayoutRow
+
+@end
+
+#pragma mark - Section
+
+@interface SUTCollectionViewSpriteLayoutSection : NSObject
+
+@property (nonatomic, strong) NSMutableArray *rows;
 
 @end
 
@@ -21,26 +31,19 @@
 
 #pragma mark - Section Rows
 
-- (instancetype)initWithNumberOfRows:(NSInteger)numberOfRows
+- (NSMutableArray *)rows
 {
-    if (self)
+    if (!_rows)
     {
-        self.rowFrames = calloc(numberOfRows, sizeof(numberOfRows));
-        self.numberOfRows = numberOfRows;
+        _rows = [[NSMutableArray alloc] init];
     }
     
-    return self;
-}
-
-- (void)dealloc
-{
-    if (self.rowFrames != nil)
-    {
-        free(self.rowFrames);
-    }
+    return _rows;
 }
 
 @end
+
+#pragma mark - Layout
 
 @interface SUTCollectionViewSpriteLayout ()
 
@@ -69,7 +72,8 @@
 - (CGRect)rectForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     SUTCollectionViewSpriteLayoutSection *section = self.sections[indexPath.jnw_section];
-    return section.rowFrames[indexPath.jnw_item];
+    SUTCollectionViewSpriteLayoutRow *row = section.rows[indexPath.jnw_item];
+    return row.frame;
 }
 
 #pragma mark - Layout
@@ -84,18 +88,7 @@
     {
         NSInteger numberOfRowInSection = [self.collectionView numberOfItemsInSection:sectionIndex];
         
-        SUTCollectionViewSpriteLayoutSection *section = [[SUTCollectionViewSpriteLayoutSection alloc] initWithNumberOfRows:numberOfRowInSection];
-        
-        CGRect sectionFrame = self.collectionView.bounds;
-        
-        if (self.orientation == SUTCollectionViewSpriteLayoutOrientationVertical)
-        {
-            sectionFrame.origin.y = globalOffset;
-        }
-        else
-        {
-            sectionFrame.origin.y = globalOffset;
-        }
+        SUTCollectionViewSpriteLayoutSection *section = [[SUTCollectionViewSpriteLayoutSection alloc] init];
         
         for (NSInteger rowIndex = 0; rowIndex < numberOfRowInSection; rowIndex++)
         {
@@ -123,20 +116,10 @@
             
             globalOffset += (self.orientation == SUTCollectionViewSpriteLayoutOrientationVertical) ? rowSize.height : rowSize.width;
             
-            CGRect rowFrame = (CGRect){rowPosition, rowSize};
-            section.rowFrames[rowIndex] = rowFrame;
-
-            if (self.orientation == SUTCollectionViewSpriteLayoutOrientationVertical)
-            {
-                sectionFrame.size.width += rowSize.width;
-            }
-            else
-            {
-                sectionFrame.size.height += rowSize.height;
-            }
+            SUTCollectionViewSpriteLayoutRow *row = [[SUTCollectionViewSpriteLayoutRow alloc] init];
+            row.frame = (CGRect){rowPosition, rowSize};
+            [section.rows addObject:row];
         }
-        
-        section.frame = sectionFrame;
         
         [self.sections addObject:section];
     }
@@ -148,16 +131,15 @@
     
     [self.sections enumerateObjectsUsingBlock:^(SUTCollectionViewSpriteLayoutSection *section, NSUInteger sectionIndex, BOOL *stop)
     {
-        for (NSInteger rowIndex = 0; rowIndex < section.numberOfRows; rowIndex++)
+        [section.rows enumerateObjectsUsingBlock:^(SUTCollectionViewSpriteLayoutRow *row, NSUInteger rowIndex, BOOL *stop)
         {
-            CGRect rowFrame = section.rowFrames[rowIndex];
-            if (CGRectIntersectsRect(rect, rowFrame))
+            if (CGRectIntersectsRect(rect, row.frame))
             {
                 NSIndexPath *indexPath = [NSIndexPath jnw_indexPathForItem:rowIndex
                                                                  inSection:sectionIndex];
                 [indexPathsInRect addObject:indexPath];
             }
-        }
+        }];
     }];
     
     return indexPathsInRect;
@@ -173,10 +155,26 @@
     return attributes;
 }
 
-- (CGRect)rectForSectionAtIndex:(NSInteger)index
+- (CGSize)contentSize
 {
-    SUTCollectionViewSpriteLayoutSection *section = self.sections[index];
-    return section.frame;
+    __block CGSize contentSize = CGSizeZero;
+    
+    [self.sections enumerateObjectsUsingBlock:^(SUTCollectionViewSpriteLayoutSection *section, NSUInteger sectionIndex, BOOL *stop)
+     {
+         [section.rows enumerateObjectsUsingBlock:^(SUTCollectionViewSpriteLayoutRow *row, NSUInteger rowIndex, BOOL *stop)
+          {
+              if (self.orientation == SUTCollectionViewSpriteLayoutOrientationVertical)
+              {
+                  contentSize.height += row.frame.size.height;
+              }
+              else
+              {
+                  contentSize.width += row.frame.size.width;
+              }
+          }];
+     }];
+    
+    return contentSize;
 }
 
 - (NSIndexPath *)indexPathForNextItemInDirection:(JNWCollectionViewDirection)direction

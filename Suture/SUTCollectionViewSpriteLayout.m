@@ -73,6 +73,7 @@
 {
     SUTCollectionViewSpriteLayoutSection *section = self.sections[indexPath.jnw_section];
     SUTCollectionViewSpriteLayoutRow *row = section.rows[indexPath.jnw_item];
+    
     return row.frame;
 }
 
@@ -150,7 +151,7 @@
     JNWCollectionViewLayoutAttributes *attributes = [[JNWCollectionViewLayoutAttributes alloc] init];
     
     attributes.frame = [self rectForItemAtIndexPath:indexPath];
-    attributes.alpha = 1.f;
+    attributes.alpha = 1.0f;
     
     return attributes;
 }

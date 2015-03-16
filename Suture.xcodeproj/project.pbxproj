@@ -98,6 +98,7 @@
 		7494DAB81AB5E591001B74CE /* SUTCollectionViewSpriteLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUTCollectionViewSpriteLayout.m; sourceTree = "<group>"; };
 		749E4EF51AB78BD600B21C33 /* SUTSpriteLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUTSpriteLayout.h; sourceTree = "<group>"; };
 		749E4EF61AB78BD600B21C33 /* SUTSpriteLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUTSpriteLayout.m; sourceTree = "<group>"; };
+		749E4EF81AB79BD200B21C33 /* SUTExporter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUTExporter.h; sourceTree = "<group>"; };
 		74F0FAD91AAF5224003F9454 /* Suture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Suture.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		74F0FADD1AAF5224003F9454 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		74F0FADE1AAF5224003F9454 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -220,6 +221,7 @@
 				74290D9B1AB4B7FF008B9527 /* SUTExportAccessoryView.m */,
 				749E4EF51AB78BD600B21C33 /* SUTSpriteLayout.h */,
 				749E4EF61AB78BD600B21C33 /* SUTSpriteLayout.m */,
+				749E4EF81AB79BD200B21C33 /* SUTExporter.h */,
 			);
 			path = Suture;
 			sourceTree = "<group>";

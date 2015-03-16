@@ -103,7 +103,20 @@
 - (NSIndexPath *)indexPathForNextItemInDirection:(JNWCollectionViewDirection)direction
                                 currentIndexPath:(NSIndexPath *)currentIndexPath
 {
-    return nil;
+    NSIndexPath *newIndexPath = currentIndexPath;
+    
+    if (direction == JNWCollectionViewDirectionUp ||
+        direction == JNWCollectionViewDirectionLEft)
+    {
+        newIndexPath  = [self.collectionView indexPathForNextSelectableItemBeforeIndexPath:currentIndexPath];
+    }
+    else if (direction == JNWCollectionViewDirectionDown ||
+             direction == JNWCollectionViewDirectionRight)
+    {
+        newIndexPath = [self.collectionView indexPathForNextSelectableItemAfterIndexPath:currentIndexPath];
+    }
+    
+    return newIndexPath;
 }
 
 @end

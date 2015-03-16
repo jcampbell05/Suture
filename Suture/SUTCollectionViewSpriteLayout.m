@@ -78,9 +78,21 @@
     for (NSInteger secionIndex = 0; secionIndex < [self.collectionView numberOfSections]; secionIndex ++)
     {
         NSInteger numberOfRowInSection = [self.collectionView numberOfItemsInSection:secionIndex];
+        
         SUTCollectionViewSpriteLayoutSection *section = [[SUTCollectionViewSpriteLayoutSection alloc] initWithNumberOfRows:numberOfRowInSection];
         
-        
+        for (NSInteger rowIndex = 0; rowIndex < numberOfRowInSection; rowIndex++)
+        {
+            NSIndexPath *indexPath = [NSIndexPath jnw_indexPathForItem:rowIndex
+                                                             inSection:secionIndex];
+//            if (delegateHeightForRow)
+//                rowHeight = [self.delegate collectionView:collectionView heightForRowAtIndexPath:indexPath];
+//            
+//            sectionInfo.rowInfo[row].height = rowHeight;
+//            sectionInfo.rowInfo[row].yOffset = sectionInfo.height;
+//            sectionInfo.height += rowHeight;
+//            sectionInfo.height += verticalSpacing;
+        }
         
         [self.sections addObject:section];
     }

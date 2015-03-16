@@ -66,7 +66,8 @@
 
 - (CGRect)rectForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    return CGRectNull;
+    SUTCollectionViewSpriteLayoutSection *section = self.sections[indexPath.jnw_section];
+    return section.rowFrames[indexPath.jnw_item];
 }
 
 #pragma mark - Layout

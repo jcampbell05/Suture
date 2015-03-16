@@ -20,7 +20,7 @@
 		744A71FC1AB4493F00077AA7 /* Suture.app in CopyFiles */ = {isa = PBXBuildFile; fileRef = 74F0FAD91AAF5224003F9454 /* Suture.app */; };
 		7465C52B1AB2E5C20058AC8A /* SUTWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7465C52A1AB2E5C20058AC8A /* SUTWindowController.m */; };
 		7465C52E1AB2FE3B0058AC8A /* SUTSpriteCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7465C52D1AB2FE3B0058AC8A /* SUTSpriteCollectionViewCell.m */; };
-		7494DAB91AB5E591001B74CE /* SUTCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 7494DAB81AB5E591001B74CE /* SUTCollectionViewFlowLayout.m */; };
+		7494DAB91AB5E591001B74CE /* SUTCollectionViewSpriteLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 7494DAB81AB5E591001B74CE /* SUTCollectionViewSpriteLayout.m */; };
 		74F0FAE01AAF5224003F9454 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 74F0FADF1AAF5224003F9454 /* AppDelegate.m */; };
 		74F0FAE21AAF5224003F9454 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 74F0FAE11AAF5224003F9454 /* main.m */; };
 		74F0FAE51AAF5224003F9454 /* SUTDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 74F0FAE41AAF5224003F9454 /* SUTDocument.m */; };
@@ -93,8 +93,8 @@
 		7465C52A1AB2E5C20058AC8A /* SUTWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUTWindowController.m; sourceTree = "<group>"; };
 		7465C52C1AB2FE3B0058AC8A /* SUTSpriteCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUTSpriteCollectionViewCell.h; sourceTree = "<group>"; };
 		7465C52D1AB2FE3B0058AC8A /* SUTSpriteCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUTSpriteCollectionViewCell.m; sourceTree = "<group>"; };
-		7494DAB71AB5E591001B74CE /* SUTCollectionViewFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUTCollectionViewFlowLayout.h; sourceTree = "<group>"; };
-		7494DAB81AB5E591001B74CE /* SUTCollectionViewFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUTCollectionViewFlowLayout.m; sourceTree = "<group>"; };
+		7494DAB71AB5E591001B74CE /* SUTCollectionViewSpriteLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUTCollectionViewSpriteLayout.h; sourceTree = "<group>"; };
+		7494DAB81AB5E591001B74CE /* SUTCollectionViewSpriteLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUTCollectionViewSpriteLayout.m; sourceTree = "<group>"; };
 		74F0FAD91AAF5224003F9454 /* Suture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Suture.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		74F0FADD1AAF5224003F9454 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		74F0FADE1AAF5224003F9454 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -192,8 +192,8 @@
 		74F0FADB1AAF5224003F9454 /* Suture */ = {
 			isa = PBXGroup;
 			children = (
-				7494DAB71AB5E591001B74CE /* SUTCollectionViewFlowLayout.h */,
-				7494DAB81AB5E591001B74CE /* SUTCollectionViewFlowLayout.m */,
+				7494DAB71AB5E591001B74CE /* SUTCollectionViewSpriteLayout.h */,
+				7494DAB81AB5E591001B74CE /* SUTCollectionViewSpriteLayout.m */,
 				74F0FADE1AAF5224003F9454 /* AppDelegate.h */,
 				74F0FADF1AAF5224003F9454 /* AppDelegate.m */,
 				74F0FAE31AAF5224003F9454 /* SUTDocument.h */,
@@ -458,7 +458,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				74F0FAE51AAF5224003F9454 /* SUTDocument.m in Sources */,
-				7494DAB91AB5E591001B74CE /* SUTCollectionViewFlowLayout.m in Sources */,
+				7494DAB91AB5E591001B74CE /* SUTCollectionViewSpriteLayout.m in Sources */,
 				7465C52E1AB2FE3B0058AC8A /* SUTSpriteCollectionViewCell.m in Sources */,
 				74F52E7C1AB1D8A60031FE1A /* SUTSprite.m in Sources */,
 				74F0FAE21AAF5224003F9454 /* main.m in Sources */,

@@ -10,18 +10,18 @@
 
 #import <JNWCollectionView/JNWCollectionView.h>
 
-#import "SUTCollectionViewFlowLayout.h"
+#import "SUTCollectionViewSpriteLayout.h"
 #import "SUTDocument.h"
 #import "SUTSprite.h"
 #import "SUTSpriteCollectionViewCell.h"
 #import "SUTEmptySpriteSheetView.h"
 #import "SUTOutlineView.h"
 
-@interface SUTEditorView () <NSDraggingDestination, JNWCollectionViewDataSource, JNWCollectionViewFlowLayoutDelegate>
+@interface SUTEditorView () <NSDraggingDestination, JNWCollectionViewDataSource, SUTCollectionViewSpriteLayoutDelegate>
 
 @property (nonatomic, strong) SUTEmptySpriteSheetView *emptySpriteView;
 @property (nonatomic, strong) JNWCollectionView *spriteCollectionView;
-@property (nonatomic, strong) SUTCollectionViewFlowLayout *spriteCollectionViewFlowLayout;
+@property (nonatomic, strong) SUTCollectionViewSpriteLayout *spriteCollectionViewLayout;
 
 @end
 
@@ -63,7 +63,7 @@
     {
         _spriteCollectionView = [[JNWCollectionView alloc] initWithFrame:self.bounds];
         _spriteCollectionView.backgroundColor = [NSColor clearColor];
-        _spriteCollectionView.collectionViewLayout = self.spriteCollectionViewFlowLayout;
+        _spriteCollectionView.collectionViewLayout = self.spriteCollectionViewLayout;
         _spriteCollectionView.dataSource = self;
         _spriteCollectionView.autoresizingMask = NSViewWidthSizable | NSViewHeightSizable;
         
@@ -74,15 +74,15 @@
     return _spriteCollectionView;
 }
 
-- (SUTCollectionViewFlowLayout *)spriteCollectionViewFlowLayout
+- (SUTCollectionViewSpriteLayout *)spriteCollectionViewLayout
 {
-    if (!_spriteCollectionViewFlowLayout)
+    if (!_spriteCollectionViewLayout)
     {
-        _spriteCollectionViewFlowLayout = [[SUTCollectionViewFlowLayout alloc] init];
-        _spriteCollectionViewFlowLayout.delegate = self;
+        _spriteCollectionViewLayout = [[SUTCollectionViewSpriteLayout alloc] init];
+        _spriteCollectionViewLayout.delegate = self;
     }
 
-    return _spriteCollectionViewFlowLayout;
+    return _spriteCollectionViewLayout;
 }
 
 #pragma mark - Documents

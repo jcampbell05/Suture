@@ -17,6 +17,17 @@
 
 @implementation SUTCollectionViewSpriteLayout
 
+#pragma mark - Layout
+
+- (void)setLayout:(SUTSpriteLayout *)layout
+{
+    [self willChangeValueForKey:NSStringFromSelector(@selector(layout))];
+    _layout = layout;
+    [self didChangeValueForKey:NSStringFromSelector(@selector(layout))];
+    
+    [self invalidateLayout];
+}
+
 #pragma mark - Layout Attributes
 
 - (NSMutableArray *)layoutAttributes

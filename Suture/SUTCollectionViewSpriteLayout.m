@@ -109,8 +109,8 @@
             
             globalOffset += (self.orientation == SUTCollectionViewSpriteLayoutOrientationVertical) ? rowSize.height : rowSize.width;
             
-            CGPoint rowPosition = CGPointMake(globalOffset * (self.orientation == SUTCollectionViewSpriteLayoutOrientationHorizontal),
-                                              globalOffset * (self.orientation == SUTCollectionViewSpriteLayoutOrientationVertical));
+            CGPoint rowPosition = CGPointMake(globalOffset * ((self.orientation == SUTCollectionViewSpriteLayoutOrientationHorizontal - 1)),
+                                              globalOffset * ((self.orientation == SUTCollectionViewSpriteLayoutOrientationVertical) - 1));
             CGRect rowFrame = (CGRect){rowPosition, rowSize};
             section.rowFrames[rowIndex] = rowFrame;
 

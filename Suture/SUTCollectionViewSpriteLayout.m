@@ -10,6 +10,7 @@
 @interface SUTCollectionViewSpriteLayoutSection : NSObject
 
 @property (nonatomic, assign) CGRect *rowFrames;
+@property (nonatomic, assign) CGRect frame;
 
 - (instancetype)initWithNumberOfRows:(NSInteger)numberOfRows;
 
@@ -97,7 +98,8 @@
 
 - (CGRect)rectForSectionAtIndex:(NSInteger)index
 {
-    return CGRectZero;
+    SUTCollectionViewSpriteLayoutSection *section = self.sections[index];
+    return section.frame;
 }
 
 - (NSIndexPath *)indexPathForNextItemInDirection:(JNWCollectionViewDirection)direction

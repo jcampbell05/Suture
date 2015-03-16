@@ -43,6 +43,7 @@
 - (void)prepareLayout
 {
     [self.layoutAttributes removeAllObjects];
+    [self.layout prepareLayout];
     
     NSInteger numberOfSprites = [self.collectionView numberOfItemsInSection:0];
     

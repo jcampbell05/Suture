@@ -10,6 +10,7 @@
 
 @protocol SUTSpriteLayoutDelegate <NSObject>
 
+- (NSInteger)numberOfSprites;
 - (CGSize)sizeForSpriteAtIndex:(NSInteger)index;
 
 @end

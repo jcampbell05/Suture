@@ -213,6 +213,11 @@
 
 #pragma mark - SUTSpriteLayoutDelegate
 
+- (NSInteger)numberOfSprites
+{
+    return self.document.sprites.count;
+}
+
 - (CGSize)sizeForSpriteAtIndex:(NSInteger)index
 {
     SUTSprite *sprite = self.document.sprites[index];

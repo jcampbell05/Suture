@@ -9,10 +9,12 @@
 #import "SUTSpriteCollectionViewCell.h"
 
 #import "SUTSprite.h"
+#import "SUTOutlineView.h"
 
 @interface SUTSpriteCollectionViewCell ()
 
 @property (nonatomic, strong) NSImageView *imageView;
+@property (nonatomic, strong) SUTOutlineView *outlineView;
 
 @end
 
@@ -35,6 +37,7 @@
         self.wantsLayer = YES;
         
         [self addSubview:self.imageView];
+        [self addSubview:self.outlineView];
     }
     return self;
 }
@@ -53,14 +56,7 @@
 
 - (void)setSelected:(BOOL)selected
 {
-    if (selected)
-    {
-        self.layer.backgroundColor = [NSColor blueColor].CGColor;
-    }
-    else
-    {
-        self.layer.backgroundColor = [NSColor clearColor].CGColor;
-    }
+    self.outlineView.hidden = !selected;
 }
 
 #pragma mark - Image View
@@ -76,6 +72,20 @@
     }
     
     return _imageView;
+}
+
+#pragma mark - Outline View
+
+- (SUTOutlineView *)outlineView
+{
+    if (!_outlineView)
+    {
+        _outlineView = [[SUTOutlineView alloc] initWithFrame:self.bounds];
+        _outlineView.hidden = YES;
+        _outlineView.autoresizingMask = NSViewWidthSizable | NSViewHeightSizable;
+    }
+    
+    return _outlineView;
 }
 
 @end

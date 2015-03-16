@@ -17,6 +17,7 @@ typedef enum : NSUInteger
 
 - (CGSize)collectionView:(JNWCollectionView *)collectionView
   sizeForItemAtIndexPath:(NSIndexPath *)indexPath;
+
 @end
 
 @interface SUTCollectionViewSpriteLayout : JNWCollectionViewLayout

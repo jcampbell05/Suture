@@ -9,7 +9,7 @@
 
 @interface SUTCollectionViewSpriteLayout ()
 
-@property (nonatomic, strong) NSMutableArray *sections;
+@property (nonatomic, strong) NSMutableArray *layoutAttributes;
 
 - (CGRect)rectForItemAtIndexPath:(NSIndexPath *)indexPath;
 
@@ -17,16 +17,16 @@
 
 @implementation SUTCollectionViewSpriteLayout
 
-#pragma mark - Sections
+#pragma mark - Layout Attributes
 
-- (NSMutableArray *)sections
+- (NSMutableArray *)layoutAttributes
 {
-    if (!_sections)
+    if (!_layoutAttributes)
     {
-        _sections = [[NSMutableArray alloc] init];
+        _layoutAttributes = [[NSMutableArray alloc] init];
     }
     
-    return _sections;
+    return _layoutAttributes;
 }
 
 #pragma mark - Frame

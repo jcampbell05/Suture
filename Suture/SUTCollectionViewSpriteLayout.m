@@ -76,16 +76,29 @@
 {
     [self.sections removeAllObjects];
     
-    for (NSInteger secionIndex = 0; secionIndex < [self.collectionView numberOfSections]; secionIndex ++)
+    CGFloat globalOffset = 0.0f;
+    
+    for (NSInteger sectionIndex = 0; sectionIndex < [self.collectionView numberOfSections]; sectionIndex ++)
     {
-        NSInteger numberOfRowInSection = [self.collectionView numberOfItemsInSection:secionIndex];
+        NSInteger numberOfRowInSection = [self.collectionView numberOfItemsInSection:sectionIndex];
         
         SUTCollectionViewSpriteLayoutSection *section = [[SUTCollectionViewSpriteLayoutSection alloc] initWithNumberOfRows:numberOfRowInSection];
+        
+        CGRect sectionFrame = self.collectionView.bounds;
+        
+        if (self.orientation == SUTCollectionViewSpriteLayoutOrientationVertical)
+        {
+            sectionFrame.origin.y = globalOffset;
+        }
+        else
+        {
+            sectionFrame.origin.y = globalOffset;
+        }
         
         for (NSInteger rowIndex = 0; rowIndex < numberOfRowInSection; rowIndex++)
         {
             NSIndexPath *indexPath = [NSIndexPath jnw_indexPathForItem:rowIndex
-                                                             inSection:secionIndex];
+                                                             inSection:sectionIndex];
             CGSize rowSize = CGSizeZero;
             
             if ([self.delegate respondsToSelector:@selector(collectionView:sizeForItemAtIndexPath:)])
@@ -94,11 +107,24 @@
                                  sizeForItemAtIndexPath:indexPath];
             }
             
-//            sectionInfo.rowInfo[row].height = rowHeight;
-//            sectionInfo.rowInfo[row].yOffset = sectionInfo.height;
-//            sectionInfo.height += rowHeight;
-//            sectionInfo.height += verticalSpacing;
+            globalOffset += (self.orientation == SUTCollectionViewSpriteLayoutOrientationVertical) ? rowSize.height : rowSize.width;
+            
+            CGPoint rowPosition = CGPointMake(globalOffset * (self.orientation == SUTCollectionViewSpriteLayoutOrientationHorizontal),
+                                              globalOffset * (self.orientation == SUTCollectionViewSpriteLayoutOrientationVertical));
+            CGRect rowFrame = (CGRect){rowPosition, rowSize};
+            section.rowFrames[rowIndex] = rowFrame;
+
+            if (self.orientation == SUTCollectionViewSpriteLayoutOrientationVertical)
+            {
+                sectionFrame.size.width += rowSize.width;
+            }
+            else
+            {
+                sectionFrame.size.height += rowSize.height;
+            }
         }
+        
+        section.frame = sectionFrame;
         
         [self.sections addObject:section];
     }

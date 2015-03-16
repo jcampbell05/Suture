@@ -17,7 +17,7 @@
 #import "SUTEmptySpriteSheetView.h"
 #import "SUTOutlineView.h"
 
-@interface SUTEditorView () <NSDraggingDestination, JNWCollectionViewDataSource, SUTCollectionViewSpriteLayoutDelegate>
+@interface SUTEditorView () <NSDraggingDestination, JNWCollectionViewDataSource>
 
 @property (nonatomic, strong) SUTEmptySpriteSheetView *emptySpriteView;
 @property (nonatomic, strong) JNWCollectionView *spriteCollectionView;
@@ -79,7 +79,6 @@
     if (!_spriteCollectionViewLayout)
     {
         _spriteCollectionViewLayout = [[SUTCollectionViewSpriteLayout alloc] init];
-        _spriteCollectionViewLayout.delegate = self;
     }
 
     return _spriteCollectionViewLayout;

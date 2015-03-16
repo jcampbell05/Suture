@@ -42,54 +42,17 @@
 
 - (void)prepareLayout
 {
-    [self.sections removeAllObjects];
+    [self.layoutAttributes removeAllObjects];
     
-    CGFloat globalOffset = 0.0f;
+    NSInteger numberOfSprites = [self.collectionView numberOfItemsInSection:0];
     
-    for (NSInteger sectionIndex = 0; sectionIndex < [self.collectionView numberOfSections]; sectionIndex ++)
+    for (NSInteger spriteIndex = 0; spriteIndex < numberOfSprites; spriteIndex ++)
     {
-        NSInteger numberOfRowInSection = [self.collectionView numberOfItemsInSection:sectionIndex];
+        JNWCollectionViewLayoutAttributes *attribute = [[JNWCollectionViewLayoutAttributes alloc] init];
+        attribute.frame = [self.layout frameForSpriteAtIndex:spriteIndex];
+        attribute.alpha = 1.0f;
         
-        SUTCollectionViewSpriteLayoutSection *section = [[SUTCollectionViewSpriteLayoutSection alloc] init];
-        
-        for (NSInteger rowIndex = 0; rowIndex < numberOfRowInSection; rowIndex++)
-        {
-            JNWCollectionViewLayoutAttributes *attributes = [[JNWCollectionViewLayoutAttributes alloc] init];
-            
-            attributes.frame = [self rectForItemAtIndexPath:indexPath];
-            attributes.alpha = 1.0f;
-            
-            
-            NSIndexPath *indexPath = [NSIndexPath jnw_indexPathForItem:rowIndex
-                                                             inSection:sectionIndex];
-            CGSize rowSize = CGSizeZero;
-            
-            if ([self.delegate respondsToSelector:@selector(collectionView:sizeForItemAtIndexPath:)])
-            {
-                rowSize = [self.delegate collectionView:self.collectionView
-                                 sizeForItemAtIndexPath:indexPath];
-            }
-            
-            CGPoint rowPosition = CGPointMake(globalOffset * (self.orientation == SUTCollectionViewSpriteLayoutOrientationHorizontal),
-                                              globalOffset * (self.orientation == SUTCollectionViewSpriteLayoutOrientationVertical));
-            
-            if (self.orientation == SUTCollectionViewSpriteLayoutOrientationVertical)
-            {
-                rowPosition.x += (self.collectionView.frame.size.width / 2) - (rowSize.width / 2);
-            }
-            else
-            {
-                rowPosition.y += (self.collectionView.frame.size.height / 2) - (rowSize.height / 2);
-            }
-            
-            globalOffset += (self.orientation == SUTCollectionViewSpriteLayoutOrientationVertical) ? rowSize.height : rowSize.width;
-            
-            SUTCollectionViewSpriteLayoutRow *row = [[SUTCollectionViewSpriteLayoutRow alloc] init];
-            row.frame = (CGRect){rowPosition, rowSize};
-            [section.rows addObject:row];
-        }
-        
-        [self.sections addObject:section];
+        [self.layoutAttributes addObject:attribute];
     }
 }
 
@@ -97,17 +60,14 @@
 {
     NSMutableArray *indexPathsInRect = [[NSMutableArray alloc] init];
     
-    [self.sections enumerateObjectsUsingBlock:^(SUTCollectionViewSpriteLayoutSection *section, NSUInteger sectionIndex, BOOL *stop)
+    [self.layoutAttributes enumerateObjectsUsingBlock:^(JNWCollectionViewLayoutAttributes *attribute, NSUInteger idx, BOOL *stop)
     {
-        [section.rows enumerateObjectsUsingBlock:^(SUTCollectionViewSpriteLayoutRow *row, NSUInteger rowIndex, BOOL *stop)
+        if (CGRectIntersectsRect(rect, attribute.frame))
         {
-            if (CGRectIntersectsRect(rect, row.frame))
-            {
-                NSIndexPath *indexPath = [NSIndexPath jnw_indexPathForItem:rowIndex
-                                                                 inSection:sectionIndex];
-                [indexPathsInRect addObject:indexPath];
-            }
-        }];
+            NSIndexPath *indexPath = [NSIndexPath jnw_indexPathForItem:idx
+                                                             inSection:0];
+            [indexPathsInRect addObject:indexPath];
+        }
     }];
     
     return indexPathsInRect;
@@ -115,29 +75,12 @@
 
 - (JNWCollectionViewLayoutAttributes *)layoutAttributesForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    return layoutAttributes[indexPath.jnw_item];
+    return self.layoutAttributes[indexPath.jnw_item];
 }
 
 - (CGSize)contentSize
 {
-    __block CGSize contentSize = CGSizeZero;
-    
-    [self.sections enumerateObjectsUsingBlock:^(SUTCollectionViewSpriteLayoutSection *section, NSUInteger sectionIndex, BOOL *stop)
-     {
-         [section.rows enumerateObjectsUsingBlock:^(SUTCollectionViewSpriteLayoutRow *row, NSUInteger rowIndex, BOOL *stop)
-          {
-              if (self.orientation == SUTCollectionViewSpriteLayoutOrientationVertical)
-              {
-                  contentSize.height += row.frame.size.height;
-              }
-              else
-              {
-                  contentSize.width += row.frame.size.width;
-              }
-          }];
-     }];
-    
-    return contentSize;
+    return self.layout.contentSize;
 }
 
 - (NSIndexPath *)indexPathForNextItemInDirection:(JNWCollectionViewDirection)direction

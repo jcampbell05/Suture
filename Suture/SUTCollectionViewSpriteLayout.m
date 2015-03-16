@@ -106,7 +106,7 @@
     NSIndexPath *newIndexPath = currentIndexPath;
     
     if (direction == JNWCollectionViewDirectionUp ||
-        direction == JNWCollectionViewDirectionLEft)
+        direction == JNWCollectionViewDirectionLeft)
     {
         newIndexPath  = [self.collectionView indexPathForNextSelectableItemBeforeIndexPath:currentIndexPath];
     }

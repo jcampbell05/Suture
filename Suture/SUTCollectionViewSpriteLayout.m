@@ -107,10 +107,20 @@
                                  sizeForItemAtIndexPath:indexPath];
             }
             
+            CGPoint rowPosition = CGPointMake(globalOffset * (self.orientation == SUTCollectionViewSpriteLayoutOrientationHorizontal),
+                                              globalOffset * (self.orientation == SUTCollectionViewSpriteLayoutOrientationVertical));
+            
+            if (self.orientation == SUTCollectionViewSpriteLayoutOrientationVertical)
+            {
+                rowPosition.x += (self.collectionView.frame.size.width / 2) - (rowSize.width / 2);
+            }
+            else
+            {
+                rowPosition.y += (self.collectionView.frame.size.height / 2) - (rowSize.height / 2);
+            }
+            
             globalOffset += (self.orientation == SUTCollectionViewSpriteLayoutOrientationVertical) ? rowSize.height : rowSize.width;
             
-            CGPoint rowPosition = CGPointMake(globalOffset * ((self.orientation == SUTCollectionViewSpriteLayoutOrientationHorizontal - 1)),
-                                              globalOffset * ((self.orientation == SUTCollectionViewSpriteLayoutOrientationVertical) - 1));
             CGRect rowFrame = (CGRect){rowPosition, rowSize};
             section.rowFrames[rowIndex] = rowFrame;
 

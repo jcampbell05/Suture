@@ -14,6 +14,7 @@
 
 @interface SUTWindowController ()
 
+@property (nonatomic, strong) NSPanel *inspectorPanel;
 @property (nonatomic, strong) SUTOutlineView *dropHighlightView;
 @property (nonatomic, strong) SUTEditorView *editorView;
 
@@ -41,6 +42,13 @@
         
         [self.window.contentView addSubview:self.editorView];
         [self.window.contentView addSubview:self.dropHighlightView];
+        
+        self.inspectorPanel = [[NSPanel alloc] initWithContentRect:NSMakeRect(200.0, 200.0, 300, 200)
+                                                    styleMask:NSHUDWindowMask | NSUtilityWindowMask | NSTitledWindowMask
+                                                      backing:NSBackingStoreBuffered
+                                                        defer:YES];
+        self.inspectorPanel.floatingPanel = YES;
+        [self.inspectorPanel makeKeyAndOrderFront:nil];
     }
     
     return self;

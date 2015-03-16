@@ -10,4 +10,19 @@
 
 @implementation SUTSpriteLayout
 
+- (void)prepareLayout
+{
+    
+}
+
+- (CGRect)frameForSpriteAtIndex:(NSInteger)index
+{
+    return CGRectNull;
+}
+
+- (CGSize)contentSize
+{
+    return CGSizeZero;
+}
+
 @end

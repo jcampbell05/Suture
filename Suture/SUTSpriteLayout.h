@@ -8,15 +8,25 @@
 
 #import <Foundation/Foundation.h>
 
+@protocol SUTSpriteLayoutDelegate <NSObject>
+
+- (CGSize)sizeForSpriteAtIndex:(NSInteger)index;
+
+@end
+
 typedef enum : NSUInteger
 {
     SUTSpriteLayoutOrientationVertical,
     SUTSpriteLayoutOrientationHorizontal,
 } SUTSpriteLayoutOrientation;
 
-
 @interface SUTSpriteLayout : NSObject
 
+@property (nonatomic, weak) id<SUTSpriteLayoutDelegate> delegate;
 @property (nonatomic, assign) SUTSpriteLayoutOrientation orientation;
+
+- (void)prepareLayout;
+- (CGRect)frameForSpriteAtIndex:(NSInteger)index;
+- (CGSize)contentSize;
 
 @end

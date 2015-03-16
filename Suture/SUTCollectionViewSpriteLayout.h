@@ -9,12 +9,6 @@
 
 #import "SUTSpriteLayout.h"
 
-typedef enum : NSUInteger
-{
-    SUTCollectionViewSpriteLayoutOrientationVertical,
-    SUTCollectionViewSpriteLayoutOrientationHorizontal,
-} SUTCollectionViewSpriteLayoutOrientation;
-
 @protocol SUTCollectionViewSpriteLayoutDelegate <NSObject>
 
 - (CGSize)collectionView:(JNWCollectionView *)collectionView
@@ -25,7 +19,7 @@ typedef enum : NSUInteger
 @interface SUTCollectionViewSpriteLayout : JNWCollectionViewLayout
 
 @property (nonatomic, weak) id<SUTCollectionViewSpriteLayoutDelegate> delegate;
-@property (nonatomic, assign) SUTCollectionViewSpriteLayoutOrientation orientation;
+@property (nonatomic, assign) SUTSpriteLayoutOrientation orientation;
 
 @property (nonatomic, strong) SUTSpriteLayout *layout;
 

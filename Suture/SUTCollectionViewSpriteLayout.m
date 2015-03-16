@@ -86,9 +86,14 @@
         {
             NSIndexPath *indexPath = [NSIndexPath jnw_indexPathForItem:rowIndex
                                                              inSection:secionIndex];
-//            if (delegateHeightForRow)
-//                rowHeight = [self.delegate collectionView:collectionView heightForRowAtIndexPath:indexPath];
-//            
+            CGSize rowSize = CGSizeZero;
+            
+            if ([self.delegate respondsToSelector:@selector(collectionView:sizeForItemAtIndexPath:)])
+            {
+                rowSize = [self.delegate collectionView:self.collectionView
+                                 sizeForItemAtIndexPath:indexPath];
+            }
+            
 //            sectionInfo.rowInfo[row].height = rowHeight;
 //            sectionInfo.rowInfo[row].yOffset = sectionInfo.height;
 //            sectionInfo.height += rowHeight;

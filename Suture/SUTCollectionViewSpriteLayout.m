@@ -11,8 +11,6 @@
 
 @property (nonatomic, strong) NSMutableArray *layoutAttributes;
 
-- (CGRect)rectForItemAtIndexPath:(NSIndexPath *)indexPath;
-
 @end
 
 @implementation SUTCollectionViewSpriteLayout
@@ -40,16 +38,6 @@
     return _layoutAttributes;
 }
 
-#pragma mark - Frame
-
-- (CGRect)rectForItemAtIndexPath:(NSIndexPath *)indexPath
-{
-    SUTCollectionViewSpriteLayoutSection *section = self.sections[indexPath.jnw_section];
-    SUTCollectionViewSpriteLayoutRow *row = section.rows[indexPath.jnw_item];
-    
-    return row.frame;
-}
-
 #pragma mark - Layout
 
 - (void)prepareLayout
@@ -66,6 +54,12 @@
         
         for (NSInteger rowIndex = 0; rowIndex < numberOfRowInSection; rowIndex++)
         {
+            JNWCollectionViewLayoutAttributes *attributes = [[JNWCollectionViewLayoutAttributes alloc] init];
+            
+            attributes.frame = [self rectForItemAtIndexPath:indexPath];
+            attributes.alpha = 1.0f;
+            
+            
             NSIndexPath *indexPath = [NSIndexPath jnw_indexPathForItem:rowIndex
                                                              inSection:sectionIndex];
             CGSize rowSize = CGSizeZero;
@@ -121,12 +115,7 @@
 
 - (JNWCollectionViewLayoutAttributes *)layoutAttributesForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    JNWCollectionViewLayoutAttributes *attributes = [[JNWCollectionViewLayoutAttributes alloc] init];
-    
-    attributes.frame = [self rectForItemAtIndexPath:indexPath];
-    attributes.alpha = 1.0f;
-    
-    return attributes;
+    return layoutAttributes[indexPath.jnw_item];
 }
 
 - (CGSize)contentSize

@@ -21,6 +21,7 @@
 		7465C52B1AB2E5C20058AC8A /* SUTWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7465C52A1AB2E5C20058AC8A /* SUTWindowController.m */; };
 		7465C52E1AB2FE3B0058AC8A /* SUTSpriteCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7465C52D1AB2FE3B0058AC8A /* SUTSpriteCollectionViewCell.m */; };
 		7494DAB91AB5E591001B74CE /* SUTCollectionViewSpriteLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 7494DAB81AB5E591001B74CE /* SUTCollectionViewSpriteLayout.m */; };
+		749E4EF71AB78BD600B21C33 /* SUTSpriteLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 749E4EF61AB78BD600B21C33 /* SUTSpriteLayout.m */; };
 		74F0FAE01AAF5224003F9454 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 74F0FADF1AAF5224003F9454 /* AppDelegate.m */; };
 		74F0FAE21AAF5224003F9454 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 74F0FAE11AAF5224003F9454 /* main.m */; };
 		74F0FAE51AAF5224003F9454 /* SUTDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 74F0FAE41AAF5224003F9454 /* SUTDocument.m */; };
@@ -95,6 +96,8 @@
 		7465C52D1AB2FE3B0058AC8A /* SUTSpriteCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUTSpriteCollectionViewCell.m; sourceTree = "<group>"; };
 		7494DAB71AB5E591001B74CE /* SUTCollectionViewSpriteLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUTCollectionViewSpriteLayout.h; sourceTree = "<group>"; };
 		7494DAB81AB5E591001B74CE /* SUTCollectionViewSpriteLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUTCollectionViewSpriteLayout.m; sourceTree = "<group>"; };
+		749E4EF51AB78BD600B21C33 /* SUTSpriteLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUTSpriteLayout.h; sourceTree = "<group>"; };
+		749E4EF61AB78BD600B21C33 /* SUTSpriteLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUTSpriteLayout.m; sourceTree = "<group>"; };
 		74F0FAD91AAF5224003F9454 /* Suture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Suture.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		74F0FADD1AAF5224003F9454 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		74F0FADE1AAF5224003F9454 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -215,6 +218,8 @@
 				7465C52D1AB2FE3B0058AC8A /* SUTSpriteCollectionViewCell.m */,
 				74290D9A1AB4B7FF008B9527 /* SUTExportAccessoryView.h */,
 				74290D9B1AB4B7FF008B9527 /* SUTExportAccessoryView.m */,
+				749E4EF51AB78BD600B21C33 /* SUTSpriteLayout.h */,
+				749E4EF61AB78BD600B21C33 /* SUTSpriteLayout.m */,
 			);
 			path = Suture;
 			sourceTree = "<group>";
@@ -466,6 +471,7 @@
 				74F0FAE01AAF5224003F9454 /* AppDelegate.m in Sources */,
 				74290D9C1AB4B7FF008B9527 /* SUTExportAccessoryView.m in Sources */,
 				7465C52B1AB2E5C20058AC8A /* SUTWindowController.m in Sources */,
+				749E4EF71AB78BD600B21C33 /* SUTSpriteLayout.m in Sources */,
 				7417AB5A1AAFA8820063E88A /* SUTEmptySpriteSheetView.m in Sources */,
 				7417AB571AAFA8530063E88A /* SUTEditorView.m in Sources */,
 			);

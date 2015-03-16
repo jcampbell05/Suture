@@ -7,6 +7,8 @@
 
 #import "JNWCollectionViewLayout.h"
 
+#import "SUTSpriteLayout.h"
+
 typedef enum : NSUInteger
 {
     SUTCollectionViewSpriteLayoutOrientationVertical,
@@ -24,5 +26,7 @@ typedef enum : NSUInteger
 
 @property (nonatomic, weak) id<SUTCollectionViewSpriteLayoutDelegate> delegate;
 @property (nonatomic, assign) SUTCollectionViewSpriteLayoutOrientation orientation;
+
+@property (nonatomic, strong) SUTSpriteLayout *layout;
 
 @end

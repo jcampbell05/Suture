@@ -19,7 +19,6 @@
 
 @interface SUTEditorView () <NSDraggingDestination, JNWCollectionViewDataSource, JNWCollectionViewFlowLayoutDelegate>
 
-@property (nonatomic, strong) SUTOutlineView *dropHighlightView;
 @property (nonatomic, strong) SUTEmptySpriteSheetView *emptySpriteView;
 @property (nonatomic, strong) JNWCollectionView *spriteCollectionView;
 @property (nonatomic, strong) SUTCollectionViewFlowLayout *spriteCollectionViewFlowLayout;
@@ -40,25 +39,12 @@
         
         [self addSubview:self.emptySpriteView];
         [self addSubview:self.spriteCollectionView];
-        [self addSubview:self.dropHighlightView];
     }
     
     return self;
 }
 
 #pragma mark - emptySpriteView
-
-- (SUTOutlineView *)dropHighlightView
-{
-    if (!_dropHighlightView)
-    {
-        _dropHighlightView = [[SUTOutlineView alloc] initWithFrame:self.bounds];
-        _dropHighlightView.hidden = YES;
-        _dropHighlightView.autoresizingMask = NSViewWidthSizable | NSViewHeightSizable;
-    }
-    
-    return _dropHighlightView;
-}
 
 - (SUTEmptySpriteSheetView *)emptySpriteView
 {
@@ -141,13 +127,13 @@
         CFRelease(fileUTI);
    }];
     
-   self.dropHighlightView.hidden = (operation == NSDragOperationNone);
+   //self.dropHighlightView.hidden = (operation == NSDragOperationNone);
    return operation;
 }
 
 - (void)draggingExited:(id <NSDraggingInfo>)sender
 {
-    self.dropHighlightView.hidden = YES;
+   // self.dropHighlightView.hidden = YES;
 }
 
 - (BOOL)performDragOperation:(id <NSDraggingInfo>)sender
@@ -170,7 +156,7 @@
 
 - (void)concludeDragOperation:(id <NSDraggingInfo>)sender
 {
-    self.dropHighlightView.hidden = YES;
+   // self.dropHighlightView.hidden = YES;
 }
 
 #pragma mark - Sprite 

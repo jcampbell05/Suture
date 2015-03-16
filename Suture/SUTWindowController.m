@@ -10,12 +10,12 @@
 
 #import "SUTEditorView.h"
 #import "SUTExportAccessoryView.h"
+#import "SUTOutlineView.h"
 
 @interface SUTWindowController ()
 
+@property (nonatomic, strong) SUTOutlineView *dropHighlightView;
 @property (nonatomic, strong) SUTEditorView *editorView;
-@property (nonatomic, strong) NSView *inspectorView;
-@property (nonatomic, strong) NSSplitView *splitView;
 
 @end
 
@@ -23,7 +23,6 @@
 
 - (instancetype)init
 {
-    
     self = [super init];
     
     if (self)
@@ -41,6 +40,7 @@
         [self.window center];
         
         [self.window.contentView addSubview:self.editorView];
+        [self.window.contentView addSubview:self.dropHighlightView];
     }
     
     return self;
@@ -55,7 +55,19 @@
     self.editorView.document = document;
 }
 
-#pragma mark - EditorView
+#pragma mark - Views
+
+- (SUTOutlineView *)dropHighlightView
+{
+    if (!_dropHighlightView)
+    {
+        _dropHighlightView = [[SUTOutlineView alloc] initWithFrame:((NSView*)self.window.contentView).bounds];
+        _dropHighlightView.hidden = YES;
+        _dropHighlightView.autoresizingMask = NSViewWidthSizable | NSViewHeightSizable;
+    }
+    
+    return _dropHighlightView;
+}
 
 - (SUTEditorView *)editorView
 {
@@ -67,30 +79,6 @@
     
     return _editorView;
 }
-
-- (NSView *)inspectorView
-{
-    if (!_inspectorView)
-    {
-        _inspectorView = [[NSView alloc] initWithFrame:((NSView*)self.window.contentView).bounds];
-        _inspectorView.autoresizingMask = NSViewWidthSizable | NSViewHeightSizable;
-    }
-    
-    return _inspectorView;
-}
-
-- (NSSplitView *)splitView
-{
-    if (!_splitView)
-    {
-        _splitView = [[NSSplitView alloc] initWithFrame:((NSView*)self.window.contentView).bounds];
-        _splitView.autoresizingMask = NSViewWidthSizable | NSViewHeightSizable;
-    }
-    
-    return _splitView;
-}
-
-
 
 #pragma mark - Menu Items
 

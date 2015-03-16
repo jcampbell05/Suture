@@ -16,5 +16,25 @@
 
 @implementation SUTCollectionViewSpriteLayout
 
+- (void)prepareLayout
+{
+    
+}
+
+- (JNWCollectionViewLayoutAttributes *)layoutAttributesForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    return nil;
+}
+
+- (CGRect)rectForSectionAtIndex:(NSInteger)index
+{
+    return CGRectZero;
+}
+
+- (NSIndexPath *)indexPathForNextItemInDirection:(JNWCollectionViewDirection)direction
+                                currentIndexPath:(NSIndexPath *)currentIndexPath
+{
+    return nil;
+}
 
 @end

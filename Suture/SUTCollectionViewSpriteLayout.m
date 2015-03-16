@@ -9,6 +9,7 @@
 
 @interface SUTCollectionViewSpriteLayoutSection : NSObject
 
+@property (nonatomic, assign) NSInteger numberOfRows;
 @property (nonatomic, assign) CGRect *rowFrames;
 @property (nonatomic, assign) CGRect frame;
 
@@ -25,6 +26,7 @@
     if (self)
     {
         self.rowFrames = calloc(numberOfRows, sizeof(numberOfRows));
+        self.numberOfRows = numberOfRows;
     }
     
     return self;
@@ -138,6 +140,27 @@
         
         [self.sections addObject:section];
     }
+}
+
+- (NSArray *)indexPathsForItemsInRect:(CGRect)rect
+{
+    NSMutableArray *indexPathsInRect = [[NSMutableArray alloc] init];
+    
+    [self.sections enumerateObjectsUsingBlock:^(SUTCollectionViewSpriteLayoutSection *section, NSUInteger sectionIndex, BOOL *stop)
+    {
+        for (NSInteger rowIndex = 0; rowIndex < section.numberOfRows; rowIndex++)
+        {
+            CGRect rowFrame = section.rowFrames[rowIndex];
+            if (CGRectIntersectsRect(rect, rowFrame))
+            {
+                NSIndexPath *indexPath = [NSIndexPath jnw_indexPathForItem:rowIndex
+                                                                 inSection:sectionIndex];
+                [indexPathsInRect addObject:indexPath];
+            }
+        }
+    }];
+    
+    return indexPathsInRect;
 }
 
 - (JNWCollectionViewLayoutAttributes *)layoutAttributesForItemAtIndexPath:(NSIndexPath *)indexPath

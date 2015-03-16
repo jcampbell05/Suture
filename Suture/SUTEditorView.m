@@ -213,6 +213,11 @@
 
 #pragma mark - SUTSpriteLayoutDelegate
 
+- (CGSize)sheetSize
+{
+    return self.spriteCollectionView.bounds.size;
+}
+
 - (NSInteger)numberOfSprites
 {
     return self.document.sprites.count;

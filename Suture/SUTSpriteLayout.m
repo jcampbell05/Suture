@@ -52,13 +52,19 @@
 {
     [self.layoutAttributes removeAllObjects];
     
+    CGSize sheetSize = [self.delegate sheetSize];
     CGPoint spriteOffset = CGPointZero;
+    
     for (NSInteger spriteIndex = 0; spriteIndex < [self.delegate numberOfSprites]; spriteIndex ++)
     {
         CGSize spriteSize = [self.delegate sizeForSpriteAtIndex:spriteIndex];
+        CGPoint spritePositon = spriteOffset;
+        
+        spritePositon.x += ((sheetSize.width / 2) - (spriteSize.width / 2)) * !self.transformMultiplier.x;
+        spritePositon.y += ((sheetSize.height / 2) - (spriteSize.height / 2)) * !self.transformMultiplier.y;
         
         SUTSpriteLayoutAttribute *attribute = [[SUTSpriteLayoutAttribute alloc] init];
-        attribute.frame = (CGRect){spriteOffset, spriteSize};
+        attribute.frame = (CGRect){spritePositon, spriteSize};
         
         [self.layoutAttributes addObject:attribute];
         

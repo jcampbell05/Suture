@@ -29,6 +29,8 @@
     return self;
 }
 
+#pragma mark - Ok
+
 - (IBAction)ok:(id)sender
 {
     [super ok:sender];

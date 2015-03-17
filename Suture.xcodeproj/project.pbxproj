@@ -22,6 +22,9 @@
 		7465C52E1AB2FE3B0058AC8A /* SUTSpriteCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7465C52D1AB2FE3B0058AC8A /* SUTSpriteCollectionViewCell.m */; };
 		7494DAB91AB5E591001B74CE /* SUTCollectionViewSpriteLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 7494DAB81AB5E591001B74CE /* SUTCollectionViewSpriteLayout.m */; };
 		749E4EF71AB78BD600B21C33 /* SUTSpriteLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 749E4EF61AB78BD600B21C33 /* SUTSpriteLayout.m */; };
+		74A289E71AB858DC007553A6 /* SUTImageExporter.m in Sources */ = {isa = PBXBuildFile; fileRef = 74A289E61AB858DC007553A6 /* SUTImageExporter.m */; };
+		74A289EA1AB8591F007553A6 /* SUTExporterRegistry.m in Sources */ = {isa = PBXBuildFile; fileRef = 74A289E91AB8591F007553A6 /* SUTExporterRegistry.m */; };
+		74A289ED1AB85A55007553A6 /* SUTExportPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 74A289EC1AB85A55007553A6 /* SUTExportPanel.m */; };
 		74F0FAE01AAF5224003F9454 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 74F0FADF1AAF5224003F9454 /* AppDelegate.m */; };
 		74F0FAE21AAF5224003F9454 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 74F0FAE11AAF5224003F9454 /* main.m */; };
 		74F0FAE51AAF5224003F9454 /* SUTDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 74F0FAE41AAF5224003F9454 /* SUTDocument.m */; };
@@ -99,6 +102,12 @@
 		749E4EF51AB78BD600B21C33 /* SUTSpriteLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUTSpriteLayout.h; sourceTree = "<group>"; };
 		749E4EF61AB78BD600B21C33 /* SUTSpriteLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUTSpriteLayout.m; sourceTree = "<group>"; };
 		749E4EF81AB79BD200B21C33 /* SUTExporter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUTExporter.h; sourceTree = "<group>"; };
+		74A289E51AB858DC007553A6 /* SUTImageExporter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUTImageExporter.h; sourceTree = "<group>"; };
+		74A289E61AB858DC007553A6 /* SUTImageExporter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUTImageExporter.m; sourceTree = "<group>"; };
+		74A289E81AB8591F007553A6 /* SUTExporterRegistry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUTExporterRegistry.h; sourceTree = "<group>"; };
+		74A289E91AB8591F007553A6 /* SUTExporterRegistry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUTExporterRegistry.m; sourceTree = "<group>"; };
+		74A289EB1AB85A55007553A6 /* SUTExportPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUTExportPanel.h; sourceTree = "<group>"; };
+		74A289EC1AB85A55007553A6 /* SUTExportPanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUTExportPanel.m; sourceTree = "<group>"; };
 		74F0FAD91AAF5224003F9454 /* Suture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Suture.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		74F0FADD1AAF5224003F9454 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		74F0FADE1AAF5224003F9454 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -222,6 +231,12 @@
 				749E4EF51AB78BD600B21C33 /* SUTSpriteLayout.h */,
 				749E4EF61AB78BD600B21C33 /* SUTSpriteLayout.m */,
 				749E4EF81AB79BD200B21C33 /* SUTExporter.h */,
+				74A289E51AB858DC007553A6 /* SUTImageExporter.h */,
+				74A289E61AB858DC007553A6 /* SUTImageExporter.m */,
+				74A289E81AB8591F007553A6 /* SUTExporterRegistry.h */,
+				74A289E91AB8591F007553A6 /* SUTExporterRegistry.m */,
+				74A289EB1AB85A55007553A6 /* SUTExportPanel.h */,
+				74A289EC1AB85A55007553A6 /* SUTExportPanel.m */,
 			);
 			path = Suture;
 			sourceTree = "<group>";
@@ -466,12 +481,15 @@
 			files = (
 				74F0FAE51AAF5224003F9454 /* SUTDocument.m in Sources */,
 				7494DAB91AB5E591001B74CE /* SUTCollectionViewSpriteLayout.m in Sources */,
+				74A289E71AB858DC007553A6 /* SUTImageExporter.m in Sources */,
 				7465C52E1AB2FE3B0058AC8A /* SUTSpriteCollectionViewCell.m in Sources */,
 				74F52E7C1AB1D8A60031FE1A /* SUTSprite.m in Sources */,
 				74F0FAE21AAF5224003F9454 /* main.m in Sources */,
 				74F52E791AB1CB560031FE1A /* SUTOutlineView.m in Sources */,
 				74F0FAE01AAF5224003F9454 /* AppDelegate.m in Sources */,
+				74A289EA1AB8591F007553A6 /* SUTExporterRegistry.m in Sources */,
 				74290D9C1AB4B7FF008B9527 /* SUTExportAccessoryView.m in Sources */,
+				74A289ED1AB85A55007553A6 /* SUTExportPanel.m in Sources */,
 				7465C52B1AB2E5C20058AC8A /* SUTWindowController.m in Sources */,
 				749E4EF71AB78BD600B21C33 /* SUTSpriteLayout.m in Sources */,
 				7417AB5A1AAFA8820063E88A /* SUTEmptySpriteSheetView.m in Sources */,

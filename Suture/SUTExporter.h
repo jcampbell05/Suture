@@ -10,4 +10,6 @@
 
 @protocol SUTExporter <NSObject>
 
+@property (nonatomic, strong, readonly) NSString *name;
+
 @end

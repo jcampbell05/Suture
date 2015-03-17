@@ -7,10 +7,12 @@
 //
 
 @import Cocoa;
+#import "SUTExporter.h"
 
 @interface SUTExportAccessoryView : NSView
 
 @property (nonatomic, strong, readonly) NSSavePanel *savePanel;
+@property (nonatomic, strong, readonly) id<SUTExporter> selectedExporter;
 
 - (instancetype)initWithSavePanel:(NSSavePanel *)savePanel;
 

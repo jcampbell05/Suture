@@ -10,7 +10,9 @@
 #import "SUTExporterRegistry.h"
 
 static CGFloat SUTExportAccessoryViewHeight = 50.0f;
-static CGFloat SUTExportAccessoryViewFieldsHeight = 35.0f;
+static CGFloat SUTExportAccessoryPopUpButtonViewHeight = 35.0f;
+static CGFloat SUTExportAccessoryPopUpButtonViewWidth = 125.0f;
+static CGFloat SUTExportAccessoryPopUpButtonViewLeftMargin = 5.0f;
 
 @interface SUTExportAccessoryView ()
 
@@ -51,11 +53,11 @@ static CGFloat SUTExportAccessoryViewFieldsHeight = 35.0f;
 {
     if (!_formatPopUpButtonView)
     {
-        _formatPopUpButtonView = [[NSPopUpButton alloc] initWithFrame:NSMakeRect(100.0f,
+        _formatPopUpButtonView = [[NSPopUpButton alloc] initWithFrame:NSMakeRect(NSMaxX(self.formatTitleView.frame) + SUTExportAccessoryPopUpButtonViewLeftMargin,
                                                                                  (SUTExportAccessoryViewHeight / 2) -
-                                                                                 (SUTExportAccessoryViewFieldsHeight / 2),
-                                                                                 100.0f,
-                                                                                 SUTExportAccessoryViewFieldsHeight)];
+                                                                                 (SUTExportAccessoryPopUpButtonViewHeight / 2),
+                                                                                 SUTExportAccessoryPopUpButtonViewWidth,
+                                                                                 SUTExportAccessoryPopUpButtonViewHeight)];
         
         NSMutableArray *items = [[NSMutableArray alloc] init];
         
@@ -76,11 +78,7 @@ static CGFloat SUTExportAccessoryViewFieldsHeight = 35.0f;
 {
     if (!_formatTitleView)
     {
-        _formatTitleView = [[NSTextField alloc] initWithFrame:NSMakeRect(0.0f,
-                                                                         (SUTExportAccessoryViewHeight / 2) -
-                                                                         (SUTExportAccessoryViewFieldsHeight / 2),
-                                                                         100.0f,
-                                                                         SUTExportAccessoryViewFieldsHeight)];
+        _formatTitleView = [[NSTextField alloc] init];
         
         _formatTitleView.alignment = NSCenterTextAlignment;
         _formatTitleView.bezeled = NO;
@@ -90,6 +88,14 @@ static CGFloat SUTExportAccessoryViewFieldsHeight = 35.0f;
         
         _formatTitleView.stringValue = NSLocalizedString(@"format_nav",
                                                          nil);
+        
+        [_formatTitleView sizeToFit];
+        
+        _formatTitleView.frame = NSMakeRect(0.0f,
+                                            (SUTExportAccessoryViewHeight / 2) -
+                                            (_formatTitleView.frame.size.height / 2),
+                                            _formatTitleView.frame.size.width,
+                                            _formatTitleView.frame.size.height);
     }
     
     return _formatTitleView;

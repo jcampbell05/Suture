@@ -30,7 +30,7 @@
         self.frame = NSMakeRect(0.0f,
                                 0.0f,
                                 400.0f,
-                                100.0f);
+                                50.0f);
         
         self.savePanel = savePanel;
         self.savePanel.accessoryView = self;

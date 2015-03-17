@@ -44,6 +44,7 @@
     {
         _layout = [[SUTSpriteLayout alloc] init];
         _layout.delegate = self;
+        [_layout prepareLayout];
     }
     
     return _layout;
@@ -177,6 +178,8 @@
     NSMutableArray *newSprites = [self.sprites mutableCopy];
     newSprites[index] = sprite;
     _sprites = newSprites;
+    
+    [self.layout prepareLayout];
 }
 
 - (void)removeObjectFromSpritesAtIndex:(NSUInteger)index

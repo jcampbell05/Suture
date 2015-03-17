@@ -38,10 +38,18 @@
     [image lockFocus];
     
     CGContextRef context = [[NSGraphicsContext currentContext] graphicsPort];
-    
     CGContextClearRect(context, NSMakeRect(0, 0, contentSize.width, contentSize.height));
+    
     CGContextSetFillColorWithColor(context, [[NSColor blueColor] CGColor]);
-    CGContextFillEllipseInRect(context, NSMakeRect(0, 0, contentSize.width, contentSize.height));
+    
+    for (NSInteger spriteIndex = 0 ; spriteIndex < document.sprites.count; spriteIndex ++)
+    {
+        CGRect spriteFrame = [document.layout frameForSpriteAtIndex:spriteIndex];
+        CGContextFillEllipseInRect(context, NSMakeRect(spriteFrame.origin.x,
+                                                       spriteFrame.origin.y,
+                                                       contentSize.width,
+                                                       contentSize.height));
+    }
     
     [image unlockFocus];
     

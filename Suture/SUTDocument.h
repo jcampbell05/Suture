@@ -8,9 +8,11 @@
 
 @import Cocoa;
 @class SUTSprite;
+@class SUTSpriteLayout;
 
 @interface SUTDocument : NSDocument
 
+@property (nonatomic, strong) SUTSpriteLayout *layout;
 @property (nonatomic, strong) NSArray *sprites;
 
 - (NSImage *)imageForURL:(NSURL *)url;

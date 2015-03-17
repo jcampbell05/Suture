@@ -9,11 +9,12 @@
 #import "SUTDocument.h"
 
 #import "SUTSprite.h"
+#import "SUTSpriteLayout.h"
 #import "SUTWindowController.h"
 
 #import <os/activity.h>
 
-@interface SUTDocument ()
+@interface SUTDocument () <SUTSpriteLayoutDelegate>
 
 @property (nonatomic, strong) NSFileWrapper *fileWrapper;
 
@@ -25,7 +26,7 @@
 
 @synthesize sprites = _sprites;
 
-#pragma mark - FileWrapper
+#pragma mark - Data
 
 - (NSFileWrapper *)fileWrapper
 {
@@ -35,6 +36,17 @@
     }
     
     return _fileWrapper;
+}
+
+- (SUTSpriteLayout *)layout
+{
+    if (!_layout)
+    {
+        _layout = [[SUTSpriteLayout alloc] init];
+        _layout.delegate = self;
+    }
+    
+    return _layout;
 }
 
 - (NSArray *)sprites
@@ -186,6 +198,25 @@
 {
     NSCharacterSet* illegalFileNameCharacters = [NSCharacterSet characterSetWithCharactersInString:@"/\\?%*|\"<>"];
     return [[path componentsSeparatedByCharactersInSet:illegalFileNameCharacters] componentsJoinedByString:@""];
+}
+
+
+#pragma mark - SUTSpriteLayoutDelegate
+
+- (CGSize)sheetSize
+{
+    return CGSizeMake(500.0f, 500.0f);
+}
+
+- (NSInteger)numberOfSprites
+{
+    return self.sprites.count;
+}
+
+- (CGSize)sizeForSpriteAtIndex:(NSInteger)index
+{
+    SUTSprite *sprite = self.sprites[index];
+    return sprite.image.size;
 }
 
 @end

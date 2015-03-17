@@ -17,11 +17,10 @@
 #import "SUTEmptySpriteSheetView.h"
 #import "SUTOutlineView.h"
 
-@interface SUTEditorView () <NSDraggingDestination, JNWCollectionViewDataSource, SUTSpriteLayoutDelegate>
+@interface SUTEditorView () <NSDraggingDestination, JNWCollectionViewDataSource>
 
 @property (nonatomic, strong) SUTEmptySpriteSheetView *emptySpriteView;
 @property (nonatomic, strong) JNWCollectionView *spriteCollectionView;
-@property (nonatomic, strong) SUTSpriteLayout *spriteLayout;
 @property (nonatomic, strong) SUTCollectionViewSpriteLayout *spriteCollectionViewLayout;
 
 @end
@@ -75,23 +74,12 @@
     return _spriteCollectionView;
 }
 
-- (SUTSpriteLayout *)spriteLayout
-{
-    if (!_spriteLayout)
-    {
-        _spriteLayout = [[SUTSpriteLayout alloc] init];
-        _spriteLayout.delegate = self;
-    }
-    
-    return _spriteLayout;
-}
-
 - (SUTCollectionViewSpriteLayout *)spriteCollectionViewLayout
 {
     if (!_spriteCollectionViewLayout)
     {
         _spriteCollectionViewLayout = [[SUTCollectionViewSpriteLayout alloc] init];
-        _spriteCollectionViewLayout.layout = self.spriteLayout;
+        _spriteCollectionViewLayout.layout = self.document.layout;
     }
 
     return _spriteCollectionViewLayout;
@@ -209,24 +197,6 @@
     cell.sprite = self.document.sprites[indexPath.jnw_item];
     
     return cell;
-}
-
-#pragma mark - SUTSpriteLayoutDelegate
-
-- (CGSize)sheetSize
-{
-    return self.spriteCollectionView.bounds.size;
-}
-
-- (NSInteger)numberOfSprites
-{
-    return self.document.sprites.count;
-}
-
-- (CGSize)sizeForSpriteAtIndex:(NSInteger)index
-{
-    SUTSprite *sprite = self.document.sprites[index];
-    return sprite.image.size;
 }
 
 @end

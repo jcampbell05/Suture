@@ -81,7 +81,7 @@
 
 - (CGSize)contentSize
 {
-    return CGSizeZero;
+    return [self.delegate sheetSize];
 }
 
 @end

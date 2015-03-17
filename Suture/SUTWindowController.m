@@ -119,9 +119,7 @@
 {
     SUTExportPanel *exportPanel = [[SUTExportPanel alloc] init];
     [exportPanel beginSheetModalForWindow:self.window
-                      completionHandler:^(NSInteger result)
-     {
-     }];
+                      completionHandler:nil];
 }
 
 @end

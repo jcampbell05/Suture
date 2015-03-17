@@ -7,7 +7,18 @@
 //
 
 #import "SUTExportPanel.h"
+#import "SUTExportAccessoryView.h"
 
 @implementation SUTExportPanel
+
+- (instancetype)init
+{
+    self = [super init];
+    if (self)
+    {
+        SUTExportAccessoryView *accessoryView = [[SUTExportAccessoryView alloc] initWithSavePanel:self];
+    }
+    return self;
+}
 
 @end

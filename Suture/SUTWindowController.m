@@ -9,7 +9,7 @@
 #import "SUTWindowController.h"
 
 #import "SUTEditorView.h"
-#import "SUTExportAccessoryView.h"
+#import "SUTExportPanel.h"
 #import "SUTOutlineView.h"
 
 @interface SUTWindowController ()
@@ -117,13 +117,11 @@
 
 - (IBAction)export:(NSMenuItem *)menuItem
 {
-    NSSavePanel *savePanel = [NSSavePanel savePanel];
-    SUTExportAccessoryView *accessoryView = [[SUTExportAccessoryView alloc] initWithSavePanel:savePanel];
-
-    [savePanel beginSheetModalForWindow:self.window
+    SUTExportPanel *exportPanel = [[SUTExportPanel alloc] init];
+    [exportPanel beginSheetModalForWindow:self.window
                       completionHandler:^(NSInteger result)
-    {
-    }];
+     {
+     }];
 }
 
 @end

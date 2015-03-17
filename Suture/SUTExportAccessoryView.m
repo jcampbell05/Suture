@@ -9,7 +9,8 @@
 #import "SUTExportAccessoryView.h"
 #import "SUTExporterRegistry.h"
 
-static CGFloat SUTExportAccessoryViewFieldsHeight = 30.0f;
+static CGFloat SUTExportAccessoryViewHeight = 50.0f;
+static CGFloat SUTExportAccessoryViewFieldsHeight = 35.0f;
 
 @interface SUTExportAccessoryView ()
 
@@ -32,7 +33,7 @@ static CGFloat SUTExportAccessoryViewFieldsHeight = 30.0f;
         self.frame = NSMakeRect(0.0f,
                                 0.0f,
                                 400.0f,
-                                50.0f);
+                                SUTExportAccessoryViewHeight);
         
         self.savePanel = savePanel;
         self.savePanel.accessoryView = self;
@@ -51,7 +52,8 @@ static CGFloat SUTExportAccessoryViewFieldsHeight = 30.0f;
     if (!_formatPopUpButtonView)
     {
         _formatPopUpButtonView = [[NSPopUpButton alloc] initWithFrame:NSMakeRect(100.0f,
-                                                                                 0.0f,
+                                                                                 (SUTExportAccessoryViewHeight / 2) -
+                                                                                 (SUTExportAccessoryViewFieldsHeight / 2),
                                                                                  100.0f,
                                                                                  SUTExportAccessoryViewFieldsHeight)];
         
@@ -75,7 +77,8 @@ static CGFloat SUTExportAccessoryViewFieldsHeight = 30.0f;
     if (!_formatTitleView)
     {
         _formatTitleView = [[NSTextField alloc] initWithFrame:NSMakeRect(0.0f,
-                                                                         0.0f,
+                                                                         (SUTExportAccessoryViewHeight / 2) -
+                                                                         (SUTExportAccessoryViewFieldsHeight / 2),
                                                                          100.0f,
                                                                          SUTExportAccessoryViewFieldsHeight)];
         

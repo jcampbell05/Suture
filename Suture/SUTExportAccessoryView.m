@@ -7,6 +7,7 @@
 //
 
 #import "SUTExportAccessoryView.h"
+#import "SUTExporterRegistry.h"
 
 @interface SUTExportAccessoryView ()
 
@@ -51,7 +52,15 @@
                                                                                  0.0f,
                                                                                  100.0f,
                                                                                  30.0f)];
-        [_formatPopUpButtonView addItemsWithTitles:@[@"Image Only", @"For Web", @"For iOS"]];
+        
+        NSMutableArray *items = [[NSMutableArray alloc] init];
+        
+        [[SUTExporterRegistry sharedRegistry].exporters enumerateObjectsUsingBlock:^(id<SUTExporter> exporter, NSUInteger idx, BOOL *stop)
+        {
+            [items addObject:[exporter name]];
+        }];
+        
+        [_formatPopUpButtonView addItemsWithTitles:items];
     }
     
     return _formatPopUpButtonView;

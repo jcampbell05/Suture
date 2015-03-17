@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "SUTExporterRegistry.h"
+#import "SUTImageExporter.h"
 
 @interface AppDelegate ()
 
@@ -14,11 +16,13 @@
 
 @implementation AppDelegate
 
-- (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
-    // Insert code here to initialize your application
+- (void)applicationDidFinishLaunching:(NSNotification *)aNotification
+{
+    [[SUTExporterRegistry sharedRegistry] registerExporter:[[SUTImageExporter alloc] init]];
 }
 
-- (void)applicationWillTerminate:(NSNotification *)aNotification {
+- (void)applicationWillTerminate:(NSNotification *)aNotification
+{
     // Insert code here to tear down your application
 }
 

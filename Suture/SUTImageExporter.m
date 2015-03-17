@@ -10,4 +10,9 @@
 
 @implementation SUTImageExporter
 
+- (NSString *)name
+{
+    return @"Image Only";
+}
+
 @end

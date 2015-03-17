@@ -15,4 +15,10 @@
     return @"Image Only";
 }
 
+- (void)exportDocument:(SUTDocument *)document
+                   URL:(NSURL *)url
+{
+    NSLog(@"TBI");
+}
+
 @end

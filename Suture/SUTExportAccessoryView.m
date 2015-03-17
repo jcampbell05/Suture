@@ -9,6 +9,8 @@
 #import "SUTExportAccessoryView.h"
 #import "SUTExporterRegistry.h"
 
+static CGFloat SUTExportAccessoryViewFieldsHeight = 30.0f;
+
 @interface SUTExportAccessoryView ()
 
 @property (nonatomic, strong, readwrite) NSSavePanel *savePanel;
@@ -51,7 +53,7 @@
         _formatPopUpButtonView = [[NSPopUpButton alloc] initWithFrame:NSMakeRect(100.0f,
                                                                                  0.0f,
                                                                                  100.0f,
-                                                                                 30.0f)];
+                                                                                 SUTExportAccessoryViewFieldsHeight)];
         
         NSMutableArray *items = [[NSMutableArray alloc] init];
         
@@ -75,7 +77,7 @@
         _formatTitleView = [[NSTextField alloc] initWithFrame:NSMakeRect(0.0f,
                                                                          0.0f,
                                                                          100.0f,
-                                                                         30.0f)];
+                                                                         SUTExportAccessoryViewFieldsHeight)];
         
         _formatTitleView.alignment = NSCenterTextAlignment;
         _formatTitleView.bezeled = NO;

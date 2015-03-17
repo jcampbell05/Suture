@@ -7,6 +7,7 @@
 //
 
 #import "SUTImageExporter.h"
+#import "SUTSpriteLayout.h"
 
 @implementation SUTImageExporter
 
@@ -18,7 +19,19 @@
 - (void)exportDocument:(SUTDocument *)document
                    URL:(NSURL *)url
 {
-    NSLog(@"TBI");
+    SUTSpriteLayout *layout = [[SUTSpriteLayout alloc] init];
+    CGSize contentSize = [layout contentSize];
+    
+    CGColorSpaceRef space = CGColorSpaceCreateDeviceRGB();
+    CGContextRef context = CGBitmapContextCreate(nil,
+                                                 contentSize.width,
+                                                 contentSize.height,
+                                                 8,
+                                                 contentSize.width * (CGColorSpaceGetNumberOfComponents(space) + 1),
+                                                 space,
+                                                 0);
+
+    
 }
 
 @end

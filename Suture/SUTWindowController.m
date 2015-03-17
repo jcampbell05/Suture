@@ -118,6 +118,8 @@
 - (IBAction)export:(NSMenuItem *)menuItem
 {
     SUTExportPanel *exportPanel = [[SUTExportPanel alloc] init];
+    exportPanel.document = self.document;
+    
     [exportPanel beginSheetModalForWindow:self.window
                       completionHandler:nil];
 }

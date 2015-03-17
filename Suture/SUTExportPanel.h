@@ -6,8 +6,11 @@
 //  Copyright (c) 2015 James Campbell. All rights reserved.
 //
 
-#import <Cocoa/Cocoa.h>
+@import Cocoa;
+#import "SUTDocument.h"
 
 @interface SUTExportPanel : NSSavePanel
+
+@property (nonatomic, weak) SUTDocument *document;
 
 @end

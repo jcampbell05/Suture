@@ -11,6 +11,8 @@
 #import "SUTSprite.h"
 #import "SUTWindowController.h"
 
+#import <os/activity.h>
+
 @interface SUTDocument ()
 
 @property (nonatomic, strong) NSFileWrapper *fileWrapper;

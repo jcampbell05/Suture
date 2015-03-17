@@ -8,6 +8,7 @@
 
 #import "SUTExportPanel.h"
 #import "SUTExportAccessoryView.h"
+#import "SUTExporterRegistry.h"
 
 @interface SUTExportPanel ()
 
@@ -35,6 +36,10 @@
 {
     [super ok:sender];
     
+    id<SUTExporter> exporter = [[SUTExporterRegistry sharedRegistry].exporters firstObject];
+    
+    [exporter exportDocument:self.document
+                         URL:self.URL];
 }
 
 @end

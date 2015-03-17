@@ -9,14 +9,22 @@
 #import "SUTExportPanel.h"
 #import "SUTExportAccessoryView.h"
 
+@interface SUTExportPanel ()
+
+@property (nonatomic, strong) SUTExportAccessoryView *exportAccessoryView;
+
+@end
+
 @implementation SUTExportPanel
+
+#pragma mark - Init
 
 - (instancetype)init
 {
     self = [super init];
     if (self)
     {
-        SUTExportAccessoryView *accessoryView = [[SUTExportAccessoryView alloc] initWithSavePanel:self];
+        self.exportAccessoryView = [[SUTExportAccessoryView alloc] initWithSavePanel:self];
     }
     return self;
 }

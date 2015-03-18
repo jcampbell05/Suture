@@ -57,7 +57,6 @@ CGImageRef CGImageFromNSImage(NSImage *image)
     CGSize contentSize = [document.layout contentSize];
     CGContextRef context = SUTCreateImageContext(contentSize);
 
-
     CGContextClearRect(context, NSMakeRect(0, 0, contentSize.width, contentSize.height));
     CGContextSetStrokeColorWithColor(context, [[NSColor redColor] CGColor]);
     

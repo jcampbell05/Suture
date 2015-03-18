@@ -84,7 +84,7 @@
         
         SUTSpriteLayoutAttribute *attribute = [[SUTSpriteLayoutAttribute alloc] init];
         attribute.cellFrame = (CGRect){cellPosition, self.cellSize};
-        attribute.spriteFrame = (CGRect){spritePosition, self.cellSize};
+        attribute.spriteFrame = (CGRect){spritePosition, spriteSize};
         
         [self.layoutAttributes addObject:attribute];
         

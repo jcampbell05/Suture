@@ -25,11 +25,6 @@ CGContextRef SUTCreateImageContext (CGSize size)
                                                  bytesPerRow,
                                                  colorSpace,
                                                  (CGBitmapInfo)kCGImageAlphaPremultipliedLast);
-    if (context == NULL)
-    {
-        fprintf (stderr, "Context not created!");
-        return NULL;
-    }
     
     CGColorSpaceRelease(colorSpace);
     

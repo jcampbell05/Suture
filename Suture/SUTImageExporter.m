@@ -7,6 +7,7 @@
 //
 
 #import "SUTImageExporter.h"
+#import "SUTSprite.h"
 #import "SUTSpriteLayout.h"
 
 @import CoreServices;
@@ -29,6 +30,20 @@ CGContextRef SUTCreateImageContext (CGSize size)
     return context;
 }
 
+CGImageRef CGImageFromNSImage(NSImage *image)
+{
+   NSData * imageData = [image TIFFRepresentation];
+   CGImageRef imageRef;
+    
+    if (imageData)
+    {
+        CGImageSourceRef imageSource = CGImageSourceCreateWithData((CFDataRef)imageData, NULL);
+        imageRef = CGImageSourceCreateImageAtIndex(imageSource, 0, NULL);
+    }
+    
+    return imageRef;
+}
+
 @implementation SUTImageExporter
 
 - (NSString *)name
@@ -49,10 +64,11 @@ CGContextRef SUTCreateImageContext (CGSize size)
     for (NSInteger spriteIndex = 0 ; spriteIndex < document.sprites.count; spriteIndex ++)
     {
         CGRect spriteFrame = [document.layout frameForSpriteAtIndex:spriteIndex];
-        CGContextStrokeRect(context, NSMakeRect(spriteFrame.origin.x,
-                                                spriteFrame.origin.y,
-                                                contentSize.width,
-                                                contentSize.height));
+        SUTSprite *sprite = document.sprites[spriteIndex];
+        
+        CGContextDrawImage(context,
+                           spriteFrame,
+                           CGImageFromNSImage(sprite.image));
     }
     
     CGImageRef image = CGBitmapContextCreateImage(context);

@@ -10,7 +10,8 @@
 
 @interface SUTSpriteLayoutAttribute : NSObject
 
-@property (nonatomic, assign) CGRect frame;
+@property (nonatomic, assign) CGRect cellFrame;
+@property (nonatomic, assign) CGRect spriteFrame;
 
 @end
 
@@ -71,14 +72,19 @@
     
     for (NSInteger spriteIndex = 0; spriteIndex < numberOfSprites; spriteIndex ++)
     {
-    
-        CGPoint spritePositon = spriteOffset;
-//        
-//        spritePositon.x += ((spriteSize.width / 2)) * !self.transformMultiplier.x;
-//        spritePositon.y += ((spriteSize.height / 2)) * !self.transformMultiplier.y;
+        CGSize spriteSize = [self.delegate sizeForSpriteAtIndex:spriteIndex];
+        
+        CGPoint cellPosition = CGPointZero;
+        cellPosition.x = self.cellSize.width * (spriteIndex * self.transformMultiplier.x);
+        cellPosition.y = self.cellSize.height * (spriteIndex * self.transformMultiplier.y);
+        
+        CGPoint spritePosition = cellPosition;
+        spritePosition.x += (self.cellSize.width / 2) - (spriteSize.width / 2);
+        spritePosition.y += (self.cellSize.height / 2) - (spriteSize.height / 2);
         
         SUTSpriteLayoutAttribute *attribute = [[SUTSpriteLayoutAttribute alloc] init];
-        attribute.frame = (CGRect){spritePositon, self.cellSize};
+        attribute.cellFrame = (CGRect){cellPosition, self.cellSize};
+        attribute.spriteFrame = (CGRect){spritePosition, self.cellSize};
         
         [self.layoutAttributes addObject:attribute];
         
@@ -98,7 +104,7 @@
 - (CGRect)frameForSpriteAtIndex:(NSInteger)index
 {
     SUTSpriteLayoutAttribute *attribute = self.layoutAttributes[index];
-    return attribute.frame;
+    return attribute.cellFrame;
 }
 
 @end

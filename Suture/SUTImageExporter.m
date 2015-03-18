@@ -41,11 +41,12 @@
     CGContextClearRect(context, NSMakeRect(0, 0, contentSize.width, contentSize.height));
     
     CGContextSetFillColorWithColor(context, [[NSColor blueColor] CGColor]);
+    CGContextSetStrokeColorWithColor(context, [[NSColor redColor] CGColor]);
     
     for (NSInteger spriteIndex = 0 ; spriteIndex < document.sprites.count; spriteIndex ++)
     {
         CGRect spriteFrame = [document.layout frameForSpriteAtIndex:spriteIndex];
-        CGContextFillEllipseInRect(context, NSMakeRect(spriteFrame.origin.x,
+        CGContextFillRect(context, NSMakeRect(spriteFrame.origin.x,
                                                        spriteFrame.origin.y,
                                                        contentSize.width,
                                                        contentSize.height));

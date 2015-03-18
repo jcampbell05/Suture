@@ -8,5 +8,5 @@
 
 "empty_nav" = "Drop your images here.";
 "format_nav" = "Format:";
-"image_exporter_nav" = "Image Only";
+"image_exporter_nav" = "Image (.png)";
 "new_document_nav" = "New Sprite Sheet";

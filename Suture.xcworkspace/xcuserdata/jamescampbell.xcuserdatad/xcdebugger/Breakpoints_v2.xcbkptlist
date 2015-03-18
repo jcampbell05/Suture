@@ -30,11 +30,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Suture/SUTImageExporter.m"
-            timestampString = "448411156.240898"
+            timestampString = "448411487.70579"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "67"
-            endingLineNumber = "67"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
             landmarkName = "-exportDocument:URL:"
             landmarkType = "5">
          </BreakpointContent>

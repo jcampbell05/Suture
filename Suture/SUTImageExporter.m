@@ -44,6 +44,13 @@ CGImageRef CGImageFromNSImage(NSImage *image)
     return imageRef;
 }
 
+CGRect SUTFlipCGRect(CGRect rect, CGSize size)
+{
+    rect.origin.y = size.height - CGRectGetMaxY(rect);
+    
+    return rect;
+}
+
 @implementation SUTImageExporter
 
 - (NSString *)name
@@ -63,6 +70,8 @@ CGImageRef CGImageFromNSImage(NSImage *image)
     for (NSInteger spriteIndex = 0 ; spriteIndex < document.sprites.count; spriteIndex ++)
     {
         CGRect spriteFrame = [document.layout frameForSpriteAtIndex:spriteIndex];
+        spriteFrame = SUTFlipCGRect(spriteFrame, contentSize);
+        
         SUTSprite *sprite = document.sprites[spriteIndex];
         
         CGContextDrawImage(context,

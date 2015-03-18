@@ -22,6 +22,7 @@
 
 @property (nonatomic, strong) NSMutableArray *layoutAttributes;
 @property (nonatomic, assign, readwrite) CGSize contentSize;
+@property (nonatomic, assign, readwrite) CGSize cellSize;
 
 - (CGPoint)transformMultiplier;
 
@@ -52,29 +53,46 @@
 - (void)prepareLayout
 {
     self.contentSize = CGSizeZero;
+    self.cellSize = CGSizeZero;
     [self.layoutAttributes removeAllObjects];
     
     CGPoint spriteOffset = CGPointZero;
+    NSInteger numberOfSprites = [self.delegate numberOfSprites];
     
-    for (NSInteger spriteIndex = 0; spriteIndex < [self.delegate numberOfSprites]; spriteIndex ++)
+    for (NSInteger spriteIndex = 0; spriteIndex < numberOfSprites; spriteIndex ++)
     {
         CGSize spriteSize = [self.delegate sizeForSpriteAtIndex:spriteIndex];
+        self.cellSize = (CGSize)
+        {
+            MAX(self.cellSize.width, spriteSize.width),
+            MAX(self.cellSize.height, spriteSize.height)
+        };
+    }
+    
+    for (NSInteger spriteIndex = 0; spriteIndex < numberOfSprites; spriteIndex ++)
+    {
+    
         CGPoint spritePositon = spriteOffset;
 //        
 //        spritePositon.x += ((spriteSize.width / 2)) * !self.transformMultiplier.x;
 //        spritePositon.y += ((spriteSize.height / 2)) * !self.transformMultiplier.y;
         
         SUTSpriteLayoutAttribute *attribute = [[SUTSpriteLayoutAttribute alloc] init];
-        attribute.frame = (CGRect){spritePositon, spriteSize};
+        attribute.frame = (CGRect){spritePositon, self.cellSize};
         
         [self.layoutAttributes addObject:attribute];
         
-        spriteOffset.x += spriteSize.width * self.transformMultiplier.x;
-        spriteOffset.y += spriteSize.height * self.transformMultiplier.y;
+        spriteOffset.x += self.cellSize.width * self.transformMultiplier.x;
+        spriteOffset.y += self.cellSize.height * self.transformMultiplier.y;
     }
     
-    self.contentSize = CGSizeMake((spriteOffset.x) ? spriteOffset.x : 100.0f,
-                                  (spriteOffset.y) ? spriteOffset.y : 100.0f);
+    CGPoint contentSizeMultiplier = (CGPoint)
+    {
+        MAX(1, numberOfSprites * self.transformMultiplier.x),
+        MAX(1, numberOfSprites * self.transformMultiplier.y)
+    };
+    self.contentSize = CGSizeMake(self.cellSize.width * contentSizeMultiplier.x,
+                                  self.cellSize.height * contentSizeMultiplier.y);
 }
 
 - (CGRect)frameForSpriteAtIndex:(NSInteger)index

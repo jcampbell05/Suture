@@ -14,18 +14,17 @@
 
 CGContextRef SUTCreateImageContext (CGSize size)
 {
-    CGContextRef    context = NULL;
-    CGColorSpaceRef colorSpace;
+    size_t bitsPerComponent = 8;
+    size_t bytesPerRow = (bitsPerComponent * size.width) / 8;
     
-    colorSpace = CGColorSpaceCreateWithName(kCGColorSpaceGenericRGB);
-    
-    context = CGBitmapContextCreate(NULL,
-                                    size.width,
-                                    size.height,
-                                    8,
-                                    0,
-                                    colorSpace,
-                                    (CGBitmapInfo)kCGImageAlphaNone);
+    CGColorSpaceRef colorSpace = CGColorSpaceCreateWithName(kCGColorSpaceGenericRGB);
+    CGContextRef context = CGBitmapContextCreate(NULL,
+                                                 size.width,
+                                                 size.height,
+                                                 bitsPerComponent,
+                                                 bytesPerRow,
+                                                 colorSpace,
+                                                 (CGBitmapInfo)kCGImageAlphaPremultipliedLast);
     if (context == NULL)
     {
         fprintf (stderr, "Context not created!");
@@ -68,7 +67,6 @@ CGContextRef SUTCreateImageContext (CGSize size)
                                                                         kUTTypePNG,
                                                                         1,
                                                                         NULL);
-    
     if (!destination)
     {
         NSLog(@"Failed to create CGImageDestination for %@", url);

@@ -15,14 +15,12 @@
 CGContextRef SUTCreateImageContext (CGSize size)
 {
     size_t bitsPerComponent = 8;
-    size_t bytesPerRow = (bitsPerComponent * size.width) / 8;
-    
     CGColorSpaceRef colorSpace = CGColorSpaceCreateWithName(kCGColorSpaceGenericRGB);
     CGContextRef context = CGBitmapContextCreate(NULL,
                                                  size.width,
                                                  size.height,
                                                  bitsPerComponent,
-                                                 bytesPerRow,
+                                                 0,
                                                  colorSpace,
                                                  (CGBitmapInfo)kCGImageAlphaPremultipliedLast);
     

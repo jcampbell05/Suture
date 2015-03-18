@@ -97,6 +97,7 @@
         MAX(1, numberOfSprites * self.transformMultiplier.x),
         MAX(1, numberOfSprites * self.transformMultiplier.y)
     };
+    
     self.contentSize = CGSizeMake(self.cellSize.width * contentSizeMultiplier.x,
                                   self.cellSize.height * contentSizeMultiplier.y);
 }

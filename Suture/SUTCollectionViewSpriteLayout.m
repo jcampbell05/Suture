@@ -50,7 +50,7 @@
     for (NSInteger spriteIndex = 0; spriteIndex < numberOfSprites; spriteIndex ++)
     {
         JNWCollectionViewLayoutAttributes *attribute = [[JNWCollectionViewLayoutAttributes alloc] init];
-        attribute.frame = [self.layout frameForSpriteAtIndex:spriteIndex];
+        attribute.frame = [self.layout frameForCellAtIndex:spriteIndex];
         attribute.alpha = 1.0f;
         
         [self.layoutAttributes addObject:attribute];

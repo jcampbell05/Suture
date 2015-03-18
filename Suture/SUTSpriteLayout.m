@@ -104,6 +104,12 @@
 - (CGRect)frameForSpriteAtIndex:(NSInteger)index
 {
     SUTSpriteLayoutAttribute *attribute = self.layoutAttributes[index];
+    return attribute.spriteFrame;
+}
+
+- (CGRect)frameForCellAtIndex:(NSInteger)index
+{
+    SUTSpriteLayoutAttribute *attribute = self.layoutAttributes[index];
     return attribute.cellFrame;
 }
 

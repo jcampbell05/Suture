@@ -30,5 +30,6 @@ typedef enum : NSUInteger
 
 - (void)prepareLayout;
 - (CGRect)frameForSpriteAtIndex:(NSInteger)index;
+- (CGRect)frameForCellAtIndex:(NSInteger)index;
 
 @end

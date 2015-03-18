@@ -33,7 +33,7 @@ CGContextRef SUTCreateImageContext (CGSize size)
 
 - (NSString *)name
 {
-    return @"Image Only";
+    return NSLocalizedString(@"image_exporter_nav", nil);
 }
 
 - (void)exportDocument:(SUTDocument *)document

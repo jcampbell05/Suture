@@ -22,6 +22,7 @@
     CGSize contentSize = [document.layout contentSize];
     
     NSImage *image = [[NSImage alloc] initWithSize:contentSize];
+    
     NSBitmapImageRep *rep = [[NSBitmapImageRep alloc]
                              initWithBitmapDataPlanes:NULL
                              pixelsWide:contentSize.width
@@ -38,8 +39,8 @@
     [image lockFocus];
     
     CGContextRef context = [[NSGraphicsContext currentContext] graphicsPort];
-    CGContextClearRect(context, NSMakeRect(0, 0, contentSize.width, contentSize.height));
     
+    CGContextClearRect(context, NSMakeRect(0, 0, contentSize.width, contentSize.height));
     CGContextSetStrokeColorWithColor(context, [[NSColor redColor] CGColor]);
     
     for (NSInteger spriteIndex = 0 ; spriteIndex < document.sprites.count; spriteIndex ++)

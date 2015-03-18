@@ -17,13 +17,11 @@ CGContextRef SUTCreateImageContext (CGSize size)
     CGContextRef    context = NULL;
     CGColorSpaceRef colorSpace;
     void *          bitmapData;
-    int             bitmapByteCount;
     
     size_t bitsPerComponent = 8;
-    size_t bytesPerPixel    = 4;
-    size_t bytesPerRow      = (size.width * bitsPerComponent * bytesPerPixel);
-    
-    bitmapByteCount     = (bytesPerRow * size.height);
+    size_t bytesPerPixel  = 4;
+    size_t bytesPerRow  = (size.width * bytesPerPixel);
+    int bitmapByteCount  = (bytesPerRow * size.height);
     
     colorSpace = CGColorSpaceCreateWithName(kCGColorSpaceGenericRGB);
     bitmapData = malloc( bitmapByteCount );
@@ -36,7 +34,7 @@ CGContextRef SUTCreateImageContext (CGSize size)
     context = CGBitmapContextCreate(bitmapData,
                                     size.width,
                                     size.height,
-                                    8,
+                                    bitsPerComponent,
                                     bytesPerRow,
                                     colorSpace,
                                     (CGBitmapInfo)kCGImageAlphaPremultipliedLast);

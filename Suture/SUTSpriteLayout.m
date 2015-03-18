@@ -21,6 +21,7 @@
 @interface SUTSpriteLayout ()
 
 @property (nonatomic, strong) NSMutableArray *layoutAttributes;
+@property (nonatomic, assign, readwrite) CGSize contentSize;
 
 - (CGPoint)transformMultiplier;
 
@@ -50,18 +51,18 @@
 
 - (void)prepareLayout
 {
+    self.contentSize = CGSizeZero;
     [self.layoutAttributes removeAllObjects];
     
-    CGSize sheetSize = [self.delegate sheetSize];
     CGPoint spriteOffset = CGPointZero;
     
     for (NSInteger spriteIndex = 0; spriteIndex < [self.delegate numberOfSprites]; spriteIndex ++)
     {
         CGSize spriteSize = [self.delegate sizeForSpriteAtIndex:spriteIndex];
         CGPoint spritePositon = spriteOffset;
-        
-        spritePositon.x += ((sheetSize.width / 2) - (spriteSize.width / 2)) * !self.transformMultiplier.x;
-        spritePositon.y += ((sheetSize.height / 2) - (spriteSize.height / 2)) * !self.transformMultiplier.y;
+//        
+//        spritePositon.x += ((spriteSize.width / 2)) * !self.transformMultiplier.x;
+//        spritePositon.y += ((spriteSize.height / 2)) * !self.transformMultiplier.y;
         
         SUTSpriteLayoutAttribute *attribute = [[SUTSpriteLayoutAttribute alloc] init];
         attribute.frame = (CGRect){spritePositon, spriteSize};
@@ -71,17 +72,15 @@
         spriteOffset.x += spriteSize.width * self.transformMultiplier.x;
         spriteOffset.y += spriteSize.height * self.transformMultiplier.y;
     }
+    
+    self.contentSize = CGSizeMake((spriteOffset.x) ? spriteOffset.x : 100.0f,
+                                  (spriteOffset.y) ? spriteOffset.y : 100.0f);
 }
 
 - (CGRect)frameForSpriteAtIndex:(NSInteger)index
 {
     SUTSpriteLayoutAttribute *attribute = self.layoutAttributes[index];
     return attribute.frame;
-}
-
-- (CGSize)contentSize
-{
-    return [self.delegate sheetSize];
 }
 
 @end

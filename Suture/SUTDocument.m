@@ -206,11 +206,6 @@
 
 #pragma mark - SUTSpriteLayoutDelegate
 
-- (CGSize)sheetSize
-{
-    return CGSizeMake(500.0f, 500.0f);
-}
-
 - (NSInteger)numberOfSprites
 {
     return self.sprites.count;

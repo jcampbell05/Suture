@@ -26,9 +26,9 @@ typedef enum : NSUInteger
 
 @property (nonatomic, weak) id<SUTSpriteLayoutDelegate> delegate;
 @property (nonatomic, assign) SUTSpriteLayoutOrientation orientation;
+@property (nonatomic, assign, readonly) CGSize contentSize;
 
 - (void)prepareLayout;
 - (CGRect)frameForSpriteAtIndex:(NSInteger)index;
-- (CGSize)contentSize;
 
 @end

@@ -12,6 +12,7 @@
 @protocol SUTExporter <NSObject>
 
 @property (nonatomic, strong, readonly) NSString *name;
+@property (nonatomic, strong, readonly) NSString *extension;
 
 - (void)exportDocument:(SUTDocument *)document
                    URL:(NSURL *)url;

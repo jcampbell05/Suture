@@ -58,6 +58,11 @@ CGRect SUTFlipCGRect(CGRect rect, CGSize size)
     return NSLocalizedString(@"image_exporter_nav", nil);
 }
 
+- (NSString *)extension
+{
+    return @"png";
+}
+
 - (void)exportDocument:(SUTDocument *)document
                    URL:(NSURL *)url
 {

@@ -37,6 +37,7 @@
     [super ok:sender];
     
     id<SUTExporter> exporter = [[SUTExporterRegistry sharedRegistry].exporters firstObject];
+    [self setAllowedFileTypes:@[[exporter extension]]];
     
     [exporter exportDocument:self.document
                          URL:self.URL];

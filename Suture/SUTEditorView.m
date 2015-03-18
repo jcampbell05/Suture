@@ -96,6 +96,7 @@
         [self didChangeValueForKey:NSStringFromSelector(@selector(document))];
         
         self.spriteCollectionViewLayout.layout = document.layout;
+        [document.layout prepareLayout];
         [self.spriteCollectionView reloadData];
     }
 }

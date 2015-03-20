@@ -78,10 +78,13 @@ CGRect SUTFlipCGRect(CGRect rect, CGSize size)
         spriteFrame = SUTFlipCGRect(spriteFrame, contentSize);
         
         SUTSprite *sprite = document.sprites[spriteIndex];
+        CGImageRef image = CGImageFromNSImage(sprite.image);
         
         CGContextDrawImage(context,
                            spriteFrame,
-                           CGImageFromNSImage(sprite.image));
+                           image);
+        
+        CGImageRelease(image);
     }
     
     CGImageRef image = CGBitmapContextCreateImage(context);

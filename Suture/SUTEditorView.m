@@ -140,6 +140,7 @@
 
 - (BOOL)performDragOperation:(id <NSDraggingInfo>)sender
 {
+    __weak SUTEditorView *weakSelf = self;
     [sender enumerateDraggingItemsWithOptions:0
                                       forView:self
                                       classes:[NSArray arrayWithObject:[NSPasteboardItem class]]
@@ -150,7 +151,7 @@
          NSString *path = [item stringForType: @"public.file-url"];
          NSURL *url = [NSURL URLWithString:path];
          
-         [self addSpriteForURL:url];
+         [weakSelf addSpriteForURL:url];
      }];
     
     return YES;

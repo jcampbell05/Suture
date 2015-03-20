@@ -97,6 +97,7 @@
     openPanel.allowsMultipleSelection = YES;
     openPanel.allowedFileTypes = [NSImage imageTypes];
     
+    __weak SUTWindowController *weakSelf = self;
     [openPanel beginSheetModalForWindow:self.window
                       completionHandler:^(NSInteger result)
     {
@@ -104,7 +105,7 @@
         {
             for (NSURL *url in openPanel.URLs)
             {
-                [self.editorView addSpriteForURL:url];
+                [weakSelf.editorView addSpriteForURL:url];
             }
         }
     }];

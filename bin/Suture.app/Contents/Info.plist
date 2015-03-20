@@ -100,5 +100,36 @@
 			</dict>
 		</dict>
 	</array>
+	<key>UTImportedTypeDeclarations</key>
+	<array>
+		<dict>
+			<key>UTTypeConformsTo</key>
+			<array>
+				<string>com.apple.package</string>
+				<string>public.composite-content</string>
+				<string>public.directory</string>
+				<string>public.item</string>
+			</array>
+			<key>UTTypeDescription</key>
+			<string>Suture Project</string>
+			<key>UTTypeIdentifier</key>
+			<string>com.unii.suture.project</string>
+			<key>UTTypeTagSpecification</key>
+			<dict>
+				<key>com.apple.nspboard-type</key>
+				<array>
+					<string>Suture</string>
+				</array>
+				<key>public.filename-extension</key>
+				<array>
+					<string>suture</string>
+				</array>
+				<key>public.mime-type</key>
+				<array>
+					<string>application/octet-stream</string>
+				</array>
+			</dict>
+		</dict>
+	</array>
 </dict>
 </plist>

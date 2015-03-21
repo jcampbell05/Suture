@@ -12,6 +12,13 @@
 
 #import "SUTDocument.h"
 
+@interface SUTSprite ()
+{
+    CGSize _sizeCache;
+}
+
+@end
+
 @implementation SUTSprite
 
 #pragma mark NSCoding
@@ -23,6 +30,7 @@
     if (self)
     {
         self.fileURL = [aDecoder decodeObjectForKey:NSStringFromSelector(@selector(fileURL))];
+        _sizeCache = CGSizeZero;
     }
     
     return self;
@@ -43,30 +51,31 @@
 
 - (CGSize)size
 {
-    CGImageSourceRef imageSource = CGImageSourceCreateWithURL((CFURLRef)self.fileURL,
-                                                              NULL);
-    CGSize imageSize = CGSizeZero;
-    
-    if (imageSource)
+    if (CGSizeEqualToSize(_sizeCache, CGSizeZero))
     {
-        CFDictionaryRef imageProperties = CGImageSourceCopyPropertiesAtIndex(imageSource,
-                                                                             0,
-                                                                             NULL);
-        if (imageProperties)
+        CGImageSourceRef imageSource = CGImageSourceCreateWithURL((CFURLRef)self.fileURL,
+                                                                  NULL);
+        if (imageSource)
         {
-            NSNumber *width  = CFDictionaryGetValue(imageProperties,
-                                                    kCGImagePropertyPixelWidth);
-            NSNumber *height  = CFDictionaryGetValue(imageProperties,
-                                                     kCGImagePropertyPixelHeight);
-            
-            imageSize.width = [width floatValue];
-            imageSize.width = [height floatValue];
-
-            CFRelease(imageProperties);
+            CFDictionaryRef imageProperties = CGImageSourceCopyPropertiesAtIndex(imageSource,
+                                                                                 0,
+                                                                                 NULL);
+            if (imageProperties)
+            {
+                NSNumber *width  = CFDictionaryGetValue(imageProperties,
+                                                        kCGImagePropertyPixelWidth);
+                NSNumber *height  = CFDictionaryGetValue(imageProperties,
+                                                         kCGImagePropertyPixelHeight);
+                
+                _sizeCache.width = [width floatValue];
+                _sizeCache.width = [height floatValue];
+                
+                CFRelease(imageProperties);
+            }
         }
     }
     
-    return imageSize;
+    return _sizeCache;
 }
 
 @end

@@ -13,7 +13,7 @@
 
 @property (nonatomic, weak) SUTDocument *document;
 
-- (void)addSpriteForURL:(NSURL *)url;
+- (void)addSpritesForURLS:(NSArray *)urls;
 - (void)removeSelectedSprite;
 
 @end

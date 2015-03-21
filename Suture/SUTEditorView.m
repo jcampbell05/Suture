@@ -62,9 +62,9 @@
     if (!_spriteCollectionView)
     {
         _spriteCollectionView = [[JNWCollectionView alloc] initWithFrame:self.bounds];
-        _spriteCollectionView.backgroundColor = [NSColor clearColor];
         _spriteCollectionView.collectionViewLayout = self.spriteCollectionViewLayout;
         _spriteCollectionView.dataSource = self;
+        _spriteCollectionView.drawsBackground = NO;
         _spriteCollectionView.autoresizingMask = NSViewWidthSizable | NSViewHeightSizable;
         
         [_spriteCollectionView registerClass:[SUTSpriteCollectionViewCell class]
@@ -129,13 +129,7 @@
         CFRelease(fileUTI);
    }];
     
-   //self.dropHighlightView.hidden = (operation == NSDragOperationNone);
    return operation;
-}
-
-- (void)draggingExited:(id <NSDraggingInfo>)sender
-{
-   // self.dropHighlightView.hidden = YES;
 }
 
 - (BOOL)performDragOperation:(id <NSDraggingInfo>)sender

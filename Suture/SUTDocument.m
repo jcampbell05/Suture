@@ -178,8 +178,6 @@
     NSMutableArray *newSprites = [self.sprites mutableCopy];
     newSprites[index] = sprite;
     _sprites = newSprites;
-    
-    [self.layout prepareLayout];
 }
 
 - (void)removeObjectFromSpritesAtIndex:(NSUInteger)index
@@ -214,7 +212,7 @@
 - (CGSize)sizeForSpriteAtIndex:(NSInteger)index
 {
     SUTSprite *sprite = self.sprites[index];
-    return sprite.image.size;
+    return sprite.size;
 }
 
 @end

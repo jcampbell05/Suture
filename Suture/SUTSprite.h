@@ -13,6 +13,10 @@
 
 @property (nonatomic, weak) SUTDocument *document;
 @property (nonatomic, strong) NSURL *fileURL;
+
+#pragma mark - Image
+
 @property (nonatomic, readonly) NSImage *image;
+@property (nonatomic, readonly) CGSize size;
 
 @end

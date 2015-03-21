@@ -140,7 +140,8 @@
 
 - (BOOL)performDragOperation:(id <NSDraggingInfo>)sender
 {
-    __weak SUTEditorView *weakSelf = self;
+    NSMutableArray *spriteURLs = [[NSMutableArray alloc] init];
+    
     [sender enumerateDraggingItemsWithOptions:0
                                       forView:self
                                       classes:[NSArray arrayWithObject:[NSPasteboardItem class]]
@@ -151,25 +152,25 @@
          NSString *path = [item stringForType: @"public.file-url"];
          NSURL *url = [NSURL URLWithString:path];
          
-         [weakSelf addSpriteForURL:url];
+         [spriteURLs addObject:url];
      }];
+    
+    [self addSpritesForURLS:spriteURLs];
     
     return YES;
 }
 
-- (void)concludeDragOperation:(id <NSDraggingInfo>)sender
-{
-   // self.dropHighlightView.hidden = YES;
-}
-
 #pragma mark - Sprite 
 
-- (void)addSpriteForURL:(NSURL *)url
+- (void)addSpritesForURLS:(NSArray *)urls
 {
-    SUTSprite *sprite = [[SUTSprite alloc] init];
-    sprite.fileURL = url;
+    [urls enumerateObjectsUsingBlock:^(NSURL *url, NSUInteger idx, BOOL *stop)
+    {
+        SUTSprite *sprite = [[SUTSprite alloc] init];
+        sprite.fileURL = url;
+        [self.document addSprite:sprite];
+    }];
     
-    [self.document addSprite:sprite];
     [self.spriteCollectionView reloadData];
 }
 

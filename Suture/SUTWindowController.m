@@ -103,10 +103,14 @@
     {
         if (result == NSFileHandlingPanelOKButton)
         {
+            NSMutableArray *spriteURLs = [[NSMutableArray alloc] init];
+            
             for (NSURL *url in openPanel.URLs)
             {
-                [weakSelf.editorView addSpriteForURL:url];
+                [spriteURLs addObject:url];
             }
+            
+            [weakSelf.editorView addSpritesForURLS:spriteURLs];
         }
     }];
 }

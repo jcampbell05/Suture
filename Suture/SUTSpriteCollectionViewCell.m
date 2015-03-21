@@ -12,6 +12,8 @@
 #import "SUTSprite.h"
 #import "SUTOutlineView.h"
 
+static CGFloat SUTSpriteCheckerboardViewSize = 15.0f;
+
 @interface SUTSpriteCollectionViewCell ()
 
 @property (nonatomic, strong) SUTCheckerboardView *checkerboardView;
@@ -52,8 +54,10 @@
     if (!_checkerboardView)
     {
         _checkerboardView = [[SUTCheckerboardView alloc] initWithFrame:self.bounds];
-        _checkerboardView.cellSize = CGSizeMake(50.0f, 50.0f);
-        _checkerboardView.cellColours = @[[NSColor whiteColor], [NSColor grayColor]];
+        _checkerboardView.cellSize = CGSizeMake(SUTSpriteCheckerboardViewSize,
+                                                SUTSpriteCheckerboardViewSize);
+        _checkerboardView.cellColours = @[[NSColor whiteColor],
+                                          [NSColor lightGrayColor]];
         _checkerboardView.autoresizingMask = NSViewWidthSizable | NSViewHeightSizable;
     }
     

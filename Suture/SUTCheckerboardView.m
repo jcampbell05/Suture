@@ -30,7 +30,8 @@
                                       self.cellSize.width,
                                       self.cellSize.height);
         
-        NSColor *color = self.cellColours[index % [self.cellColours count]];
+        NSInteger colorIndex = indexPath.jnw_item + indexPath.jnw_section;
+        NSColor *color = self.cellColours[colorIndex % [self.cellColours count]];
         [color set];
         
         

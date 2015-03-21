@@ -157,11 +157,6 @@
     return YES;
 }
 
-- (void)concludeDragOperation:(id <NSDraggingInfo>)sender
-{
-   // self.dropHighlightView.hidden = YES;
-}
-
 #pragma mark - Sprite 
 
 - (void)addSpriteForURL:(NSURL *)url

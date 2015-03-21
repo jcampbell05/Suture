@@ -23,7 +23,7 @@
     for (NSInteger index = 0; index < totalCells; index++)
     {
         NSIndexPath *indexPath = [NSIndexPath jnw_indexPathForItem:index % cellsPerRow
-                                                         inSection:index % cellsPerColumn];
+                                                         inSection:index / cellsPerRow];
         
         NSRect cellFrame = NSMakeRect(indexPath.jnw_item * self.cellSize.width,
                                       indexPath.jnw_section * self.cellSize.height,

@@ -8,6 +8,8 @@
 
 #import "SUTSprite.h"
 
+@import ImageIO;
+
 #import "SUTDocument.h"
 
 @implementation SUTSprite
@@ -37,6 +39,34 @@
 - (NSImage *)image
 {
     return  [self.document imageForURL:self.fileURL];
+}
+
+- (CGSize)size
+{
+    CGImageSourceRef imageSource = CGImageSourceCreateWithURL((CFURLRef)self.fileURL,
+                                                              NULL);
+    CGSize imageSize = CGSizeZero;
+    
+    if (imageSource)
+    {
+        CFDictionaryRef imageProperties = CGImageSourceCopyPropertiesAtIndex(imageSource,
+                                                                             0,
+                                                                             NULL);
+        if (imageProperties)
+        {
+            NSNumber *width  = CFDictionaryGetValue(imageProperties,
+                                                    kCGImagePropertyPixelWidth);
+            NSNumber *height  = CFDictionaryGetValue(imageProperties,
+                                                     kCGImagePropertyPixelHeight);
+            
+            imageSize.width = [width floatValue];
+            imageSize.width = [height floatValue];
+
+            CFRelease(imageProperties);
+        }
+    }
+    
+    return imageSize;
 }
 
 @end

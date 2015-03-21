@@ -214,7 +214,7 @@
 - (CGSize)sizeForSpriteAtIndex:(NSInteger)index
 {
     SUTSprite *sprite = self.sprites[index];
-    return sprite.image.size;
+    return sprite.size;
 }
 
 @end

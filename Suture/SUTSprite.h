@@ -14,5 +14,6 @@
 @property (nonatomic, weak) SUTDocument *document;
 @property (nonatomic, strong) NSURL *fileURL;
 @property (nonatomic, readonly) NSImage *image;
+@property (nonatomic, readonly) CGSize size;
 
 @end

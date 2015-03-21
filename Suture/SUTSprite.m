@@ -68,7 +68,7 @@
                                                          kCGImagePropertyPixelHeight);
                 
                 _sizeCache.width = [width floatValue];
-                _sizeCache.width = [height floatValue];
+                _sizeCache.height = [height floatValue];
                 
                 CFRelease(imageProperties);
             }

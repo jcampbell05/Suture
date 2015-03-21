@@ -178,8 +178,6 @@
     NSMutableArray *newSprites = [self.sprites mutableCopy];
     newSprites[index] = sprite;
     _sprites = newSprites;
-    
-    [self.layout prepareLayout];
 }
 
 - (void)removeObjectFromSpritesAtIndex:(NSUInteger)index

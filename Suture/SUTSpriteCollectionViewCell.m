@@ -8,11 +8,13 @@
 
 #import "SUTSpriteCollectionViewCell.h"
 
+#import "SUTCheckerboardView.h"
 #import "SUTSprite.h"
 #import "SUTOutlineView.h"
 
 @interface SUTSpriteCollectionViewCell ()
 
+@property (nonatomic, strong) SUTCheckerboardView *checkerboardView;
 @property (nonatomic, strong) NSImageView *imageView;
 @property (nonatomic, strong) SUTOutlineView *outlineView;
 
@@ -36,10 +38,26 @@
     {
         self.wantsLayer = YES;
         
+        [self addSubview:self.checkerboardView];
         [self addSubview:self.imageView];
         [self addSubview:self.outlineView];
     }
     return self;
+}
+
+#pragma mark - Checkerboard
+
+- (SUTCheckerboardView *)checkerboardView
+{
+    if (!_checkerboardView)
+    {
+        _checkerboardView = [[SUTCheckerboardView alloc] initWithFrame:self.bounds];
+        _checkerboardView.cellSize = CGSizeMake(50.0f, 50.0f);
+        _checkerboardView.cellColours = @[[NSColor whiteColor], [NSColor grayColor]];
+        _checkerboardView.autoresizingMask = NSViewWidthSizable | NSViewHeightSizable;
+    }
+    
+    return _checkerboardView;
 }
 
 #pragma mark - Model

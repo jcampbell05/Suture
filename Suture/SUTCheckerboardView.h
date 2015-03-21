@@ -10,4 +10,7 @@
 
 @interface SUTCheckerboardView : NSView
 
+@property (nonatomic, assign) CGSize cellSize;
+@property (nonatomic, strong) NSArray *cellColours;
+
 @end

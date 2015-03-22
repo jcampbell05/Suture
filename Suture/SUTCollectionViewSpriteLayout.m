@@ -47,10 +47,22 @@
     
     NSInteger numberOfSprites = [self.collectionView numberOfItemsInSection:0];
     
+    CGSize contentSize = [self.layout contentSize];
+    CGPoint contentCenter = CGPointMake((self.collectionView.bounds.size.width / 2) - (contentSize.width / 2),
+                                        (self.collectionView.bounds.size.height / 2) - (contentSize.height / 2));
+    
+    //Make sure origin is sensible value.
+    contentCenter.x = MAX(contentCenter.x, 0.0f);
+    contentCenter.y = MAX(contentCenter.y, 0.0f);
+    
     for (NSInteger spriteIndex = 0; spriteIndex < numberOfSprites; spriteIndex ++)
     {
         JNWCollectionViewLayoutAttributes *attribute = [[JNWCollectionViewLayoutAttributes alloc] init];
         attribute.frame = [self.layout frameForCellAtIndex:spriteIndex];
+        attribute.frame = CGRectOffset(attribute.frame,
+                                       contentCenter.x,
+                                       contentCenter.y);
+        
         attribute.alpha = 1.0f;
         
         [self.layoutAttributes addObject:attribute];

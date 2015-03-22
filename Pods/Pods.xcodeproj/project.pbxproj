@@ -10,21 +10,96 @@
 	<string>46</string>
 	<key>objects</key>
 	<dict>
-		<key>01B99F477FF136058BC77D33</key>
+		<key>033E316EB16D4520C135DB9F</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>JNWScrollView.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>03A5862B239FD35A0471A813</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>path</key>
+			<string>Sparkle.framework</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>05C27E76BAE19DE92B9F7CAA</key>
 		<dict>
 			<key>fileRef</key>
-			<string>BFCF6E691A29C8BBFD7AEE7C</string>
+			<string>033E316EB16D4520C135DB9F</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-fobjc-arc</string>
+			</dict>
 		</dict>
-		<key>02E963F1F377B51C7D3AE520</key>
+		<key>08E17D1904D42CC99166F899</key>
 		<dict>
-			<key>fileRef</key>
-			<string>02FA01D145F32D1E160F3EFE</string>
+			<key>includeInIndex</key>
+			<string>1</string>
 			<key>isa</key>
-			<string>PBXBuildFile</string>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>JNWCollectionViewGridLayout.m</string>
+			<key>path</key>
+			<string>JNWCollectionView/JNWCollectionViewGridLayout.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
 		</dict>
-		<key>02FA01D145F32D1E160F3EFE</key>
+		<key>0A4D8E6571EC0194FF3CE5E4</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>Pods-dummy.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>0B0F59151B2AE76CC07C38D2</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>42D89C181964E0032176F261</string>
+			<key>buildPhases</key>
+			<array>
+				<string>60032F37A4E936974B925EFE</string>
+				<string>651F57D1DE16A729DBAE7281</string>
+				<string>554071533E1614346F64C5F6</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>Pods-JNWScrollView</string>
+			<key>productName</key>
+			<string>Pods-JNWScrollView</string>
+			<key>productReference</key>
+			<string>EB528195CF78041DAE74B3A8</string>
+			<key>productType</key>
+			<string>com.apple.product-type.library.static</string>
+		</dict>
+		<key>11F2BBBC1B1EB4FAA9C3F3C7</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -33,65 +108,215 @@
 			<key>lastKnownFileType</key>
 			<string>sourcecode.c.h</string>
 			<key>name</key>
-			<string>NSIndexPath+JNWAdditions.h</string>
+			<string>JNWCollectionViewLayout+Private.h</string>
 			<key>path</key>
-			<string>JNWCollectionView/NSIndexPath+JNWAdditions.h</string>
+			<string>JNWCollectionView/JNWCollectionViewLayout+Private.h</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>0961A0517328858262378243</key>
+		<key>152AEC39B920FA68F478EF77</key>
 		<dict>
-			<key>fileRef</key>
-			<string>3F89AB59E6C9C208CB8F1C8A</string>
+			<key>includeInIndex</key>
+			<string>1</string>
 			<key>isa</key>
-			<string>PBXBuildFile</string>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>JNWCollectionViewCell+Private.h</string>
+			<key>path</key>
+			<string>JNWCollectionView/JNWCollectionViewCell+Private.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
 		</dict>
-		<key>10FE9B759E81B6AEC09817E6</key>
+		<key>173AC7CC5F7E14FD21603CC7</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>archive.ar</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>libPods-JNWCollectionView.a</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>17E2FF48A182D20800073EED</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>JNWCollectionViewReusableView.m</string>
+			<key>path</key>
+			<string>JNWCollectionView/JNWCollectionViewReusableView.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>19DFF1ECEF8EDF00C2CFF472</key>
 		<dict>
 			<key>buildActionMask</key>
 			<string>2147483647</string>
 			<key>files</key>
 			<array>
-				<string>C3C58EA97179FD969F34C32D</string>
-				<string>256C738FAF231527A42E9C8A</string>
-				<string>8FCB8F971E848075265E32C7</string>
-				<string>37116D1C738AB5F0337B01C9</string>
-				<string>22D8943B1B05D5C0ABE953FD</string>
-				<string>9968B54CE0A4E7BB8C43BBCC</string>
-				<string>CF1B9AB84A38F35608C8613C</string>
-				<string>18D0C6BC8A173BAC1366F971</string>
-				<string>208172CEA39187C223E8D350</string>
-				<string>98A8DFAABD1802A6CA12B67E</string>
+				<string>60D3C345C525D586B314F5DC</string>
+				<string>26EB718D092E812AE3CAF239</string>
+				<string>CDDC44C8D27DD837B0DFDDE4</string>
+				<string>939C2EE3718FFCF7D037351B</string>
+				<string>FB1420C076B63C07423CD98E</string>
+				<string>6CAA7EC06DC4721CEB24C808</string>
+				<string>DB2E23D9F4E90D94B641FCFA</string>
+				<string>23EB1290D0C148C068A6F495</string>
+				<string>FF8C55596A4027F3482B2CC6</string>
+				<string>7D7EE3565AD3A02DC3D5E2A6</string>
 			</array>
 			<key>isa</key>
 			<string>PBXSourcesBuildPhase</string>
 			<key>runOnlyForDeploymentPostprocessing</key>
 			<string>0</string>
 		</dict>
-		<key>11970668B4CD583C181C13CD</key>
+		<key>1AAF27AE1B45189AC3F70CA0</key>
 		<dict>
-			<key>buildConfigurations</key>
+			<key>children</key>
 			<array>
-				<string>8263082DB86C9F987CC883E9</string>
-				<string>1856DAC955DC5946571F1676</string>
+				<string>6231F7F584F15800E1C86BEC</string>
+				<string>922448D09172FCB7EDF20916</string>
+				<string>562AE0A518DB4829E95CDB5E</string>
+				<string>AD5798AB1C605CC0FBFE6722</string>
 			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
 			<key>isa</key>
-			<string>XCConfigurationList</string>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Support Files</string>
+			<key>path</key>
+			<string>../Target Support Files/Pods-Sparkle</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
 		</dict>
-		<key>11E58D29B0B4C4D595B5D7E0</key>
+		<key>1B7AA8139C5D98FC5126C128</key>
 		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
 			<key>isa</key>
-			<string>PBXTargetDependency</string>
-			<key>target</key>
-			<string>4F7651F4EB6B2519D8A03B01</string>
-			<key>targetProxy</key>
-			<string>ABD3F32E80FC840EF79CC51D</string>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>JNWCollectionViewCell.m</string>
+			<key>path</key>
+			<string>JNWCollectionView/JNWCollectionViewCell.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
 		</dict>
-		<key>145901B1CBE075296A4B0B33</key>
+		<key>1BE72C46F6D0D6BA4C7C2877</key>
+		<dict>
+			<key>fileRef</key>
+			<string>227BC28E5052811C455F73B9</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>1DCC4904C04A225DB8D9B72F</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>EBCF67F4F245DF8787B90D3B</string>
+				<string>747479A3066E4FC2FB8748B0</string>
+				<string>7E3CBD528272AC6DB640CF76</string>
+				<string>033E316EB16D4520C135DB9F</string>
+				<string>25CF521C5A3E277CECDEDEB6</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>JNWScrollView</string>
+			<key>path</key>
+			<string>JNWScrollView</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>1F5EC9BD7547AD9E065BEC5C</key>
+		<dict>
+			<key>containerPortal</key>
+			<string>E26DAC35C59959205C13DEDA</string>
+			<key>isa</key>
+			<string>PBXContainerItemProxy</string>
+			<key>proxyType</key>
+			<string>1</string>
+			<key>remoteGlobalIDString</key>
+			<string>D30526453B9DC9C7C0118070</string>
+			<key>remoteInfo</key>
+			<string>Pods-JNWCollectionView</string>
+		</dict>
+		<key>2018F7AFA0C69E8EBEDE1246</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>03A5862B239FD35A0471A813</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Frameworks</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>2114004ED2A6C48869A9D248</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>4A73AB12747D9E93F19BF845</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>ALWAYS_SEARCH_USER_PATHS</key>
+				<string>NO</string>
+				<key>COMBINE_HIDPI_IMAGES</key>
+				<string>YES</string>
+				<key>COPY_PHASE_STRIP</key>
+				<string>YES</string>
+				<key>DEBUG_INFORMATION_FORMAT</key>
+				<string>dwarf-with-dsym</string>
+				<key>DSTROOT</key>
+				<string>/tmp/xcodeproj.dst</string>
+				<key>GCC_ENABLE_OBJC_EXCEPTIONS</key>
+				<string>YES</string>
+				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>Target Support Files/Pods-JNWScrollView/Pods-JNWScrollView-prefix.pch</string>
+				<key>GCC_VERSION</key>
+				<string>com.apple.compilers.llvm.clang.1_0</string>
+				<key>INSTALL_PATH</key>
+				<string>$(BUILT_PRODUCTS_DIR)</string>
+				<key>MACOSX_DEPLOYMENT_TARGET</key>
+				<string>10.10</string>
+				<key>OTHER_CFLAGS</key>
+				<array>
+					<string>-DNS_BLOCK_ASSERTIONS=1</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>OTHER_CPLUSPLUSFLAGS</key>
+				<array>
+					<string>-DNS_BLOCK_ASSERTIONS=1</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>OTHER_LDFLAGS</key>
+				<string></string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>SDKROOT</key>
+				<string>macosx</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>227BC28E5052811C455F73B9</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -106,28 +331,105 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>16098DADC6F2DFC2EB3D9F94</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>80B738B549EF6800D18EB808</string>
-				<string>62952BA658546AE0C16103C2</string>
-			</array>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>162E9EF4813E8AF835EF9F8F</key>
+		<key>2376A6D7540D1320CE412139</key>
 		<dict>
 			<key>fileRef</key>
-			<string>BFCF6E691A29C8BBFD7AEE7C</string>
+			<string>85784AF0422E60D3BCD72908</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
-		<key>1856DAC955DC5946571F1676</key>
+		<key>23EB1290D0C148C068A6F495</key>
+		<dict>
+			<key>fileRef</key>
+			<string>17E2FF48A182D20800073EED</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-fobjc-arc</string>
+			</dict>
+		</dict>
+		<key>24628E92A9AF7C1723085D4D</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXTargetDependency</string>
+			<key>target</key>
+			<string>0B0F59151B2AE76CC07C38D2</string>
+			<key>targetProxy</key>
+			<string>59427B0517FFDC40AE696315</string>
+		</dict>
+		<key>25428C04BB7F4FB24DCB8BC4</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>58C8FB637FA8D30492096D4D</string>
+				<string>9AA9702BE94B16B52EFF89D8</string>
+				<string>C463193B9DF983DC1F8A5C75</string>
+				<string>33584ED9F5B845CCCF7E7895</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Support Files</string>
+			<key>path</key>
+			<string>../Target Support Files/Pods-JNWCollectionView</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>25CF521C5A3E277CECDEDEB6</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>AD5B689AD29997808996585C</string>
+				<string>4A73AB12747D9E93F19BF845</string>
+				<string>703335A5FB76F53BC1CB361D</string>
+				<string>50AC1020B4F4AA918035FDFB</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Support Files</string>
+			<key>path</key>
+			<string>../Target Support Files/Pods-JNWScrollView</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>26827AEBCDFFB9F44DDC38B8</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>JNWCollectionViewLayout.m</string>
+			<key>path</key>
+			<string>JNWCollectionView/JNWCollectionViewLayout.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>26EAC85414675C73D4345E6D</key>
+		<dict>
+			<key>fileRef</key>
+			<string>D2D99C5CA8AC41558960A8D8</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>26EB718D092E812AE3CAF239</key>
+		<dict>
+			<key>fileRef</key>
+			<string>32B537B80918AD752C000CB9</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-fobjc-arc</string>
+			</dict>
+		</dict>
+		<key>2A72DD840EA2E83AD5309156</key>
 		<dict>
 			<key>buildSettings</key>
 			<dict>
@@ -189,10 +491,62 @@
 			<key>name</key>
 			<string>Release</string>
 		</dict>
-		<key>18D0C6BC8A173BAC1366F971</key>
+		<key>2AE689CCAA7FE47D6A68C71D</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>922448D09172FCB7EDF20916</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>ALWAYS_SEARCH_USER_PATHS</key>
+				<string>NO</string>
+				<key>COMBINE_HIDPI_IMAGES</key>
+				<string>YES</string>
+				<key>COPY_PHASE_STRIP</key>
+				<string>YES</string>
+				<key>DEBUG_INFORMATION_FORMAT</key>
+				<string>dwarf-with-dsym</string>
+				<key>DSTROOT</key>
+				<string>/tmp/xcodeproj.dst</string>
+				<key>GCC_ENABLE_OBJC_EXCEPTIONS</key>
+				<string>YES</string>
+				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>Target Support Files/Pods-Sparkle/Pods-Sparkle-prefix.pch</string>
+				<key>GCC_VERSION</key>
+				<string>com.apple.compilers.llvm.clang.1_0</string>
+				<key>INSTALL_PATH</key>
+				<string>$(BUILT_PRODUCTS_DIR)</string>
+				<key>MACOSX_DEPLOYMENT_TARGET</key>
+				<string>10.10</string>
+				<key>OTHER_CFLAGS</key>
+				<array>
+					<string>-DNS_BLOCK_ASSERTIONS=1</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>OTHER_CPLUSPLUSFLAGS</key>
+				<array>
+					<string>-DNS_BLOCK_ASSERTIONS=1</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>OTHER_LDFLAGS</key>
+				<string></string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>SDKROOT</key>
+				<string>macosx</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>2D14163C51BE5C2D2E0F64AB</key>
 		<dict>
 			<key>fileRef</key>
-			<string>EB1C261ECC43A99D1CB6B962</string>
+			<string>747479A3066E4FC2FB8748B0</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -201,10 +555,143 @@
 				<string>-fobjc-arc</string>
 			</dict>
 		</dict>
-		<key>1AE32F3120C5F66F3289A3A4</key>
+		<key>2D1DBDDA4966CAF1A38ED6E2</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>6558C75C367E4A9D1C43B1D2</string>
+				<string>C256E4B92FA79337ACB2E215</string>
+			</array>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>3021F7CFF83EB519C5B133EB</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>DF2AE8FCD6151BA3FC77900A</string>
+				<string>62E0524FCA9EDD91E716DE28</string>
+				<string>F0AFC9A9727D484FD86E5922</string>
+				<string>DFFAEFE5A3EE795152186B27</string>
+				<string>26EAC85414675C73D4345E6D</string>
+				<string>D5A89C2920879D0252D08018</string>
+				<string>7D4631ED0EE8780D8753E13D</string>
+				<string>1BE72C46F6D0D6BA4C7C2877</string>
+				<string>737952205920E2B6C632D0F1</string>
+				<string>795A39D982FB88D4B0C28761</string>
+				<string>4C9AECE2803FF089947634AE</string>
+				<string>2376A6D7540D1320CE412139</string>
+				<string>81664FB8C966A42620D52D45</string>
+				<string>B46964FEC593CD4771CA1D57</string>
+			</array>
+			<key>isa</key>
+			<string>PBXHeadersBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>307878C8706231E2CDA327AC</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>A10951A8A6D8288D51B7A179</string>
+			<key>buildPhases</key>
+			<array>
+				<string>66FE31BD75D3AD9BEBDEA2F3</string>
+				<string>36FEBA1247C5C804EDEEFBD5</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>Pods-Sparkle</string>
+			<key>productName</key>
+			<string>Pods-Sparkle</string>
+			<key>productReference</key>
+			<string>4BFD75BFBC54941777FD5C17</string>
+			<key>productType</key>
+			<string>com.apple.product-type.library.static</string>
+		</dict>
+		<key>32B537B80918AD752C000CB9</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>JNWCollectionViewData.m</string>
+			<key>path</key>
+			<string>JNWCollectionView/JNWCollectionViewData.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>33584ED9F5B845CCCF7E7895</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>Pods-JNWCollectionView-prefix.pch</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>36FEBA1247C5C804EDEEFBD5</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>CD6DBC93B5A721D55359B121</string>
+			</array>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>3AF718333037EFCC43BA4A1D</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>888D09E544D1ECBE176B1018</string>
+			<key>buildPhases</key>
+			<array>
+				<string>6063D3A462AE386D9091EB05</string>
+				<string>3FD72AC3602136F66A24B819</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array>
+				<string>B08729296C33EDA6F1A15977</string>
+				<string>24628E92A9AF7C1723085D4D</string>
+				<string>78C234A4EE6656CC3DCA73E3</string>
+			</array>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>Pods</string>
+			<key>productName</key>
+			<string>Pods</string>
+			<key>productReference</key>
+			<string>D7E0F37FCE5D7578C2697D95</string>
+			<key>productType</key>
+			<string>com.apple.product-type.library.static</string>
+		</dict>
+		<key>3CEFFA297A6CEF152F23FB16</key>
 		<dict>
 			<key>baseConfigurationReference</key>
-			<string>7A346C78106EC06DAC87DA70</string>
+			<string>4A73AB12747D9E93F19BF845</string>
 			<key>buildSettings</key>
 			<dict>
 				<key>ALWAYS_SEARCH_USER_PATHS</key>
@@ -252,7 +739,382 @@
 			<key>name</key>
 			<string>Debug</string>
 		</dict>
-		<key>1D645504B2C54E62357FE80A</key>
+		<key>3EA5E0BFDCE108842B439E8D</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>JNWCollectionViewFramework.h</string>
+			<key>path</key>
+			<string>JNWCollectionView/JNWCollectionViewFramework.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3FD72AC3602136F66A24B819</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>86B890F123935E4D5CBCF24C</string>
+			</array>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>40313BC966A89BA0223AD0D7</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>A4A44974B7679749A36F5640</string>
+				<string>2A72DD840EA2E83AD5309156</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>40BBBE7149CF92350FDF8CC9</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>9AA9702BE94B16B52EFF89D8</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>ALWAYS_SEARCH_USER_PATHS</key>
+				<string>NO</string>
+				<key>COMBINE_HIDPI_IMAGES</key>
+				<string>YES</string>
+				<key>COPY_PHASE_STRIP</key>
+				<string>NO</string>
+				<key>DSTROOT</key>
+				<string>/tmp/xcodeproj.dst</string>
+				<key>GCC_DYNAMIC_NO_PIC</key>
+				<string>NO</string>
+				<key>GCC_ENABLE_OBJC_EXCEPTIONS</key>
+				<string>YES</string>
+				<key>GCC_OPTIMIZATION_LEVEL</key>
+				<string>0</string>
+				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>Target Support Files/Pods-JNWCollectionView/Pods-JNWCollectionView-prefix.pch</string>
+				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
+				<array>
+					<string>DEBUG=1</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>GCC_SYMBOLS_PRIVATE_EXTERN</key>
+				<string>NO</string>
+				<key>GCC_VERSION</key>
+				<string>com.apple.compilers.llvm.clang.1_0</string>
+				<key>INSTALL_PATH</key>
+				<string>$(BUILT_PRODUCTS_DIR)</string>
+				<key>MACOSX_DEPLOYMENT_TARGET</key>
+				<string>10.10</string>
+				<key>OTHER_LDFLAGS</key>
+				<string></string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>SDKROOT</key>
+				<string>macosx</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>4108FA6883E36292F3F188DF</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>DEF6D6EA372237DE147A2413</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Targets Support Files</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>42D89C181964E0032176F261</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>3CEFFA297A6CEF152F23FB16</string>
+				<string>2114004ED2A6C48869A9D248</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>4A73AB12747D9E93F19BF845</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>path</key>
+			<string>Pods-JNWScrollView-Private.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4AC58F63F26935CAC340CE7F</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>EB8111D2052CDCE1BE73144A</string>
+				<string>D17E5B31F886726957949020</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>OS X</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4BFD75BFBC54941777FD5C17</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>archive.ar</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>libPods-Sparkle.a</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>4C9AECE2803FF089947634AE</key>
+		<dict>
+			<key>fileRef</key>
+			<string>60C7BACBB5AB994B4F6C78A7</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>4CEBA094AEEBBE9205F516A8</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>JNWCollectionViewCell.h</string>
+			<key>path</key>
+			<string>JNWCollectionView/JNWCollectionViewCell.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4FC21D88A8C9E9F6F1AF4DC3</key>
+		<dict>
+			<key>fileRef</key>
+			<string>D17E5B31F886726957949020</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>50AC1020B4F4AA918035FDFB</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>Pods-JNWScrollView-prefix.pch</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>554071533E1614346F64C5F6</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>8F7A2B938CE37E9448EC13E5</string>
+				<string>748896C99EF3A0E61EAEE50C</string>
+			</array>
+			<key>isa</key>
+			<string>PBXHeadersBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>562AE0A518DB4829E95CDB5E</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>Pods-Sparkle-dummy.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>56A4A9D5E3ED050FF0F83147</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>80083361468BAB7E90827D17</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>ALWAYS_SEARCH_USER_PATHS</key>
+				<string>NO</string>
+				<key>COMBINE_HIDPI_IMAGES</key>
+				<string>YES</string>
+				<key>COPY_PHASE_STRIP</key>
+				<string>NO</string>
+				<key>DSTROOT</key>
+				<string>/tmp/xcodeproj.dst</string>
+				<key>GCC_DYNAMIC_NO_PIC</key>
+				<string>NO</string>
+				<key>GCC_ENABLE_OBJC_EXCEPTIONS</key>
+				<string>YES</string>
+				<key>GCC_OPTIMIZATION_LEVEL</key>
+				<string>0</string>
+				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
+				<string>YES</string>
+				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
+				<array>
+					<string>DEBUG=1</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>GCC_SYMBOLS_PRIVATE_EXTERN</key>
+				<string>NO</string>
+				<key>GCC_VERSION</key>
+				<string>com.apple.compilers.llvm.clang.1_0</string>
+				<key>INSTALL_PATH</key>
+				<string>$(BUILT_PRODUCTS_DIR)</string>
+				<key>MACOSX_DEPLOYMENT_TARGET</key>
+				<string>10.10</string>
+				<key>OTHER_LDFLAGS</key>
+				<string></string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>SDKROOT</key>
+				<string>macosx</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>58C8FB637FA8D30492096D4D</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>path</key>
+			<string>Pods-JNWCollectionView.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>59427B0517FFDC40AE696315</key>
+		<dict>
+			<key>containerPortal</key>
+			<string>E26DAC35C59959205C13DEDA</string>
+			<key>isa</key>
+			<string>PBXContainerItemProxy</string>
+			<key>proxyType</key>
+			<string>1</string>
+			<key>remoteGlobalIDString</key>
+			<string>0B0F59151B2AE76CC07C38D2</string>
+			<key>remoteInfo</key>
+			<string>Pods-JNWScrollView</string>
+		</dict>
+		<key>5E0C8857920B92A3DC599FFB</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>2018F7AFA0C69E8EBEDE1246</string>
+				<string>6FA55560203EF30089136EC0</string>
+				<string>1AAF27AE1B45189AC3F70CA0</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Sparkle</string>
+			<key>path</key>
+			<string>Sparkle</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>5F02AD9A647F931137D21DD2</key>
+		<dict>
+			<key>containerPortal</key>
+			<string>E26DAC35C59959205C13DEDA</string>
+			<key>isa</key>
+			<string>PBXContainerItemProxy</string>
+			<key>proxyType</key>
+			<string>1</string>
+			<key>remoteGlobalIDString</key>
+			<string>0B0F59151B2AE76CC07C38D2</string>
+			<key>remoteInfo</key>
+			<string>Pods-JNWScrollView</string>
+		</dict>
+		<key>5FF55317A6DFBAB6DBE71135</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text</string>
+			<key>path</key>
+			<string>Pods-acknowledgements.markdown</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>60032F37A4E936974B925EFE</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>2D14163C51BE5C2D2E0F64AB</string>
+				<string>05C27E76BAE19DE92B9F7CAA</string>
+				<string>700290E87524DB6FBF3395D8</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>6063D3A462AE386D9091EB05</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>EC19D65440E84296C43C8FAE</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>60C7BACBB5AB994B4F6C78A7</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -267,10 +1129,10 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>208172CEA39187C223E8D350</key>
+		<key>60D3C345C525D586B314F5DC</key>
 		<dict>
 			<key>fileRef</key>
-			<string>96B838E53D2927CB0E716DA9</string>
+			<string>1B7AA8139C5D98FC5126C128</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -279,25 +1141,20 @@
 				<string>-fobjc-arc</string>
 			</dict>
 		</dict>
-		<key>219B2E53234027CC50F3D3C0</key>
+		<key>6231F7F584F15800E1C86BEC</key>
 		<dict>
-			<key>children</key>
-			<array>
-				<string>39B199C9A5A94E73D89A44B6</string>
-				<string>7A346C78106EC06DAC87DA70</string>
-				<string>8F49C57B9071FCA0188457EB</string>
-				<string>B356B5364CEC0C886F3B5D0A</string>
-			</array>
+			<key>includeInIndex</key>
+			<string>1</string>
 			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Support Files</string>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
 			<key>path</key>
-			<string>../Target Support Files/Pods-JNWScrollView</string>
+			<string>Pods-Sparkle.xcconfig</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>22597EA4819718ABEBC7A6D0</key>
+		<key>625F547310F1891DE43A3913</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -305,75 +1162,68 @@
 			<string>PBXFileReference</string>
 			<key>lastKnownFileType</key>
 			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>Pods-JNWCollectionView-dummy.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>22A57B3FCF96174B0C86D5C8</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>395BCE33448A9C0A98C88E02</string>
-				<string>8BA6D3A9331FD476B144A884</string>
-				<string>22597EA4819718ABEBC7A6D0</string>
-				<string>F79D1B5141F35EF2FD22E7CF</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
 			<key>name</key>
-			<string>Support Files</string>
+			<string>JNWCollectionViewListLayout.m</string>
 			<key>path</key>
-			<string>../Target Support Files/Pods-JNWCollectionView</string>
+			<string>JNWCollectionView/JNWCollectionViewListLayout.m</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>22D8943B1B05D5C0ABE953FD</key>
+		<key>62E0524FCA9EDD91E716DE28</key>
 		<dict>
 			<key>fileRef</key>
-			<string>AADFF847D750B05A149664C3</string>
+			<string>FF4251F8E5E047F796BA942A</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string>-fobjc-arc</string>
-			</dict>
 		</dict>
-		<key>238F8834A24FA13F391E44F2</key>
+		<key>651F57D1DE16A729DBAE7281</key>
 		<dict>
-			<key>buildConfigurations</key>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
 			<array>
-				<string>5A72F204AC12AD4715795884</string>
-				<string>868DA491ECCDFC78BC0B3EB7</string>
+				<string>C94B09BD58AAB25CD2ADC393</string>
+				<string>4FC21D88A8C9E9F6F1AF4DC3</string>
 			</array>
-			<key>defaultConfigurationIsVisible</key>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
 			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
 		</dict>
-		<key>24E18F35DE94884CF96F67B2</key>
+		<key>6558C75C367E4A9D1C43B1D2</key>
 		<dict>
 			<key>fileRef</key>
-			<string>257CAB5A02A38FB09AE03BB3</string>
+			<string>EB8111D2052CDCE1BE73144A</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
-		<key>256C738FAF231527A42E9C8A</key>
+		<key>66FE31BD75D3AD9BEBDEA2F3</key>
 		<dict>
-			<key>fileRef</key>
-			<string>CBDFACE3BBF7E6DC3232F0CE</string>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>DF634B129D2ED35B80CEF12A</string>
+			</array>
 			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string>-fobjc-arc</string>
-			</dict>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
 		</dict>
-		<key>257CAB5A02A38FB09AE03BB3</key>
+		<key>67214855F633E9E34C45BA91</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>Pods-environment.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>6A5CB2A8788F71CB053EC4DF</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -382,13 +1232,176 @@
 			<key>lastKnownFileType</key>
 			<string>sourcecode.c.h</string>
 			<key>name</key>
-			<string>JNWCollectionViewReusableView.h</string>
+			<string>JNWCollectionViewDocumentView.h</string>
 			<key>path</key>
-			<string>JNWCollectionView/JNWCollectionViewReusableView.h</string>
+			<string>JNWCollectionView/JNWCollectionViewDocumentView.h</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>2CC3E8D26738A463816186E4</key>
+		<key>6CAA7EC06DC4721CEB24C808</key>
+		<dict>
+			<key>fileRef</key>
+			<string>26827AEBCDFFB9F44DDC38B8</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-fobjc-arc</string>
+			</dict>
+		</dict>
+		<key>6FA55560203EF30089136EC0</key>
+		<dict>
+			<key>children</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Resources</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>700290E87524DB6FBF3395D8</key>
+		<dict>
+			<key>fileRef</key>
+			<string>703335A5FB76F53BC1CB361D</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>703335A5FB76F53BC1CB361D</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>Pods-JNWScrollView-dummy.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>737952205920E2B6C632D0F1</key>
+		<dict>
+			<key>fileRef</key>
+			<string>11F2BBBC1B1EB4FAA9C3F3C7</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>747479A3066E4FC2FB8748B0</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>JNWClipView.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>748896C99EF3A0E61EAEE50C</key>
+		<dict>
+			<key>fileRef</key>
+			<string>7E3CBD528272AC6DB640CF76</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>75C6954670B3082147038241</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>85AC13D74C8B9A994D3747C8</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>ALWAYS_SEARCH_USER_PATHS</key>
+				<string>NO</string>
+				<key>COMBINE_HIDPI_IMAGES</key>
+				<string>YES</string>
+				<key>COPY_PHASE_STRIP</key>
+				<string>YES</string>
+				<key>DEBUG_INFORMATION_FORMAT</key>
+				<string>dwarf-with-dsym</string>
+				<key>DSTROOT</key>
+				<string>/tmp/xcodeproj.dst</string>
+				<key>GCC_ENABLE_OBJC_EXCEPTIONS</key>
+				<string>YES</string>
+				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
+				<string>YES</string>
+				<key>GCC_VERSION</key>
+				<string>com.apple.compilers.llvm.clang.1_0</string>
+				<key>INSTALL_PATH</key>
+				<string>$(BUILT_PRODUCTS_DIR)</string>
+				<key>MACOSX_DEPLOYMENT_TARGET</key>
+				<string>10.10</string>
+				<key>OTHER_CFLAGS</key>
+				<array>
+					<string>-DNS_BLOCK_ASSERTIONS=1</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>OTHER_CPLUSPLUSFLAGS</key>
+				<array>
+					<string>-DNS_BLOCK_ASSERTIONS=1</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>OTHER_LDFLAGS</key>
+				<string></string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>SDKROOT</key>
+				<string>macosx</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>78C234A4EE6656CC3DCA73E3</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXTargetDependency</string>
+			<key>target</key>
+			<string>307878C8706231E2CDA327AC</string>
+			<key>targetProxy</key>
+			<string>7B35FCDA6C2D326BF28D7BC5</string>
+		</dict>
+		<key>795A39D982FB88D4B0C28761</key>
+		<dict>
+			<key>fileRef</key>
+			<string>8DD4CC01F44FF20F88729F4E</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>7B35FCDA6C2D326BF28D7BC5</key>
+		<dict>
+			<key>containerPortal</key>
+			<string>E26DAC35C59959205C13DEDA</string>
+			<key>isa</key>
+			<string>PBXContainerItemProxy</string>
+			<key>proxyType</key>
+			<string>1</string>
+			<key>remoteGlobalIDString</key>
+			<string>307878C8706231E2CDA327AC</string>
+			<key>remoteInfo</key>
+			<string>Pods-Sparkle</string>
+		</dict>
+		<key>7D4631ED0EE8780D8753E13D</key>
+		<dict>
+			<key>fileRef</key>
+			<string>3EA5E0BFDCE108842B439E8D</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>7D7EE3565AD3A02DC3D5E2A6</key>
+		<dict>
+			<key>fileRef</key>
+			<string>C463193B9DF983DC1F8A5C75</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>7E3CBD528272AC6DB640CF76</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -401,71 +1414,7 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>31C840E3AE91604F03135B21</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>162E9EF4813E8AF835EF9F8F</string>
-				<string>AAD55FFB5F985EBC0A41042B</string>
-			</array>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>37116D1C738AB5F0337B01C9</key>
-		<dict>
-			<key>fileRef</key>
-			<string>FDCB0AC92E6D77637B57BBEC</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string>-fobjc-arc</string>
-			</dict>
-		</dict>
-		<key>386441DA99483830DACCC84C</key>
-		<dict>
-			<key>attributes</key>
-			<dict>
-				<key>LastUpgradeCheck</key>
-				<string>0510</string>
-			</dict>
-			<key>buildConfigurationList</key>
-			<string>11970668B4CD583C181C13CD</string>
-			<key>compatibilityVersion</key>
-			<string>Xcode 3.2</string>
-			<key>developmentRegion</key>
-			<string>English</string>
-			<key>hasScannedForEncodings</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXProject</string>
-			<key>knownRegions</key>
-			<array>
-				<string>en</string>
-			</array>
-			<key>mainGroup</key>
-			<string>691C12909F7F9E3414FCB555</string>
-			<key>productRefGroup</key>
-			<string>3F01C33FD2DF5461FE5469BE</string>
-			<key>projectDirPath</key>
-			<string></string>
-			<key>projectReferences</key>
-			<array/>
-			<key>projectRoot</key>
-			<string></string>
-			<key>targets</key>
-			<array>
-				<string>39D56DBEB0D84615CE0381DE</string>
-				<string>A5ACEB9FF7B256383D13A7B2</string>
-				<string>4F7651F4EB6B2519D8A03B01</string>
-			</array>
-		</dict>
-		<key>395BCE33448A9C0A98C88E02</key>
+		<key>80083361468BAB7E90827D17</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -474,109 +1423,80 @@
 			<key>lastKnownFileType</key>
 			<string>text.xcconfig</string>
 			<key>path</key>
-			<string>Pods-JNWCollectionView.xcconfig</string>
+			<string>Pods.debug.xcconfig</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>39B199C9A5A94E73D89A44B6</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>path</key>
-			<string>Pods-JNWScrollView.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>39D56DBEB0D84615CE0381DE</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>238F8834A24FA13F391E44F2</string>
-			<key>buildPhases</key>
-			<array>
-				<string>E68AF26902EF8E2292D84005</string>
-				<string>860B3BAFA59E9259699A1CB7</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array>
-				<string>ABC2E5FFEF97CADAAD9A0DB8</string>
-				<string>8751EEFEBA419AADDD54C391</string>
-			</array>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>Pods</string>
-			<key>productName</key>
-			<string>Pods</string>
-			<key>productReference</key>
-			<string>632B18BA70CAC0FFAC0B61D4</string>
-			<key>productType</key>
-			<string>com.apple.product-type.library.static</string>
-		</dict>
-		<key>3F01C33FD2DF5461FE5469BE</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>632B18BA70CAC0FFAC0B61D4</string>
-				<string>DAE1DF110C2C6D530B43546A</string>
-				<string>FDC6056E341D35E160E2FEC0</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Products</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>3F89AB59E6C9C208CB8F1C8A</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>JNWCollectionView+Private.h</string>
-			<key>path</key>
-			<string>JNWCollectionView/JNWCollectionView+Private.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>41BC5BEC188BDBB84F4E6F0C</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>762C2DEEF715D8C1B4F6EE9D</string>
-				<string>775A91A630573386E44E09AC</string>
-				<string>DAC50B6E15E7179E587EB07C</string>
-				<string>E2A4B4C2FF5610736018100A</string>
-				<string>F1ECA6486607A99603021210</string>
-				<string>CA1F63ED4995572C3BA0503D</string>
-				<string>A4696F3D5F184D8FB25AB6EC</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Pods</string>
-			<key>path</key>
-			<string>Target Support Files/Pods</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>44799ED4DC6BE0B1D2DCAA37</key>
+		<key>81664FB8C966A42620D52D45</key>
 		<dict>
 			<key>fileRef</key>
-			<string>96DE2653BCFFD942BDC93922</string>
+			<string>917E98E135C36CFF61155A69</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
-		<key>44CF5A9C9740A808352B00F0</key>
+		<key>818C77D464F0FD7D0FF0A070</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>ED07514B03EE7CB179704964</string>
+				<string>C522624E31701D614A8E48F0</string>
+				<string>9514787A44072212D6BEA20D</string>
+				<string>95BA0EC09ED81B6E61F9354F</string>
+				<string>4108FA6883E36292F3F188DF</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>82A4465350B4B861AD4A589C</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXTargetDependency</string>
+			<key>target</key>
+			<string>0B0F59151B2AE76CC07C38D2</string>
+			<key>targetProxy</key>
+			<string>5F02AD9A647F931137D21DD2</string>
+		</dict>
+		<key>83B32F0F8BB86F6D4F689975</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>FF4251F8E5E047F796BA942A</string>
+				<string>C3635C9FE5D96602EA15F741</string>
+				<string>4CEBA094AEEBBE9205F516A8</string>
+				<string>1B7AA8139C5D98FC5126C128</string>
+				<string>152AEC39B920FA68F478EF77</string>
+				<string>D2D99C5CA8AC41558960A8D8</string>
+				<string>32B537B80918AD752C000CB9</string>
+				<string>6A5CB2A8788F71CB053EC4DF</string>
+				<string>9280E54F343A31B591116CA8</string>
+				<string>3EA5E0BFDCE108842B439E8D</string>
+				<string>D5B690645C6D662702BEE2F3</string>
+				<string>227BC28E5052811C455F73B9</string>
+				<string>08E17D1904D42CC99166F899</string>
+				<string>8DD4CC01F44FF20F88729F4E</string>
+				<string>26827AEBCDFFB9F44DDC38B8</string>
+				<string>11F2BBBC1B1EB4FAA9C3F3C7</string>
+				<string>60C7BACBB5AB994B4F6C78A7</string>
+				<string>625F547310F1891DE43A3913</string>
+				<string>917E98E135C36CFF61155A69</string>
+				<string>17E2FF48A182D20800073EED</string>
+				<string>85784AF0422E60D3BCD72908</string>
+				<string>F4729D08BB49C45C2DF31999</string>
+				<string>EF6E3D4AF52175643D869AFB</string>
+				<string>25428C04BB7F4FB24DCB8BC4</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>JNWCollectionView</string>
+			<key>path</key>
+			<string>JNWCollectionView</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>85784AF0422E60D3BCD72908</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -591,376 +1511,41 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>4CC44AF5FECD09C3433DE2F5</key>
+		<key>85AC13D74C8B9A994D3747C8</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
 			<key>isa</key>
 			<string>PBXFileReference</string>
 			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>JNWCollectionViewLayout+Private.h</string>
+			<string>text.xcconfig</string>
 			<key>path</key>
-			<string>JNWCollectionView/JNWCollectionViewLayout+Private.h</string>
+			<string>Pods.release.xcconfig</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>4F7072746AFD0BC422FBAED3</key>
+		<key>86B890F123935E4D5CBCF24C</key>
 		<dict>
-			<key>baseConfigurationReference</key>
-			<string>8BA6D3A9331FD476B144A884</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>COMBINE_HIDPI_IMAGES</key>
-				<string>YES</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>YES</string>
-				<key>DEBUG_INFORMATION_FORMAT</key>
-				<string>dwarf-with-dsym</string>
-				<key>DSTROOT</key>
-				<string>/tmp/xcodeproj.dst</string>
-				<key>GCC_ENABLE_OBJC_EXCEPTIONS</key>
-				<string>YES</string>
-				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
-				<string>YES</string>
-				<key>GCC_PREFIX_HEADER</key>
-				<string>Target Support Files/Pods-JNWCollectionView/Pods-JNWCollectionView-prefix.pch</string>
-				<key>GCC_VERSION</key>
-				<string>com.apple.compilers.llvm.clang.1_0</string>
-				<key>INSTALL_PATH</key>
-				<string>$(BUILT_PRODUCTS_DIR)</string>
-				<key>MACOSX_DEPLOYMENT_TARGET</key>
-				<string>10.10</string>
-				<key>OTHER_CFLAGS</key>
-				<array>
-					<string>-DNS_BLOCK_ASSERTIONS=1</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>OTHER_CPLUSPLUSFLAGS</key>
-				<array>
-					<string>-DNS_BLOCK_ASSERTIONS=1</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>OTHER_LDFLAGS</key>
-				<string></string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>SDKROOT</key>
-				<string>macosx</string>
-				<key>SKIP_INSTALL</key>
-				<string>YES</string>
-			</dict>
+			<key>fileRef</key>
+			<string>EB8111D2052CDCE1BE73144A</string>
 			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
+			<string>PBXBuildFile</string>
 		</dict>
-		<key>4F7651F4EB6B2519D8A03B01</key>
+		<key>888D09E544D1ECBE176B1018</key>
 		<dict>
-			<key>buildConfigurationList</key>
-			<string>F3F34BC4E75D24AD05F7DD72</string>
-			<key>buildPhases</key>
+			<key>buildConfigurations</key>
 			<array>
-				<string>8612C3C32CDE98376131748E</string>
-				<string>31C840E3AE91604F03135B21</string>
-				<string>75AC1F6C1B47BBE5C2BF9392</string>
+				<string>56A4A9D5E3ED050FF0F83147</string>
+				<string>75C6954670B3082147038241</string>
 			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>Pods-JNWScrollView</string>
-			<key>productName</key>
-			<string>Pods-JNWScrollView</string>
-			<key>productReference</key>
-			<string>FDC6056E341D35E160E2FEC0</string>
-			<key>productType</key>
-			<string>com.apple.product-type.library.static</string>
-		</dict>
-		<key>549CEE392FC46D29FB4C6033</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>41BC5BEC188BDBB84F4E6F0C</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Targets Support Files</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>55C11317C20E7BF49743FC41</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>QuartzCore.framework</string>
-			<key>path</key>
-			<string>Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/QuartzCore.framework</string>
-			<key>sourceTree</key>
-			<string>DEVELOPER_DIR</string>
-		</dict>
-		<key>57DAC0D49F51FCA50E35FB25</key>
-		<dict>
-			<key>fileRef</key>
-			<string>1D645504B2C54E62357FE80A</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>5A72F204AC12AD4715795884</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>CA1F63ED4995572C3BA0503D</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>COMBINE_HIDPI_IMAGES</key>
-				<string>YES</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>NO</string>
-				<key>DSTROOT</key>
-				<string>/tmp/xcodeproj.dst</string>
-				<key>GCC_DYNAMIC_NO_PIC</key>
-				<string>NO</string>
-				<key>GCC_ENABLE_OBJC_EXCEPTIONS</key>
-				<string>YES</string>
-				<key>GCC_OPTIMIZATION_LEVEL</key>
-				<string>0</string>
-				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
-				<string>YES</string>
-				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
-				<array>
-					<string>DEBUG=1</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>GCC_SYMBOLS_PRIVATE_EXTERN</key>
-				<string>NO</string>
-				<key>GCC_VERSION</key>
-				<string>com.apple.compilers.llvm.clang.1_0</string>
-				<key>INSTALL_PATH</key>
-				<string>$(BUILT_PRODUCTS_DIR)</string>
-				<key>MACOSX_DEPLOYMENT_TARGET</key>
-				<string>10.10</string>
-				<key>OTHER_LDFLAGS</key>
-				<string></string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>SDKROOT</key>
-				<string>macosx</string>
-				<key>SKIP_INSTALL</key>
-				<string>YES</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>5B11FFD70F490F007629BEBA</key>
-		<dict>
-			<key>fileRef</key>
-			<string>8F49C57B9071FCA0188457EB</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>5C5D8832072232A0F19B3E72</key>
-		<dict>
-			<key>fileRef</key>
-			<string>F9A3CC371D9339C22405F25F</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>5CF6B1CF144F6B2072BD76E2</key>
-		<dict>
-			<key>containerPortal</key>
-			<string>386441DA99483830DACCC84C</string>
-			<key>isa</key>
-			<string>PBXContainerItemProxy</string>
-			<key>proxyType</key>
-			<string>1</string>
-			<key>remoteGlobalIDString</key>
-			<string>4F7651F4EB6B2519D8A03B01</string>
-			<key>remoteInfo</key>
-			<string>Pods-JNWScrollView</string>
-		</dict>
-		<key>5FD9A9C57A74769CB9688F39</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A7DF57E6BCCA97050F1A8123</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>61C605CF00EF5A637F13B8F1</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>JNWCollectionViewCell+Private.h</string>
-			<key>path</key>
-			<string>JNWCollectionView/JNWCollectionViewCell+Private.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>62952BA658546AE0C16103C2</key>
-		<dict>
-			<key>fileRef</key>
-			<string>55C11317C20E7BF49743FC41</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>632B18BA70CAC0FFAC0B61D4</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>archive.ar</string>
-			<key>includeInIndex</key>
+			<key>defaultConfigurationIsVisible</key>
 			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>libPods.a</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>67F839B7EB4C65C7550A55EA</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>7A346C78106EC06DAC87DA70</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>COMBINE_HIDPI_IMAGES</key>
-				<string>YES</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>YES</string>
-				<key>DEBUG_INFORMATION_FORMAT</key>
-				<string>dwarf-with-dsym</string>
-				<key>DSTROOT</key>
-				<string>/tmp/xcodeproj.dst</string>
-				<key>GCC_ENABLE_OBJC_EXCEPTIONS</key>
-				<string>YES</string>
-				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
-				<string>YES</string>
-				<key>GCC_PREFIX_HEADER</key>
-				<string>Target Support Files/Pods-JNWScrollView/Pods-JNWScrollView-prefix.pch</string>
-				<key>GCC_VERSION</key>
-				<string>com.apple.compilers.llvm.clang.1_0</string>
-				<key>INSTALL_PATH</key>
-				<string>$(BUILT_PRODUCTS_DIR)</string>
-				<key>MACOSX_DEPLOYMENT_TARGET</key>
-				<string>10.10</string>
-				<key>OTHER_CFLAGS</key>
-				<array>
-					<string>-DNS_BLOCK_ASSERTIONS=1</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>OTHER_CPLUSPLUSFLAGS</key>
-				<array>
-					<string>-DNS_BLOCK_ASSERTIONS=1</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>OTHER_LDFLAGS</key>
-				<string></string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>SDKROOT</key>
-				<string>macosx</string>
-				<key>SKIP_INSTALL</key>
-				<string>YES</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
+			<key>defaultConfigurationName</key>
 			<string>Release</string>
-		</dict>
-		<key>691C12909F7F9E3414FCB555</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>B8FB3BE4F15DCE25454BCECF</string>
-				<string>CD4E04CB8367D3C0AA09FA36</string>
-				<string>D6E14D814C7B420B52CD24E3</string>
-				<string>3F01C33FD2DF5461FE5469BE</string>
-				<string>549CEE392FC46D29FB4C6033</string>
-			</array>
 			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
+			<string>XCConfigurationList</string>
 		</dict>
-		<key>73E44F6E17F57F168EA81BC5</key>
-		<dict>
-			<key>containerPortal</key>
-			<string>386441DA99483830DACCC84C</string>
-			<key>isa</key>
-			<string>PBXContainerItemProxy</string>
-			<key>proxyType</key>
-			<string>1</string>
-			<key>remoteGlobalIDString</key>
-			<string>A5ACEB9FF7B256383D13A7B2</string>
-			<key>remoteInfo</key>
-			<string>Pods-JNWCollectionView</string>
-		</dict>
-		<key>747C9ED22741CAD428FDF7FF</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>C192438D695219A7FC441623</string>
-				<string>9A0C7171C677C23102BD2016</string>
-				<string>2CC3E8D26738A463816186E4</string>
-				<string>8EF83B70A42C387196D17090</string>
-				<string>219B2E53234027CC50F3D3C0</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>JNWScrollView</string>
-			<key>path</key>
-			<string>JNWScrollView</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>75AC1F6C1B47BBE5C2BF9392</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>D4C979C273B6225973010368</string>
-				<string>8F9F489CD579E6F20DEF5A65</string>
-			</array>
-			<key>isa</key>
-			<string>PBXHeadersBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>762C2DEEF715D8C1B4F6EE9D</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text</string>
-			<key>path</key>
-			<string>Pods-acknowledgements.markdown</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>775A91A630573386E44E09AC</key>
+		<key>8ACB1C65464CFF1E7B7A59AE</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -973,35 +1558,7 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>7A346C78106EC06DAC87DA70</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>path</key>
-			<string>Pods-JNWScrollView-Private.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>7BF110E0086740A823E64324</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>JNWCollectionViewCell.m</string>
-			<key>path</key>
-			<string>JNWCollectionView/JNWCollectionViewCell.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>7E7ADD9CDEC7A25338D38FA3</key>
+		<key>8DD4CC01F44FF20F88729F4E</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -1010,20 +1567,146 @@
 			<key>lastKnownFileType</key>
 			<string>sourcecode.c.h</string>
 			<key>name</key>
-			<string>JNWCollectionView.h</string>
+			<string>JNWCollectionViewLayout.h</string>
 			<key>path</key>
-			<string>JNWCollectionView/JNWCollectionView.h</string>
+			<string>JNWCollectionView/JNWCollectionViewLayout.h</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>80B738B549EF6800D18EB808</key>
+		<key>8F7A2B938CE37E9448EC13E5</key>
 		<dict>
 			<key>fileRef</key>
-			<string>BFCF6E691A29C8BBFD7AEE7C</string>
+			<string>EBCF67F4F245DF8787B90D3B</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
-		<key>8263082DB86C9F987CC883E9</key>
+		<key>917E98E135C36CFF61155A69</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>JNWCollectionViewReusableView.h</string>
+			<key>path</key>
+			<string>JNWCollectionView/JNWCollectionViewReusableView.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>922448D09172FCB7EDF20916</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>path</key>
+			<string>Pods-Sparkle-Private.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>9280E54F343A31B591116CA8</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>JNWCollectionViewDocumentView.m</string>
+			<key>path</key>
+			<string>JNWCollectionView/JNWCollectionViewDocumentView.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>939C2EE3718FFCF7D037351B</key>
+		<dict>
+			<key>fileRef</key>
+			<string>D5B690645C6D662702BEE2F3</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-fobjc-arc</string>
+			</dict>
+		</dict>
+		<key>9514787A44072212D6BEA20D</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>83B32F0F8BB86F6D4F689975</string>
+				<string>1DCC4904C04A225DB8D9B72F</string>
+				<string>5E0C8857920B92A3DC599FFB</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Pods</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>95BA0EC09ED81B6E61F9354F</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>D7E0F37FCE5D7578C2697D95</string>
+				<string>173AC7CC5F7E14FD21603CC7</string>
+				<string>EB528195CF78041DAE74B3A8</string>
+				<string>4BFD75BFBC54941777FD5C17</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Products</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>96FCB2C4258A1E992DEB478C</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.script.sh</string>
+			<key>path</key>
+			<string>Pods-resources.sh</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>9AA9702BE94B16B52EFF89D8</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>path</key>
+			<string>Pods-JNWCollectionView-Private.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>A10951A8A6D8288D51B7A179</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>E5DBD11CF3EEE3630F1FC468</string>
+				<string>2AE689CCAA7FE47D6A68C71D</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>A4A44974B7679749A36F5640</key>
 		<dict>
 			<key>buildSettings</key>
 			<dict>
@@ -1090,76 +1773,52 @@
 			<key>name</key>
 			<string>Debug</string>
 		</dict>
-		<key>8328CBF1CB79871EF267D432</key>
+		<key>AD5798AB1C605CC0FBFE6722</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>Pods-Sparkle-prefix.pch</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>AD5B689AD29997808996585C</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>path</key>
+			<string>Pods-JNWScrollView.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>B08729296C33EDA6F1A15977</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXTargetDependency</string>
+			<key>target</key>
+			<string>D30526453B9DC9C7C0118070</string>
+			<key>targetProxy</key>
+			<string>1F5EC9BD7547AD9E065BEC5C</string>
+		</dict>
+		<key>B46964FEC593CD4771CA1D57</key>
 		<dict>
 			<key>fileRef</key>
-			<string>9A0C7171C677C23102BD2016</string>
+			<string>F4729D08BB49C45C2DF31999</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string>-fobjc-arc</string>
-			</dict>
 		</dict>
-		<key>856953D265C1B77B461A7DC5</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>0961A0517328858262378243</string>
-				<string>E5FC7F6148318F9F9EF6912C</string>
-				<string>9A649036205F9301AC9045C7</string>
-				<string>B40C2057D9EB22059AB739E2</string>
-				<string>B5529C97DF59711AC6500364</string>
-				<string>5FD9A9C57A74769CB9688F39</string>
-				<string>5C5D8832072232A0F19B3E72</string>
-				<string>D488340778A37DCA4CFB296F</string>
-				<string>AD609A32EA270D5B5346AA46</string>
-				<string>44799ED4DC6BE0B1D2DCAA37</string>
-				<string>57DAC0D49F51FCA50E35FB25</string>
-				<string>D7A6434A3F5507026F9C30A5</string>
-				<string>24E18F35DE94884CF96F67B2</string>
-				<string>02E963F1F377B51C7D3AE520</string>
-			</array>
-			<key>isa</key>
-			<string>PBXHeadersBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>860B3BAFA59E9259699A1CB7</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>01B99F477FF136058BC77D33</string>
-			</array>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>8612C3C32CDE98376131748E</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>8328CBF1CB79871EF267D432</string>
-				<string>D5EB331E2899D19D625FA8F0</string>
-				<string>5B11FFD70F490F007629BEBA</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>868DA491ECCDFC78BC0B3EB7</key>
+		<key>BDF3851F56D65630360E698A</key>
 		<dict>
 			<key>baseConfigurationReference</key>
-			<string>A4696F3D5F184D8FB25AB6EC</string>
+			<string>9AA9702BE94B16B52EFF89D8</string>
 			<key>buildSettings</key>
 			<dict>
 				<key>ALWAYS_SEARCH_USER_PATHS</key>
@@ -1176,6 +1835,8 @@
 				<string>YES</string>
 				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
 				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>Target Support Files/Pods-JNWCollectionView/Pods-JNWCollectionView-prefix.pch</string>
 				<key>GCC_VERSION</key>
 				<string>com.apple.compilers.llvm.clang.1_0</string>
 				<key>INSTALL_PATH</key>
@@ -1206,65 +1867,72 @@
 			<key>name</key>
 			<string>Release</string>
 		</dict>
-		<key>8751EEFEBA419AADDD54C391</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXTargetDependency</string>
-			<key>target</key>
-			<string>4F7651F4EB6B2519D8A03B01</string>
-			<key>targetProxy</key>
-			<string>5CF6B1CF144F6B2072BD76E2</string>
-		</dict>
-		<key>8BA6D3A9331FD476B144A884</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>path</key>
-			<string>Pods-JNWCollectionView-Private.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>8EF83B70A42C387196D17090</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>JNWScrollView.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>8F49C57B9071FCA0188457EB</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>Pods-JNWScrollView-dummy.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>8F9F489CD579E6F20DEF5A65</key>
+		<key>C256E4B92FA79337ACB2E215</key>
 		<dict>
 			<key>fileRef</key>
-			<string>2CC3E8D26738A463816186E4</string>
+			<string>D17E5B31F886726957949020</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
-		<key>8FCB8F971E848075265E32C7</key>
+		<key>C3635C9FE5D96602EA15F741</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>JNWCollectionView+Private.h</string>
+			<key>path</key>
+			<string>JNWCollectionView/JNWCollectionView+Private.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C463193B9DF983DC1F8A5C75</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>Pods-JNWCollectionView-dummy.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C522624E31701D614A8E48F0</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>4AC58F63F26935CAC340CE7F</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Frameworks</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C94B09BD58AAB25CD2ADC393</key>
 		<dict>
 			<key>fileRef</key>
-			<string>DC6D958F5534AEC6800F72A2</string>
+			<string>EB8111D2052CDCE1BE73144A</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>CD6DBC93B5A721D55359B121</key>
+		<dict>
+			<key>fileRef</key>
+			<string>EB8111D2052CDCE1BE73144A</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>CDDC44C8D27DD837B0DFDDE4</key>
+		<dict>
+			<key>fileRef</key>
+			<string>9280E54F343A31B591116CA8</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -1273,268 +1941,20 @@
 				<string>-fobjc-arc</string>
 			</dict>
 		</dict>
-		<key>964BF245874CAB568F21DBB5</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>DDEF22FC94C1244F6D8EB9B9</string>
-				<string>4F7072746AFD0BC422FBAED3</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>96B838E53D2927CB0E716DA9</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>NSIndexPath+JNWAdditions.m</string>
-			<key>path</key>
-			<string>JNWCollectionView/NSIndexPath+JNWAdditions.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>96DE2653BCFFD942BDC93922</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>JNWCollectionViewLayout.h</string>
-			<key>path</key>
-			<string>JNWCollectionView/JNWCollectionViewLayout.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>98A8DFAABD1802A6CA12B67E</key>
-		<dict>
-			<key>fileRef</key>
-			<string>22597EA4819718ABEBC7A6D0</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>9968B54CE0A4E7BB8C43BBCC</key>
-		<dict>
-			<key>fileRef</key>
-			<string>B468880A9F40E2B362B2B2CA</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string>-fobjc-arc</string>
-			</dict>
-		</dict>
-		<key>9A0C7171C677C23102BD2016</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>JNWClipView.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>9A649036205F9301AC9045C7</key>
-		<dict>
-			<key>fileRef</key>
-			<string>61C605CF00EF5A637F13B8F1</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A4696F3D5F184D8FB25AB6EC</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>path</key>
-			<string>Pods.release.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A5ACEB9FF7B256383D13A7B2</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>964BF245874CAB568F21DBB5</string>
-			<key>buildPhases</key>
-			<array>
-				<string>10FE9B759E81B6AEC09817E6</string>
-				<string>16098DADC6F2DFC2EB3D9F94</string>
-				<string>856953D265C1B77B461A7DC5</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array>
-				<string>11E58D29B0B4C4D595B5D7E0</string>
-			</array>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>Pods-JNWCollectionView</string>
-			<key>productName</key>
-			<string>Pods-JNWCollectionView</string>
-			<key>productReference</key>
-			<string>DAE1DF110C2C6D530B43546A</string>
-			<key>productType</key>
-			<string>com.apple.product-type.library.static</string>
-		</dict>
-		<key>A7DF57E6BCCA97050F1A8123</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>JNWCollectionViewDocumentView.h</string>
-			<key>path</key>
-			<string>JNWCollectionView/JNWCollectionViewDocumentView.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AAD55FFB5F985EBC0A41042B</key>
-		<dict>
-			<key>fileRef</key>
-			<string>55C11317C20E7BF49743FC41</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>AADFF847D750B05A149664C3</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>JNWCollectionViewGridLayout.m</string>
-			<key>path</key>
-			<string>JNWCollectionView/JNWCollectionViewGridLayout.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>ABC2E5FFEF97CADAAD9A0DB8</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXTargetDependency</string>
-			<key>target</key>
-			<string>A5ACEB9FF7B256383D13A7B2</string>
-			<key>targetProxy</key>
-			<string>73E44F6E17F57F168EA81BC5</string>
-		</dict>
-		<key>ABD3F32E80FC840EF79CC51D</key>
-		<dict>
-			<key>containerPortal</key>
-			<string>386441DA99483830DACCC84C</string>
-			<key>isa</key>
-			<string>PBXContainerItemProxy</string>
-			<key>proxyType</key>
-			<string>1</string>
-			<key>remoteGlobalIDString</key>
-			<string>4F7651F4EB6B2519D8A03B01</string>
-			<key>remoteInfo</key>
-			<string>Pods-JNWScrollView</string>
-		</dict>
-		<key>AD609A32EA270D5B5346AA46</key>
-		<dict>
-			<key>fileRef</key>
-			<string>4CC44AF5FECD09C3433DE2F5</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>B356B5364CEC0C886F3B5D0A</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>Pods-JNWScrollView-prefix.pch</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>B40C2057D9EB22059AB739E2</key>
-		<dict>
-			<key>fileRef</key>
-			<string>F5097F5B36B4C237EC1267F5</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>B468880A9F40E2B362B2B2CA</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>JNWCollectionViewLayout.m</string>
-			<key>path</key>
-			<string>JNWCollectionView/JNWCollectionViewLayout.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>B5529C97DF59711AC6500364</key>
-		<dict>
-			<key>fileRef</key>
-			<string>C1723E44CF7532205718CAF6</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>B8FB3BE4F15DCE25454BCECF</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text</string>
-			<key>name</key>
-			<string>Podfile</string>
-			<key>path</key>
-			<string>../Podfile</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-			<key>xcLanguageSpecificationIdentifier</key>
-			<string>xcode.lang.ruby</string>
-		</dict>
-		<key>BFCF6E691A29C8BBFD7AEE7C</key>
+		<key>D17E5B31F886726957949020</key>
 		<dict>
 			<key>isa</key>
 			<string>PBXFileReference</string>
 			<key>lastKnownFileType</key>
 			<string>wrapper.framework</string>
 			<key>name</key>
-			<string>Cocoa.framework</string>
+			<string>QuartzCore.framework</string>
 			<key>path</key>
-			<string>Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/Cocoa.framework</string>
+			<string>Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/QuartzCore.framework</string>
 			<key>sourceTree</key>
 			<string>DEVELOPER_DIR</string>
 		</dict>
-		<key>C1723E44CF7532205718CAF6</key>
+		<key>D2D99C5CA8AC41558960A8D8</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -1549,99 +1969,41 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>C192438D695219A7FC441623</key>
+		<key>D30526453B9DC9C7C0118070</key>
 		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>JNWClipView.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>C3C58EA97179FD969F34C32D</key>
-		<dict>
-			<key>fileRef</key>
-			<string>7BF110E0086740A823E64324</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string>-fobjc-arc</string>
-			</dict>
-		</dict>
-		<key>CA1F63ED4995572C3BA0503D</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>path</key>
-			<string>Pods.debug.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CBDFACE3BBF7E6DC3232F0CE</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>JNWCollectionViewData.m</string>
-			<key>path</key>
-			<string>JNWCollectionView/JNWCollectionViewData.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CD4E04CB8367D3C0AA09FA36</key>
-		<dict>
-			<key>children</key>
+			<key>buildConfigurationList</key>
+			<string>FEEA24E0DF14110F40DF5346</string>
+			<key>buildPhases</key>
 			<array>
-				<string>DC5F2D57FD8C89FF77B8E403</string>
+				<string>19DFF1ECEF8EDF00C2CFF472</string>
+				<string>2D1DBDDA4966CAF1A38ED6E2</string>
+				<string>3021F7CFF83EB519C5B133EB</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array>
+				<string>82A4465350B4B861AD4A589C</string>
 			</array>
 			<key>isa</key>
-			<string>PBXGroup</string>
+			<string>PBXNativeTarget</string>
 			<key>name</key>
-			<string>Frameworks</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
+			<string>Pods-JNWCollectionView</string>
+			<key>productName</key>
+			<string>Pods-JNWCollectionView</string>
+			<key>productReference</key>
+			<string>173AC7CC5F7E14FD21603CC7</string>
+			<key>productType</key>
+			<string>com.apple.product-type.library.static</string>
 		</dict>
-		<key>CF1B9AB84A38F35608C8613C</key>
+		<key>D5A89C2920879D0252D08018</key>
 		<dict>
 			<key>fileRef</key>
-			<string>D4DDAB196B925D64BF940DD8</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string>-fobjc-arc</string>
-			</dict>
-		</dict>
-		<key>D488340778A37DCA4CFB296F</key>
-		<dict>
-			<key>fileRef</key>
-			<string>145901B1CBE075296A4B0B33</string>
+			<string>6A5CB2A8788F71CB053EC4DF</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
-		<key>D4C979C273B6225973010368</key>
-		<dict>
-			<key>fileRef</key>
-			<string>C192438D695219A7FC441623</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>D4DDAB196B925D64BF940DD8</key>
+		<key>D5B690645C6D662702BEE2F3</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -1650,59 +2012,13 @@
 			<key>lastKnownFileType</key>
 			<string>sourcecode.c.objc</string>
 			<key>name</key>
-			<string>JNWCollectionViewListLayout.m</string>
+			<string>JNWCollectionViewFramework.m</string>
 			<key>path</key>
-			<string>JNWCollectionView/JNWCollectionViewListLayout.m</string>
+			<string>JNWCollectionView/JNWCollectionViewFramework.m</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>D5EB331E2899D19D625FA8F0</key>
-		<dict>
-			<key>fileRef</key>
-			<string>8EF83B70A42C387196D17090</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string>-fobjc-arc</string>
-			</dict>
-		</dict>
-		<key>D6E14D814C7B420B52CD24E3</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>E8AA78CE0BB3EDBC57AEE20C</string>
-				<string>747C9ED22741CAD428FDF7FF</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Pods</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>D7A6434A3F5507026F9C30A5</key>
-		<dict>
-			<key>fileRef</key>
-			<string>44CF5A9C9740A808352B00F0</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>DAC50B6E15E7179E587EB07C</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>Pods-dummy.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>DAE1DF110C2C6D530B43546A</key>
+		<key>D7E0F37FCE5D7578C2697D95</key>
 		<dict>
 			<key>explicitFileType</key>
 			<string>archive.ar</string>
@@ -1711,43 +2027,107 @@
 			<key>isa</key>
 			<string>PBXFileReference</string>
 			<key>path</key>
-			<string>libPods-JNWCollectionView.a</string>
+			<string>libPods.a</string>
 			<key>sourceTree</key>
 			<string>BUILT_PRODUCTS_DIR</string>
 		</dict>
-		<key>DC5F2D57FD8C89FF77B8E403</key>
+		<key>DB2E23D9F4E90D94B641FCFA</key>
+		<dict>
+			<key>fileRef</key>
+			<string>625F547310F1891DE43A3913</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-fobjc-arc</string>
+			</dict>
+		</dict>
+		<key>DEF6D6EA372237DE147A2413</key>
 		<dict>
 			<key>children</key>
 			<array>
-				<string>BFCF6E691A29C8BBFD7AEE7C</string>
-				<string>55C11317C20E7BF49743FC41</string>
+				<string>5FF55317A6DFBAB6DBE71135</string>
+				<string>8ACB1C65464CFF1E7B7A59AE</string>
+				<string>0A4D8E6571EC0194FF3CE5E4</string>
+				<string>67214855F633E9E34C45BA91</string>
+				<string>96FCB2C4258A1E992DEB478C</string>
+				<string>80083361468BAB7E90827D17</string>
+				<string>85AC13D74C8B9A994D3747C8</string>
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
 			<key>name</key>
-			<string>OS X</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>DC6D958F5534AEC6800F72A2</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>JNWCollectionViewDocumentView.m</string>
+			<string>Pods</string>
 			<key>path</key>
-			<string>JNWCollectionView/JNWCollectionViewDocumentView.m</string>
+			<string>Target Support Files/Pods</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>DDEF22FC94C1244F6D8EB9B9</key>
+		<key>DF2AE8FCD6151BA3FC77900A</key>
+		<dict>
+			<key>fileRef</key>
+			<string>C3635C9FE5D96602EA15F741</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>DF634B129D2ED35B80CEF12A</key>
+		<dict>
+			<key>fileRef</key>
+			<string>562AE0A518DB4829E95CDB5E</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>DFFAEFE5A3EE795152186B27</key>
+		<dict>
+			<key>fileRef</key>
+			<string>4CEBA094AEEBBE9205F516A8</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>E26DAC35C59959205C13DEDA</key>
+		<dict>
+			<key>attributes</key>
+			<dict>
+				<key>LastUpgradeCheck</key>
+				<string>0510</string>
+			</dict>
+			<key>buildConfigurationList</key>
+			<string>40313BC966A89BA0223AD0D7</string>
+			<key>compatibilityVersion</key>
+			<string>Xcode 3.2</string>
+			<key>developmentRegion</key>
+			<string>English</string>
+			<key>hasScannedForEncodings</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXProject</string>
+			<key>knownRegions</key>
+			<array>
+				<string>en</string>
+			</array>
+			<key>mainGroup</key>
+			<string>818C77D464F0FD7D0FF0A070</string>
+			<key>productRefGroup</key>
+			<string>95BA0EC09ED81B6E61F9354F</string>
+			<key>projectDirPath</key>
+			<string></string>
+			<key>projectReferences</key>
+			<array/>
+			<key>projectRoot</key>
+			<string></string>
+			<key>targets</key>
+			<array>
+				<string>3AF718333037EFCC43BA4A1D</string>
+				<string>D30526453B9DC9C7C0118070</string>
+				<string>0B0F59151B2AE76CC07C38D2</string>
+				<string>307878C8706231E2CDA327AC</string>
+			</array>
+		</dict>
+		<key>E5DBD11CF3EEE3630F1FC468</key>
 		<dict>
 			<key>baseConfigurationReference</key>
-			<string>8BA6D3A9331FD476B144A884</string>
+			<string>922448D09172FCB7EDF20916</string>
 			<key>buildSettings</key>
 			<dict>
 				<key>ALWAYS_SEARCH_USER_PATHS</key>
@@ -1767,7 +2147,7 @@
 				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
 				<string>YES</string>
 				<key>GCC_PREFIX_HEADER</key>
-				<string>Target Support Files/Pods-JNWCollectionView/Pods-JNWCollectionView-prefix.pch</string>
+				<string>Target Support Files/Pods-Sparkle/Pods-Sparkle-prefix.pch</string>
 				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
 				<array>
 					<string>DEBUG=1</string>
@@ -1795,170 +2175,7 @@
 			<key>name</key>
 			<string>Debug</string>
 		</dict>
-		<key>E2A4B4C2FF5610736018100A</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>Pods-environment.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>E5FC7F6148318F9F9EF6912C</key>
-		<dict>
-			<key>fileRef</key>
-			<string>7E7ADD9CDEC7A25338D38FA3</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>E64C40616341A6630FA77D36</key>
-		<dict>
-			<key>fileRef</key>
-			<string>DAC50B6E15E7179E587EB07C</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>E68AF26902EF8E2292D84005</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>E64C40616341A6630FA77D36</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>E8AA78CE0BB3EDBC57AEE20C</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>7E7ADD9CDEC7A25338D38FA3</string>
-				<string>3F89AB59E6C9C208CB8F1C8A</string>
-				<string>F5097F5B36B4C237EC1267F5</string>
-				<string>7BF110E0086740A823E64324</string>
-				<string>61C605CF00EF5A637F13B8F1</string>
-				<string>C1723E44CF7532205718CAF6</string>
-				<string>CBDFACE3BBF7E6DC3232F0CE</string>
-				<string>A7DF57E6BCCA97050F1A8123</string>
-				<string>DC6D958F5534AEC6800F72A2</string>
-				<string>F9A3CC371D9339C22405F25F</string>
-				<string>FDCB0AC92E6D77637B57BBEC</string>
-				<string>145901B1CBE075296A4B0B33</string>
-				<string>AADFF847D750B05A149664C3</string>
-				<string>96DE2653BCFFD942BDC93922</string>
-				<string>B468880A9F40E2B362B2B2CA</string>
-				<string>4CC44AF5FECD09C3433DE2F5</string>
-				<string>1D645504B2C54E62357FE80A</string>
-				<string>D4DDAB196B925D64BF940DD8</string>
-				<string>257CAB5A02A38FB09AE03BB3</string>
-				<string>EB1C261ECC43A99D1CB6B962</string>
-				<string>44CF5A9C9740A808352B00F0</string>
-				<string>02FA01D145F32D1E160F3EFE</string>
-				<string>96B838E53D2927CB0E716DA9</string>
-				<string>22A57B3FCF96174B0C86D5C8</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>JNWCollectionView</string>
-			<key>path</key>
-			<string>JNWCollectionView</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>EB1C261ECC43A99D1CB6B962</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>JNWCollectionViewReusableView.m</string>
-			<key>path</key>
-			<string>JNWCollectionView/JNWCollectionViewReusableView.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F1ECA6486607A99603021210</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.script.sh</string>
-			<key>path</key>
-			<string>Pods-resources.sh</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F3F34BC4E75D24AD05F7DD72</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>1AE32F3120C5F66F3289A3A4</string>
-				<string>67F839B7EB4C65C7550A55EA</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>F5097F5B36B4C237EC1267F5</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>JNWCollectionViewCell.h</string>
-			<key>path</key>
-			<string>JNWCollectionView/JNWCollectionViewCell.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F79D1B5141F35EF2FD22E7CF</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>Pods-JNWCollectionView-prefix.pch</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F9A3CC371D9339C22405F25F</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>JNWCollectionViewFramework.h</string>
-			<key>path</key>
-			<string>JNWCollectionView/JNWCollectionViewFramework.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>FDC6056E341D35E160E2FEC0</key>
+		<key>EB528195CF78041DAE74B3A8</key>
 		<dict>
 			<key>explicitFileType</key>
 			<string>archive.ar</string>
@@ -1971,7 +2188,57 @@
 			<key>sourceTree</key>
 			<string>BUILT_PRODUCTS_DIR</string>
 		</dict>
-		<key>FDCB0AC92E6D77637B57BBEC</key>
+		<key>EB8111D2052CDCE1BE73144A</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>Cocoa.framework</string>
+			<key>path</key>
+			<string>Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/Cocoa.framework</string>
+			<key>sourceTree</key>
+			<string>DEVELOPER_DIR</string>
+		</dict>
+		<key>EBCF67F4F245DF8787B90D3B</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>JNWClipView.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>EC19D65440E84296C43C8FAE</key>
+		<dict>
+			<key>fileRef</key>
+			<string>0A4D8E6571EC0194FF3CE5E4</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>ED07514B03EE7CB179704964</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text</string>
+			<key>name</key>
+			<string>Podfile</string>
+			<key>path</key>
+			<string>../Podfile</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+			<key>xcLanguageSpecificationIdentifier</key>
+			<string>xcode.lang.ruby</string>
+		</dict>
+		<key>EF6E3D4AF52175643D869AFB</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -1980,14 +2247,89 @@
 			<key>lastKnownFileType</key>
 			<string>sourcecode.c.objc</string>
 			<key>name</key>
-			<string>JNWCollectionViewFramework.m</string>
+			<string>NSIndexPath+JNWAdditions.m</string>
 			<key>path</key>
-			<string>JNWCollectionView/JNWCollectionViewFramework.m</string>
+			<string>JNWCollectionView/NSIndexPath+JNWAdditions.m</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
+		<key>F0AFC9A9727D484FD86E5922</key>
+		<dict>
+			<key>fileRef</key>
+			<string>152AEC39B920FA68F478EF77</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>F4729D08BB49C45C2DF31999</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>NSIndexPath+JNWAdditions.h</string>
+			<key>path</key>
+			<string>JNWCollectionView/NSIndexPath+JNWAdditions.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>FB1420C076B63C07423CD98E</key>
+		<dict>
+			<key>fileRef</key>
+			<string>08E17D1904D42CC99166F899</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-fobjc-arc</string>
+			</dict>
+		</dict>
+		<key>FEEA24E0DF14110F40DF5346</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>40BBBE7149CF92350FDF8CC9</string>
+				<string>BDF3851F56D65630360E698A</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>FF4251F8E5E047F796BA942A</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>JNWCollectionView.h</string>
+			<key>path</key>
+			<string>JNWCollectionView/JNWCollectionView.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>FF8C55596A4027F3482B2CC6</key>
+		<dict>
+			<key>fileRef</key>
+			<string>EF6E3D4AF52175643D869AFB</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-fobjc-arc</string>
+			</dict>
+		</dict>
 	</dict>
 	<key>rootObject</key>
-	<string>386441DA99483830DACCC84C</string>
+	<string>E26DAC35C59959205C13DEDA</string>
 </dict>
 </plist>

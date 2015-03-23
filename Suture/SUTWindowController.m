@@ -14,9 +14,11 @@
 
 @interface SUTWindowController ()
 
-@property (nonatomic, strong) NSPanel *inspectorPanel;
 @property (nonatomic, strong) SUTOutlineView *dropHighlightView;
 @property (nonatomic, strong) SUTEditorView *editorView;
+
+- (void)didEnterVersionBrowser:(NSNotification *)notification;
+- (void)didExitVersionBrowser:(NSNotification *)notification;
 
 @end
 
@@ -43,12 +45,14 @@
         [self.window.contentView addSubview:self.editorView];
         [self.window.contentView addSubview:self.dropHighlightView];
         
-//        self.inspectorPanel = [[NSPanel alloc] initWithContentRect:NSMakeRect(200.0, 200.0, 300, 200)
-//                                                    styleMask:NSHUDWindowMask | NSUtilityWindowMask | NSTitledWindowMask
-//                                                      backing:NSBackingStoreBuffered
-//                                                        defer:YES];
-//        self.inspectorPanel.floatingPanel = YES;
-//        [self.inspectorPanel makeKeyAndOrderFront:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(didEnterVersionBrowser:)
+                                                     name:NSWindowDidEnterVersionBrowserNotification
+                                                   object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(didExitVersionBrowser:)
+                                                     name:NSWindowDidExitVersionBrowserNotification
+                                                   object:nil];
     }
     
     return self;
@@ -127,6 +131,25 @@
     
     [exportPanel beginSheetModalForWindow:self.window
                       completionHandler:nil];
+}
+
+#pragma mark - Time Machine
+
+- (void)didEnterVersionBrowser:(NSNotification *)notification
+{
+    
+}
+
+- (void)didExitVersionBrowser:(NSNotification *)notification
+{
+    
+}
+
+#pragma mark - Dealloc
+
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 @end

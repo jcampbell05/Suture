@@ -33,6 +33,8 @@
 	</array>
 	<key>CFBundleExecutable</key>
 	<string>Suture</string>
+	<key>CFBundleIconFile</key>
+	<string>AppIcon</string>
 	<key>CFBundleIdentifier</key>
 	<string>Unii.Suture</string>
 	<key>CFBundleInfoDictionaryVersion</key>

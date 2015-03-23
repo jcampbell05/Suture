@@ -137,12 +137,12 @@
 
 - (void)didEnterVersionBrowser:(NSNotification *)notification
 {
-    
+    self.editorView.enabled = NO;
 }
 
 - (void)didExitVersionBrowser:(NSNotification *)notification
 {
-    
+    self.editorView.enabled = YES;
 }
 
 #pragma mark - Dealloc

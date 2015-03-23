@@ -12,6 +12,7 @@
 @interface SUTEditorView : NSView
 
 @property (nonatomic, weak) SUTDocument *document;
+@property (nonatomic, assign) BOOL enabled;
 
 - (void)addSpritesForURLS:(NSArray *)urls;
 - (void)removeSelectedSprite;

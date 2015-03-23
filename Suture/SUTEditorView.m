@@ -17,7 +17,7 @@
 #import "SUTEmptySpriteSheetView.h"
 #import "SUTOutlineView.h"
 
-@interface SUTEditorView () <NSDraggingDestination, JNWCollectionViewDataSource>
+@interface SUTEditorView () <NSDraggingDestination, JNWCollectionViewDataSource, JNWCollectionViewDelegate>
 
 @property (nonatomic, strong) SUTEmptySpriteSheetView *emptySpriteView;
 @property (nonatomic, strong) JNWCollectionView *spriteCollectionView;
@@ -35,6 +35,8 @@
     
     if (self)
     {
+        self.enabled = YES;
+        
         [self registerForDraggedTypes:@[NSFilenamesPboardType]];
         
         [self addSubview:self.emptySpriteView];
@@ -64,6 +66,7 @@
         _spriteCollectionView = [[JNWCollectionView alloc] initWithFrame:self.bounds];
         _spriteCollectionView.collectionViewLayout = self.spriteCollectionViewLayout;
         _spriteCollectionView.dataSource = self;
+        _spriteCollectionView.delegate = self;
         _spriteCollectionView.drawsBackground = NO;
         _spriteCollectionView.autoresizingMask = NSViewWidthSizable | NSViewHeightSizable;
         
@@ -105,30 +108,35 @@
 
 - (NSDragOperation)draggingEntered:(id<NSDraggingInfo>)sender
 {
-    __block NSDragOperation operation = NSDragOperationCopy;
-
-    [sender enumerateDraggingItemsWithOptions:0
-                                      forView:self
-                                      classes:[NSArray arrayWithObject:[NSPasteboardItem class]]
-                                searchOptions:nil
-                                   usingBlock:^(NSDraggingItem *draggingItem, NSInteger idx, BOOL *stop)
-    {
-        NSPasteboardItem *item = draggingItem.item;
-        NSString *path = [item stringForType: @"public.file-url"];
-        NSURL *url = [NSURL URLWithString:path];
-        
-        CFStringRef fileExtension = (__bridge CFStringRef) [url pathExtension];
-        CFStringRef fileUTI = UTTypeCreatePreferredIdentifierForTag(kUTTagClassFilenameExtension, fileExtension, NULL);
-        
-        if (!UTTypeConformsTo(fileUTI, kUTTypeImage))
-        {
-            operation = NSDragOperationNone;
-            *stop = YES;
-        }
-        
-        CFRelease(fileUTI);
-   }];
+    __block NSDragOperation operation = NSDragOperationNone;
     
+    if (self.enabled)
+    {
+        operation = NSDragOperationCopy;
+        
+        [sender enumerateDraggingItemsWithOptions:0
+                                          forView:self
+                                          classes:[NSArray arrayWithObject:[NSPasteboardItem class]]
+                                    searchOptions:nil
+                                       usingBlock:^(NSDraggingItem *draggingItem, NSInteger idx, BOOL *stop)
+         {
+             NSPasteboardItem *item = draggingItem.item;
+             NSString *path = [item stringForType: @"public.file-url"];
+             NSURL *url = [NSURL URLWithString:path];
+             
+             CFStringRef fileExtension = (__bridge CFStringRef) [url pathExtension];
+             CFStringRef fileUTI = UTTypeCreatePreferredIdentifierForTag(kUTTagClassFilenameExtension, fileExtension, NULL);
+             
+             if (!UTTypeConformsTo(fileUTI, kUTTypeImage))
+             {
+                 operation = NSDragOperationNone;
+                 *stop = YES;
+             }
+             
+             CFRelease(fileUTI);
+         }];
+    }
+
    return operation;
 }
 
@@ -195,6 +203,14 @@
     cell.sprite = self.document.sprites[indexPath.jnw_item];
     
     return cell;
+}
+
+#pragma mark - JNWCollectionViewDelegate
+
+- (BOOL)collectionView:(JNWCollectionView *)collectionView
+shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    return self.enabled;
 }
 
 @end

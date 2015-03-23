@@ -6,5 +6,13 @@
 		</link>
 		<description>Most recent changes with links to updates.</description>
 		<language>en</language>
+		<item>
+            		<title>Version 1.2</title>
+			<sparkle:releaseNotesLink>
+				https://github.com/jcampbell05/Suture/blob/master/Changelog.md
+			</sparkle:releaseNotesLink>
+			<pubDate>Mon, 23 Mar 2015 13:34:00 +0000</pubDate>
+            		<enclosure url="https://github.com/jcampbell05/Suture/releases/download/v1.2/Suture.pkg" sparkle:version="1.2" length="1623481" type="application/octet-stream" sparkle:dsaSignature="BAFJW4B6B1K1JyW30nbkBwainOzrN6EQuAh" />
+         </item>
 	</channel>
 </rss>

@@ -1,3 +1,8 @@
+v1.3
+===
+- New Higher Resolution version of Icon.
+- Export will now only export when replacing a file when you allow it to do so.
+
 v1.2
 ===
 - Adds new Icon.

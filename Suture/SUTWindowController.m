@@ -9,6 +9,8 @@
 #import "SUTWindowController.h"
 
 #import "SUTEditorView.h"
+#import "SUTExporter.h"
+#import "SUTExporterRegistry.h"
 #import "SUTExportPanel.h"
 #import "SUTOutlineView.h"
 
@@ -130,7 +132,18 @@
     exportPanel.document = self.document;
     
     [exportPanel beginSheetModalForWindow:self.window
-                      completionHandler:nil];
+                        completionHandler:^(NSInteger result)
+     {
+         if (result == NSFileHandlingPanelOKButton)
+         {
+             id<SUTExporter> exporter = [[SUTExporterRegistry sharedRegistry].exporters firstObject];
+             [exportPanel setAllowedFileTypes:@[[exporter extension]]];
+             
+             [exporter exportDocument:exportPanel.document
+                                  URL:exportPanel.URL];
+         }
+         
+     }];
 }
 
 #pragma mark - Time Machine

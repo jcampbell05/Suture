@@ -13,43 +13,13 @@
 @import CoreServices;
 @import ImageIO;
 
-CGContextRef SUTCreateImageContext (CGSize size)
-{
-    size_t bitsPerComponent = 8;
-    CGColorSpaceRef colorSpace = CGColorSpaceCreateWithName(kCGColorSpaceGenericRGB);
-    CGContextRef context = CGBitmapContextCreate(NULL,
-                                                 size.width,
-                                                 size.height,
-                                                 bitsPerComponent,
-                                                 0,
-                                                 colorSpace,
-                                                 (CGBitmapInfo)kCGImageAlphaPremultipliedLast);
-    
-    CGColorSpaceRelease(colorSpace);
-    
-    return context;
-}
+@interface SUTImageExporter ()
 
-CGImageRef CGImageFromNSImage(NSImage *image)
-{
-   NSData * imageData = [image TIFFRepresentation];
-   CGImageRef imageRef;
-    
-    if (imageData)
-    {
-        CGImageSourceRef imageSource = CGImageSourceCreateWithData((CFDataRef)imageData, NULL);
-        imageRef = CGImageSourceCreateImageAtIndex(imageSource, 0, NULL);
-    }
-    
-    return imageRef;
-}
+@property (nonatomic, strong, readwrite) NSProgress *progress;
 
-CGRect SUTFlipCGRect(CGRect rect, CGSize size)
-{
-    rect.origin.y = size.height - CGRectGetMaxY(rect);
-    
-    return rect;
-}
+- (CGContextRef)createExportingImageContextWithSize:(CGSize)size;
+
+@end
 
 @implementation SUTImageExporter
 
@@ -65,7 +35,12 @@ CGRect SUTFlipCGRect(CGRect rect, CGSize size)
 
 - (NSProgress *)progress
 {
-    return nil;
+    if (!_progress)
+    {
+        _progress = [[NSProgress alloc] init];
+    }
+    
+    return _progress;
 }
 
 - (void)exportDocument:(SUTDocument *)document
@@ -74,7 +49,7 @@ CGRect SUTFlipCGRect(CGRect rect, CGSize size)
     [self.delegate exporterWillExport:self];
     
     CGSize contentSize = [document.layout contentSize];
-    CGContextRef context = SUTCreateImageContext(contentSize);
+    CGContextRef context = [self createExportingImageContextWithSize:contentSize];
 
     CGContextClearRect(context, NSMakeRect(0, 0, contentSize.width, contentSize.height));
     CGContextSetStrokeColorWithColor(context, [[NSColor redColor] CGColor]);
@@ -117,6 +92,43 @@ CGRect SUTFlipCGRect(CGRect rect, CGSize size)
     
     CGImageRelease(image);
     CGContextRelease(context);
+}
+
+- (CGContextRef)createExportingImageContextWithSize:(CGSize)size
+{
+    size_t bitsPerComponent = 8;
+    CGColorSpaceRef colorSpace = CGColorSpaceCreateWithName(kCGColorSpaceGenericRGB);
+    CGContextRef context = CGBitmapContextCreate(NULL,
+                                                 size.width,
+                                                 size.height,
+                                                 bitsPerComponent,
+                                                 0,
+                                                 colorSpace,
+                                                 (CGBitmapInfo)kCGImageAlphaPremultipliedLast);
+    
+    CGColorSpaceRelease(colorSpace);
+    
+    return context;
+}
+
+CGImageRef CGImageFromNSImage(NSImage *image)
+{
+    NSData * imageData = [image TIFFRepresentation];
+    CGImageRef imageRef;
+    
+    if (imageData)
+    {
+        CGImageSourceRef imageSource = CGImageSourceCreateWithData((CFDataRef)imageData, NULL);
+        imageRef = CGImageSourceCreateImageAtIndex(imageSource, 0, NULL);
+    }
+    
+    return imageRef;
+}
+
+CGRect SUTFlipCGRect(CGRect rect, CGSize size)
+{
+    rect.origin.y = size.height - CGRectGetMaxY(rect);
+    return rect;
 }
 
 @end

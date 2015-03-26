@@ -7,11 +7,13 @@
 //
 
 #import "SUTImageExporter.h"
-#import "SUTSprite.h"
-#import "SUTSpriteLayout.h"
 
 @import CoreServices;
-@import ImageIO;
+
+#import "SUTGeometry.h"
+#import "SUTSprite.h"
+#import "SUTSpriteLayout.h"
+#import "NSImage+CGImage.h"
 
 @interface SUTImageExporter ()
 
@@ -60,7 +62,7 @@
         spriteFrame = SUTFlipCGRect(spriteFrame, contentSize);
         
         SUTSprite *sprite = document.sprites[spriteIndex];
-        CGImageRef image = CGImageFromNSImage(sprite.image);
+        CGImageRef image = sprite.image.CGImage;
         
         CGContextDrawImage(context,
                            spriteFrame,
@@ -109,28 +111,6 @@
     CGColorSpaceRelease(colorSpace);
     
     return context;
-}
-
-//TODO: Move into category.
-CGImageRef CGImageFromNSImage(NSImage *image)
-{
-    NSData * imageData = [image TIFFRepresentation];
-    CGImageRef imageRef;
-    
-    if (imageData)
-    {
-        CGImageSourceRef imageSource = CGImageSourceCreateWithData((CFDataRef)imageData, NULL);
-        imageRef = CGImageSourceCreateImageAtIndex(imageSource, 0, NULL);
-    }
-    
-    return imageRef;
-}
-
-//Move into another header file.
-CGRect SUTFlipCGRect(CGRect rect, CGSize size)
-{
-    rect.origin.y = size.height - CGRectGetMaxY(rect);
-    return rect;
 }
 
 @end

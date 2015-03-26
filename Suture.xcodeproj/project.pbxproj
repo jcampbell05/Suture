@@ -32,6 +32,7 @@
 		74CF98E51AC3960F002F8DC5 /* SUTProgressPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 74CF98D31AC3960F002F8DC5 /* SUTProgressPanel.m */; };
 		74CF98E61AC3960F002F8DC5 /* SUTSpriteCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 74CF98D51AC3960F002F8DC5 /* SUTSpriteCollectionViewCell.m */; };
 		74CF98E91AC39644002F8DC5 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74F0FAEB1AAF5224003F9454 /* MainMenu.xib */; };
+		74CF98EE1AC399B8002F8DC5 /* NSImage+CGImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 74CF98ED1AC399B8002F8DC5 /* NSImage+CGImage.m */; };
 		74F0FAE01AAF5224003F9454 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 74F0FADF1AAF5224003F9454 /* AppDelegate.m */; };
 		74F0FAE21AAF5224003F9454 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 74F0FAE11AAF5224003F9454 /* main.m */; };
 		74F0FAEA1AAF5224003F9454 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74F0FAE91AAF5224003F9454 /* Images.xcassets */; };
@@ -124,6 +125,9 @@
 		74CF98D31AC3960F002F8DC5 /* SUTProgressPanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUTProgressPanel.m; sourceTree = "<group>"; };
 		74CF98D41AC3960F002F8DC5 /* SUTSpriteCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUTSpriteCollectionViewCell.h; sourceTree = "<group>"; };
 		74CF98D51AC3960F002F8DC5 /* SUTSpriteCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUTSpriteCollectionViewCell.m; sourceTree = "<group>"; };
+		74CF98EC1AC399B8002F8DC5 /* NSImage+CGImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSImage+CGImage.h"; sourceTree = "<group>"; };
+		74CF98ED1AC399B8002F8DC5 /* NSImage+CGImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSImage+CGImage.m"; sourceTree = "<group>"; };
+		74CF98EF1AC39A36002F8DC5 /* SUTGeometry.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SUTGeometry.h; sourceTree = "<group>"; };
 		74F0FAD91AAF5224003F9454 /* Suture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Suture.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		74F0FADD1AAF5224003F9454 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		74F0FADE1AAF5224003F9454 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -265,6 +269,15 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		74CF98EB1AC39997002F8DC5 /* Catergories */ = {
+			isa = PBXGroup;
+			children = (
+				74CF98EC1AC399B8002F8DC5 /* NSImage+CGImage.h */,
+				74CF98ED1AC399B8002F8DC5 /* NSImage+CGImage.m */,
+			);
+			path = Catergories;
+			sourceTree = "<group>";
+		};
 		74F0FAD01AAF5224003F9454 = {
 			isa = PBXGroup;
 			children = (
@@ -290,6 +303,7 @@
 		74F0FADB1AAF5224003F9454 /* Suture */ = {
 			isa = PBXGroup;
 			children = (
+				74CF98EB1AC39997002F8DC5 /* Catergories */,
 				74CF98AF1AC3960F002F8DC5 /* Certificates */,
 				74CF98B21AC3960F002F8DC5 /* Controllers */,
 				74CF98B51AC3960F002F8DC5 /* Exporters */,
@@ -301,6 +315,7 @@
 				74F0FAE91AAF5224003F9454 /* Images.xcassets */,
 				74F0FAEB1AAF5224003F9454 /* MainMenu.xib */,
 				74F0FADC1AAF5224003F9454 /* Supporting Files */,
+				74CF98EF1AC39A36002F8DC5 /* SUTGeometry.h */,
 			);
 			path = Suture;
 			sourceTree = "<group>";
@@ -553,6 +568,7 @@
 				74F0FAE01AAF5224003F9454 /* AppDelegate.m in Sources */,
 				74CF98E61AC3960F002F8DC5 /* SUTSpriteCollectionViewCell.m in Sources */,
 				74CF98E21AC3960F002F8DC5 /* SUTExportAccessoryView.m in Sources */,
+				74CF98EE1AC399B8002F8DC5 /* NSImage+CGImage.m in Sources */,
 				74CF98DD1AC3960F002F8DC5 /* SUTDocument.m in Sources */,
 				74CF98DF1AC3960F002F8DC5 /* SUTCheckerboardView.m in Sources */,
 				74CF98DC1AC3960F002F8DC5 /* SUTSpriteLayout.m in Sources */,

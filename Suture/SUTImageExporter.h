@@ -10,4 +10,6 @@
 
 @interface SUTImageExporter : NSObject <SUTExporter>
 
+@property (nonatomic, weak) id<SUTExporterDelegate> delegate;
+
 @end

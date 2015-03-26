@@ -14,10 +14,11 @@
 #import "SUTExportPanel.h"
 #import "SUTOutlineView.h"
 
-@interface SUTWindowController ()
+@interface SUTWindowController () <SUTExporterDelegate>
 
 @property (nonatomic, strong) SUTOutlineView *dropHighlightView;
 @property (nonatomic, strong) SUTEditorView *editorView;
+@property (nonatomic, strong) NSPanel *exportProgressPanel;
 
 - (void)didEnterVersionBrowser:(NSNotification *)notification;
 - (void)didExitVersionBrowser:(NSNotification *)notification;
@@ -131,18 +132,20 @@
     SUTExportPanel *exportPanel = [[SUTExportPanel alloc] init];
     exportPanel.document = self.document;
     
+    id<SUTExporter> exporter = [[SUTExporterRegistry sharedRegistry].exporters firstObject];
+    exporter.delegate = self;
+    [exportPanel setAllowedFileTypes:@[[exporter extension]]];
+    
     [exportPanel beginSheetModalForWindow:self.window
                         completionHandler:^(NSInteger result)
      {
+         [exportPanel orderOut:nil];
+         
          if (result == NSFileHandlingPanelOKButton)
          {
-             id<SUTExporter> exporter = [[SUTExporterRegistry sharedRegistry].exporters firstObject];
-             [exportPanel setAllowedFileTypes:@[[exporter extension]]];
-             
              [exporter exportDocument:exportPanel.document
                                   URL:exportPanel.URL];
          }
-         
      }];
 }
 
@@ -156,6 +159,21 @@
 - (void)didExitVersionBrowser:(NSNotification *)notification
 {
     self.editorView.enabled = YES;
+}
+
+#pragma mark - SUTExporterDelegate
+
+- (void)exporterWillExport:(id<SUTExporter>)exporter
+{
+    self.exportProgressPanel = [[NSPanel alloc] initWithContentRect:NSMakeRect(0.0f, 0.0f, 400.0f, 400.0f)
+                                                          styleMask:NSDocModalWindowMask
+                                                            backing:NSBackingStoreBuffered
+                                                              defer:NO];
+    
+    [self.exportProgressPanel beginSheet:self.window
+                       completionHandler:^(NSModalResponse returnCode)
+    {
+    }];
 }
 
 #pragma mark - Dealloc

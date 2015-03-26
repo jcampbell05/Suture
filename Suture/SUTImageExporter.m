@@ -66,6 +66,8 @@ CGRect SUTFlipCGRect(CGRect rect, CGSize size)
 - (void)exportDocument:(SUTDocument *)document
                    URL:(NSURL *)url
 {
+    [self.delegate exporterWillExport:self];
+    
     CGSize contentSize = [document.layout contentSize];
     CGContextRef context = SUTCreateImageContext(contentSize);
 

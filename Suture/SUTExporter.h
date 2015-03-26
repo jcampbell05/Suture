@@ -9,10 +9,19 @@
 @import Foundation;
 #import "SUTDocument.h"
 
+@protocol SUTExporter;
+
+@protocol SUTExporterDelegate <NSObject>
+
+- (void)exporterWillExport:(id<SUTExporter>)exporter;
+
+@end
+
 @protocol SUTExporter <NSObject>
 
 @property (nonatomic, strong, readonly) NSString *name;
 @property (nonatomic, strong, readonly) NSString *extension;
+@property (nonatomic, weak) id<SUTExporterDelegate> delegate;
 
 - (void)exportDocument:(SUTDocument *)document
                    URL:(NSURL *)url;

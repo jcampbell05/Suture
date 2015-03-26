@@ -165,12 +165,12 @@
 
 - (void)exporterWillExport:(id<SUTExporter>)exporter
 {
-    self.exportProgressPanel = [[NSPanel alloc] initWithContentRect:NSMakeRect(0.0f, 0.0f, 400.0f, 400.0f)
+    self.exportProgressPanel = [[NSPanel alloc] initWithContentRect:NSMakeRect(0.0f, 0.0f, 400.0f, 125.0f)
                                                           styleMask:NSDocModalWindowMask
                                                             backing:NSBackingStoreBuffered
                                                               defer:NO];
     
-    [self.exportProgressPanel beginSheet:self.window
+    [self.window beginSheet:self.exportProgressPanel
                        completionHandler:^(NSModalResponse returnCode)
     {
     }];

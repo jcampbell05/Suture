@@ -18,6 +18,7 @@
 @interface SUTImageExporter ()
 
 @property (nonatomic, strong, readwrite) NSProgress *progress;
+@property (nonatomic, strong) NSOperationQueue *exportingQueue;
 
 - (CGContextRef)createExportingImageContextWithSize:(CGSize)size;
 

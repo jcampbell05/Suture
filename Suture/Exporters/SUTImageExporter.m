@@ -63,6 +63,11 @@ CGRect SUTFlipCGRect(CGRect rect, CGSize size)
     return @"png";
 }
 
+- (NSProgress *)progress
+{
+    return nil;
+}
+
 - (void)exportDocument:(SUTDocument *)document
                    URL:(NSURL *)url
 {

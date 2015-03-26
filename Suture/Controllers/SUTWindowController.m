@@ -12,13 +12,13 @@
 #import "SUTExporter.h"
 #import "SUTExporterRegistry.h"
 #import "SUTExportPanel.h"
+#import "SUTProgressPanel.h"
 #import "SUTOutlineView.h"
 
 @interface SUTWindowController () <SUTExporterDelegate>
 
 @property (nonatomic, strong) SUTOutlineView *dropHighlightView;
 @property (nonatomic, strong) SUTEditorView *editorView;
-@property (nonatomic, strong) NSPanel *exportProgressPanel;
 
 - (void)didEnterVersionBrowser:(NSNotification *)notification;
 - (void)didExitVersionBrowser:(NSNotification *)notification;
@@ -165,13 +165,13 @@
 
 - (void)exporterWillExport:(id<SUTExporter>)exporter
 {
-    self.exportProgressPanel = [[NSPanel alloc] initWithContentRect:NSMakeRect(0.0f, 0.0f, 400.0f, 125.0f)
-                                                          styleMask:NSDocModalWindowMask
-                                                            backing:NSBackingStoreBuffered
-                                                              defer:NO];
+    SUTProgressPanel *progressPanel = [[SUTProgressPanel alloc] initWithContentRect:NSMakeRect(0.0f, 0.0f, 400.0f, 125.0f)
+                                                                          styleMask:NSDocModalWindowMask
+                                                                            backing:NSBackingStoreBuffered
+                                                                              defer:NO];
     
-    [self.window beginSheet:self.exportProgressPanel
-                       completionHandler:^(NSModalResponse returnCode)
+    [self.window beginSheet:progressPanel
+          completionHandler:^(NSModalResponse returnCode)
     {
     }];
 }

@@ -22,6 +22,7 @@
 @property (nonatomic, strong, readonly) NSString *name;
 @property (nonatomic, strong, readonly) NSString *extension;
 @property (nonatomic, weak) id<SUTExporterDelegate> delegate;
+@property (nonatomic, strong, readonly) NSProgress *progress;
 
 - (void)exportDocument:(SUTDocument *)document
                    URL:(NSURL *)url;

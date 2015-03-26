@@ -111,6 +111,7 @@
     return context;
 }
 
+//TODO: Move into category.
 CGImageRef CGImageFromNSImage(NSImage *image)
 {
     NSData * imageData = [image TIFFRepresentation];
@@ -125,6 +126,7 @@ CGImageRef CGImageFromNSImage(NSImage *image)
     return imageRef;
 }
 
+//Move into another header file.
 CGRect SUTFlipCGRect(CGRect rect, CGSize size)
 {
     rect.origin.y = size.height - CGRectGetMaxY(rect);

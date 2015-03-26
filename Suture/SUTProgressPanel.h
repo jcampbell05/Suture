@@ -10,4 +10,6 @@
 
 @interface SUTProgressPanel : NSPanel
 
+@property (nonatomic, strong) NSProgress *progress;
+
 @end

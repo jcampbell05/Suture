@@ -1,3 +1,7 @@
+v1.4
+===
+- Fixes version number.
+
 v1.3
 ===
 - New Higher Resolution version of Icon.

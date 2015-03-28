@@ -19,16 +19,18 @@
 
 @property (nonatomic, strong, readwrite) NSProgress *progress;
 
-
 - (CGContextRef)createExportingImageContextWithSize:(CGSize)size;
 
 @end
 
 @implementation SUTImageExporter
 
+#pragma mark - Exporter Info
+
 - (NSString *)name
 {
-    return NSLocalizedString(@"image_exporter_nav", nil);
+    return NSLocalizedString(@"image_exporter_nav",
+                             nil);
 }
 
 - (NSString *)extension
@@ -64,7 +66,7 @@
     CGContextClearRect(context, NSMakeRect(0, 0, contentSize.width, contentSize.height));
     CGContextSetStrokeColorWithColor(context, [[NSColor redColor] CGColor]);
     
-    for (NSInteger spriteIndex = 0 ; spriteIndex < numberOfSprites; spriteIndex ++)
+    for (NSInteger spriteIndex = 0; spriteIndex < numberOfSprites; spriteIndex ++)
     {
         self.progress.completedUnitCount ++;
         

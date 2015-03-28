@@ -48,8 +48,6 @@ static CGFloat const SUTProgressIndicatorMargin = 20.0f;
                         change:(NSDictionary *)change
                        context:(void *)context
 {
-  
-    
     if ([object isEqual:self.progress])
     {
         [self updateProgress];
@@ -96,8 +94,17 @@ static CGFloat const SUTProgressIndicatorMargin = 20.0f;
 
 - (void)updateProgress
 {
-    self.progressIndicator.maxValue = self.progress.totalUnitCount;
-    self.progressIndicator.doubleValue = self.progress.completedUnitCount;
+    dispatch_async(dispatch_get_main_queue(), ^
+    {
+        if (self.progressIndicator.maxValue != self.progress.totalUnitCount)
+        {
+            self.progressIndicator.maxValue = self.progress.totalUnitCount;
+        }
+        
+        [self.progressIndicator incrementBy:1];
+        
+        NSLog(@"Progress: %f", self.progressIndicator.doubleValue);
+    });
 }
 
 #pragma mark - ProgressIndicator
@@ -112,6 +119,7 @@ static CGFloat const SUTProgressIndicatorMargin = 20.0f;
                                                                                    width,
                                                                                    SUTProgressIndicatorHeight)];
         _progressIndicator.indeterminate = NO;
+        _progressIndicator.controlTint = NSBlueControlTint;
     }
     
     return _progressIndicator;

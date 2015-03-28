@@ -15,6 +15,8 @@ static CGFloat const SUTProgressIndicatorMargin = 20.0f;
 
 @property (nonatomic, strong) NSProgressIndicator *progressIndicator;
 
+- (void)updateProgress;
+
 @end
 
 @implementation SUTProgressPanel
@@ -39,6 +41,65 @@ static CGFloat const SUTProgressIndicatorMargin = 20.0f;
     return self;
 }
 
+#pragma mark - KVO
+
+- (void)observeValueForKeyPath:(NSString *)keyPath
+                      ofObject:(id)object
+                        change:(NSDictionary *)change
+                       context:(void *)context
+{
+  
+    
+    if ([object isEqual:self.progress])
+    {
+        [self updateProgress];
+    }
+    else
+    {
+        [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
+    }
+}
+
+#pragma mark - Progress
+
+- (void)setProgress:(NSProgress *)progress
+{
+    if (![_progress isEqual:progress])
+    {
+        if (_progress)
+        {
+            [_progress removeObserver:self
+                           forKeyPath:NSStringFromSelector(@selector(totalUnitCount))];
+            [_progress removeObserver:self
+                           forKeyPath:NSStringFromSelector(@selector(completedUnitCount))];
+        }
+        
+        [self willChangeValueForKey:NSStringFromSelector(@selector(progress))];
+        _progress = progress;
+        [self didChangeValueForKey:NSStringFromSelector(@selector(progress))];
+        
+        [self updateProgress];
+        
+        if (progress)
+        {
+            [progress addObserver:self
+                       forKeyPath:NSStringFromSelector(@selector(totalUnitCount))
+                          options:NSKeyValueObservingOptionNew
+                          context:NULL];
+            [progress addObserver:self
+                       forKeyPath:NSStringFromSelector(@selector(completedUnitCount))
+                          options:NSKeyValueObservingOptionNew
+                          context:NULL];
+        }
+    }
+}
+
+- (void)updateProgress
+{
+    self.progressIndicator.maxValue = self.progress.totalUnitCount;
+    self.progressIndicator.doubleValue = self.progress.completedUnitCount;
+}
+
 #pragma mark - ProgressIndicator
 
 - (NSProgressIndicator *)progressIndicator
@@ -50,6 +111,7 @@ static CGFloat const SUTProgressIndicatorMargin = 20.0f;
                                                                                    ([self.contentView bounds].size.width / 2) - (width / 2),
                                                                                    width,
                                                                                    SUTProgressIndicatorHeight)];
+        _progressIndicator.indeterminate = NO;
     }
     
     return _progressIndicator;

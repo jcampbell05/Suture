@@ -14,6 +14,7 @@
 @protocol SUTExporterDelegate <NSObject>
 
 - (void)exporterWillExport:(id<SUTExporter>)exporter;
+- (void)exporterDidExport:(id<SUTExporter>)exporter;
 
 @end
 

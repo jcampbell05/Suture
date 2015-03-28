@@ -18,7 +18,7 @@
 @interface SUTImageExporter ()
 
 @property (nonatomic, strong, readwrite) NSProgress *progress;
-@property (nonatomic, strong) NSOperationQueue *exportingQueue;
+
 
 - (CGContextRef)createExportingImageContextWithSize:(CGSize)size;
 
@@ -35,6 +35,8 @@
 {
     return @"png";
 }
+
+#pragma mark - Progress
 
 - (NSProgress *)progress
 {
@@ -64,6 +66,8 @@
     
     for (NSInteger spriteIndex = 0 ; spriteIndex < numberOfSprites; spriteIndex ++)
     {
+        self.progress.completedUnitCount ++;
+        
         CGRect spriteFrame = [document.layout frameForSpriteAtIndex:spriteIndex];
         spriteFrame = SUTFlipCGRect(spriteFrame, contentSize);
         
@@ -100,6 +104,11 @@
     
     CGImageRelease(image);
     CGContextRelease(context);
+    
+    self.progress.completedUnitCount ++;
+    
+    self.progress = nil;
+    [self.delegate exporterDidExport:self];
 }
 
 - (CGContextRef)createExportingImageContextWithSize:(CGSize)size

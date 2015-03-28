@@ -19,6 +19,8 @@
 
 @property (nonatomic, strong) SUTOutlineView *dropHighlightView;
 @property (nonatomic, strong) SUTEditorView *editorView;
+@property (nonatomic, strong) SUTProgressPanel *progressPanel;
+@property (nonatomic, strong) NSOperationQueue *exportingQueue;
 
 - (void)didEnterVersionBrowser:(NSNotification *)notification;
 - (void)didExitVersionBrowser:(NSNotification *)notification;
@@ -59,6 +61,18 @@
     }
     
     return self;
+}
+
+#pragma mark - Queue
+
+- (NSOperationQueue *)exportingQueue
+{
+    if (!_exportingQueue)
+    {
+        _exportingQueue = [[NSOperationQueue alloc] init];
+    }
+    
+    return _exportingQueue;
 }
 
 #pragma mark - Document
@@ -143,8 +157,11 @@
          
          if (result == NSFileHandlingPanelOKButton)
          {
-             [exporter exportDocument:exportPanel.document
-                                  URL:exportPanel.URL];
+             [self.exportingQueue addOperationWithBlock:^
+             {
+                 [exporter exportDocument:exportPanel.document
+                                      URL:exportPanel.URL];
+             }];
          }
      }];
 }
@@ -165,15 +182,20 @@
 
 - (void)exporterWillExport:(id<SUTExporter>)exporter
 {
-    SUTProgressPanel *progressPanel = [[SUTProgressPanel alloc] initWithContentRect:NSMakeRect(0.0f, 0.0f, 400.0f, 125.0f)
-                                                                          styleMask:NSDocModalWindowMask
-                                                                            backing:NSBackingStoreBuffered
-                                                                              defer:NO];
+    self.progressPanel = [[SUTProgressPanel alloc] initWithContentRect:NSMakeRect(0.0f, 0.0f, 400.0f, 125.0f)
+                                                             styleMask:NSDocModalWindowMask
+                                                               backing:NSBackingStoreBuffered
+                                                                 defer:NO];
+    self.progressPanel.progress = exporter.progress;
     
-    [self.window beginSheet:progressPanel
-          completionHandler:^(NSModalResponse returnCode)
-    {
-    }];
+    [self.window beginSheet:self.progressPanel
+          completionHandler:nil];
+}
+
+- (void)exporterDidExport:(id<SUTExporter>)exporter
+{
+    [self.window endSheet:self.progressPanel];
+    self.progressPanel = nil;
 }
 
 #pragma mark - Dealloc

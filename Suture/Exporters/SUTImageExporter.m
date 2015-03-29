@@ -58,7 +58,7 @@
     
     NSInteger numberOfSprites = document.sprites.count;
     self.progress.completedUnitCount = 0;
-    self.progress.totalUnitCount = numberOfSprites;
+    self.progress.totalUnitCount = numberOfSprites + 1;
     
     CGSize contentSize = [document.layout contentSize];
     CGContextRef context = [self createExportingImageContextWithSize:contentSize];
@@ -68,8 +68,6 @@
     
     for (NSInteger spriteIndex = 0; spriteIndex < numberOfSprites; spriteIndex ++)
     {
-        self.progress.completedUnitCount ++;
-        
         CGRect spriteFrame = [document.layout frameForSpriteAtIndex:spriteIndex];
         spriteFrame = SUTFlipCGRect(spriteFrame, contentSize);
         
@@ -81,6 +79,8 @@
                            image);
         
         CGImageRelease(image);
+        
+        self.progress.completedUnitCount ++;
     }
     
     CGImageRef image = CGBitmapContextCreateImage(context);

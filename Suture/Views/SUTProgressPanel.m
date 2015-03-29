@@ -94,14 +94,14 @@ static CGFloat const SUTProgressIndicatorMargin = 20.0f;
 
 - (void)updateProgress
 {
-    dispatch_async(dispatch_get_main_queue(), ^
+    dispatch_sync(dispatch_get_main_queue(), ^
     {
         if (self.progressIndicator.maxValue != self.progress.totalUnitCount)
         {
             self.progressIndicator.maxValue = self.progress.totalUnitCount;
         }
         
-        [self.progressIndicator incrementBy:1];
+        self.progressIndicator.doubleValue = self.progress.completedUnitCount;
         
         NSLog(@"Progress: %f", self.progressIndicator.doubleValue);
     });

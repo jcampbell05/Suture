@@ -3,6 +3,7 @@ v1.5
 - New progress indicator when exporting.
 - You can still interact with the app whilst exporting.
 - Fixes a bug where the export file dialog wrongly asked the user if they would like to replace a file, if the file they wanted to export had the same name as a folder.
+- Fixes bug where the auto update would always think there is a new version.
 
 v1.4
 ====

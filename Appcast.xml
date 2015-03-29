@@ -12,7 +12,7 @@
 				https://raw.githubusercontent.com/jcampbell05/Suture/master/Changelog.md
 			</sparkle:releaseNotesLink>
 			<pubDate>Sun, 29 Mar 2015 15:46:00 +0000</pubDate>
-      <enclosure url="https://github.com/jcampbell05/Suture/releases/download/v1.4/Suture.zip" sparkle:version="1.5" length="1776464" type="application/octet-stream" sparkle:dsaSignature="MCwCFAI8rPaTGGZpXHVqM/a+qwXU+b+jAhQkk8pRc4X3lstvl5TslHi+L06wCA=="/>
+      <enclosure url="https://github.com/jcampbell05/Suture/releases/download/v1.5/Suture.zip" sparkle:version="6" sparkle:shortVersionString="1.5" length="1776464" type="application/octet-stream" sparkle:dsaSignature="MCwCFDnWDenNwhFB+DtymUNFY9J8CoD5AhQcu2DrgZmRl2D5hmS+BEjl7k7xKg=="/>
     </item>
 		<item>
       <title>Version 1.4</title>

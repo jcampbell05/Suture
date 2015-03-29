@@ -20,7 +20,7 @@
 				https://raw.githubusercontent.com/jcampbell05/Suture/master/Changelog.md
 			</sparkle:releaseNotesLink>
 			<pubDate>Mon, 24 Mar 2015 14:29:00 +0000</pubDate>
-      <enclosure url="https://github.com/jcampbell05/Suture/releases/download/v1.4/Suture.zip" sparkle:version="1.4" length="1776464" type="application/octet-stream" sparkle:dsaSignature="MCwCFAI8rPaTGGZpXHVqM/a+qwXU+b+jAhQkk8pRc4X3lstvl5TslHi+L06wCA=="/>
+      <enclosure url="https://github.com/jcampbell05/Suture/releases/download/v1.4/Suture.zip" sparkle:version="5" sparkle:shortVersionString="1.4" length="1776464" type="application/octet-stream" sparkle:dsaSignature="MCwCFAI8rPaTGGZpXHVqM/a+qwXU+b+jAhQkk8pRc4X3lstvl5TslHi+L06wCA=="/>
     </item>
 		<item>
       <title>Version 1.3</title>
@@ -28,7 +28,7 @@
 				https://raw.githubusercontent.com/jcampbell05/Suture/master/Changelog.md
 			</sparkle:releaseNotesLink>
 			<pubDate>Mon, 24 Mar 2015 14:16:00 +0000</pubDate>
-      <enclosure url="https://github.com/jcampbell05/Suture/releases/download/v1.3/Suture.zip" sparkle:version="1.3" length="1776463" type="application/octet-stream" sparkle:dsaSignature="MC0CFE3OGNGzT935nH7r7w7Plira79mcAhUAgb7YmYlAFlWAXtuyf96nYAk8spQ="/>
+      <enclosure url="https://github.com/jcampbell05/Suture/releases/download/v1.3/Suture.zip" sparkle:version="4" sparkle:shortVersionString="1.3" length="1776463" type="application/octet-stream" sparkle:dsaSignature="MC0CFE3OGNGzT935nH7r7w7Plira79mcAhUAgb7YmYlAFlWAXtuyf96nYAk8spQ="/>
     </item>
 		<item>
       <title>Version 1.2</title>
@@ -36,7 +36,7 @@
 				https://raw.githubusercontent.com/jcampbell05/Suture/master/Changelog.md
 			</sparkle:releaseNotesLink>
 			<pubDate>Mon, 23 Mar 2015 13:34:00 +0000</pubDate>
-      <enclosure url="https://github.com/jcampbell05/Suture/releases/download/v1.2/Suture.zip" sparkle:version="1.2" length="1849357" type="application/octet-stream" sparkle:dsaSignature="MCwCFDdqiIMl6tvve+5sX7MEoQ823u9rAhRGWYiWVhpHlwpvyAUlVfpJdI5K0A=="/>
+      <enclosure url="https://github.com/jcampbell05/Suture/releases/download/v1.2/Suture.zip" sparkle:version="3" sparkle:shortVersionString="1.2" length="1849357" type="application/octet-stream" sparkle:dsaSignature="MCwCFDdqiIMl6tvve+5sX7MEoQ823u9rAhRGWYiWVhpHlwpvyAUlVfpJdI5K0A=="/>
     </item>
 	</channel>
 </rss>

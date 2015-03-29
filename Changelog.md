@@ -1,14 +1,20 @@
+v1.5
+====
+- New progress indicator when exporting.
+- You can still interact with the app whilst exporting.
+- Fixes a bug where the export file dialog wrongly asked the user if they would like to replace a file, if the file they wanted to export had the same name as a folder.
+
 v1.4
-===
+====
 - Fixes version number.
 
 v1.3
-===
+====
 - New Higher Resolution version of Icon.
 - Export will now only export when replacing a file when you allow it to do so.
 
 v1.2
-===
+====
 - Adds new Icon.
 
 v1.1
@@ -19,5 +25,5 @@ v1.1
 - Sprite sheet is now centered in the editor.
 
 v1.0
-===
+====
 - Initial Release

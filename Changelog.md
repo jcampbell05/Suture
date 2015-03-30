@@ -1,3 +1,7 @@
+v1.6
+====
+- Adds ability to export to JPEG.
+
 v1.5
 ====
 - New progress indicator when exporting.

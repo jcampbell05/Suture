@@ -23,11 +23,20 @@
 - (instancetype)init
 {
     self = [super init];
+    
     if (self)
     {
         self.exportAccessoryView = [[SUTExportAccessoryView alloc] initWithSavePanel:self];
     }
+    
     return self;
+}
+
+#pragma mark - Selected Exporter
+
+- (id<SUTExporter>)selectedExporter
+{
+    return self.exportAccessoryView.selectedExporter;
 }
 
 @end

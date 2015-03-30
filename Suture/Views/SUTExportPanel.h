@@ -8,9 +8,10 @@
 
 @import Cocoa;
 #import "SUTDocument.h"
+#import "SUTExporter.h"
 
 @interface SUTExportPanel : NSSavePanel
 
-@property (nonatomic, weak) SUTDocument *document;
+@property (nonatomic, readonly) id<SUTExporter> selectedExporter;
 
 @end

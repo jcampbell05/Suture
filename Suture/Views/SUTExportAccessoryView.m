@@ -14,11 +14,13 @@ static CGFloat SUTExportAccessoryPopUpButtonViewHeight = 35.0f;
 static CGFloat SUTExportAccessoryPopUpButtonViewWidth = 125.0f;
 static CGFloat SUTExportAccessoryPopUpButtonViewLeftMargin = 5.0f;
 
-@interface SUTExportAccessoryView ()
+@interface SUTExportAccessoryView () <NSMenuDelegate>
 
 @property (nonatomic, strong, readwrite) NSSavePanel *savePanel;
 @property (nonatomic, strong) NSPopUpButton *formatPopUpButtonView;
 @property (nonatomic, strong) NSTextField *formatTitleView;
+
+- (void)exporterWasSelected:(NSPopUpButton *)button;
 
 @end
 
@@ -47,6 +49,13 @@ static CGFloat SUTExportAccessoryPopUpButtonViewLeftMargin = 5.0f;
     return self;
 }
 
+#pragma mark - Selected Exporter
+
+- (id<SUTExporter>)selectedExporter
+{
+    return [SUTExporterRegistry sharedRegistry].exporters[self.formatPopUpButtonView.indexOfSelectedItem];
+}
+
 #pragma mark - Format Combo View
 
 - (NSPopUpButton *)formatPopUpButtonView
@@ -58,6 +67,8 @@ static CGFloat SUTExportAccessoryPopUpButtonViewLeftMargin = 5.0f;
                                                                                  (SUTExportAccessoryPopUpButtonViewHeight / 2),
                                                                                  SUTExportAccessoryPopUpButtonViewWidth,
                                                                                  SUTExportAccessoryPopUpButtonViewHeight)];
+        [_formatPopUpButtonView setTarget:self];
+        [_formatPopUpButtonView setAction:@selector(exporterWasSelected:)];
         
         NSMutableArray *items = [[NSMutableArray alloc] init];
         
@@ -67,6 +78,8 @@ static CGFloat SUTExportAccessoryPopUpButtonViewLeftMargin = 5.0f;
         }];
         
         [_formatPopUpButtonView addItemsWithTitles:items];
+        
+        [self exporterWasSelected:_formatPopUpButtonView];
     }
     
     return _formatPopUpButtonView;
@@ -99,6 +112,13 @@ static CGFloat SUTExportAccessoryPopUpButtonViewLeftMargin = 5.0f;
     }
     
     return _formatTitleView;
+}
+
+#pragma mark - Events
+
+- (void)exporterWasSelected:(NSPopUpButton *)button;
+{
+    [self.savePanel setAllowedFileTypes:@[[self.selectedExporter extension]]];
 }
 
 @end

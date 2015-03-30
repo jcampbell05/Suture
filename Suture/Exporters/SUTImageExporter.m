@@ -29,13 +29,32 @@
 
 - (NSString *)name
 {
-    return NSLocalizedString(@"image_exporter_nav",
-                             nil);
+    switch (self.type)
+    {
+        case SUTImageExporterPNGType:
+            return NSLocalizedString(@"png_image_exporter_nav",
+                                     nil);
+             break;
+            
+        case SUTImageExporterJPEGType:
+            return NSLocalizedString(@"jpeg_image_exporter_nav",
+                                     nil);
+            break;
+    }
 }
 
 - (NSString *)extension
 {
-    return @"png";
+    switch (self.type)
+    {
+        case SUTImageExporterPNGType:
+            return @"png";
+            break;
+            
+        case SUTImageExporterJPEGType:
+            return @"jpg";
+            break;
+    }
 }
 
 #pragma mark - Progress
@@ -84,8 +103,23 @@
     }
     
     CGImageRef image = CGBitmapContextCreateImage(context);
+    CFStringRef exportType;
+    
+    switch (self.type)
+    {
+        case SUTImageExporterPNGType:
+            exportType = kUTTypePNG;
+            break;
+        case SUTImageExporterJPEGType:
+            exportType = kUTTypeJPEG;
+            break;
+            
+        default:
+            break;
+    }
+    
     CGImageDestinationRef destination = CGImageDestinationCreateWithURL((__bridge CFURLRef)url,
-                                                                        kUTTypePNG,
+                                                                        exportType,
                                                                         1,
                                                                         NULL);
     if (!destination)

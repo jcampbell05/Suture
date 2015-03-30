@@ -144,12 +144,8 @@
 - (IBAction)export:(NSMenuItem *)menuItem
 {
     SUTExportPanel *exportPanel = [[SUTExportPanel alloc] init];
-    exportPanel.document = self.document;
     
-    id<SUTExporter> exporter = [[SUTExporterRegistry sharedRegistry].exporters firstObject];
-    exporter.delegate = self;
-    [exportPanel setAllowedFileTypes:@[[exporter extension]]];
-    
+    [exportPanel setNameFieldStringValue:[self.document defaultDraftName]];
     [exportPanel beginSheetModalForWindow:self.window
                         completionHandler:^(NSInteger result)
      {
@@ -159,8 +155,9 @@
          {
              [self.exportingQueue addOperationWithBlock:^
              {
-                 [exporter exportDocument:exportPanel.document
-                                      URL:exportPanel.URL];
+                 exportPanel.selectedExporter.delegate = self;
+                 [exportPanel.selectedExporter exportDocument:self.document
+                                                          URL:exportPanel.URL];
              }];
          }
      }];

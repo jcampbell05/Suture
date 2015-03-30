@@ -18,7 +18,12 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-    [[SUTExporterRegistry sharedRegistry] registerExporter:[[SUTImageExporter alloc] init]];
+    SUTImageExporter *pngExporter = [[SUTImageExporter alloc] init];
+    SUTImageExporter *jpegExporter = [[SUTImageExporter alloc] init];
+    jpegExporter.type = SUTImageExporterJPEGType;
+    
+    [[SUTExporterRegistry sharedRegistry] registerExporter:pngExporter];
+    [[SUTExporterRegistry sharedRegistry] registerExporter:jpegExporter];
 }
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification

@@ -23,6 +23,7 @@
 		74415F3B1ADE7B9A00747B1E /* libpng16.16.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 74415F3A1ADE7B9A00747B1E /* libpng16.16.dylib */; };
 		74415F411ADE7BED00747B1E /* rwpng.c in Sources */ = {isa = PBXBuildFile; fileRef = 74415F3E1ADE7BED00747B1E /* rwpng.c */; };
 		74415F441ADE7C8600747B1E /* rwpng_cocoa.m in Sources */ = {isa = PBXBuildFile; fileRef = 74415F431ADE7C8600747B1E /* rwpng_cocoa.m */; };
+		74415F491ADE82FB00747B1E /* pngquant.c in Sources */ = {isa = PBXBuildFile; fileRef = 74415F471ADE82FB00747B1E /* pngquant.c */; };
 		744A71EE1AB4421C00077AA7 /* GenerateThumbnailForURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 744A71ED1AB4421C00077AA7 /* GenerateThumbnailForURL.m */; };
 		744A71F01AB4421C00077AA7 /* GeneratePreviewForURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 744A71EF1AB4421C00077AA7 /* GeneratePreviewForURL.m */; };
 		744A71F21AB4421C00077AA7 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 744A71F11AB4421C00077AA7 /* main.c */; };
@@ -124,6 +125,8 @@
 		74415F3E1ADE7BED00747B1E /* rwpng.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = rwpng.c; sourceTree = "<group>"; };
 		74415F3F1ADE7BED00747B1E /* rwpng.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rwpng.h; sourceTree = "<group>"; };
 		74415F431ADE7C8600747B1E /* rwpng_cocoa.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rwpng_cocoa.m; sourceTree = "<group>"; };
+		74415F471ADE82FB00747B1E /* pngquant.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = pngquant.c; sourceTree = "<group>"; };
+		74415F481ADE82FB00747B1E /* pngquant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pngquant.h; sourceTree = "<group>"; };
 		744A71E91AB4421C00077AA7 /* SutureQuickLook.qlgenerator */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SutureQuickLook.qlgenerator; sourceTree = BUILT_PRODUCTS_DIR; };
 		744A71EC1AB4421C00077AA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		744A71ED1AB4421C00077AA7 /* GenerateThumbnailForURL.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GenerateThumbnailForURL.m; sourceTree = "<group>"; };
@@ -270,6 +273,8 @@
 			isa = PBXGroup;
 			children = (
 				74415F431ADE7C8600747B1E /* rwpng_cocoa.m */,
+				74415F471ADE82FB00747B1E /* pngquant.c */,
+				74415F481ADE82FB00747B1E /* pngquant.h */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -686,6 +691,7 @@
 				744159E31ADE739500747B1E /* pam.c in Sources */,
 				744159DF1ADE739500747B1E /* MANUAL.md in Sources */,
 				74415F411ADE7BED00747B1E /* rwpng.c in Sources */,
+				74415F491ADE82FB00747B1E /* pngquant.c in Sources */,
 				74CF98DE1AC3960F002F8DC5 /* SUTSprite.m in Sources */,
 				74CF98DB1AC3960F002F8DC5 /* SUTCollectionViewSpriteLayout.m in Sources */,
 				744159E21ADE739500747B1E /* nearest.c in Sources */,

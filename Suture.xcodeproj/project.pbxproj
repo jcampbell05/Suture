@@ -9,6 +9,17 @@
 /* Begin PBXBuildFile section */
 		6E161129761A7158BAFDD4E7 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6376226A7E16A3DFC4595580 /* libPods.a */; };
 		7405F5C41AB38AF4006694F1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7405F5C31AB38AF4006694F1 /* Localizable.strings */; };
+		744159DA1ADE739500747B1E /* blur.c in Sources */ = {isa = PBXBuildFile; fileRef = 744159B71ADE739500747B1E /* blur.c */; };
+		744159DB1ADE739500747B1E /* configure in Resources */ = {isa = PBXBuildFile; fileRef = 744159B91ADE739500747B1E /* configure */; };
+		744159DC1ADE739500747B1E /* COPYRIGHT in Resources */ = {isa = PBXBuildFile; fileRef = 744159BA1ADE739500747B1E /* COPYRIGHT */; };
+		744159DD1ADE739500747B1E /* libimagequant.c in Sources */ = {isa = PBXBuildFile; fileRef = 744159BB1ADE739500747B1E /* libimagequant.c */; };
+		744159DE1ADE739500747B1E /* Makefile in Sources */ = {isa = PBXBuildFile; fileRef = 744159BD1ADE739500747B1E /* Makefile */; };
+		744159DF1ADE739500747B1E /* MANUAL.md in Sources */ = {isa = PBXBuildFile; fileRef = 744159BE1ADE739500747B1E /* MANUAL.md */; };
+		744159E01ADE739500747B1E /* mediancut.c in Sources */ = {isa = PBXBuildFile; fileRef = 744159BF1ADE739500747B1E /* mediancut.c */; };
+		744159E11ADE739500747B1E /* mempool.c in Sources */ = {isa = PBXBuildFile; fileRef = 744159C11ADE739500747B1E /* mempool.c */; };
+		744159E21ADE739500747B1E /* nearest.c in Sources */ = {isa = PBXBuildFile; fileRef = 744159C31ADE739500747B1E /* nearest.c */; };
+		744159E31ADE739500747B1E /* pam.c in Sources */ = {isa = PBXBuildFile; fileRef = 744159C51ADE739500747B1E /* pam.c */; };
+		744159E41ADE739500747B1E /* viter.c in Sources */ = {isa = PBXBuildFile; fileRef = 744159C71ADE739500747B1E /* viter.c */; };
 		744A71EE1AB4421C00077AA7 /* GenerateThumbnailForURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 744A71ED1AB4421C00077AA7 /* GenerateThumbnailForURL.m */; };
 		744A71F01AB4421C00077AA7 /* GeneratePreviewForURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 744A71EF1AB4421C00077AA7 /* GeneratePreviewForURL.m */; };
 		744A71F21AB4421C00077AA7 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 744A71F11AB4421C00077AA7 /* main.c */; };
@@ -87,6 +98,24 @@
 		6376226A7E16A3DFC4595580 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		7405F5C31AB38AF4006694F1 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		7428E6041ABEC94900116CA9 /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
+		744159B71ADE739500747B1E /* blur.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = blur.c; sourceTree = "<group>"; };
+		744159B81ADE739500747B1E /* blur.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = blur.h; sourceTree = "<group>"; };
+		744159B91ADE739500747B1E /* configure */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = configure; sourceTree = "<group>"; };
+		744159BA1ADE739500747B1E /* COPYRIGHT */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = COPYRIGHT; sourceTree = "<group>"; };
+		744159BB1ADE739500747B1E /* libimagequant.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = libimagequant.c; sourceTree = "<group>"; };
+		744159BC1ADE739500747B1E /* libimagequant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = libimagequant.h; sourceTree = "<group>"; };
+		744159BD1ADE739500747B1E /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
+		744159BE1ADE739500747B1E /* MANUAL.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = MANUAL.md; sourceTree = "<group>"; };
+		744159BF1ADE739500747B1E /* mediancut.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mediancut.c; sourceTree = "<group>"; };
+		744159C01ADE739500747B1E /* mediancut.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mediancut.h; sourceTree = "<group>"; };
+		744159C11ADE739500747B1E /* mempool.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mempool.c; sourceTree = "<group>"; };
+		744159C21ADE739500747B1E /* mempool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mempool.h; sourceTree = "<group>"; };
+		744159C31ADE739500747B1E /* nearest.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = nearest.c; sourceTree = "<group>"; };
+		744159C41ADE739500747B1E /* nearest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = nearest.h; sourceTree = "<group>"; };
+		744159C51ADE739500747B1E /* pam.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = pam.c; sourceTree = "<group>"; };
+		744159C61ADE739500747B1E /* pam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pam.h; sourceTree = "<group>"; };
+		744159C71ADE739500747B1E /* viter.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = viter.c; sourceTree = "<group>"; };
+		744159C81ADE739500747B1E /* viter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = viter.h; sourceTree = "<group>"; };
 		744A71E91AB4421C00077AA7 /* SutureQuickLook.qlgenerator */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SutureQuickLook.qlgenerator; sourceTree = BUILT_PRODUCTS_DIR; };
 		744A71EC1AB4421C00077AA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		744A71ED1AB4421C00077AA7 /* GenerateThumbnailForURL.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GenerateThumbnailForURL.m; sourceTree = "<group>"; };
@@ -173,6 +202,47 @@
 				6376226A7E16A3DFC4595580 /* libPods.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		744159AF1ADE739500747B1E /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				744159B01ADE739500747B1E /* pngquant */,
+			);
+			path = Vendor;
+			sourceTree = "<group>";
+		};
+		744159B01ADE739500747B1E /* pngquant */ = {
+			isa = PBXGroup;
+			children = (
+				744159B61ADE739500747B1E /* lib */,
+			);
+			path = pngquant;
+			sourceTree = "<group>";
+		};
+		744159B61ADE739500747B1E /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				744159B71ADE739500747B1E /* blur.c */,
+				744159B81ADE739500747B1E /* blur.h */,
+				744159B91ADE739500747B1E /* configure */,
+				744159BA1ADE739500747B1E /* COPYRIGHT */,
+				744159BB1ADE739500747B1E /* libimagequant.c */,
+				744159BC1ADE739500747B1E /* libimagequant.h */,
+				744159BD1ADE739500747B1E /* Makefile */,
+				744159BE1ADE739500747B1E /* MANUAL.md */,
+				744159BF1ADE739500747B1E /* mediancut.c */,
+				744159C01ADE739500747B1E /* mediancut.h */,
+				744159C11ADE739500747B1E /* mempool.c */,
+				744159C21ADE739500747B1E /* mempool.h */,
+				744159C31ADE739500747B1E /* nearest.c */,
+				744159C41ADE739500747B1E /* nearest.h */,
+				744159C51ADE739500747B1E /* pam.c */,
+				744159C61ADE739500747B1E /* pam.h */,
+				744159C71ADE739500747B1E /* viter.c */,
+				744159C81ADE739500747B1E /* viter.h */,
+			);
+			path = lib;
 			sourceTree = "<group>";
 		};
 		744A71EA1AB4421C00077AA7 /* SutureQuickLook */ = {
@@ -281,6 +351,7 @@
 		74F0FAD01AAF5224003F9454 = {
 			isa = PBXGroup;
 			children = (
+				744159AF1ADE739500747B1E /* Vendor */,
 				74F0FADB1AAF5224003F9454 /* Suture */,
 				74F0FAF51AAF5224003F9454 /* SutureTests */,
 				744A71EA1AB4421C00077AA7 /* SutureQuickLook */,
@@ -483,6 +554,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				744159DC1ADE739500747B1E /* COPYRIGHT in Resources */,
+				744159DB1ADE739500747B1E /* configure in Resources */,
 				74CF98E91AC39644002F8DC5 /* MainMenu.xib in Resources */,
 				74F0FAEA1AAF5224003F9454 /* Images.xcassets in Resources */,
 				74CF98D71AC3960F002F8DC5 /* dsa_pub.pem in Resources */,
@@ -560,9 +633,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				744159E41ADE739500747B1E /* viter.c in Sources */,
+				744159E01ADE739500747B1E /* mediancut.c in Sources */,
 				74CF98DA1AC3960F002F8DC5 /* SUTImageExporter.m in Sources */,
 				74F0FAE21AAF5224003F9454 /* main.m in Sources */,
+				744159E11ADE739500747B1E /* mempool.c in Sources */,
 				74CF98E41AC3960F002F8DC5 /* SUTOutlineView.m in Sources */,
+				744159DD1ADE739500747B1E /* libimagequant.c in Sources */,
+				744159DA1ADE739500747B1E /* blur.c in Sources */,
 				74CF98E01AC3960F002F8DC5 /* SUTEditorView.m in Sources */,
 				74CF98E31AC3960F002F8DC5 /* SUTExportPanel.m in Sources */,
 				74F0FAE01AAF5224003F9454 /* AppDelegate.m in Sources */,
@@ -570,11 +648,15 @@
 				74CF98E21AC3960F002F8DC5 /* SUTExportAccessoryView.m in Sources */,
 				74CF98EE1AC399B8002F8DC5 /* NSImage+CGImage.m in Sources */,
 				74CF98DD1AC3960F002F8DC5 /* SUTDocument.m in Sources */,
+				744159DE1ADE739500747B1E /* Makefile in Sources */,
 				74CF98DF1AC3960F002F8DC5 /* SUTCheckerboardView.m in Sources */,
 				74CF98DC1AC3960F002F8DC5 /* SUTSpriteLayout.m in Sources */,
 				74CF98D91AC3960F002F8DC5 /* SUTExporterRegistry.m in Sources */,
+				744159E31ADE739500747B1E /* pam.c in Sources */,
+				744159DF1ADE739500747B1E /* MANUAL.md in Sources */,
 				74CF98DE1AC3960F002F8DC5 /* SUTSprite.m in Sources */,
 				74CF98DB1AC3960F002F8DC5 /* SUTCollectionViewSpriteLayout.m in Sources */,
+				744159E21ADE739500747B1E /* nearest.c in Sources */,
 				74CF98E11AC3960F002F8DC5 /* SUTEmptySpriteSheetView.m in Sources */,
 				74CF98E51AC3960F002F8DC5 /* SUTProgressPanel.m in Sources */,
 				74CF98D81AC3960F002F8DC5 /* SUTWindowController.m in Sources */,

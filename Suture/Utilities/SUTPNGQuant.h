@@ -15,4 +15,4 @@
 #include "rwpng.h"
 
 png24_image SUTCreate24BitPNGImageFromContext(CGContextRef context);
-png8_image SUTCreate8BitPNGImageFrom24BitImage(png24_image image);
+png8_image SUTCreate8BitPNGImageFrom24BitPNGImage(png24_image image);

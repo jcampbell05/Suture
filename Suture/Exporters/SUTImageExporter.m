@@ -175,7 +175,14 @@
              url:(NSURL *)url
 {
     png24_image inImage = SUTCreate24BitPNGImageFromContext(context);
-    png8_image outImage = SUTCreate8BitPNGImageFrom24BitImage(inImage);
+    png8_image outImage = SUTCreate8BitPNGImageFrom24BitPNGImage(inImage);
+    
+    
+    FILE *outfile = fopen([url.path UTF8String], "wb");
+    
+    rwpng_write_image8(outfile, &outImage);
+    
+    fclose(outfile);
 }
 
 - (CGContextRef)createExportingImageContextWithSize:(CGSize)size

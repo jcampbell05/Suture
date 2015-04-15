@@ -196,15 +196,12 @@
 		74415E8D1ADE78F400747B1E /* example.c in Sources */ = {isa = PBXBuildFile; fileRef = 74415D211ADE78F400747B1E /* example.c */; };
 		74415E8E1ADE78F400747B1E /* INSTALL in Resources */ = {isa = PBXBuildFile; fileRef = 74415D221ADE78F400747B1E /* INSTALL */; };
 		74415E8F1ADE78F400747B1E /* libpng-config in Resources */ = {isa = PBXBuildFile; fileRef = 74415D241ADE78F400747B1E /* libpng-config */; };
-		74415E901ADE78F400747B1E /* libpng.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 74415D251ADE78F400747B1E /* libpng.a */; };
 		74415E911ADE78F400747B1E /* libpng.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 74415D261ADE78F400747B1E /* libpng.dylib */; };
 		74415E921ADE78F400747B1E /* libpng.pc in Resources */ = {isa = PBXBuildFile; fileRef = 74415D271ADE78F400747B1E /* libpng.pc */; };
 		74415E931ADE78F400747B1E /* libpng-config in Resources */ = {isa = PBXBuildFile; fileRef = 74415D281ADE78F400747B1E /* libpng-config */; };
 		74415E941ADE78F400747B1E /* libpng-config.in in Resources */ = {isa = PBXBuildFile; fileRef = 74415D291ADE78F400747B1E /* libpng-config.in */; };
 		74415E951ADE78F400747B1E /* libpng-manual.txt in Resources */ = {isa = PBXBuildFile; fileRef = 74415D2A1ADE78F400747B1E /* libpng-manual.txt */; };
 		74415E961ADE78F400747B1E /* libpng.3 in Resources */ = {isa = PBXBuildFile; fileRef = 74415D2B1ADE78F400747B1E /* libpng.3 */; };
-		74415E971ADE78F400747B1E /* libpng.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 74415D2C1ADE78F400747B1E /* libpng.a */; };
-		74415E981ADE78F400747B1E /* libpng.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 74415D2D1ADE78F400747B1E /* libpng.dylib */; };
 		74415E991ADE78F400747B1E /* libpng.pc in Resources */ = {isa = PBXBuildFile; fileRef = 74415D2E1ADE78F400747B1E /* libpng.pc */; };
 		74415E9A1ADE78F400747B1E /* libpng.pc.in in Resources */ = {isa = PBXBuildFile; fileRef = 74415D2F1ADE78F400747B1E /* libpng.pc.in */; };
 		74415E9B1ADE78F400747B1E /* libpng16-config in Resources */ = {isa = PBXBuildFile; fileRef = 74415D301ADE78F400747B1E /* libpng16-config */; };
@@ -887,9 +884,6 @@
 			files = (
 				6E161129761A7158BAFDD4E7 /* libPods.a in Frameworks */,
 				74415E911ADE78F400747B1E /* libpng.dylib in Frameworks */,
-				74415E901ADE78F400747B1E /* libpng.a in Frameworks */,
-				74415E971ADE78F400747B1E /* libpng.a in Frameworks */,
-				74415E981ADE78F400747B1E /* libpng.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

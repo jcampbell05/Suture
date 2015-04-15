@@ -162,7 +162,13 @@
     
     if (self.type & SUTImageExporterPNGTypeBit)
     {
-        //TODO: Talk to tool directly.
+        NSString *pngquantPath = [[NSBundle mainBundle] pathForResource:@"pngquant" ofType:nil];
+        NSTask *task = [[NSTask alloc] init];
+
+        task.launchPath = pngquantPath;
+        
+        [task launch];
+        [task waitUntilExit];
     }
     
     self.progress.completedUnitCount ++;

@@ -25,16 +25,35 @@
 
 @implementation SUTImageExporter
 
+#pragma mark - Init
+
+- (instancetype)init
+{
+    self = [super init];
+    
+    if (self)
+    {
+        self.type = SUTImageExporterPNG8Type;
+    }
+    
+    return self;
+}
+
 #pragma mark - Exporter Info
 
 - (NSString *)name
 {
     switch (self.type)
     {
-        case SUTImageExporterPNGType:
-            return NSLocalizedString(@"png_image_exporter_nav",
+        case SUTImageExporterPNG8Type:
+            return NSLocalizedString(@"png_8_image_exporter_nav",
                                      nil);
-             break;
+            break;
+            
+        case SUTImageExporterPNG32Type:
+            return NSLocalizedString(@"png_32_image_exporter_nav",
+                                     nil);
+            break;
             
         case SUTImageExporterJPEGType:
             return NSLocalizedString(@"jpeg_image_exporter_nav",
@@ -45,16 +64,18 @@
 
 - (NSString *)extension
 {
-    switch (self.type)
+    NSString *extension = nil;
+    
+    if (self.type & SUTImageExporterPNGTypeBit)
     {
-        case SUTImageExporterPNGType:
-            return @"png";
-            break;
-            
-        case SUTImageExporterJPEGType:
-            return @"jpg";
-            break;
+        extension = @"png";
     }
+    else
+    {
+        extension = @"jpg";
+    }
+    
+    return extension;
 }
 
 #pragma mark - Progress
@@ -77,7 +98,7 @@
     
     NSInteger numberOfSprites = document.sprites.count;
     self.progress.completedUnitCount = 0;
-    self.progress.totalUnitCount = numberOfSprites + 1;
+    self.progress.totalUnitCount = numberOfSprites + 1 + 1;
     
     CGSize contentSize = [document.layout contentSize];
     CGContextRef context = [self createExportingImageContextWithSize:contentSize];
@@ -105,17 +126,13 @@
     CGImageRef image = CGBitmapContextCreateImage(context);
     CFStringRef exportType;
     
-    switch (self.type)
+    if (self.type & SUTImageExporterPNGTypeBit)
     {
-        case SUTImageExporterPNGType:
-            exportType = kUTTypePNG;
-            break;
-        case SUTImageExporterJPEGType:
-            exportType = kUTTypeJPEG;
-            break;
-            
-        default:
-            break;
+        exportType = kUTTypePNG;
+    }
+    else
+    {
+        exportType = kUTTypeJPEG;
     }
     
     CGImageDestinationRef destination = CGImageDestinationCreateWithURL((__bridge CFURLRef)url,
@@ -141,7 +158,14 @@
     CGImageRelease(image);
     CGContextRelease(context);
     
-    self.progress.completedUnitCount ++;
+    if (self.type & SUTImageExporterPNGTypeBit)
+    {
+        self.progress.completedUnitCount ++;
+    }
+    else
+    {
+       self.progress.completedUnitCount += 2;
+    }
     
     self.progress = nil;
     [self.delegate exporterDidExport:self];
@@ -149,7 +173,8 @@
 
 - (CGContextRef)createExportingImageContextWithSize:(CGSize)size
 {
-    size_t bitsPerComponent = 8;
+    size_t bitsPerComponent = (self.type == SUTImageExporterPNG8Type) ? 2 : 8;
+    
     CGColorSpaceRef colorSpace = CGColorSpaceCreateWithName(kCGColorSpaceGenericRGB);
     CGContextRef context = CGBitmapContextCreate(NULL,
                                                  size.width,

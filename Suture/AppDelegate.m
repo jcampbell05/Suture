@@ -18,11 +18,15 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-    SUTImageExporter *pngExporter = [[SUTImageExporter alloc] init];
+    SUTImageExporter *png32BitExporter = [[SUTImageExporter alloc] init];
+    png32BitExporter.type = SUTImageExporterPNG32Type;
+    [[SUTExporterRegistry sharedRegistry] registerExporter:png32BitExporter];
+    
+    SUTImageExporter *png8BitExporter = [[SUTImageExporter alloc] init];
+    [[SUTExporterRegistry sharedRegistry] registerExporter:png8BitExporter];
+    
     SUTImageExporter *jpegExporter = [[SUTImageExporter alloc] init];
     jpegExporter.type = SUTImageExporterJPEGType;
-    
-    [[SUTExporterRegistry sharedRegistry] registerExporter:pngExporter];
     [[SUTExporterRegistry sharedRegistry] registerExporter:jpegExporter];
 }
 

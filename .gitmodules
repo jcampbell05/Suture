@@ -1,0 +1,3 @@
+[submodule "Vendor/pngquant"]
+	path = Vendor/pngquant
+	url = https://github.com/pornel/pngquant.git

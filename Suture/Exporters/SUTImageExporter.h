@@ -8,9 +8,14 @@
 
 #import "SUTExporter.h"
 
-typedef NS_ENUM(NSUInteger, SUTImageExporterType) {
-    SUTImageExporterPNGType,
-    SUTImageExporterJPEGType
+#define SUTImageExporterPNGTypeBit 10
+#define SUTImageExporterJPEGTypeBit 20
+
+typedef NS_ENUM(NSUInteger, SUTImageExporterType)
+{
+    SUTImageExporterPNG8Type = 0 | SUTImageExporterPNGTypeBit,
+    SUTImageExporterPNG32Type = 1 | SUTImageExporterPNGTypeBit,
+    SUTImageExporterJPEGType = 2 | SUTImageExporterJPEGTypeBit
 };
 
 @interface SUTImageExporter : NSObject <SUTExporter>

@@ -15,6 +15,7 @@
 #import "SUTSpriteLayout.h"
 #import "NSImage+CGImage.h"
 
+//TODO: Handle Errors in UI.
 @interface SUTImageExporter ()
 
 @property (nonatomic, strong, readwrite) NSProgress *progress;
@@ -98,7 +99,7 @@
     
     NSInteger numberOfSprites = document.sprites.count;
     self.progress.completedUnitCount = 0;
-    self.progress.totalUnitCount = numberOfSprites + 1 + 1;
+    self.progress.totalUnitCount = numberOfSprites + 1;
     
     CGSize contentSize = [document.layout contentSize];
     CGContextRef context = [self createExportingImageContextWithSize:contentSize];
@@ -123,20 +124,30 @@
         self.progress.completedUnitCount ++;
     }
     
-    CGImageRef image = CGBitmapContextCreateImage(context);
-    CFStringRef exportType;
-    
     if (self.type & SUTImageExporterPNGTypeBit)
     {
-        exportType = kUTTypePNG;
+        [self writePNG:context
+                   url:url];
     }
     else
     {
-        exportType = kUTTypeJPEG;
+        [self writeJPEG:context
+                    url:url];
     }
     
+    CGContextRelease(context);
+    
+    self.progress.completedUnitCount ++;
+    self.progress = nil;
+    [self.delegate exporterDidExport:self];
+}
+
+- (void)writeJPEG:(CGContextRef)context
+              url:(NSURL *)url
+{
+    CGImageRef image = CGBitmapContextCreateImage(context);
     CGImageDestinationRef destination = CGImageDestinationCreateWithURL((__bridge CFURLRef)url,
-                                                                        exportType,
+                                                                        kUTTypeJPEG,
                                                                         1,
                                                                         NULL);
     if (!destination)
@@ -155,25 +166,22 @@
         CFRelease(destination);
     }
     
-    self.progress.completedUnitCount ++;
-    
     CGImageRelease(image);
-    CGContextRelease(context);
-    
-    if (self.type & SUTImageExporterPNGTypeBit)
-    {
-        NSString *pngquantPath = [[NSBundle mainBundle] pathForResource:@"pngquant" ofType:nil];
-        NSTask *task = [[NSTask alloc] init];
+}
 
-        task.launchPath = pngquantPath;
-        
-        [task launch];
-        [task waitUntilExit];
-    }
+- (void)writePNG:(CGContextRef)context
+             url:(NSURL *)url
+{
+    NSString *pngquantPath = [[NSBundle mainBundle] pathForResource:@"pngquant" ofType:nil];
+    NSTask *task = [[NSTask alloc] init];
     
-    self.progress.completedUnitCount ++;
-    self.progress = nil;
-    [self.delegate exporterDidExport:self];
+    task.launchPath = pngquantPath;
+    task.arguments = @[@"-f",
+                       @"--",
+                       url.path];
+    
+    [task launch];
+    [task waitUntilExit];
 }
 
 - (CGContextRef)createExportingImageContextWithSize:(CGSize)size

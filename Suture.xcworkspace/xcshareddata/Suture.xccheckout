@@ -22,9 +22,9 @@
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>02EC75C24037E05A184450D346C408084F916E59</key>
-		<string>../Vendor/pngquant/</string>
+		<string>../Vendor/pngquant</string>
 		<key>547A7CFBD5F0A850C99F405659B662B03DA54A62</key>
-		<string>../Vendor/libpng/</string>
+		<string>../Vendor/libpng</string>
 		<key>96BCE550C156CE7BA2EB3F8F3D63EC94218B39B6</key>
 		<string>..</string>
 	</dict>

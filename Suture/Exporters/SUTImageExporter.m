@@ -15,6 +15,8 @@
 #import "SUTSpriteLayout.h"
 #import "NSImage+CGImage.h"
 
+#import "SUTPNGQuant.h"
+
 //TODO: Handle Errors in UI.
 @interface SUTImageExporter ()
 
@@ -172,16 +174,8 @@
 - (void)writePNG:(CGContextRef)context
              url:(NSURL *)url
 {
-    NSString *pngquantPath = [[NSBundle mainBundle] pathForResource:@"pngquant" ofType:nil];
-    NSTask *task = [[NSTask alloc] init];
-    
-    task.launchPath = pngquantPath;
-    task.arguments = @[@"-f",
-                       @"--",
-                       url.path];
-    
-    [task launch];
-    [task waitUntilExit];
+    png24_image inImage = SUTCreate24BitPNGImageFromContext(context);
+    png8_image outImage = SUTCreate8BitPNGImageFrom24BitImage(inImage);
 }
 
 - (CGContextRef)createExportingImageContextWithSize:(CGSize)size

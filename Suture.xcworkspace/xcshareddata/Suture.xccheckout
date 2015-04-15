@@ -12,6 +12,8 @@
 	<dict>
 		<key>02EC75C24037E05A184450D346C408084F916E59</key>
 		<string>https://github.com/pornel/pngquant.git</string>
+		<key>547A7CFBD5F0A850C99F405659B662B03DA54A62</key>
+		<string>git://git.code.sf.net/p/libpng/code</string>
 		<key>96BCE550C156CE7BA2EB3F8F3D63EC94218B39B6</key>
 		<string>https://github.com/jcampbell05/Suture.git</string>
 	</dict>
@@ -21,6 +23,8 @@
 	<dict>
 		<key>02EC75C24037E05A184450D346C408084F916E59</key>
 		<string>../Vendor/pngquant/</string>
+		<key>547A7CFBD5F0A850C99F405659B662B03DA54A62</key>
+		<string>../Vendor/libpng/</string>
 		<key>96BCE550C156CE7BA2EB3F8F3D63EC94218B39B6</key>
 		<string>..</string>
 	</dict>
@@ -32,6 +36,14 @@
 	<string>96BCE550C156CE7BA2EB3F8F3D63EC94218B39B6</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>547A7CFBD5F0A850C99F405659B662B03DA54A62</string>
+			<key>IDESourceControlWCCName</key>
+			<string>libpng</string>
+		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>

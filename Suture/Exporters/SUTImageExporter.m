@@ -15,9 +15,6 @@
 #import "SUTSpriteLayout.h"
 #import "NSImage+CGImage.h"
 
-#import "libimagequant.h"
-#import "rwpng.h"
-
 @interface SUTImageExporter ()
 
 @property (nonatomic, strong, readwrite) NSProgress *progress;
@@ -165,36 +162,7 @@
     
     if (self.type & SUTImageExporterPNGTypeBit)
     {
-        const char *filepath = [url.path UTF8String];
-        
-        FILE *inFile = fopen(filepath,
-                             "rb");
-        
-        if (inFile == NULL)
-        {
-            NSLog(@"Error writing to \"%s\", %s", filepath, strerror(errno));
-        }
-        else
-        {
-            //TODO: Handle Errors Via UI.
-            png24_image input_image = {};
-            
-            rwpng_read_image24(inFile,
-                               &input_image,
-                               true);
-            
-            fclose(inFile);
-            
-            FILE *outFile = fopen(filepath,
-                                 "w");
-            
-            png8_image output_image = {};
-            
-            rwpng_write_image8(outFile,
-                               &output_image);
-            
-            fclose(outFile);
-        }
+        //TODO: Talk to tool directly.
     }
     
     self.progress.completedUnitCount ++;

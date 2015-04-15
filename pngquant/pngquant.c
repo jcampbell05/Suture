@@ -2,8 +2,6 @@
  **
  ** Copyright (C) 1989, 1991 by Jef Poskanzer.
  **
- ** Modified for Suture 1.7
- **
  ** Permission to use, copy, modify, and distribute this software and its
  ** documentation for any purpose and without fee is hereby granted, provided
  ** that the above copyright notice appear in all copies and that both that
@@ -40,8 +38,6 @@
  ** OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  **
  */
-
-#include "pngquant.h"
 
 #define PNGQUANT_VERSION LIQ_VERSION_STRING " (April 2015)"
 

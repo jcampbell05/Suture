@@ -1,3 +1,7 @@
+v1.7
+====
+- Adds ability to export 8-Bit PNGs.
+
 v1.6
 ====
 - Adds ability to export to JPEG.

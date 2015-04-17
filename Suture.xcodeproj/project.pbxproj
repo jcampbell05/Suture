@@ -9,6 +9,16 @@
 /* Begin PBXBuildFile section */
 		6E161129761A7158BAFDD4E7 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6376226A7E16A3DFC4595580 /* libPods.a */; };
 		7405F5C41AB38AF4006694F1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7405F5C31AB38AF4006694F1 /* Localizable.strings */; };
+		744161951ADE9CF500747B1E /* libpng16.16.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7441615D1ADE85C800747B1E /* libpng16.16.dylib */; };
+		744161971ADE9D0500747B1E /* blur.c in Sources */ = {isa = PBXBuildFile; fileRef = 74415F611ADE85AD00747B1E /* blur.c */; };
+		744161981ADE9D0500747B1E /* libimagequant.c in Sources */ = {isa = PBXBuildFile; fileRef = 74415F661ADE85AD00747B1E /* libimagequant.c */; };
+		744161991ADE9D0500747B1E /* mediancut.c in Sources */ = {isa = PBXBuildFile; fileRef = 74415F6A1ADE85AD00747B1E /* mediancut.c */; };
+		7441619A1ADE9D0500747B1E /* mempool.c in Sources */ = {isa = PBXBuildFile; fileRef = 74415F6C1ADE85AD00747B1E /* mempool.c */; };
+		7441619B1ADE9D0500747B1E /* nearest.c in Sources */ = {isa = PBXBuildFile; fileRef = 74415F6E1ADE85AD00747B1E /* nearest.c */; };
+		7441619C1ADE9D0500747B1E /* pam.c in Sources */ = {isa = PBXBuildFile; fileRef = 74415F701ADE85AD00747B1E /* pam.c */; };
+		7441619D1ADE9D0500747B1E /* viter.c in Sources */ = {isa = PBXBuildFile; fileRef = 74415F721ADE85AD00747B1E /* viter.c */; };
+		7441619E1ADE9D0500747B1E /* rwpng.c in Sources */ = {isa = PBXBuildFile; fileRef = 74415F791ADE85AD00747B1E /* rwpng.c */; };
+		744161A11ADE9D4900747B1E /* SUTPNGQuant.m in Sources */ = {isa = PBXBuildFile; fileRef = 744161A01ADE9D4900747B1E /* SUTPNGQuant.m */; };
 		744A71EE1AB4421C00077AA7 /* GenerateThumbnailForURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 744A71ED1AB4421C00077AA7 /* GenerateThumbnailForURL.m */; };
 		744A71F01AB4421C00077AA7 /* GeneratePreviewForURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 744A71EF1AB4421C00077AA7 /* GeneratePreviewForURL.m */; };
 		744A71F21AB4421C00077AA7 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 744A71F11AB4421C00077AA7 /* main.c */; };
@@ -87,6 +97,33 @@
 		6376226A7E16A3DFC4595580 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		7405F5C31AB38AF4006694F1 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		7428E6041ABEC94900116CA9 /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
+		74415F611ADE85AD00747B1E /* blur.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = blur.c; sourceTree = "<group>"; };
+		74415F621ADE85AD00747B1E /* blur.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = blur.h; sourceTree = "<group>"; };
+		74415F631ADE85AD00747B1E /* config.mk */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = config.mk; sourceTree = "<group>"; };
+		74415F641ADE85AD00747B1E /* configure */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = configure; sourceTree = "<group>"; };
+		74415F651ADE85AD00747B1E /* COPYRIGHT */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = COPYRIGHT; sourceTree = "<group>"; };
+		74415F661ADE85AD00747B1E /* libimagequant.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = libimagequant.c; sourceTree = "<group>"; };
+		74415F671ADE85AD00747B1E /* libimagequant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = libimagequant.h; sourceTree = "<group>"; };
+		74415F681ADE85AD00747B1E /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
+		74415F691ADE85AD00747B1E /* MANUAL.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = MANUAL.md; sourceTree = "<group>"; };
+		74415F6A1ADE85AD00747B1E /* mediancut.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mediancut.c; sourceTree = "<group>"; };
+		74415F6B1ADE85AD00747B1E /* mediancut.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mediancut.h; sourceTree = "<group>"; };
+		74415F6C1ADE85AD00747B1E /* mempool.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mempool.c; sourceTree = "<group>"; };
+		74415F6D1ADE85AD00747B1E /* mempool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mempool.h; sourceTree = "<group>"; };
+		74415F6E1ADE85AD00747B1E /* nearest.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = nearest.c; sourceTree = "<group>"; };
+		74415F6F1ADE85AD00747B1E /* nearest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = nearest.h; sourceTree = "<group>"; };
+		74415F701ADE85AD00747B1E /* pam.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = pam.c; sourceTree = "<group>"; };
+		74415F711ADE85AD00747B1E /* pam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pam.h; sourceTree = "<group>"; };
+		74415F721ADE85AD00747B1E /* viter.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = viter.c; sourceTree = "<group>"; };
+		74415F731ADE85AD00747B1E /* viter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = viter.h; sourceTree = "<group>"; };
+		74415F791ADE85AD00747B1E /* rwpng.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = rwpng.c; sourceTree = "<group>"; };
+		74415F7A1ADE85AD00747B1E /* rwpng.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rwpng.h; sourceTree = "<group>"; };
+		7441615D1ADE85C800747B1E /* libpng16.16.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libpng16.16.dylib; sourceTree = "<group>"; };
+		7441615E1ADE85C800747B1E /* png.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = png.h; sourceTree = "<group>"; };
+		744161681ADE865600747B1E /* pngquant.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = pngquant.c; sourceTree = "<group>"; };
+		744161941ADE876000747B1E /* Suture copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Suture copy-Info.plist"; path = "/Users/jamescampbell/Documents/Suture/Suture copy-Info.plist"; sourceTree = "<absolute>"; };
+		744161A01ADE9D4900747B1E /* SUTPNGQuant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUTPNGQuant.m; sourceTree = "<group>"; };
+		744161A21ADEA1B900747B1E /* SUTPNGQuant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SUTPNGQuant.h; sourceTree = "<group>"; };
 		744A71E91AB4421C00077AA7 /* SutureQuickLook.qlgenerator */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SutureQuickLook.qlgenerator; sourceTree = BUILT_PRODUCTS_DIR; };
 		744A71EC1AB4421C00077AA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		744A71ED1AB4421C00077AA7 /* GenerateThumbnailForURL.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GenerateThumbnailForURL.m; sourceTree = "<group>"; };
@@ -154,6 +191,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6E161129761A7158BAFDD4E7 /* libPods.a in Frameworks */,
+				744161951ADE9CF500747B1E /* libpng16.16.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -173,6 +211,70 @@
 				6376226A7E16A3DFC4595580 /* libPods.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		744159AF1ADE739500747B1E /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				74415F8E1ADE85B600747B1E /* libpng */,
+				74415F591ADE85AD00747B1E /* pngquant */,
+			);
+			path = Vendor;
+			sourceTree = "<group>";
+		};
+		74415F591ADE85AD00747B1E /* pngquant */ = {
+			isa = PBXGroup;
+			children = (
+				744161681ADE865600747B1E /* pngquant.c */,
+				74415F601ADE85AD00747B1E /* lib */,
+				74415F791ADE85AD00747B1E /* rwpng.c */,
+				74415F7A1ADE85AD00747B1E /* rwpng.h */,
+			);
+			path = pngquant;
+			sourceTree = "<group>";
+		};
+		74415F601ADE85AD00747B1E /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				74415F611ADE85AD00747B1E /* blur.c */,
+				74415F621ADE85AD00747B1E /* blur.h */,
+				74415F631ADE85AD00747B1E /* config.mk */,
+				74415F641ADE85AD00747B1E /* configure */,
+				74415F651ADE85AD00747B1E /* COPYRIGHT */,
+				74415F661ADE85AD00747B1E /* libimagequant.c */,
+				74415F671ADE85AD00747B1E /* libimagequant.h */,
+				74415F681ADE85AD00747B1E /* Makefile */,
+				74415F691ADE85AD00747B1E /* MANUAL.md */,
+				74415F6A1ADE85AD00747B1E /* mediancut.c */,
+				74415F6B1ADE85AD00747B1E /* mediancut.h */,
+				74415F6C1ADE85AD00747B1E /* mempool.c */,
+				74415F6D1ADE85AD00747B1E /* mempool.h */,
+				74415F6E1ADE85AD00747B1E /* nearest.c */,
+				74415F6F1ADE85AD00747B1E /* nearest.h */,
+				74415F701ADE85AD00747B1E /* pam.c */,
+				74415F711ADE85AD00747B1E /* pam.h */,
+				74415F721ADE85AD00747B1E /* viter.c */,
+				74415F731ADE85AD00747B1E /* viter.h */,
+			);
+			path = lib;
+			sourceTree = "<group>";
+		};
+		74415F8E1ADE85B600747B1E /* libpng */ = {
+			isa = PBXGroup;
+			children = (
+				7441615D1ADE85C800747B1E /* libpng16.16.dylib */,
+				7441615E1ADE85C800747B1E /* png.h */,
+			);
+			path = libpng;
+			sourceTree = "<group>";
+		};
+		7441619F1ADE9D4900747B1E /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				744161A01ADE9D4900747B1E /* SUTPNGQuant.m */,
+				744161A21ADEA1B900747B1E /* SUTPNGQuant.h */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 		744A71EA1AB4421C00077AA7 /* SutureQuickLook */ = {
@@ -281,12 +383,14 @@
 		74F0FAD01AAF5224003F9454 = {
 			isa = PBXGroup;
 			children = (
+				744159AF1ADE739500747B1E /* Vendor */,
 				74F0FADB1AAF5224003F9454 /* Suture */,
 				74F0FAF51AAF5224003F9454 /* SutureTests */,
 				744A71EA1AB4421C00077AA7 /* SutureQuickLook */,
 				74F0FADA1AAF5224003F9454 /* Products */,
 				75480BA0D6BFD9160E6AC0A8 /* Pods */,
 				47FCD93DB7A7332A0D546D8B /* Frameworks */,
+				744161941ADE876000747B1E /* Suture copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -303,6 +407,7 @@
 		74F0FADB1AAF5224003F9454 /* Suture */ = {
 			isa = PBXGroup;
 			children = (
+				7441619F1ADE9D4900747B1E /* Utilities */,
 				74CF98EB1AC39997002F8DC5 /* Catergories */,
 				74CF98AF1AC3960F002F8DC5 /* Certificates */,
 				74CF98B21AC3960F002F8DC5 /* Controllers */,
@@ -560,14 +665,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				744161971ADE9D0500747B1E /* blur.c in Sources */,
 				74CF98DA1AC3960F002F8DC5 /* SUTImageExporter.m in Sources */,
 				74F0FAE21AAF5224003F9454 /* main.m in Sources */,
 				74CF98E41AC3960F002F8DC5 /* SUTOutlineView.m in Sources */,
 				74CF98E01AC3960F002F8DC5 /* SUTEditorView.m in Sources */,
 				74CF98E31AC3960F002F8DC5 /* SUTExportPanel.m in Sources */,
+				7441619D1ADE9D0500747B1E /* viter.c in Sources */,
 				74F0FAE01AAF5224003F9454 /* AppDelegate.m in Sources */,
 				74CF98E61AC3960F002F8DC5 /* SUTSpriteCollectionViewCell.m in Sources */,
+				7441619E1ADE9D0500747B1E /* rwpng.c in Sources */,
+				744161991ADE9D0500747B1E /* mediancut.c in Sources */,
 				74CF98E21AC3960F002F8DC5 /* SUTExportAccessoryView.m in Sources */,
+				744161A11ADE9D4900747B1E /* SUTPNGQuant.m in Sources */,
+				7441619C1ADE9D0500747B1E /* pam.c in Sources */,
+				7441619A1ADE9D0500747B1E /* mempool.c in Sources */,
+				744161981ADE9D0500747B1E /* libimagequant.c in Sources */,
+				7441619B1ADE9D0500747B1E /* nearest.c in Sources */,
 				74CF98EE1AC399B8002F8DC5 /* NSImage+CGImage.m in Sources */,
 				74CF98DD1AC3960F002F8DC5 /* SUTDocument.m in Sources */,
 				74CF98DF1AC3960F002F8DC5 /* SUTCheckerboardView.m in Sources */,
@@ -725,6 +839,11 @@
 				);
 				INFOPLIST_FILE = Suture/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Vendor/libpng/lib",
+					"$(PROJECT_DIR)/Vendor/libpng",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -741,6 +860,11 @@
 				);
 				INFOPLIST_FILE = Suture/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Vendor/libpng/lib",
+					"$(PROJECT_DIR)/Vendor/libpng",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

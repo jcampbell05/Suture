@@ -15,6 +15,9 @@
 #import "SUTSpriteLayout.h"
 #import "NSImage+CGImage.h"
 
+#import "SUTPNGQuant.h"
+
+//TODO: Handle Errors in UI.
 @interface SUTImageExporter ()
 
 @property (nonatomic, strong, readwrite) NSProgress *progress;
@@ -25,16 +28,35 @@
 
 @implementation SUTImageExporter
 
+#pragma mark - Init
+
+- (instancetype)init
+{
+    self = [super init];
+    
+    if (self)
+    {
+        self.type = SUTImageExporterPNG8Type;
+    }
+    
+    return self;
+}
+
 #pragma mark - Exporter Info
 
 - (NSString *)name
 {
     switch (self.type)
     {
-        case SUTImageExporterPNGType:
-            return NSLocalizedString(@"png_image_exporter_nav",
+        case SUTImageExporterPNG8Type:
+            return NSLocalizedString(@"png_8_image_exporter_nav",
                                      nil);
-             break;
+            break;
+            
+        case SUTImageExporterPNG32Type:
+            return NSLocalizedString(@"png_32_image_exporter_nav",
+                                     nil);
+            break;
             
         case SUTImageExporterJPEGType:
             return NSLocalizedString(@"jpeg_image_exporter_nav",
@@ -45,16 +67,18 @@
 
 - (NSString *)extension
 {
-    switch (self.type)
+    NSString *extension = nil;
+    
+    if (self.type & SUTImageExporterPNGTypeBit)
     {
-        case SUTImageExporterPNGType:
-            return @"png";
-            break;
-            
-        case SUTImageExporterJPEGType:
-            return @"jpg";
-            break;
+        extension = @"png";
     }
+    else
+    {
+        extension = @"jpg";
+    }
+    
+    return extension;
 }
 
 #pragma mark - Progress
@@ -102,24 +126,30 @@
         self.progress.completedUnitCount ++;
     }
     
-    CGImageRef image = CGBitmapContextCreateImage(context);
-    CFStringRef exportType;
-    
-    switch (self.type)
+    if (self.type & SUTImageExporterPNGTypeBit)
     {
-        case SUTImageExporterPNGType:
-            exportType = kUTTypePNG;
-            break;
-        case SUTImageExporterJPEGType:
-            exportType = kUTTypeJPEG;
-            break;
-            
-        default:
-            break;
+        [self writePNG:context
+                   url:url];
+    }
+    else
+    {
+        [self writeJPEG:context
+                    url:url];
     }
     
+    CGContextRelease(context);
+    
+    self.progress.completedUnitCount ++;
+    self.progress = nil;
+    [self.delegate exporterDidExport:self];
+}
+
+- (void)writeJPEG:(CGContextRef)context
+              url:(NSURL *)url
+{
+    CGImageRef image = CGBitmapContextCreateImage(context);
     CGImageDestinationRef destination = CGImageDestinationCreateWithURL((__bridge CFURLRef)url,
-                                                                        exportType,
+                                                                        kUTTypeJPEG,
                                                                         1,
                                                                         NULL);
     if (!destination)
@@ -139,25 +169,56 @@
     }
     
     CGImageRelease(image);
-    CGContextRelease(context);
-    
-    self.progress.completedUnitCount ++;
-    
-    self.progress = nil;
-    [self.delegate exporterDidExport:self];
+}
+
+- (void)writePNG:(CGContextRef)context
+             url:(NSURL *)url
+{
+    if (self.type == SUTImageExporterPNG8Type)
+    {
+        png8_image outImage = SUTCreate8BitPNGImageFromContext(context);
+        
+        FILE *outfile = fopen([url.path UTF8String], "wb");
+        rwpng_write_image8(outfile, &outImage);
+        fclose(outfile);
+    }
+    else
+    {
+        CGImageRef image = CGBitmapContextCreateImage(context);
+        CGImageDestinationRef destination = CGImageDestinationCreateWithURL((__bridge CFURLRef)url,
+                                                                            kUTTypePNG,
+                                                                            1,
+                                                                            NULL);
+        if (!destination)
+        {
+            NSLog(@"Failed to create CGImageDestination for %@", url);
+        }
+        else
+        {
+            CGImageDestinationAddImage(destination, image, nil);
+            
+            if (!CGImageDestinationFinalize(destination))
+            {
+                NSLog(@"Failed to write image to %@", url);
+            }
+            
+            CFRelease(destination);
+        }
+        
+        CGImageRelease(image);
+    }
 }
 
 - (CGContextRef)createExportingImageContextWithSize:(CGSize)size
 {
-    size_t bitsPerComponent = 8;
     CGColorSpaceRef colorSpace = CGColorSpaceCreateWithName(kCGColorSpaceGenericRGB);
     CGContextRef context = CGBitmapContextCreate(NULL,
                                                  size.width,
                                                  size.height,
-                                                 bitsPerComponent,
-                                                 0,
+                                                 8,
+                                                 size.width * 4,
                                                  colorSpace,
-                                                 (CGBitmapInfo)kCGImageAlphaPremultipliedLast);
+                                                 (CGBitmapInfo)kCGImageAlphaPremultipliedLast|kCGBitmapByteOrder32Big);
     
     CGColorSpaceRelease(colorSpace);
     

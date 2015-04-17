@@ -1,0 +1,6 @@
+[submodule "Vendor/pngquant"]
+	path = Vendor/pngquant
+	url = https://github.com/pornel/pngquant.git
+[submodule "Vendor/libpng"]
+	path = Vendor/libpng
+	url = git://git.code.sf.net/p/libpng/code

@@ -8,76 +8,26 @@
 
 #import "SUTPNGQuant.h"
 
-png24_image SUTCreate24BitPNGImageFromContext(CGContextRef context)
+png8_image SUTCreate8BitPNGImageFromContext(CGContextRef context)
 {
-    png24_image image = {};
-   
-    if (context)
+    CGSize size = (CGSize)
     {
-        CGSize size = (CGSize)
-        {
-            CGBitmapContextGetWidth(context),
-            CGBitmapContextGetHeight(context)
-        };
-        
-        rgba_pixel *pixel_data = CGBitmapContextGetData(context);
-        
-        //Reverse premultiplication
-        for(int i=0; i < size.width * size.height; i++)
-        {
-            if (pixel_data[i].a)
-            {
-                pixel_data[i] = (rgba_pixel)
-                {
-                    .a = pixel_data[i].a,
-                    .r = (pixel_data[i].r * 255) / pixel_data[i].a,
-                    .g = (pixel_data[i].g * 255) / pixel_data[i].a,
-                    .b = (pixel_data[i].b * 255) / pixel_data[i].a,
-                };
-            }
-        }
-        
-        image.gamma = 0.45455;
-        image.width = size.width;
-        image.height = size.height;
-        image.rgba_data = (unsigned char *)pixel_data;
-        image.row_pointers = malloc(sizeof(image.row_pointers[0]) * image.height);
-        
-        for(int i=0; i < image.height; i++)
-        {
-            image.row_pointers[i] = (unsigned char *)&pixel_data[image.width * i];
-        }
-    }
+        CGBitmapContextGetWidth(context),
+        CGBitmapContextGetHeight(context)
+    };
     
-    return image;
-}
-
-liq_image * SUTCreateQuantImageFrom24BitPNGImage(png24_image image,
-                                               liq_attr *attributes)
-{
-    liq_image *input_image = liq_image_create_rgba_rows(attributes,
-                                                        (void**)image.row_pointers,
-                                                        image.width,
-                                                        image.height,
-                                                        image.gamma);
+    liq_attr *attributes = liq_attr_create();
+    
+    liq_image *input_image = liq_image_create_rgba(attributes,
+                                                   CGBitmapContextGetData(context),
+                                                   size.width,
+                                                   size.height,
+                                                   0.45455);
     
     liq_image_set_memory_ownership(input_image, LIQ_OWN_ROWS | LIQ_OWN_PIXELS);
     
-    image.row_pointers = NULL;
-    image.rgba_data = NULL;
-    
-    return input_image;
-}
-
-png8_image SUTCreate8BitPNGImageFrom24BitPNGImage(png24_image image)
-{
-    liq_attr *attributes = liq_attr_create();
-    liq_image *input_image = SUTCreateQuantImageFrom24BitPNGImage(image,
-                                                                  attributes);
-    
     liq_result *remap = liq_quantize_image(attributes,
                                            input_image);
-    liq_set_output_gamma(remap, 0.45455); // fixed gamma ~2.2 for the web. PNG can't store exact 1/2.2
     liq_set_dithering_level(remap, 1.f);
     
     png8_image output_image = {};

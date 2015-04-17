@@ -174,29 +174,51 @@
 - (void)writePNG:(CGContextRef)context
              url:(NSURL *)url
 {
-    png24_image inImage = SUTCreate24BitPNGImageFromContext(context);
-    png8_image outImage = SUTCreate8BitPNGImageFrom24BitPNGImage(inImage);
-    
-    
-    FILE *outfile = fopen([url.path UTF8String], "wb");
-    
-    rwpng_write_image8(outfile, &outImage);
-    
-    fclose(outfile);
+    if (self.type == SUTImageExporterPNG8Type)
+    {
+        png8_image outImage = SUTCreate8BitPNGImageFromContext(context);
+        
+        FILE *outfile = fopen([url.path UTF8String], "wb");
+        rwpng_write_image8(outfile, &outImage);
+        fclose(outfile);
+    }
+    else
+    {
+        CGImageRef image = CGBitmapContextCreateImage(context);
+        CGImageDestinationRef destination = CGImageDestinationCreateWithURL((__bridge CFURLRef)url,
+                                                                            kUTTypePNG,
+                                                                            1,
+                                                                            NULL);
+        if (!destination)
+        {
+            NSLog(@"Failed to create CGImageDestination for %@", url);
+        }
+        else
+        {
+            CGImageDestinationAddImage(destination, image, nil);
+            
+            if (!CGImageDestinationFinalize(destination))
+            {
+                NSLog(@"Failed to write image to %@", url);
+            }
+            
+            CFRelease(destination);
+        }
+        
+        CGImageRelease(image);
+    }
 }
 
 - (CGContextRef)createExportingImageContextWithSize:(CGSize)size
 {
-    size_t bitsPerComponent = (self.type == SUTImageExporterPNG8Type) ? 2 : 8;
-    
     CGColorSpaceRef colorSpace = CGColorSpaceCreateWithName(kCGColorSpaceGenericRGB);
     CGContextRef context = CGBitmapContextCreate(NULL,
                                                  size.width,
                                                  size.height,
-                                                 bitsPerComponent,
-                                                 0,
+                                                 8,
+                                                 size.width * 4,
                                                  colorSpace,
-                                                 (CGBitmapInfo)kCGImageAlphaPremultipliedLast);
+                                                 (CGBitmapInfo)kCGImageAlphaPremultipliedLast|kCGBitmapByteOrder32Big);
     
     CGColorSpaceRelease(colorSpace);
     

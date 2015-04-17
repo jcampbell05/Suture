@@ -14,5 +14,10 @@
 #include "pam.h"
 #include "rwpng.h"
 
-png24_image SUTCreate24BitPNGImageFromContext(CGContextRef context);
-png8_image SUTCreate8BitPNGImageFrom24BitPNGImage(png24_image image);
+struct
+{
+    liq_image *image;
+}
+SUTPNGImage;
+
+png8_image SUTCreate8BitPNGImageFromContext(CGContextRef context);

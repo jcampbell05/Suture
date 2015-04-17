@@ -1,3 +1,7 @@
+v1.8
+====
+- Fixes crash upon launch if libPNG wasn't installed on the user's system.
+
 v1.7
 ====
 - Adds ability to export 8-Bit PNGs.

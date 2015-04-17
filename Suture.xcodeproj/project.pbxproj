@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		6E161129761A7158BAFDD4E7 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6376226A7E16A3DFC4595580 /* libPods.a */; };
 		7405F5C41AB38AF4006694F1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7405F5C31AB38AF4006694F1 /* Localizable.strings */; };
-		744161951ADE9CF500747B1E /* libpng16.16.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7441615D1ADE85C800747B1E /* libpng16.16.dylib */; };
 		744161971ADE9D0500747B1E /* blur.c in Sources */ = {isa = PBXBuildFile; fileRef = 74415F611ADE85AD00747B1E /* blur.c */; };
 		744161981ADE9D0500747B1E /* libimagequant.c in Sources */ = {isa = PBXBuildFile; fileRef = 74415F661ADE85AD00747B1E /* libimagequant.c */; };
 		744161991ADE9D0500747B1E /* mediancut.c in Sources */ = {isa = PBXBuildFile; fileRef = 74415F6A1ADE85AD00747B1E /* mediancut.c */; };
@@ -24,7 +23,7 @@
 		744A71F21AB4421C00077AA7 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 744A71F11AB4421C00077AA7 /* main.c */; };
 		744A71F71AB444B400077AA7 /* SutureQuickLook.qlgenerator in CopyFiles */ = {isa = PBXBuildFile; fileRef = 744A71E91AB4421C00077AA7 /* SutureQuickLook.qlgenerator */; };
 		744A71FA1AB4491900077AA7 /* SutureQuickLook.qlgenerator in CopyFiles */ = {isa = PBXBuildFile; fileRef = 744A71E91AB4421C00077AA7 /* SutureQuickLook.qlgenerator */; };
-		744A71FC1AB4493F00077AA7 /* Suture.app in CopyFiles */ = {isa = PBXBuildFile; fileRef = 74F0FAD91AAF5224003F9454 /* Suture.app */; };
+		744A71FC1AB4493F00077AA7 /* Suture.app in Copy Files */ = {isa = PBXBuildFile; fileRef = 74F0FAD91AAF5224003F9454 /* Suture.app */; };
 		74CF98D71AC3960F002F8DC5 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 74CF98B11AC3960F002F8DC5 /* dsa_pub.pem */; };
 		74CF98D81AC3960F002F8DC5 /* SUTWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74CF98B41AC3960F002F8DC5 /* SUTWindowController.m */; };
 		74CF98D91AC3960F002F8DC5 /* SUTExporterRegistry.m in Sources */ = {isa = PBXBuildFile; fileRef = 74CF98B81AC3960F002F8DC5 /* SUTExporterRegistry.m */; };
@@ -43,6 +42,8 @@
 		74CF98E61AC3960F002F8DC5 /* SUTSpriteCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 74CF98D51AC3960F002F8DC5 /* SUTSpriteCollectionViewCell.m */; };
 		74CF98E91AC39644002F8DC5 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74F0FAEB1AAF5224003F9454 /* MainMenu.xib */; };
 		74CF98EE1AC399B8002F8DC5 /* NSImage+CGImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 74CF98ED1AC399B8002F8DC5 /* NSImage+CGImage.m */; };
+		74E4EEE01AE1486E0038A10C /* libpng16.16.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7441615D1ADE85C800747B1E /* libpng16.16.dylib */; };
+		74E4EEE21AE148920038A10C /* libpng16.16.dylib in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7441615D1ADE85C800747B1E /* libpng16.16.dylib */; };
 		74F0FAE01AAF5224003F9454 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 74F0FADF1AAF5224003F9454 /* AppDelegate.m */; };
 		74F0FAE21AAF5224003F9454 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 74F0FAE11AAF5224003F9454 /* main.m */; };
 		74F0FAEA1AAF5224003F9454 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74F0FAE91AAF5224003F9454 /* Images.xcassets */; };
@@ -80,14 +81,26 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		744A71FB1AB4492E00077AA7 /* CopyFiles */ = {
+		744A71FB1AB4492E00077AA7 /* Copy Files */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "$(SRCROOT)/bin";
 			dstSubfolderSpec = 0;
 			files = (
-				744A71FC1AB4493F00077AA7 /* Suture.app in CopyFiles */,
+				744A71FC1AB4493F00077AA7 /* Suture.app in Copy Files */,
 			);
+			name = "Copy Files";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		74E4EEE11AE148790038A10C /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				74E4EEE21AE148920038A10C /* libpng16.16.dylib in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -191,7 +204,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6E161129761A7158BAFDD4E7 /* libPods.a in Frameworks */,
-				744161951ADE9CF500747B1E /* libpng16.16.dylib in Frameworks */,
+				74E4EEE01AE1486E0038A10C /* libpng16.16.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -504,8 +517,10 @@
 				74F0FAD51AAF5224003F9454 /* Sources */,
 				74F0FAD61AAF5224003F9454 /* Frameworks */,
 				74F0FAD71AAF5224003F9454 /* Resources */,
+				74E4EEE11AE148790038A10C /* Embed Frameworks */,
 				9DC4EEA31B38D6E037655F0E /* Copy Pods Resources */,
-				744A71FB1AB4492E00077AA7 /* CopyFiles */,
+				744A71FB1AB4492E00077AA7 /* Copy Files */,
+				74E4EEE31AE14B610038A10C /* Patch Install Name */,
 			);
 			buildRules = (
 			);
@@ -632,6 +647,20 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "qlmanage -r";
+		};
+		74E4EEE31AE14B610038A10C /* Patch Install Name */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Patch Install Name";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "install_name_tool -change /usr/local/lib/libpng16.16.dylib @executable_path/../Frameworks/libpng16.16.dylib ${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}";
 		};
 		9DC4EEA31B38D6E037655F0E /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -838,10 +867,9 @@
 					"$(PROJECT_DIR)/Vendor",
 				);
 				INFOPLIST_FILE = Suture/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks/";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Vendor/libpng/lib",
 					"$(PROJECT_DIR)/Vendor/libpng",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -859,10 +887,9 @@
 					"$(PROJECT_DIR)/Vendor",
 				);
 				INFOPLIST_FILE = Suture/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks/";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Vendor/libpng/lib",
 					"$(PROJECT_DIR)/Vendor/libpng",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";

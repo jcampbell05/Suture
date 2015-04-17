@@ -7,11 +7,19 @@
 		<description>Most recent changes with links to updates.</description>
 		<language>en</language>
 		<item>
+      <title>Version 1.8</title>
+			<sparkle:releaseNotesLink>
+				https://raw.githubusercontent.com/jcampbell05/Suture/master/Changelog.md
+			</sparkle:releaseNotesLink>
+			<pubDate>Fri, 17 Apr 2015 15:32:00 +0000</pubDate>
+      <enclosure url="https://github.com/jcampbell05/Suture/releases/download/v1.8/Suture.zip" sparkle:version="9" sparkle:shortVersionString="1.8" length="1924243" type="application/octet-stream" sparkle:dsaSignature="MCwCFHqQf4IJTMnv9UmgaFcA1raeSFGUAhQVRgiX1l25rElt3gh4SZF3M7hTKA=="/>
+    </item>
+		<item>
       <title>Version 1.7</title>
 			<sparkle:releaseNotesLink>
 				https://raw.githubusercontent.com/jcampbell05/Suture/master/Changelog.md
 			</sparkle:releaseNotesLink>
-			<pubDate>Mon, 30 Mar 2015 14:22:00 +0000</pubDate>
+			<pubDate>Fri, 17 Apr 2015 14:31:00 +0000</pubDate>
       <enclosure url="https://github.com/jcampbell05/Suture/releases/download/v1.7/Suture.zip" sparkle:version="8" sparkle:shortVersionString="1.7" length="1818431" type="application/octet-stream" sparkle:dsaSignature="MCwCFDtSuy/Pl7aH5KbNDyt6ylddCJqyAhQDLE8B3niDkuNFfb94+tkaoooNjQ=="/>
     </item>
 		<item>

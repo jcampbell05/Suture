@@ -8,7 +8,16 @@
 
 #import "SUTWindow.h"
 
+static NSString * const SUTWindowTitleToolbarIdentifier = @"Title";
+
+@interface SUTWindow ()
+
+@property (nonatomic, strong) NSToolbar *titleToolbar;
+
+@end
+
 @implementation SUTWindow
+
 
 + (instancetype)window
 {
@@ -23,9 +32,42 @@
                                                     defer:NO];
     
     window.contentMinSize = windowSize;
+    window.titleVisibility = NSWindowTitleHidden;
+    
     [window center];
     
     return window;
+}
+
+- (instancetype)initWithContentRect:(NSRect)contentRect
+                          styleMask:(NSUInteger)aStyle
+                            backing:(NSBackingStoreType)bufferingType
+                              defer:(BOOL)flag
+{
+    self = [super initWithContentRect:contentRect
+                            styleMask:aStyle
+                              backing:bufferingType
+                                defer:flag];
+    
+    if (self)
+    {
+        self.toolbar = self.titleToolbar;
+    }
+    
+    return self;
+}
+
+#pragma mark - Title Toolbar
+
+- (NSToolbar *)titleToolbar
+{
+    if (!_titleToolbar)
+    {
+        _titleToolbar = [[NSToolbar alloc] initWithIdentifier:SUTWindowTitleToolbarIdentifier];
+        _titleToolbar.sizeMode = NSToolbarSizeModeRegular;
+    }
+    
+    return _titleToolbar;
 }
 
 @end

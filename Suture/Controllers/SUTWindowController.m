@@ -14,6 +14,7 @@
 #import "SUTExportPanel.h"
 #import "SUTProgressPanel.h"
 #import "SUTOutlineView.h"
+#import "SUTWindow.h"
 
 @interface SUTWindowController () <SUTExporterDelegate>
 
@@ -35,17 +36,7 @@
     
     if (self)
     {
-        CGSize windowSize = CGSizeMake(550.0f,
-                                       450.0f);
-        self.window = [[NSWindow alloc] initWithContentRect:(NSRect){NSZeroPoint, windowSize}
-                                                  styleMask:(NSTitledWindowMask |
-                                                             NSClosableWindowMask |
-                                                             NSMiniaturizableWindowMask |
-                                                             NSResizableWindowMask)
-                                                    backing:NSBackingStoreBuffered
-                                                      defer:NO];
-        self.window.contentMinSize = windowSize;
-        [self.window center];
+        self.window = [SUTWindow window];
         
         [self.window.contentView addSubview:self.editorView];
         [self.window.contentView addSubview:self.dropHighlightView];

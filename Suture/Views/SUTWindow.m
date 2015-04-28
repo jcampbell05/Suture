@@ -9,8 +9,9 @@
 #import "SUTWindow.h"
 
 static NSString * const SUTWindowTitleToolbarIdentifier = @"Title";
+static NSString * const SUTWindowVersionsToolbarItemIdentifier = @"VersionsItem";
 
-@interface SUTWindow ()
+@interface SUTWindow () <NSToolbarDelegate>
 
 @property (nonatomic, strong) NSToolbar *titleToolbar;
 
@@ -64,10 +65,43 @@ static NSString * const SUTWindowTitleToolbarIdentifier = @"Title";
     if (!_titleToolbar)
     {
         _titleToolbar = [[NSToolbar alloc] initWithIdentifier:SUTWindowTitleToolbarIdentifier];
+        _titleToolbar.delegate = self;
         _titleToolbar.sizeMode = NSToolbarSizeModeRegular;
     }
     
     return _titleToolbar;
+}
+
+#pragma mark - NSToolbarDelegate
+
+- (NSArray *)toolbarAllowedItemIdentifiers:(NSToolbar *)toolbar
+{
+    return @[SUTWindowVersionsToolbarItemIdentifier];
+}
+
+- (NSArray *)toolbarDefaultItemIdentifiers:(NSToolbar *)toolbar
+{
+    return @[SUTWindowVersionsToolbarItemIdentifier];
+}
+
+- (NSToolbarItem *)toolbar:(NSToolbar *)toolbar
+     itemForItemIdentifier:(NSString *)itemIdentifier
+ willBeInsertedIntoToolbar:(BOOL)flag
+{
+    NSToolbarItem *item = nil;
+    
+    if ([itemIdentifier isEqual:SUTWindowVersionsToolbarItemIdentifier])
+    {
+        NSButton *versionsButton = [[self class] standardWindowButton:NSWindowDocumentVersionsButton
+                                                         forStyleMask:self.styleMask];
+        [versionsButton sizeToFit];
+        
+        item = [[NSToolbarItem alloc] initWithItemIdentifier:SUTWindowVersionsToolbarItemIdentifier];
+        item.view = versionsButton;
+        [item setMinSize:versionsButton.frame.size];
+    }
+    
+    return item;
 }
 
 @end

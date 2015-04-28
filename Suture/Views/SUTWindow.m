@@ -104,7 +104,21 @@ static NSString * const SUTWindowDocumentVersionsToolbarItemIdentifier = @"Docum
     }
     else if([itemIdentifier isEqual:SUTWindowDocumentTitleToolbarItemIdentifier])
     {
-        item.label = self.title;
+        NSTextField* formatTitleView = [[NSTextField alloc] init];
+        
+        formatTitleView.alignment = NSCenterTextAlignment;
+        formatTitleView.bezeled = NO;
+        formatTitleView.drawsBackground = NO;
+        formatTitleView.editable = NO;
+        formatTitleView.selectable = NO;
+        
+        formatTitleView.stringValue =  @"Title";
+        
+        [formatTitleView sizeToFit];
+
+  
+        
+        itemView = formatTitleView;
     }
     else if([itemIdentifier isEqual:SUTWindowDocumentVersionsToolbarItemIdentifier])
     {

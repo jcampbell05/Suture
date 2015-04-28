@@ -8,6 +8,8 @@
 
 #import "SUTWindow.h"
 
+static NSInteger const SUTWindowDocumentTitleWidth = 100.0f;
+
 static NSString * const SUTWindowTitleToolbarIdentifier = @"Title";
 static NSString * const SUTWindowDocumentIconToolbarItemIdentifier = @"DocumentIconItem";
 static NSString * const SUTWindowDocumentTitleToolbarItemIdentifier = @"DocumentTitleItem";
@@ -131,6 +133,7 @@ static NSString * const SUTWindowDocumentVersionsToolbarItemIdentifier = @"Docum
     {
 
         itemView = self.titleTextField;
+        [item setMaxSize:NSMakeSize(SUTWindowDocumentTitleWidth, itemView.frame.size.height)];
     }
     else if([itemIdentifier isEqual:SUTWindowDocumentVersionsToolbarItemIdentifier])
     {

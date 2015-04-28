@@ -15,6 +15,7 @@ static NSString * const SUTWindowDocumentVersionsToolbarItemIdentifier = @"Docum
 
 @interface SUTWindow () <NSToolbarDelegate>
 
+@property (nonatomic, strong) NSTextField *titleTextField;
 @property (nonatomic, strong) NSToolbar *titleToolbar;
 
 @end
@@ -58,6 +59,30 @@ static NSString * const SUTWindowDocumentVersionsToolbarItemIdentifier = @"Docum
     }
     
     return self;
+}
+
+- (NSTextField *)titleTextField
+{
+    if (!_titleTextField)
+    {
+        _titleTextField = [[NSTextField alloc] init];
+        
+        _titleTextField.alignment = NSCenterTextAlignment;
+        _titleTextField.bezeled = NO;
+        _titleTextField.drawsBackground = NO;
+        _titleTextField.editable = NO;
+        _titleTextField.selectable = NO;
+        
+        if (self.title)
+        {
+           _titleTextField.stringValue = self.title;
+            [_titleTextField sizeToFit];
+        }
+
+        [_titleTextField sizeToFit];
+    }
+    
+    return  _titleTextField;
 }
 
 #pragma mark - Title Toolbar
@@ -104,21 +129,8 @@ static NSString * const SUTWindowDocumentVersionsToolbarItemIdentifier = @"Docum
     }
     else if([itemIdentifier isEqual:SUTWindowDocumentTitleToolbarItemIdentifier])
     {
-        NSTextField* formatTitleView = [[NSTextField alloc] init];
-        
-        formatTitleView.alignment = NSCenterTextAlignment;
-        formatTitleView.bezeled = NO;
-        formatTitleView.drawsBackground = NO;
-        formatTitleView.editable = NO;
-        formatTitleView.selectable = NO;
-        
-        formatTitleView.stringValue =  @"Title";
-        
-        [formatTitleView sizeToFit];
 
-  
-        
-        itemView = formatTitleView;
+        itemView = self.titleTextField;
     }
     else if([itemIdentifier isEqual:SUTWindowDocumentVersionsToolbarItemIdentifier])
     {
@@ -130,6 +142,17 @@ static NSString * const SUTWindowDocumentVersionsToolbarItemIdentifier = @"Docum
     [item setMinSize:itemView.frame.size];
     
     return item;
+}
+
+- (void)setTitle:(NSString *)title
+{
+    [super setTitle:title];
+    
+    if (self.title)
+    {
+        self.titleTextField.stringValue = self.title;
+        [self.titleTextField sizeToFit];
+    }
 }
 
 @end

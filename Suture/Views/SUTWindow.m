@@ -9,7 +9,9 @@
 #import "SUTWindow.h"
 
 static NSString * const SUTWindowTitleToolbarIdentifier = @"Title";
-static NSString * const SUTWindowVersionsToolbarItemIdentifier = @"VersionsItem";
+static NSString * const SUTWindowDocumentIconToolbarItemIdentifier = @"DocumentIconItem";
+static NSString * const SUTWindowDocumentTitleToolbarItemIdentifier = @"DocumentTitleItem";
+static NSString * const SUTWindowDocumentVersionsToolbarItemIdentifier = @"DocumentVersionsItem";
 
 @interface SUTWindow () <NSToolbarDelegate>
 
@@ -76,30 +78,42 @@ static NSString * const SUTWindowVersionsToolbarItemIdentifier = @"VersionsItem"
 
 - (NSArray *)toolbarAllowedItemIdentifiers:(NSToolbar *)toolbar
 {
-    return @[SUTWindowVersionsToolbarItemIdentifier];
+    return @[SUTWindowDocumentIconToolbarItemIdentifier,
+             SUTWindowDocumentTitleToolbarItemIdentifier,
+             SUTWindowDocumentVersionsToolbarItemIdentifier];
 }
 
 - (NSArray *)toolbarDefaultItemIdentifiers:(NSToolbar *)toolbar
 {
-    return @[SUTWindowVersionsToolbarItemIdentifier];
+    return @[SUTWindowDocumentIconToolbarItemIdentifier,
+             SUTWindowDocumentTitleToolbarItemIdentifier,
+             SUTWindowDocumentVersionsToolbarItemIdentifier];
 }
 
 - (NSToolbarItem *)toolbar:(NSToolbar *)toolbar
      itemForItemIdentifier:(NSString *)itemIdentifier
  willBeInsertedIntoToolbar:(BOOL)flag
 {
-    NSToolbarItem *item = nil;
+    NSToolbarItem *item = [[NSToolbarItem alloc] initWithItemIdentifier:itemIdentifier];
+    NSView *itemView = nil;
     
-    if ([itemIdentifier isEqual:SUTWindowVersionsToolbarItemIdentifier])
+    if ([itemIdentifier isEqual:SUTWindowDocumentIconToolbarItemIdentifier])
     {
-        NSButton *versionsButton = [[self class] standardWindowButton:NSWindowDocumentVersionsButton
-                                                         forStyleMask:self.styleMask];
-        [versionsButton sizeToFit];
-        
-        item = [[NSToolbarItem alloc] initWithItemIdentifier:SUTWindowVersionsToolbarItemIdentifier];
-        item.view = versionsButton;
-        [item setMinSize:versionsButton.frame.size];
+        itemView = [[self class] standardWindowButton:NSWindowDocumentIconButton
+                                         forStyleMask:self.styleMask];
     }
+    else if([itemIdentifier isEqual:SUTWindowDocumentTitleToolbarItemIdentifier])
+    {
+        item.label = self.title;
+    }
+    else if([itemIdentifier isEqual:SUTWindowDocumentVersionsToolbarItemIdentifier])
+    {
+        itemView = [[self class] standardWindowButton:NSWindowDocumentVersionsButton
+                                         forStyleMask:self.styleMask];
+    }
+    
+    item.view = itemView;
+    [item setMinSize:itemView.frame.size];
     
     return item;
 }

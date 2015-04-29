@@ -49,12 +49,6 @@
         _titleTextField.editable = NO;
         _titleTextField.selectable = NO;
         
-        if (self.title)
-        {
-            _titleTextField.stringValue = self.title;
-            [_titleTextField sizeToFit];
-        }
-        
         [_titleTextField sizeToFit];
     }
     

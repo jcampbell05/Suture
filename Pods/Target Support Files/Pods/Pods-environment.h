@@ -18,6 +18,12 @@
 #define COCOAPODS_VERSION_MINOR_JNWScrollView 1
 #define COCOAPODS_VERSION_PATCH_JNWScrollView 0
 
+// Masonry
+#define COCOAPODS_POD_AVAILABLE_Masonry
+#define COCOAPODS_VERSION_MAJOR_Masonry 0
+#define COCOAPODS_VERSION_MINOR_Masonry 6
+#define COCOAPODS_VERSION_PATCH_Masonry 1
+
 // Sparkle
 #define COCOAPODS_POD_AVAILABLE_Sparkle
 #define COCOAPODS_VERSION_MAJOR_Sparkle 1

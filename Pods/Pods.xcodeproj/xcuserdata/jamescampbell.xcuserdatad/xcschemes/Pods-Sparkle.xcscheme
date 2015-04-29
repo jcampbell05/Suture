@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "307878C8706231E2CDA327AC"
+               BlueprintIdentifier = "801A483CF389FABF16D9E253"
                BuildableName = "libPods-Sparkle.a"
                BlueprintName = "Pods-Sparkle"
                ReferencedContainer = "container:Pods.xcodeproj">

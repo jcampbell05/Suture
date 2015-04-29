@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 James Campbell. All rights reserved.
 //
 
-#import <Cocoa/Cocoa.h>
+@import Cocoa;
 
 @interface SUTWindow : NSWindow
 

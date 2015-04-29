@@ -7,17 +7,16 @@
 //
 
 #import "SUTWindow.h"
+#import "SUTWindowTitleView.h"
 
-static NSInteger const SUTWindowDocumentTitleWidth = 100.0f;
+#import <CoreGraphics/CoreGraphics.h>
 
 static NSString * const SUTWindowTitleToolbarIdentifier = @"Title";
-static NSString * const SUTWindowDocumentIconToolbarItemIdentifier = @"DocumentIconItem";
-static NSString * const SUTWindowDocumentTitleToolbarItemIdentifier = @"DocumentTitleItem";
-static NSString * const SUTWindowDocumentVersionsToolbarItemIdentifier = @"DocumentVersionsItem";
+static NSString * const SUTWindowTitleViewIdentifier = @"TitleView";
 
 @interface SUTWindow () <NSToolbarDelegate>
 
-@property (nonatomic, strong) NSTextField *titleTextField;
+@property (nonatomic, strong) SUTWindowTitleView *titleView;
 @property (nonatomic, strong) NSToolbar *titleToolbar;
 
 @end
@@ -63,28 +62,15 @@ static NSString * const SUTWindowDocumentVersionsToolbarItemIdentifier = @"Docum
     return self;
 }
 
-- (NSTextField *)titleTextField
+- (SUTWindowTitleView *)titleView
 {
-    if (!_titleTextField)
+    if (!_titleView)
     {
-        _titleTextField = [[NSTextField alloc] init];
-        
-        _titleTextField.alignment = NSCenterTextAlignment;
-        _titleTextField.bezeled = NO;
-        _titleTextField.drawsBackground = NO;
-        _titleTextField.editable = NO;
-        _titleTextField.selectable = NO;
-        
-        if (self.title)
-        {
-           _titleTextField.stringValue = self.title;
-            [_titleTextField sizeToFit];
-        }
-
-        [_titleTextField sizeToFit];
+        _titleView = [[SUTWindowTitleView alloc] init];
+        _titleView.layer.backgroundColor = [NSColor redColor].CGColor;
     }
     
-    return  _titleTextField;
+    return _titleView;
 }
 
 #pragma mark - Title Toolbar
@@ -105,16 +91,12 @@ static NSString * const SUTWindowDocumentVersionsToolbarItemIdentifier = @"Docum
 
 - (NSArray *)toolbarAllowedItemIdentifiers:(NSToolbar *)toolbar
 {
-    return @[SUTWindowDocumentIconToolbarItemIdentifier,
-             SUTWindowDocumentTitleToolbarItemIdentifier,
-             SUTWindowDocumentVersionsToolbarItemIdentifier];
+    return @[SUTWindowTitleViewIdentifier];
 }
 
 - (NSArray *)toolbarDefaultItemIdentifiers:(NSToolbar *)toolbar
 {
-    return @[SUTWindowDocumentIconToolbarItemIdentifier,
-             SUTWindowDocumentTitleToolbarItemIdentifier,
-             SUTWindowDocumentVersionsToolbarItemIdentifier];
+    return @[SUTWindowTitleViewIdentifier];
 }
 
 - (NSToolbarItem *)toolbar:(NSToolbar *)toolbar
@@ -122,40 +104,10 @@ static NSString * const SUTWindowDocumentVersionsToolbarItemIdentifier = @"Docum
  willBeInsertedIntoToolbar:(BOOL)flag
 {
     NSToolbarItem *item = [[NSToolbarItem alloc] initWithItemIdentifier:itemIdentifier];
-    NSView *itemView = nil;
-    
-    if ([itemIdentifier isEqual:SUTWindowDocumentIconToolbarItemIdentifier])
-    {
-        itemView = [[self class] standardWindowButton:NSWindowDocumentIconButton
-                                         forStyleMask:self.styleMask];
-    }
-    else if([itemIdentifier isEqual:SUTWindowDocumentTitleToolbarItemIdentifier])
-    {
-
-        itemView = self.titleTextField;
-        [item setMaxSize:NSMakeSize(SUTWindowDocumentTitleWidth, itemView.frame.size.height)];
-    }
-    else if([itemIdentifier isEqual:SUTWindowDocumentVersionsToolbarItemIdentifier])
-    {
-        itemView = [[self class] standardWindowButton:NSWindowDocumentVersionsButton
-                                         forStyleMask:self.styleMask];
-    }
-    
-    item.view = itemView;
-    [item setMinSize:itemView.frame.size];
+    item.view = self.titleView;
+    [item setMaxSize:NSMakeSize(CGFLOAT_MAX, CGFLOAT_MAX)];
     
     return item;
-}
-
-- (void)setTitle:(NSString *)title
-{
-    [super setTitle:title];
-    
-    if (self.title)
-    {
-        self.titleTextField.stringValue = self.title;
-        [self.titleTextField sizeToFit];
-    }
 }
 
 @end

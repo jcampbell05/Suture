@@ -28,6 +28,10 @@
 		747A103B1AEE5D640097E6AB /* SUTWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 747A10391AEE5D640097E6AB /* SUTWindow.m */; };
 		747A103C1AEE5D640097E6AB /* SUTWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 747A10391AEE5D640097E6AB /* SUTWindow.m */; };
 		747A103D1AEE5D640097E6AB /* SUTWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 747A10391AEE5D640097E6AB /* SUTWindow.m */; };
+		74AF59261AF0EBF00013F9CD /* SUTWindowTitleView.h in Headers */ = {isa = PBXBuildFile; fileRef = 74AF59241AF0EBF00013F9CD /* SUTWindowTitleView.h */; };
+		74AF59271AF0EBF00013F9CD /* SUTWindowTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 74AF59251AF0EBF00013F9CD /* SUTWindowTitleView.m */; };
+		74AF59281AF0EBF00013F9CD /* SUTWindowTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 74AF59251AF0EBF00013F9CD /* SUTWindowTitleView.m */; };
+		74AF59291AF0EBF00013F9CD /* SUTWindowTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 74AF59251AF0EBF00013F9CD /* SUTWindowTitleView.m */; };
 		74CF98D71AC3960F002F8DC5 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 74CF98B11AC3960F002F8DC5 /* dsa_pub.pem */; };
 		74CF98D81AC3960F002F8DC5 /* SUTWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74CF98B41AC3960F002F8DC5 /* SUTWindowController.m */; };
 		74CF98D91AC3960F002F8DC5 /* SUTExporterRegistry.m in Sources */ = {isa = PBXBuildFile; fileRef = 74CF98B81AC3960F002F8DC5 /* SUTExporterRegistry.m */; };
@@ -148,6 +152,8 @@
 		744A71F11AB4421C00077AA7 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		747A10381AEE5D640097E6AB /* SUTWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUTWindow.h; sourceTree = "<group>"; };
 		747A10391AEE5D640097E6AB /* SUTWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUTWindow.m; sourceTree = "<group>"; };
+		74AF59241AF0EBF00013F9CD /* SUTWindowTitleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUTWindowTitleView.h; sourceTree = "<group>"; };
+		74AF59251AF0EBF00013F9CD /* SUTWindowTitleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUTWindowTitleView.m; sourceTree = "<group>"; };
 		74CF98B01AC3960F002F8DC5 /* dsa_priv.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_priv.pem; sourceTree = "<group>"; };
 		74CF98B11AC3960F002F8DC5 /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
 		74CF98B31AC3960F002F8DC5 /* SUTWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUTWindowController.h; sourceTree = "<group>"; };
@@ -388,6 +394,8 @@
 				74CF98D51AC3960F002F8DC5 /* SUTSpriteCollectionViewCell.m */,
 				747A10381AEE5D640097E6AB /* SUTWindow.h */,
 				747A10391AEE5D640097E6AB /* SUTWindow.m */,
+				74AF59241AF0EBF00013F9CD /* SUTWindowTitleView.h */,
+				74AF59251AF0EBF00013F9CD /* SUTWindowTitleView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -491,6 +499,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				747A103A1AEE5D640097E6AB /* SUTWindow.h in Headers */,
+				74AF59261AF0EBF00013F9CD /* SUTWindowTitleView.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -693,6 +702,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74AF59291AF0EBF00013F9CD /* SUTWindowTitleView.m in Sources */,
 				744A71EE1AB4421C00077AA7 /* GenerateThumbnailForURL.m in Sources */,
 				744A71F01AB4421C00077AA7 /* GeneratePreviewForURL.m in Sources */,
 				747A103D1AEE5D640097E6AB /* SUTWindow.m in Sources */,
@@ -732,6 +742,7 @@
 				74CF98E11AC3960F002F8DC5 /* SUTEmptySpriteSheetView.m in Sources */,
 				74CF98E51AC3960F002F8DC5 /* SUTProgressPanel.m in Sources */,
 				74CF98D81AC3960F002F8DC5 /* SUTWindowController.m in Sources */,
+				74AF59271AF0EBF00013F9CD /* SUTWindowTitleView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -740,6 +751,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				747A103C1AEE5D640097E6AB /* SUTWindow.m in Sources */,
+				74AF59281AF0EBF00013F9CD /* SUTWindowTitleView.m in Sources */,
 				74F0FAF91AAF5224003F9454 /* SutureTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

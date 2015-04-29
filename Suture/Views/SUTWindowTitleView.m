@@ -8,6 +8,8 @@
 
 #import "SUTWindowTitleView.h"
 
+#import <Masonry/Masonry.h>
+
 @interface SUTWindowTitleView ()
 
 @property (nonatomic, strong) NSTextField *titleTextField;
@@ -41,41 +43,10 @@
     [self addSubview:documentVersionsButton];
     [self addSubview:self.titleTextField];
     
-    NSLayoutConstraint *centerXTitleTextFieldConstraint = [NSLayoutConstraint constraintWithItem:self.titleTextField
-                                                                                       attribute:NSLayoutAttributeCenterX
-                                                                                       relatedBy:NSLayoutRelationEqual
-                                                                                          toItem:self
-                                                                                       attribute:NSLayoutAttributeCenterX
-                                                                                      multiplier:0.5f
-                                                                                        constant:0.0f];
-    [self addConstraint:centerXTitleTextFieldConstraint];
-    
-    NSLayoutConstraint *centerYTitleTextFieldConstraint = [NSLayoutConstraint constraintWithItem:self.titleTextField
-                                                                                       attribute:NSLayoutAttributeCenterY
-                                                                                       relatedBy:NSLayoutRelationEqual
-                                                                                          toItem:self
-                                                                                       attribute:NSLayoutAttributeCenterY
-                                                                                      multiplier:0.5f
-                                                                                        constant:0.0f];
-    [self addConstraint:centerYTitleTextFieldConstraint];
-    
-    NSLayoutConstraint *hieghtTitleTextFieldConstraint = [NSLayoutConstraint constraintWithItem:self.titleTextField
-                                                                                       attribute:NSLayoutAttributeHeight
-                                                                                       relatedBy:NSLayoutRelationEqual
-                                                                                          toItem:nil
-                                                                                       attribute:NSLayoutAttributeNotAnAttribute
-                                                                                      multiplier:0.0f
-                                                                                        constant:10.0f];
-    [self addConstraint:hieghtTitleTextFieldConstraint];
-    
-    NSLayoutConstraint *wTitleTextFieldConstraint = [NSLayoutConstraint constraintWithItem:self.titleTextField
-                                                                                      attribute:NSLayoutAttributeWidth
-                                                                                      relatedBy:NSLayoutRelationEqual
-                                                                                         toItem:nil
-                                                                                      attribute:NSLayoutAttributeNotAnAttribute
-                                                                                     multiplier:0.0f
-                                                                                       constant:10.0f];
-    [self addConstraint:wTitleTextFieldConstraint];
+    [self.titleTextField mas_makeConstraints:^(MASConstraintMaker *make)
+    {
+        make.centerX.equalTo(self.mas_centerX);
+    }];
 }
 
 #pragma mark - Views

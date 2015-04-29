@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "DC03A671BB9950E754DD31E0"
+               BlueprintIdentifier = "629259ACA9A9E42781A3A367"
                BuildableName = "libPods-JNWScrollView.a"
                BlueprintName = "Pods-JNWScrollView"
                ReferencedContainer = "container:Pods.xcodeproj">

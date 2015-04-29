@@ -32,8 +32,17 @@
 
 - (void)viewDidMoveToWindow
 {
+    NSButton *documentIconButton = [NSWindow standardWindowButton:NSWindowDocumentIconButton
+                                                     forStyleMask:self.window.styleMask];
+    NSButton *documentVersionsButton = [NSWindow standardWindowButton:NSWindowDocumentVersionsButton
+                                                         forStyleMask:self.window.styleMask];
     
+    [self addSubview:documentIconButton];
+    [self addSubview:documentVersionsButton];
+    [self addSubview:self.titleTextField];
 }
+
+
 
 #pragma mark - Views
 

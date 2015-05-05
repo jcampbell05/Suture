@@ -76,6 +76,7 @@
         _titleTextField.drawsBackground = NO;
         _titleTextField.editable = NO;
         _titleTextField.selectable = NO;
+        _titleTextField.stringValue = @"A Document Title";
     }
     
     return  _titleTextField;

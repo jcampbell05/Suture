@@ -30,7 +30,6 @@
 		747A103D1AEE5D640097E6AB /* SUTWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 747A10391AEE5D640097E6AB /* SUTWindow.m */; };
 		74AF59261AF0EBF00013F9CD /* SUTWindowTitleView.h in Headers */ = {isa = PBXBuildFile; fileRef = 74AF59241AF0EBF00013F9CD /* SUTWindowTitleView.h */; };
 		74AF59271AF0EBF00013F9CD /* SUTWindowTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 74AF59251AF0EBF00013F9CD /* SUTWindowTitleView.m */; };
-		74AF59281AF0EBF00013F9CD /* SUTWindowTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 74AF59251AF0EBF00013F9CD /* SUTWindowTitleView.m */; };
 		74AF59291AF0EBF00013F9CD /* SUTWindowTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 74AF59251AF0EBF00013F9CD /* SUTWindowTitleView.m */; };
 		74CF98D71AC3960F002F8DC5 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 74CF98B11AC3960F002F8DC5 /* dsa_pub.pem */; };
 		74CF98D81AC3960F002F8DC5 /* SUTWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74CF98B41AC3960F002F8DC5 /* SUTWindowController.m */; };
@@ -51,7 +50,7 @@
 		74CF98E91AC39644002F8DC5 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74F0FAEB1AAF5224003F9454 /* MainMenu.xib */; };
 		74CF98EE1AC399B8002F8DC5 /* NSImage+CGImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 74CF98ED1AC399B8002F8DC5 /* NSImage+CGImage.m */; };
 		74E4EEE01AE1486E0038A10C /* libpng16.16.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7441615D1ADE85C800747B1E /* libpng16.16.dylib */; };
-		74E4EEE21AE148920038A10C /* libpng16.16.dylib in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7441615D1ADE85C800747B1E /* libpng16.16.dylib */; };
+		74E4EEE21AE148920038A10C /* libpng16.16.dylib in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7441615D1ADE85C800747B1E /* libpng16.16.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		74F0FAE01AAF5224003F9454 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 74F0FADF1AAF5224003F9454 /* AppDelegate.m */; };
 		74F0FAE21AAF5224003F9454 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 74F0FAE11AAF5224003F9454 /* main.m */; };
 		74F0FAEA1AAF5224003F9454 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74F0FAE91AAF5224003F9454 /* Images.xcassets */; };
@@ -572,7 +571,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = SUT;
-				LastUpgradeCheck = 0610;
+				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = "James Campbell";
 				TargetAttributes = {
 					744A71E81AB4421C00077AA7 = {
@@ -749,7 +748,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				747A103C1AEE5D640097E6AB /* SUTWindow.m in Sources */,
-				74AF59281AF0EBF00013F9CD /* SUTWindowTitleView.m in Sources */,
 				74F0FAF91AAF5224003F9454 /* SutureTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

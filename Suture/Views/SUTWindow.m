@@ -67,7 +67,6 @@ static NSString * const SUTWindowTitleViewIdentifier = @"TitleView";
     if (!_titleView)
     {
         _titleView = [[SUTWindowTitleView alloc] init];
-        _titleView.layer.backgroundColor = [NSColor redColor].CGColor;
     }
     
     return _titleView;

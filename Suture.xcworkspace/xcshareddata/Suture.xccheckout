@@ -5,7 +5,7 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>2D9A2468-E0FE-4C44-9F1D-E21FB3F44D9A</string>
+	<string>27F2F683-8C31-4608-9BD8-142EFB7701B9</string>
 	<key>IDESourceControlProjectName</key>
 	<string>Suture</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
@@ -22,9 +22,9 @@
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>02EC75C24037E05A184450D346C408084F916E59</key>
-		<string>../Vendor/pngquant</string>
+		<string>..Vendor/pngquant</string>
 		<key>547A7CFBD5F0A850C99F405659B662B03DA54A62</key>
-		<string>../Vendor/libpng</string>
+		<string>..Vendor/libpng</string>
 		<key>96BCE550C156CE7BA2EB3F8F3D63EC94218B39B6</key>
 		<string>..</string>
 	</dict>

@@ -42,13 +42,13 @@
 
 - (void)viewWillMoveToWindow:(NSWindow *)newWindow
 {
-//    NSButton *documentIconButton = [NSWindow standardWindowButton:NSWindowDocumentIconButton
-//                                                     forStyleMask:self.window.styleMask];
-//    NSButton *documentVersionsButton = [NSWindow standardWindowButton:NSWindowDocumentVersionsButton
-//                                                         forStyleMask:self.window.styleMask];
-//    
-//    [self addSubview:documentIconButton];
-//    [self addSubview:documentVersionsButton];
+    NSButton *documentIconButton = [NSWindow standardWindowButton:NSWindowDocumentIconButton
+                                                     forStyleMask:self.window.styleMask];
+    NSButton *documentVersionsButton = [NSWindow standardWindowButton:NSWindowDocumentVersionsButton
+                                                         forStyleMask:self.window.styleMask];
+    
+    [self addSubview:documentIconButton];
+    [self addSubview:documentVersionsButton];
     
     [self.window removeObserver:self
                      forKeyPath:NSStringFromSelector(@selector(title))];

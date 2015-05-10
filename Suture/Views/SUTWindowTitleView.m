@@ -12,6 +12,8 @@
 
 @property (nonatomic, strong) NSTextField *titleTextField;
 
+- (void)updateTitleView;
+
 @end
 
 @implementation SUTWindowTitleView
@@ -33,7 +35,12 @@
 }
 
 
-- (void)viewDidMoveToWindow
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+{
+    [self updateTitleView];
+}
+
+- (void)viewWillMoveToWindow:(NSWindow *)newWindow
 {
 //    NSButton *documentIconButton = [NSWindow standardWindowButton:NSWindowDocumentIconButton
 //                                                     forStyleMask:self.window.styleMask];
@@ -43,12 +50,17 @@
 //    [self addSubview:documentIconButton];
 //    [self addSubview:documentVersionsButton];
     
+    [self.window removeObserver:self
+                     forKeyPath:NSStringFromSelector(@selector(title))];
+    
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(windowResized:) name:NSWindowDidResizeNotification object:[self window]];
-    [self.titleTextField bind:NSStringFromSelector(@selector(stringValue))
-                     toObject:self.window
-                  withKeyPath:NSStringFromSelector(@selector(title))
-                      options:nil];
+
+    [newWindow addObserver:self
+                forKeyPath:NSStringFromSelector(@selector(title))
+                   options:0
+                   context:NULL];
 }
+
 
 - (void)dealloc
 {
@@ -57,11 +69,7 @@
 
 - (void)windowResized:(NSNotification *)notification;
 {
-    [self.titleTextField sizeToFit];
-    self.titleTextField.frame = CGRectMake(0.0f,
-                                           7.0f,
-                                           self.titleTextField.frame.size.width,
-                                           20.0f);
+    [self updateTitleView];
 }
 #pragma mark - Views
 
@@ -76,10 +84,25 @@
         _titleTextField.drawsBackground = NO;
         _titleTextField.editable = NO;
         _titleTextField.selectable = NO;
-        _titleTextField.stringValue = @"A Document Title";
+        
+        [self updateTitleView];
     }
     
     return  _titleTextField;
+}
+
+- (void)updateTitleView
+{
+    if (self.window.title)
+    {
+        self.titleTextField.stringValue = self.window.title;
+    }
+    
+    [self.titleTextField sizeToFit];
+    self.titleTextField.frame = CGRectMake(0.0f,
+                                           7.0f,
+                                           self.titleTextField.frame.size.width,
+                                           20.0f);
 }
 
 @end

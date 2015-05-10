@@ -8,6 +8,8 @@
 
 #import "SUTWindowTitleView.h"
 
+static NSInteger const SUTWindowTitleControlsWidth = 50.0f;
+
 @interface SUTWindowTitleView ()
 
 @property (nonatomic, strong) NSTextField *titleTextField;
@@ -99,7 +101,8 @@
     }
     
     [self.titleTextField sizeToFit];
-    self.titleTextField.frame = CGRectMake(0.0f,
+    
+    self.titleTextField.frame = CGRectMake(((self.window.frame.size.width / 2) - (self.titleTextField.frame.size.width / 2)) - SUTWindowTitleControlsWidth,
                                            7.0f,
                                            self.titleTextField.frame.size.width,
                                            20.0f);

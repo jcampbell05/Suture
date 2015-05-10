@@ -9,9 +9,13 @@
 #import "SUTWindowTitleView.h"
 
 static NSInteger const SUTWindowTitleControlsWidth = 50.0f;
+static NSInteger const SUTDocumentIconButtonXOffset = -15.0f;
+static NSInteger const SUTDocumentVersionsButtonXOffset = 10.0f;
 
 @interface SUTWindowTitleView ()
 
+@property (nonatomic, strong) NSButton *documentIconButton;
+@property (nonatomic, strong) NSButton *documentVersionsButton;
 @property (nonatomic, strong) NSTextField *titleTextField;
 
 - (void)updateTitleView;
@@ -44,14 +48,13 @@ static NSInteger const SUTWindowTitleControlsWidth = 50.0f;
 
 - (void)viewWillMoveToWindow:(NSWindow *)newWindow
 {
-    NSButton *documentIconButton = [NSWindow standardWindowButton:NSWindowDocumentIconButton
-                                                     forStyleMask:self.window.styleMask];
-    NSButton *documentVersionsButton = [NSWindow standardWindowButton:NSWindowDocumentVersionsButton
-                                                         forStyleMask:self.window.styleMask];
+    self.documentIconButton= [NSWindow standardWindowButton:NSWindowDocumentIconButton
+                                               forStyleMask:self.window.styleMask];
+    self.documentVersionsButton = [NSWindow standardWindowButton:NSWindowDocumentVersionsButton
+                                                    forStyleMask:self.window.styleMask];
     
-    [self addSubview:documentIconButton];
-    [self addSubview:documentVersionsButton];
-    
+    [self addSubview:self.documentIconButton];
+    [self addSubview:self.documentVersionsButton];
     [self.window removeObserver:self
                      forKeyPath:NSStringFromSelector(@selector(title))];
     
@@ -106,6 +109,14 @@ static NSInteger const SUTWindowTitleControlsWidth = 50.0f;
                                            7.0f,
                                            self.titleTextField.frame.size.width,
                                            20.0f);
+    
+    CGRect documentIconButtonFrame = self.documentIconButton.frame;
+    documentIconButtonFrame.origin.x = self.titleTextField.frame.origin.x + SUTDocumentIconButtonXOffset;
+    documentIconButtonFrame.origin.y = 10.0f;
+    
+    self.documentIconButton.frame = documentIconButtonFrame;
+    
+    self.documentVersionsButton.frame = CGRectOffset(self.titleTextField.frame, SUTDocumentVersionsButtonXOffset, 0.0f);
 }
 
 @end

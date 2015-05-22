@@ -78,6 +78,7 @@
     
     openPanel.allowsMultipleSelection = YES;
     openPanel.allowedFileTypes = [NSImage imageTypes];
+    openPanel.appearance = [NSAppearance appearanceNamed:NSAppearanceNameAqua];
     
     __weak SUTWindowController *weakSelf = self;
     [openPanel beginSheetModalForWindow:self.window
@@ -105,6 +106,8 @@
 - (IBAction)export:(NSMenuItem *)menuItem
 {
     SUTExportPanel *exportPanel = [[SUTExportPanel alloc] init];
+
+    exportPanel.appearance = [NSAppearance appearanceNamed:NSAppearanceNameAqua];
     
     [exportPanel setNameFieldStringValue:[self.document defaultDraftName]];
     [exportPanel beginSheetModalForWindow:self.window

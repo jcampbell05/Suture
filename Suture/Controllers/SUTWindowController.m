@@ -67,6 +67,7 @@
     [super setDocument:document];
     
     self.window.editorView.document = document;
+    self.window.propertyView.document = document;
 }
 
 #pragma mark - Menu Items

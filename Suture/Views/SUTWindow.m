@@ -10,7 +10,6 @@
 
 #import <CoreGraphics/CoreGraphics.h>
 
-#import "SUTPropertyView.h"
 #import "SUTWindowTitleView.h"
 
 static NSString * const SUTWindowTitleToolbarIdentifier = @"Title";
@@ -23,7 +22,7 @@ static CGFloat const SUTPropertyViewWidth = 250.0f;
 
 @property (nonatomic, strong, readwrite) SUTOutlineView *dropHighlightView;
 @property (nonatomic, strong, readwrite) SUTEditorView *editorView;
-@property (nonatomic, strong) SUTPropertyView *propertyView;
+@property (nonatomic, strong, readwrite) SUTPropertyView *propertyView;
 
 @property (nonatomic, strong) SUTWindowTitleView *titleView;
 @property (nonatomic, strong) NSToolbar *titleToolbar;

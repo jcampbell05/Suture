@@ -8,12 +8,14 @@
 
 @import Cocoa;
 #import "SUTEditorView.h"
+#import "SUTPropertyView.h"
 #import "SUTOutlineView.h"
 
 @interface SUTWindow : NSWindow
 
 @property (nonatomic, strong, readonly) SUTOutlineView *dropHighlightView;
 @property (nonatomic, strong, readonly) SUTEditorView *editorView;
+@property (nonatomic, strong, readonly) SUTPropertyView *propertyView;
 @property (atomic, strong) NSView *contentView;
 
 + (instancetype)window;

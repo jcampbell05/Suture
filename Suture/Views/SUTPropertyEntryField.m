@@ -8,6 +8,8 @@
 
 #import "SUTPropertyEntryField.h"
 
+#import <PureLayout/PureLayout.h>
+
 @interface SUTPropertyEntryField ()
 
 @property (nonatomic, strong) NSTextField *labelTextField;
@@ -33,6 +35,20 @@
     
         [self addSubview:self.labelTextField];
         [self addSubview:self.entryTextField];
+        
+        [self.labelTextField autoPinEdgeToSuperviewEdge:ALEdgeLeft];
+        [self.labelTextField autoPinEdgeToSuperviewEdge:ALEdgeTop];
+        [self.labelTextField autoPinEdgeToSuperviewEdge:ALEdgeBottom];
+        [self.labelTextField autoSetDimension:ALDimensionWidth
+                                       toSize:50.0f];
+        
+        [self.entryTextField autoPinEdgeToSuperviewEdge:ALEdgeTop];
+        [self.entryTextField autoPinEdgeToSuperviewEdge:ALEdgeRight];
+        [self.entryTextField autoPinEdgeToSuperviewEdge:ALEdgeBottom];
+        [self.entryTextField autoPinEdge:ALEdgeLeft
+                                  toEdge:ALEdgeRight
+                                  ofView:self.labelTextField
+                              withOffset:5.0f];
     }
     
     return self;
@@ -45,11 +61,14 @@
     if (!_labelTextField)
     {
         _labelTextField = [[NSTextField alloc] init];
+        _labelTextField.translatesAutoresizingMaskIntoConstraints = NO;
         
         _labelTextField.bezeled = NO;
         _labelTextField.bordered = NO;
         _labelTextField.drawsBackground = NO;
         _labelTextField.focusRingType = NSFocusRingTypeNone;
+        
+        [_labelTextField setStringValue:@"fff"];
     }
     
     return _labelTextField;
@@ -60,6 +79,7 @@
     if (!_entryTextField)
     {
         _entryTextField = [[NSTextField alloc] init];
+        _entryTextField.translatesAutoresizingMaskIntoConstraints = NO;
         
         _entryTextField.bezeled = NO;
         _entryTextField.bordered = NO;

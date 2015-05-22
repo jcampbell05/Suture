@@ -158,7 +158,7 @@
         _specificationsTitleView.editable = NO;
         _specificationsTitleView.selectable = NO;
         
-        _specificationsTitleView.stringValue = NSLocalizedString(@"specifications_nav",
+        _specificationsTitleView.stringValue = NSLocalizedString(@"specification_nav",
                                                          nil);
     }
     

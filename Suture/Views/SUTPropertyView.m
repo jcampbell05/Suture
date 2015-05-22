@@ -24,6 +24,7 @@
 
 - (void)createConstraints;
 - (void)updateFrameSpecificationText;
+- (void)exportSpecification;
 
 @end
 
@@ -247,6 +248,8 @@
     {
         _exportSpecificationButton = [[NSButton alloc] initForAutoLayout];
         _exportSpecificationButton.title = @"Export Specification";
+        [_exportSpecificationButton setAction:@selector(exportSpecification)];
+        [_exportSpecificationButton setTarget:self];
     }
     
     return _exportSpecificationButton;
@@ -264,6 +267,11 @@
     {
         self.framesPerSecondTextField.valueText = [NSString stringWithFormat:@"%lu", [self.document.sprites count] / self.document.duration];
     }
+}
+
+- (void)exportSpecification
+{
+    
 }
 
 #pragma mark - SUTPropertyEntryFieldDelegate

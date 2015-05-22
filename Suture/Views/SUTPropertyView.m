@@ -42,6 +42,10 @@
                                                       blue:71.0f/255.0f
                                                      alpha:1.0f].CGColor;
         
+        [self addSubview:self.specificationsTitleView];
+        [self addSubview:self.framesTitleView];
+        [self addSubview:self.frameSizeTitleView];
+        
         [self setViews:@[self.specificationsTitleView,
                          self.framesTitleView,
                          self.frameSizeTitleView]
@@ -142,9 +146,9 @@
     {
         CGRect adjustedBounds = NSInsetRect(self.bounds, self.edgeInsets.left + self.edgeInsets.right, 0.0f);
         _frameSizeTitleView = [[NSTextField alloc] initWithFrame:NSMakeRect(0.0f,
-                                                                         0.0f,
-                                                                         CGRectGetWidth(adjustedBounds),
-                                                                         75.0f)];
+                                                                            0.0f,
+                                                                            CGRectGetWidth(adjustedBounds),
+                                                                            75.0f)];
         
         _frameSizeTitleView.alignment = NSCenterTextAlignment;
         _frameSizeTitleView.bezeled = NO;
@@ -160,7 +164,7 @@
 - (void)updateFrameSpecificationText
 {
     self.framesTitleView.stringValue = [NSString stringWithFormat:@"Frames: %lu", [self.document.sprites count]];
-    self.framesTitleView.stringValue = [NSString stringWithFormat:@"Frame Size: %@", NSStringFromSize([self.document largestSpriteSize])];
+    self.frameSizeTitleView.stringValue = [NSString stringWithFormat:@"Frame Size: %@", NSStringFromSize([self.document largestSpriteSize])];
 }
 
 @end

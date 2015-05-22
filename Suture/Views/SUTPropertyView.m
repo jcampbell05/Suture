@@ -234,7 +234,11 @@
     self.framesTitleView.stringValue = [NSString stringWithFormat:@"Frames: %lu", [self.document.sprites count]];
     self.frameSizeTitleView.stringValue = [NSString stringWithFormat:@"Frame Size: %@", NSStringFromSize([self.document largestSpriteSize])];
     self.durationTextField.valueText = [NSString stringWithFormat:@"%lu", self.document.duration];
-    self.framesPerSecondTextField.valueText = [NSString stringWithFormat:@"%lu", [self.document.sprites count] / self.document.duration];
+    
+    if (self.document.duration > 0)
+    {
+        self.framesPerSecondTextField.valueText = [NSString stringWithFormat:@"%lu", [self.document.sprites count] / self.document.duration];
+    }
 }
 
 #pragma mark - SUTPropertyEntryFieldDelegate

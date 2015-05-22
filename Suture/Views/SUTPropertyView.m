@@ -25,6 +25,11 @@
     if (self)
     {
         self.orientation = NSUserInterfaceLayoutOrientationVertical;
+        self.edgeInsets = NSEdgeInsetsMake(10.0f,
+                                           10.0f,
+                                           10.0f,
+                                           10.0f);
+        
         self.wantsLayer = YES;
         self.layer.backgroundColor = [NSColor colorWithRed:55.0f/255.0f
                                                      green:58.0f/255.0f

@@ -15,7 +15,9 @@
 
 static NSString * const SUTWindowTitleToolbarIdentifier = @"Title";
 static NSString * const SUTWindowTitleViewIdentifier = @"TitleView";
-static CGFloat const SUTPropertyViewWidth = 100.0f;
+
+static CGSize const SUTWindowSize = (CGSize){900.0f, 650.0f};
+static CGFloat const SUTPropertyViewWidth = 250.0f;
 
 @interface SUTWindow () <NSToolbarDelegate>
 
@@ -34,9 +36,7 @@ static CGFloat const SUTPropertyViewWidth = 100.0f;
 
 + (instancetype)window
 {
-    CGSize windowSize = CGSizeMake(850.0f,
-                                   650.0f);
-    SUTWindow *window = [[self alloc] initWithContentRect:(NSRect){NSZeroPoint, windowSize}
+    SUTWindow *window = [[self alloc] initWithContentRect:(NSRect){NSZeroPoint, SUTWindowSize}
                                                 styleMask:(NSTitledWindowMask |
                                                            NSClosableWindowMask |
                                                            NSMiniaturizableWindowMask |
@@ -44,7 +44,7 @@ static CGFloat const SUTPropertyViewWidth = 100.0f;
                                                   backing:NSBackingStoreBuffered
                                                     defer:NO];
     
-    window.contentMinSize = windowSize;
+    window.contentMinSize = SUTWindowSize;
     window.titleVisibility = NSWindowTitleHidden;
     
     [window center];

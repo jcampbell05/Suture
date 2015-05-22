@@ -13,7 +13,6 @@
 @interface SUTPropertyView ()
 
 @property (nonatomic, strong) NSTextField *specificationsTitleView;
-@property (nonatomic, strong) NSTextField *instructionsTitleView;
 @property (nonatomic, strong) NSTextField *framesTitleView;
 @property (nonatomic, strong) NSTextField *frameSizeTitleView;
 
@@ -46,10 +45,8 @@
         [self setViews:@[self.specificationsTitleView,
                          self.framesTitleView]
               inGravity:NSStackViewGravityTop];
-//        [self addView:self.instructionsTitleView
-//            inGravity:NSStackViewGravityTop];
-//        [self addView:self.frameSizeTitleView
-//            inGravity:NSStackViewGravityTop];
+        [self addView:self.frameSizeTitleView
+            inGravity:NSStackViewGravityTop];
     }
     
     return self;
@@ -85,7 +82,7 @@
         {
             [_document addObserver:self
                         forKeyPath:NSStringFromSelector(@selector(sprites))
-                           options:nil
+                           options:0
                            context:NULL];
         }
         
@@ -117,30 +114,6 @@
     }
     
     return _specificationsTitleView;
-}
-
-- (NSTextField *)instructionsTitleView
-{
-//    if (!_specificationsTitleView)
-//    {
-//        _specificationsTitleView = [[NSTextField alloc] init];
-//        
-//        _specificationsTitleView.alignment = NSCenterTextAlignment;
-//        _specificationsTitleView.bezeled = NO;
-//        _specificationsTitleView.textColor = [NSColor whiteColor];
-//        _specificationsTitleView.drawsBackground = NO;
-//        _specificationsTitleView.editable = NO;
-//        _specificationsTitleView.selectable = NO;
-//        
-//        _specificationsTitleView.stringValue = NSLocalizedString(@"specifications_nav",
-//                                                                 nil);
-//        
-//        [_specificationsTitleView sizeToFit];
-//    }
-//    
-//    return _specificationsTitleView;
-    
-    return nil;
 }
 
 - (NSTextField *)framesTitleView

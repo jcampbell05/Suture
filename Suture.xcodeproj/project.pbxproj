@@ -26,6 +26,7 @@
 		744A71FC1AB4493F00077AA7 /* Suture.app in Copy Files */ = {isa = PBXBuildFile; fileRef = 74F0FAD91AAF5224003F9454 /* Suture.app */; };
 		745D4EE81B0F307E00969535 /* SUTPropertyView.h in Headers */ = {isa = PBXBuildFile; fileRef = 745D4EE61B0F307E00969535 /* SUTPropertyView.h */; };
 		745D4EE91B0F307E00969535 /* SUTPropertyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 745D4EE71B0F307E00969535 /* SUTPropertyView.m */; };
+		745D4EF71B0F704C00969535 /* SUTPropertyEntryField.m in Sources */ = {isa = PBXBuildFile; fileRef = 745D4EF61B0F704C00969535 /* SUTPropertyEntryField.m */; };
 		747A103A1AEE5D640097E6AB /* SUTWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = 747A10381AEE5D640097E6AB /* SUTWindow.h */; };
 		747A103B1AEE5D640097E6AB /* SUTWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 747A10391AEE5D640097E6AB /* SUTWindow.m */; };
 		74AF59261AF0EBF00013F9CD /* SUTWindowTitleView.h in Headers */ = {isa = PBXBuildFile; fileRef = 74AF59241AF0EBF00013F9CD /* SUTWindowTitleView.h */; };
@@ -150,6 +151,8 @@
 		744A71F11AB4421C00077AA7 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		745D4EE61B0F307E00969535 /* SUTPropertyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUTPropertyView.h; sourceTree = "<group>"; };
 		745D4EE71B0F307E00969535 /* SUTPropertyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUTPropertyView.m; sourceTree = "<group>"; };
+		745D4EF51B0F704C00969535 /* SUTPropertyEntryField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUTPropertyEntryField.h; sourceTree = "<group>"; };
+		745D4EF61B0F704C00969535 /* SUTPropertyEntryField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUTPropertyEntryField.m; sourceTree = "<group>"; };
 		747A10381AEE5D640097E6AB /* SUTWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUTWindow.h; sourceTree = "<group>"; };
 		747A10391AEE5D640097E6AB /* SUTWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUTWindow.m; sourceTree = "<group>"; };
 		74AF59241AF0EBF00013F9CD /* SUTWindowTitleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUTWindowTitleView.h; sourceTree = "<group>"; };
@@ -398,6 +401,8 @@
 				74AF59251AF0EBF00013F9CD /* SUTWindowTitleView.m */,
 				745D4EE61B0F307E00969535 /* SUTPropertyView.h */,
 				745D4EE71B0F307E00969535 /* SUTPropertyView.m */,
+				745D4EF51B0F704C00969535 /* SUTPropertyEntryField.h */,
+				745D4EF61B0F704C00969535 /* SUTPropertyEntryField.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -724,6 +729,7 @@
 				7441619D1ADE9D0500747B1E /* viter.c in Sources */,
 				74F0FAE01AAF5224003F9454 /* AppDelegate.m in Sources */,
 				745D4EE91B0F307E00969535 /* SUTPropertyView.m in Sources */,
+				745D4EF71B0F704C00969535 /* SUTPropertyEntryField.m in Sources */,
 				74CF98E61AC3960F002F8DC5 /* SUTSpriteCollectionViewCell.m in Sources */,
 				7441619E1ADE9D0500747B1E /* rwpng.c in Sources */,
 				744161991ADE9D0500747B1E /* mediancut.c in Sources */,

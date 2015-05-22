@@ -30,15 +30,44 @@
                                                       blue:83.0f/255.0f
                                                      alpha:1.0f].CGColor;
         
-        
-        //        _durationTextField.focusRingType = NSFocusRingTypeNone;
-        //
-        //
-        //        _durationTextField.bordered = NO;
-        //        _durationTextField.bezeled = NO;
+    
+        [self addSubview:self.labelTextField];
+        [self addSubview:self.entryTextField];
     }
     
     return self;
+}
+
+#pragma mark - Views
+
+- (NSTextField *)labelTextField
+{
+    if (!_labelTextField)
+    {
+        _labelTextField = [[NSTextField alloc] init];
+        
+        _labelTextField.bezeled = NO;
+        _labelTextField.bordered = NO;
+        _labelTextField.drawsBackground = NO;
+        _labelTextField.focusRingType = NSFocusRingTypeNone;
+    }
+    
+    return _labelTextField;
+}
+
+- (NSTextField *)entryTextField
+{
+    if (!_entryTextField)
+    {
+        _entryTextField = [[NSTextField alloc] init];
+        
+        _entryTextField.bezeled = NO;
+        _entryTextField.bordered = NO;
+        _entryTextField.drawsBackground = NO;
+        _entryTextField.focusRingType = NSFocusRingTypeNone;
+    }
+    
+    return _entryTextField;
 }
 
 @end

@@ -57,7 +57,7 @@
     return self;
 }
 
-#pragma mark - Label Text
+#pragma mark - Text
 
 - (void)setLabelText:(NSString *)labelText
 {
@@ -67,6 +67,16 @@
 - (NSString *)labelText
 {
     return self.labelTextField.stringValue;
+}
+
+- (void)setValueText:(NSString *)labelText
+{
+    self.entryTextField.stringValue = labelText;
+}
+
+- (NSString *)valueText
+{
+    return self.entryTextField.stringValue;
 }
 
 #pragma mark - Views

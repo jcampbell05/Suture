@@ -65,8 +65,12 @@ static CGFloat const SUTPropertyViewWidth = 250.0f;
     
     if (self)
     {
+        self.backgroundColor = [NSColor colorWithRed:235.0f/255.0f
+                                               green:235.0f/255.0f
+                                                blue:235.0f/255.0f
+                                               alpha:1.0f];
         self.toolbar = self.titleToolbar;
-        
+ 
         [self.contentView  addSubview:self.editorView];
         [self.contentView  addSubview:self.propertyView];
         [self.contentView addSubview:self.dropHighlightView];

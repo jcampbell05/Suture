@@ -36,7 +36,7 @@
     if (self)
     {
         self.enabled = YES;
-        
+
         [self registerForDraggedTypes:@[NSFilenamesPboardType]];
         
         [self addSubview:self.emptySpriteView];

@@ -272,11 +272,13 @@
 - (void)exportSpecification
 {
     NSSavePanel *savePanel = [NSSavePanel savePanel];
+    savePanel.allowedFileTypes = @[@"txt"];
     
     [savePanel beginSheetModalForWindow:self.window
-                      completionHandler:^(NSInteger result) {
+                      completionHandler:^(NSInteger result)
+    {
                           
-                      }];
+    }];
 }
 
 #pragma mark - SUTPropertyEntryFieldDelegate

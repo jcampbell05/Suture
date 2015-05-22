@@ -9,6 +9,7 @@
 #import "SUTWindow.h"
 
 #import <CoreGraphics/CoreGraphics.h>
+#import <PureLayout/PureLayout.h>
 
 #import "SUTWindowTitleView.h"
 
@@ -68,6 +69,19 @@ static CGFloat const SUTPropertyViewWidth = 250.0f;
         [self.contentView  addSubview:self.editorView];
         [self.contentView  addSubview:self.propertyView];
         [self.contentView addSubview:self.dropHighlightView];
+        
+        [self.editorView autoPinEdgeToSuperviewEdge:ALEdgeLeft];
+        [self.editorView autoPinEdgeToSuperviewEdge:ALEdgeTop];
+        [self.editorView autoPinEdgeToSuperviewEdge:ALEdgeBottom];
+        [self.editorView autoPinEdge:ALEdgeRight
+                              toEdge:ALEdgeLeft
+                              ofView:self.propertyView];
+        
+        [self.propertyView autoPinEdgeToSuperviewEdge:ALEdgeTop];
+        [self.propertyView autoPinEdgeToSuperviewEdge:ALEdgeRight];
+        [self.propertyView autoPinEdgeToSuperviewEdge:ALEdgeBottom];
+        [self.propertyView autoSetDimension:ALDimensionWidth
+                                     toSize:SUTPropertyViewWidth];
     }
     
     return self;
@@ -91,11 +105,8 @@ static CGFloat const SUTPropertyViewWidth = 250.0f;
 {
     if (!_editorView)
     {
-        NSRect frame = self.contentView.bounds;
-        frame.size.width -= SUTPropertyViewWidth;
-        
-        _editorView = [[SUTEditorView alloc] initWithFrame:frame];
-        _editorView.autoresizingMask = NSViewWidthSizable | NSViewHeightSizable;
+        _editorView = [[SUTEditorView alloc] init];
+        _editorView.translatesAutoresizingMaskIntoConstraints = NO;
     }
     
     return _editorView;
@@ -115,12 +126,8 @@ static CGFloat const SUTPropertyViewWidth = 250.0f;
 {
     if (!_propertyView)
     {
-        NSRect frame = self.contentView.bounds;
-        frame.origin.x = frame.size.width - SUTPropertyViewWidth;
-        frame.size.width = SUTPropertyViewWidth;
-        
-        _propertyView = [[SUTPropertyView alloc] initWithFrame:frame];
-        _propertyView.autoresizingMask = NSViewMinXMargin | NSViewHeightSizable;
+        _propertyView = [[SUTPropertyView alloc] init];
+        _propertyView.translatesAutoresizingMaskIntoConstraints = NO;
     }
     
     return _propertyView;

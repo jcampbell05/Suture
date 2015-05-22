@@ -28,8 +28,6 @@
 		745D4EE91B0F307E00969535 /* SUTPropertyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 745D4EE71B0F307E00969535 /* SUTPropertyView.m */; };
 		747A103A1AEE5D640097E6AB /* SUTWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = 747A10381AEE5D640097E6AB /* SUTWindow.h */; };
 		747A103B1AEE5D640097E6AB /* SUTWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 747A10391AEE5D640097E6AB /* SUTWindow.m */; };
-		747A103C1AEE5D640097E6AB /* SUTWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 747A10391AEE5D640097E6AB /* SUTWindow.m */; };
-		747A103D1AEE5D640097E6AB /* SUTWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 747A10391AEE5D640097E6AB /* SUTWindow.m */; };
 		74AF59261AF0EBF00013F9CD /* SUTWindowTitleView.h in Headers */ = {isa = PBXBuildFile; fileRef = 74AF59241AF0EBF00013F9CD /* SUTWindowTitleView.h */; };
 		74AF59271AF0EBF00013F9CD /* SUTWindowTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 74AF59251AF0EBF00013F9CD /* SUTWindowTitleView.m */; };
 		74AF59291AF0EBF00013F9CD /* SUTWindowTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 74AF59251AF0EBF00013F9CD /* SUTWindowTitleView.m */; };
@@ -709,7 +707,6 @@
 				74AF59291AF0EBF00013F9CD /* SUTWindowTitleView.m in Sources */,
 				744A71EE1AB4421C00077AA7 /* GenerateThumbnailForURL.m in Sources */,
 				744A71F01AB4421C00077AA7 /* GeneratePreviewForURL.m in Sources */,
-				747A103D1AEE5D640097E6AB /* SUTWindow.m in Sources */,
 				744A71F21AB4421C00077AA7 /* main.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -755,7 +752,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				747A103C1AEE5D640097E6AB /* SUTWindow.m in Sources */,
 				74F0FAF91AAF5224003F9454 /* SutureTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

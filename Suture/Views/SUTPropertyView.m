@@ -277,7 +277,22 @@
     [savePanel beginSheetModalForWindow:self.window
                       completionHandler:^(NSInteger result)
     {
-                          
+        NSInteger FPS = 1;
+        
+        if (self.document.duration > 0)
+        {
+            self.framesPerSecondTextField.valueText = [NSString stringWithFormat:@"%lu", [self.document.sprites count] / self.document.duration];
+        }
+        
+        NSString *contents = [NSString stringWithFormat:@"Frames: %lu\nFrame Size: %@\nDuration: %lu\nFrames Per Second: %lu",
+                              [self.document.sprites count],
+                              NSStringFromSize([self.document largestSpriteSize]),
+                              self.document.duration,
+                              FPS];
+        
+        [[NSFileManager defaultManager] createFileAtPath:[savePanel.URL path]
+                                                contents:[contents dataUsingEncoding:NSUTF8StringEncoding]
+                                                attributes:nil];
     }];
 }
 

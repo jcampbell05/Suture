@@ -10,6 +10,7 @@
 
 @interface SUTPropertyEntryField : NSView
 
+@property (nonatomic, weak) id<NSTextFieldDelegate> delegate;
 @property (nonatomic, copy) NSString *labelText;
 @property (nonatomic, copy) NSString *valueText;
 

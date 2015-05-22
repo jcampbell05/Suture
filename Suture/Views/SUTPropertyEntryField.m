@@ -79,6 +79,18 @@
     return self.entryTextField.stringValue;
 }
 
+#pragma mark - Delegate
+
+- (void)setDelegate:(id<NSTextFieldDelegate>)delegate
+{
+    self.entryTextField.delegate = delegate;
+}
+
+- (id<NSTextFieldDelegate>)delegate
+{
+    return self.entryTextField.delegate;
+}
+
 #pragma mark - Views
 
 - (NSTextField *)labelTextField

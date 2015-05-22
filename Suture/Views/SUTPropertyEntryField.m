@@ -42,7 +42,7 @@
                                               withInset:10.0f];
         [self.labelTextField autoPinEdgeToSuperviewEdge:ALEdgeBottom];
         [self.labelTextField autoSetDimension:ALDimensionWidth
-                                       toSize:50.0f];
+                                       toSize:60.0f];
         
         [self.entryTextField autoPinEdgeToSuperviewEdge:ALEdgeTop
                                               withInset:10.0f];
@@ -81,7 +81,9 @@
         _labelTextField.bezeled = NO;
         _labelTextField.bordered = NO;
         _labelTextField.drawsBackground = NO;
+        _labelTextField.editable = NO;
         _labelTextField.focusRingType = NSFocusRingTypeNone;
+        _labelTextField.selectable = NO;
     }
     
     return _labelTextField;

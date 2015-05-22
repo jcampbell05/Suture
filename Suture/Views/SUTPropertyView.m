@@ -55,7 +55,8 @@
 {
     //Specifications Title View
     [self.specificationsTitleView autoPinEdgeToSuperviewEdge:ALEdgeLeft];
-    [self.specificationsTitleView autoPinEdgeToSuperviewEdge:ALEdgeTop];
+    [self.specificationsTitleView autoPinEdgeToSuperviewEdge:ALEdgeTop
+                                                   withInset:15.0f];
     [self.specificationsTitleView autoPinEdgeToSuperviewEdge:ALEdgeRight];
     [self.specificationsTitleView autoSetDimension:ALDimensionHeight
                                             toSize:30.0f];
@@ -64,7 +65,8 @@
     [self.framesTitleView autoPinEdgeToSuperviewEdge:ALEdgeLeft];
     [self.framesTitleView autoPinEdge:ALEdgeTop
                                toEdge:ALEdgeBottom
-                               ofView:self.specificationsTitleView];
+                               ofView:self.specificationsTitleView
+                           withOffset:10.0f];
     [self.framesTitleView autoPinEdgeToSuperviewEdge:ALEdgeRight];
     [self.framesTitleView autoSetDimension:ALDimensionHeight
                                             toSize:20.0f];

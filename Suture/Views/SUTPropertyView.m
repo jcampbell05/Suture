@@ -44,6 +44,7 @@
         [self addSubview:self.specificationsTitleView];
         [self addSubview:self.framesTitleView];
         [self addSubview:self.frameSizeTitleView];
+        [self addSubview:self.framesPerSecondTextField];
 
         [self createConstraints];
     }
@@ -81,6 +82,14 @@
                                        toSize:20.0f];
     
     //Duration Text Field
+    [self.framesPerSecondTextField autoPinEdgeToSuperviewEdge:ALEdgeLeft];
+    [self.framesPerSecondTextField autoPinEdge:ALEdgeTop
+                                        toEdge:ALEdgeBottom
+                                        ofView:self.frameSizeTitleView
+                                    withOffset:10.0f];
+    [self.framesPerSecondTextField autoPinEdgeToSuperviewEdge:ALEdgeRight];
+    [self.framesPerSecondTextField autoSetDimension:ALDimensionHeight
+                                             toSize:35.0f];
     
     //Frames Per Second Text Field
 }
@@ -181,6 +190,33 @@
     
     return _frameSizeTitleView;
 }
+
+- (NSTextField *)framesPerSecondTextField
+{
+    if (!_framesPerSecondTextField)
+    {
+        _framesPerSecondTextField = [[NSTextField alloc] init];
+        
+        _framesPerSecondTextField.focusRingType = NSFocusRingTypeNone;
+        _framesPerSecondTextField.translatesAutoresizingMaskIntoConstraints = NO;
+        
+        _framesPerSecondTextField.backgroundColor = [NSColor colorWithRed:67.0f/255.0f
+                                                                    green:70.0f/255.0f
+                                                                     blue:83.0f/255.0f
+                                                                    alpha:1.0f];
+        _framesPerSecondTextField.bordered = NO;
+        _framesPerSecondTextField.bezeled = NO;
+    }
+    
+    return _framesPerSecondTextField;
+}
+
+- (NSTextField *)durationTextField
+{
+    return nil;
+}
+
+#pragma mark - Events
 
 - (void)updateFrameSpecificationText
 {

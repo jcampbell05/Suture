@@ -207,6 +207,7 @@
     {
         _framesPerSecondTextField = [[SUTPropertyEntryField alloc] init];
         _framesPerSecondTextField.translatesAutoresizingMaskIntoConstraints = NO;
+        _framesPerSecondTextField.labelText = NSLocalizedString(@"frames_per_second_nav", nil);
     }
     
     return _framesPerSecondTextField;
@@ -218,6 +219,7 @@
     {
         _durationTextField = [[SUTPropertyEntryField alloc] init];
         _durationTextField.translatesAutoresizingMaskIntoConstraints = NO;
+        _durationTextField.labelText = NSLocalizedString(@"duration_nav", nil);
     }
     
     return _durationTextField;

@@ -36,13 +36,16 @@
         [self addSubview:self.labelTextField];
         [self addSubview:self.entryTextField];
         
-        [self.labelTextField autoPinEdgeToSuperviewEdge:ALEdgeLeft];
-        [self.labelTextField autoPinEdgeToSuperviewEdge:ALEdgeTop];
+        [self.labelTextField autoPinEdgeToSuperviewEdge:ALEdgeLeft
+                                              withInset:10.0f];
+        [self.labelTextField autoPinEdgeToSuperviewEdge:ALEdgeTop
+                                              withInset:10.0f];
         [self.labelTextField autoPinEdgeToSuperviewEdge:ALEdgeBottom];
         [self.labelTextField autoSetDimension:ALDimensionWidth
                                        toSize:50.0f];
         
-        [self.entryTextField autoPinEdgeToSuperviewEdge:ALEdgeTop];
+        [self.entryTextField autoPinEdgeToSuperviewEdge:ALEdgeTop
+                                              withInset:10.0f];
         [self.entryTextField autoPinEdgeToSuperviewEdge:ALEdgeRight];
         [self.entryTextField autoPinEdgeToSuperviewEdge:ALEdgeBottom];
         [self.entryTextField autoPinEdge:ALEdgeLeft
@@ -52,6 +55,18 @@
     }
     
     return self;
+}
+
+#pragma mark - Label Text
+
+- (void)setLabelText:(NSString *)labelText
+{
+    self.labelTextField.stringValue = labelText;
+}
+
+- (NSString *)labelText
+{
+    return self.labelTextField.stringValue;
 }
 
 #pragma mark - Views
@@ -67,8 +82,6 @@
         _labelTextField.bordered = NO;
         _labelTextField.drawsBackground = NO;
         _labelTextField.focusRingType = NSFocusRingTypeNone;
-        
-        [_labelTextField setStringValue:@"fff"];
     }
     
     return _labelTextField;

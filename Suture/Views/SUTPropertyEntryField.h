@@ -10,4 +10,6 @@
 
 @interface SUTPropertyEntryField : NSView
 
+@property (nonatomic, copy) NSString *labelText;
+
 @end

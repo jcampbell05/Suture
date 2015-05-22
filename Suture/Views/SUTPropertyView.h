@@ -8,6 +8,6 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface SUTPropertyView : NSView
+@interface SUTPropertyView : NSStackView
 
 @end

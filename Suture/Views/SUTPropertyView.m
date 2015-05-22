@@ -39,8 +39,13 @@
                                                       blue:71.0f/255.0f
                                                      alpha:1.0f].CGColor;
         
-        [self addView:self.specificationsTitleView
-            inGravity:NSStackViewGravityTop];
+        [self setViews:@[self.specificationsTitleView,
+                         self.framesTitleView]
+              inGravity:NSStackViewGravityTop];
+//        [self addView:self.instructionsTitleView
+//            inGravity:NSStackViewGravityTop];
+//        [self addView:self.frameSizeTitleView
+//            inGravity:NSStackViewGravityTop];
     }
     
     return self;
@@ -52,7 +57,10 @@
 {
     if (!_specificationsTitleView)
     {
-        _specificationsTitleView = [[NSTextField alloc] init];
+        _specificationsTitleView = [[NSTextField alloc] initWithFrame:NSMakeRect(0.0f,
+                                                                                 0.0f,
+                                                                                 CGRectGetWidth(self.bounds),
+                                                                                 50.0f)];
         
         _specificationsTitleView.alignment = NSCenterTextAlignment;
         _specificationsTitleView.bezeled = NO;
@@ -63,8 +71,6 @@
         
         _specificationsTitleView.stringValue = NSLocalizedString(@"specifications_nav",
                                                          nil);
-        
-        [_specificationsTitleView sizeToFit];
     }
     
     return _specificationsTitleView;
@@ -72,16 +78,73 @@
 
 - (NSTextField *)instructionsTitleView
 {
+//    if (!_specificationsTitleView)
+//    {
+//        _specificationsTitleView = [[NSTextField alloc] init];
+//        
+//        _specificationsTitleView.alignment = NSCenterTextAlignment;
+//        _specificationsTitleView.bezeled = NO;
+//        _specificationsTitleView.textColor = [NSColor whiteColor];
+//        _specificationsTitleView.drawsBackground = NO;
+//        _specificationsTitleView.editable = NO;
+//        _specificationsTitleView.selectable = NO;
+//        
+//        _specificationsTitleView.stringValue = NSLocalizedString(@"specifications_nav",
+//                                                                 nil);
+//        
+//        [_specificationsTitleView sizeToFit];
+//    }
+//    
+//    return _specificationsTitleView;
+    
     return nil;
 }
 
 - (NSTextField *)framesTitleView
 {
-    return nil;
+    if (!_framesTitleView)
+    {
+        _framesTitleView = [[NSTextField alloc] initWithFrame:NSMakeRect(0.0f,
+                                                                         0.0f,
+                                                                         CGRectGetWidth(self.bounds),
+                                                                         50.0f)];
+        
+        _framesTitleView.alignment = NSCenterTextAlignment;
+        _framesTitleView.bezeled = NO;
+        _framesTitleView.textColor = [NSColor whiteColor];
+        _framesTitleView.drawsBackground = NO;
+        _framesTitleView.editable = NO;
+        _framesTitleView.selectable = NO;
+        
+        _framesTitleView.stringValue = @"WOOOO";
+        
+        [_framesTitleView sizeToFit];
+    }
+    
+    return _framesTitleView;
 }
 
 - (NSTextField *)frameSizeTitleView
 {
+//    if (!_specificationsTitleView)
+//    {
+//        _specificationsTitleView = [[NSTextField alloc] init];
+//        
+//        _specificationsTitleView.alignment = NSCenterTextAlignment;
+//        _specificationsTitleView.bezeled = NO;
+//        _specificationsTitleView.textColor = [NSColor whiteColor];
+//        _specificationsTitleView.drawsBackground = NO;
+//        _specificationsTitleView.editable = NO;
+//        _specificationsTitleView.selectable = NO;
+//        
+//        _specificationsTitleView.stringValue = NSLocalizedString(@"specifications_nav",
+//                                                                 nil);
+//        
+//        [_specificationsTitleView sizeToFit];
+//    }
+//    
+//    return _specificationsTitleView;
+    
     return nil;
 }
 

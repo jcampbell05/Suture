@@ -10,7 +10,7 @@
 
 #import <PureLayout/PureLayout.h>
 
-@interface SUTPropertyEntryField ()
+@interface SUTPropertyEntryField () <NSTextFieldDelegate>
 
 @property (nonatomic, strong) NSTextField *labelTextField;
 @property (nonatomic, strong) NSTextField *entryTextField;
@@ -79,18 +79,6 @@
     return self.entryTextField.stringValue;
 }
 
-#pragma mark - Delegate
-
-- (void)setDelegate:(id<NSTextFieldDelegate>)delegate
-{
-    self.entryTextField.delegate = delegate;
-}
-
-- (id<NSTextFieldDelegate>)delegate
-{
-    return self.entryTextField.delegate;
-}
-
 #pragma mark - Views
 
 - (NSTextField *)labelTextField
@@ -116,6 +104,7 @@
     if (!_entryTextField)
     {
         _entryTextField = [[NSTextField alloc] init];
+        _entryTextField.delegate = self;
         _entryTextField.translatesAutoresizingMaskIntoConstraints = NO;
         
         _entryTextField.bezeled = NO;
@@ -125,6 +114,13 @@
     }
     
     return _entryTextField;
+}
+
+#pragma mark - NSTextFieldDelegate
+
+- (void)controlTextDidChange:(NSNotification *)obj
+{
+    [self.delegate propertyEntryFieldDidChange:self];
 }
 
 @end

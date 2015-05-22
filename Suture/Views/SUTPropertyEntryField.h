@@ -8,9 +8,17 @@
 
 #import <Cocoa/Cocoa.h>
 
+@class SUTPropertyEntryField;
+
+@protocol SUTPropertyEntryFieldDelegate <NSObject>
+
+- (void)propertyEntryFieldDidChange:(SUTPropertyEntryField *)propertyEntryField;
+
+@end
+
 @interface SUTPropertyEntryField : NSView
 
-@property (nonatomic, weak) id<NSTextFieldDelegate> delegate;
+@property (nonatomic, weak) id<SUTPropertyEntryFieldDelegate> delegate;
 @property (nonatomic, copy) NSString *labelText;
 @property (nonatomic, copy) NSString *valueText;
 

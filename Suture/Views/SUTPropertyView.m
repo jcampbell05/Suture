@@ -13,7 +13,7 @@
 #import "SUTDocument.h"
 #import "SUTPropertyEntryField.h"
 
-@interface SUTPropertyView () <NSTextFieldDelegate>
+@interface SUTPropertyView () <SUTPropertyEntryFieldDelegate>
 
 @property (nonatomic, strong) NSTextField *specificationsTitleView;
 @property (nonatomic, strong) NSTextField *framesTitleView;
@@ -237,13 +237,30 @@
     self.framesPerSecondTextField.valueText = [NSString stringWithFormat:@"%lu", [self.document.sprites count] / self.document.duration];
 }
 
-#pragma mark - NSTextFieldDelegate
+#pragma mark - SUTPropertyEntryFieldDelegate
 
-- (void)controlTextDidChange:(NSNotification *)obj
+- (void)propertyEntryFieldDidChange:(SUTPropertyEntryField *)propertyEntryField
 {
-    NSTextField *textfield = [obj object];
-    
-    
+    if ([propertyEntryField isEqualTo:self.framesPerSecondTextField])
+    {
+        NSInteger framesPerSecond = [self.framesPerSecondTextField.valueText integerValue];
+        
+        if (framesPerSecond > 0)
+        {
+            self.document.duration = [self.document.sprites count] / framesPerSecond;
+            [self updateFrameSpecificationText];
+        }
+    }
+    else
+    {
+        NSInteger duration = [self.framesPerSecondTextField.valueText integerValue];
+        
+        if (duration > 0)
+        {
+            self.document.duration = duration;
+            [self updateFrameSpecificationText];
+        }
+    }
 }
 
 @end

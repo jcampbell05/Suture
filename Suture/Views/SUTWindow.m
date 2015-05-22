@@ -44,6 +44,7 @@ static CGFloat const SUTPropertyViewWidth = 250.0f;
                                                   backing:NSBackingStoreBuffered
                                                     defer:NO];
     
+    window.appearance = [NSAppearance appearanceNamed:NSAppearanceNameVibrantDark];
     window.contentMinSize = SUTWindowSize;
     window.titleVisibility = NSWindowTitleHidden;
     

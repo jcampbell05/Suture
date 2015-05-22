@@ -43,6 +43,7 @@
         [self addSubview:self.framesTitleView];
         [self addSubview:self.frameSizeTitleView];
 
+        [self createConstraints];
     }
     
     return self;
@@ -55,11 +56,25 @@
     [self.specificationsTitleView autoPinEdgeToSuperviewEdge:ALEdgeTop];
     [self.specificationsTitleView autoPinEdgeToSuperviewEdge:ALEdgeRight];
     [self.specificationsTitleView autoSetDimension:ALDimensionHeight
-                                            toSize:50.0f];
+                                            toSize:30.0f];
     
     //Frames Title View
+    [self.framesTitleView autoPinEdgeToSuperviewEdge:ALEdgeLeft];
+    [self.framesTitleView autoPinEdge:ALEdgeTop
+                               toEdge:ALEdgeBottom
+                               ofView:self.specificationsTitleView];
+    [self.framesTitleView autoPinEdgeToSuperviewEdge:ALEdgeRight];
+    [self.framesTitleView autoSetDimension:ALDimensionHeight
+                                            toSize:20.0f];
     
     //Frame Size Title View
+    [self.frameSizeTitleView autoPinEdgeToSuperviewEdge:ALEdgeLeft];
+    [self.frameSizeTitleView autoPinEdge:ALEdgeTop
+                                  toEdge:ALEdgeBottom
+                                  ofView:self.framesTitleView];
+    [self.frameSizeTitleView autoPinEdgeToSuperviewEdge:ALEdgeRight];
+    [self.frameSizeTitleView autoSetDimension:ALDimensionHeight
+                                       toSize:20.0f];
 }
 
 #pragma mark - KVO

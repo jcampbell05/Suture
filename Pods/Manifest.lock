@@ -4,16 +4,19 @@ PODS:
   - JNWScrollView (0.1)
   - PureLayout (2.0.6)
   - Sparkle (1.9.0)
+  - ZKTextField (0.0.1)
 
 DEPENDENCIES:
   - JNWCollectionView
   - PureLayout
   - Sparkle (~> 1.9)
+  - ZKTextField
 
 SPEC CHECKSUMS:
   JNWCollectionView: 3bad227492d5e8219c2664b7878e3ca20fd29f92
   JNWScrollView: d98a3bf2b663e1251a20cdd3a306123f132a7033
   PureLayout: f25f0bb904d5ccfe6e31da3cb869185259f02e0d
   Sparkle: 75bbbc5ab2d666f7f77c241afe7fd28364a8f9f7
+  ZKTextField: f1538276ac8f5042ed49a4780f617e63772299ff
 
 COCOAPODS: 0.34.0

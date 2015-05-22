@@ -77,6 +77,10 @@
     [self.frameSizeTitleView autoPinEdgeToSuperviewEdge:ALEdgeRight];
     [self.frameSizeTitleView autoSetDimension:ALDimensionHeight
                                        toSize:20.0f];
+    
+    //Duration Text Field
+    
+    //Frames Per Second Text Field
 }
 
 #pragma mark - KVO

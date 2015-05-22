@@ -112,7 +112,7 @@ static NSString * const SUTWindowTitleViewIdentifier = @"TitleView";
         
         [_splitView adjustSubviews];
         
-        CGFloat dividerPosition = CGRectGetMaxX(self.contentView.bounds) * 0.8;
+        CGFloat dividerPosition = CGRectGetMaxX(self.contentView.bounds) * 0.4;
         [_splitView setPosition:dividerPosition
                ofDividerAtIndex:0];
     }

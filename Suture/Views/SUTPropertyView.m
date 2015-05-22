@@ -271,7 +271,12 @@
 
 - (void)exportSpecification
 {
+    NSSavePanel *savePanel = [NSSavePanel savePanel];
     
+    [savePanel beginSheetModalForWindow:self.window
+                      completionHandler:^(NSInteger result) {
+                          
+                      }];
 }
 
 #pragma mark - SUTPropertyEntryFieldDelegate

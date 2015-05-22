@@ -33,8 +33,8 @@ static NSString * const SUTWindowTitleViewIdentifier = @"TitleView";
 
 + (instancetype)window
 {
-    CGSize windowSize = CGSizeMake(650.0f,
-                                   500.0f);
+    CGSize windowSize = CGSizeMake(850.0f,
+                                   650.0f);
     SUTWindow *window = [[self alloc] initWithContentRect:(NSRect){NSZeroPoint, windowSize}
                                                 styleMask:(NSTitledWindowMask |
                                                            NSClosableWindowMask |

@@ -11,7 +11,7 @@
 #import <PureLayout/PureLayout.h>
 
 static CGFloat USNImageViewMargin = 25;
-static CGFloat USNImageViewSize = 60;
+static CGFloat USNImageViewSize = 120;
 
 @interface SUTEmptySpriteSheetView ()
 

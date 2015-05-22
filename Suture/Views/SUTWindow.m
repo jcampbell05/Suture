@@ -7,9 +7,11 @@
 //
 
 #import "SUTWindow.h"
-#import "SUTWindowTitleView.h"
 
 #import <CoreGraphics/CoreGraphics.h>
+
+#import "SUTPropertyView.h"
+#import "SUTWindowTitleView.h"
 
 static NSString * const SUTWindowTitleToolbarIdentifier = @"Title";
 static NSString * const SUTWindowTitleViewIdentifier = @"TitleView";
@@ -18,6 +20,7 @@ static NSString * const SUTWindowTitleViewIdentifier = @"TitleView";
 
 @property (nonatomic, strong, readwrite) SUTOutlineView *dropHighlightView;
 @property (nonatomic, strong, readwrite) SUTEditorView *editorView;
+@property (nonatomic, strong) SUTPropertyView *propertyView;
 @property (nonatomic, strong, readwrite) NSSplitView *splitView;
 
 @property (nonatomic, strong) SUTWindowTitleView *titleView;
@@ -63,6 +66,10 @@ static NSString * const SUTWindowTitleViewIdentifier = @"TitleView";
         self.toolbar = self.titleToolbar;
         
         [self.contentView addSubview:self.splitView];
+        [self.splitView addSubview:self.editorView];
+        [self.splitView addSubview:self.propertyView];
+        [self.splitView adjustSubviews];
+        
         [self.contentView addSubview:self.dropHighlightView];
     }
     
@@ -100,7 +107,6 @@ static NSString * const SUTWindowTitleViewIdentifier = @"TitleView";
     {
         _splitView = [[NSSplitView alloc] initWithFrame:self.contentView.bounds];
         _splitView.autoresizingMask = NSViewWidthSizable | NSViewHeightSizable;
-        _splitView.subviews = @[self.editorView];
     }
     
     return _splitView;
@@ -114,6 +120,17 @@ static NSString * const SUTWindowTitleViewIdentifier = @"TitleView";
     }
     
     return _titleView;
+}
+
+- (SUTPropertyView *)propertyView
+{
+    if (!_propertyView)
+    {
+        _propertyView = [[SUTPropertyView alloc] init];
+        _propertyView.autoresizingMask = NSViewWidthSizable | NSViewHeightSizable;
+    }
+    
+    return _propertyView;
 }
 
 #pragma mark - Title Toolbar
@@ -152,5 +169,7 @@ static NSString * const SUTWindowTitleViewIdentifier = @"TitleView";
     
     return item;
 }
+
+#pragma mark - Delegate
 
 @end

@@ -113,7 +113,7 @@
     if (![fileWrapper isDirectory])
     {
         NSDictionary *userInfo = [NSDictionary dictionaryWithObject:@"Illegal Document Format" forKey:NSLocalizedDescriptionKey];
-        *outError = [NSError errorWithDomain:@"Shoebox" code:1 userInfo:userInfo];
+        *outError = [NSError errorWithDomain:@"com.unii.suture" code:1 userInfo:userInfo];
         return NO;
     }
     

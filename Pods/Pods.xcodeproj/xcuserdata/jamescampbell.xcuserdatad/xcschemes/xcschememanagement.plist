@@ -8,74 +8,51 @@
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>3</integer>
 		</dict>
 		<key>Pods-JNWScrollView.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>4</integer>
+		</dict>
+		<key>Pods-PureLayout.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>Pods-Sparkle.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>5</integer>
 		</dict>
 		<key>Pods.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>2</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0B0F59151B2AE76CC07C38D2</key>
+		<key>409741FE06EF9AB8C9D8D6E0</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>307878C8706231E2CDA327AC</key>
+		<key>48EF6BD55170255C367307A7</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>33C5081B590A04255C5323CD</key>
+		<key>7474DA81149132CDA06D2BF8</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>3AF718333037EFCC43BA4A1D</key>
+		<key>851F1C58876124BE6078D33C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>6630815DA3C525148446CAA0</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>C972852A41DED5D52FEADBDA</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>D30526453B9DC9C7C0118070</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>F15019C6D8327A8A4770207E</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>FBC501B188113C99B7FA162B</key>
+		<key>DF982EC89EBAED5F8AE138C0</key>
 		<dict>
 			<key>primary</key>
 			<true/>

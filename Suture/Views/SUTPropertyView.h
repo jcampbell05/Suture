@@ -10,7 +10,7 @@
 
 @class SUTDocument;
 
-@interface SUTPropertyView : NSStackView
+@interface SUTPropertyView : NSView
 
 @property (nonatomic, strong) SUTDocument *document;
 

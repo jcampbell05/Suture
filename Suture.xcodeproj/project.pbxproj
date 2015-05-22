@@ -26,7 +26,6 @@
 		744A71FC1AB4493F00077AA7 /* Suture.app in Copy Files */ = {isa = PBXBuildFile; fileRef = 74F0FAD91AAF5224003F9454 /* Suture.app */; };
 		745D4EE81B0F307E00969535 /* SUTPropertyView.h in Headers */ = {isa = PBXBuildFile; fileRef = 745D4EE61B0F307E00969535 /* SUTPropertyView.h */; };
 		745D4EE91B0F307E00969535 /* SUTPropertyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 745D4EE71B0F307E00969535 /* SUTPropertyView.m */; };
-		745D4EEA1B0F307E00969535 /* SUTPropertyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 745D4EE71B0F307E00969535 /* SUTPropertyView.m */; };
 		747A103A1AEE5D640097E6AB /* SUTWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = 747A10381AEE5D640097E6AB /* SUTWindow.h */; };
 		747A103B1AEE5D640097E6AB /* SUTWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 747A10391AEE5D640097E6AB /* SUTWindow.m */; };
 		747A103C1AEE5D640097E6AB /* SUTWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 747A10391AEE5D640097E6AB /* SUTWindow.m */; };
@@ -758,7 +757,6 @@
 			files = (
 				747A103C1AEE5D640097E6AB /* SUTWindow.m in Sources */,
 				74F0FAF91AAF5224003F9454 /* SutureTests.m in Sources */,
-				745D4EEA1B0F307E00969535 /* SUTPropertyView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

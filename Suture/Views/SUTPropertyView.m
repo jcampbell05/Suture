@@ -8,6 +8,8 @@
 
 #import "SUTPropertyView.h"
 
+#import <PureLayout/PureLayout.h>
+
 #import "SUTDocument.h"
 
 @interface SUTPropertyView ()
@@ -16,6 +18,7 @@
 @property (nonatomic, strong) NSTextField *framesTitleView;
 @property (nonatomic, strong) NSTextField *frameSizeTitleView;
 
+- (void)createConstraints;
 - (void)updateFrameSpecificationText;
 
 @end
@@ -30,12 +33,6 @@
     
     if (self)
     {
-        self.orientation = NSUserInterfaceLayoutOrientationVertical;
-        self.edgeInsets = NSEdgeInsetsMake(10.0f,
-                                           10.0f,
-                                           10.0f,
-                                           10.0f);
-        
         self.wantsLayer = YES;
         self.layer.backgroundColor = [NSColor colorWithRed:55.0f/255.0f
                                                      green:58.0f/255.0f
@@ -45,14 +42,24 @@
         [self addSubview:self.specificationsTitleView];
         [self addSubview:self.framesTitleView];
         [self addSubview:self.frameSizeTitleView];
-        
-        [self setViews:@[self.specificationsTitleView,
-                         self.framesTitleView,
-                         self.frameSizeTitleView]
-              inGravity:NSStackViewGravityTop];
+
     }
     
     return self;
+}
+
+- (void)createConstraints
+{
+    //Specifications Title View
+    [self.specificationsTitleView autoPinEdgeToSuperviewEdge:ALEdgeLeft];
+    [self.specificationsTitleView autoPinEdgeToSuperviewEdge:ALEdgeTop];
+    [self.specificationsTitleView autoPinEdgeToSuperviewEdge:ALEdgeRight];
+    [self.specificationsTitleView autoSetDimension:ALDimensionHeight
+                                            toSize:50.0f];
+    
+    //Frames Title View
+    
+    //Frame Size Title View
 }
 
 #pragma mark - KVO
@@ -99,11 +106,8 @@
 {
     if (!_specificationsTitleView)
     {
-        CGRect adjustedBounds = NSInsetRect(self.bounds, self.edgeInsets.left + self.edgeInsets.right, 0.0f);
-        _specificationsTitleView = [[NSTextField alloc] initWithFrame:NSMakeRect(0.0f,
-                                                                                 0.0f,
-                                                                                 CGRectGetWidth(adjustedBounds),
-                                                                                 75.0f)];
+        _specificationsTitleView = [[NSTextField alloc] init];
+        _specificationsTitleView.translatesAutoresizingMaskIntoConstraints = NO;
         
         _specificationsTitleView.alignment = NSCenterTextAlignment;
         _specificationsTitleView.bezeled = NO;
@@ -123,11 +127,8 @@
 {
     if (!_framesTitleView)
     {
-        CGRect adjustedBounds = NSInsetRect(self.bounds, self.edgeInsets.left + self.edgeInsets.right, 0.0f);
-        _framesTitleView = [[NSTextField alloc] initWithFrame:NSMakeRect(0.0f,
-                                                                         0.0f,
-                                                                         CGRectGetWidth(adjustedBounds),
-                                                                         75.0f)];
+        _framesTitleView = [[NSTextField alloc] init];
+        _framesTitleView.translatesAutoresizingMaskIntoConstraints = NO;
         
         _framesTitleView.alignment = NSCenterTextAlignment;
         _framesTitleView.bezeled = NO;
@@ -144,11 +145,8 @@
 {
     if (!_frameSizeTitleView)
     {
-        CGRect adjustedBounds = NSInsetRect(self.bounds, self.edgeInsets.left + self.edgeInsets.right, 0.0f);
-        _frameSizeTitleView = [[NSTextField alloc] initWithFrame:NSMakeRect(0.0f,
-                                                                            0.0f,
-                                                                            CGRectGetWidth(adjustedBounds),
-                                                                            75.0f)];
+        _frameSizeTitleView = [[NSTextField alloc] init];
+        _framesTitleView.translatesAutoresizingMaskIntoConstraints = NO;
         
         _frameSizeTitleView.alignment = NSCenterTextAlignment;
         _frameSizeTitleView.bezeled = NO;

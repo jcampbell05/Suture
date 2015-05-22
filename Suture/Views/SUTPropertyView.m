@@ -106,13 +106,15 @@
                                       toSize:35.0f];
     
     //Export Button
-    [self.durationTextField autoPinEdgeToSuperviewEdge:ALEdgeLeft];
-    [self.durationTextField autoPinEdge:ALEdgeTop
-                                 toEdge:ALEdgeBottom
-                                 ofView:self.framesPerSecondTextField
-                             withOffset:10.0f];
-    [self.durationTextField autoPinEdgeToSuperviewEdge:ALEdgeRight];
-    [self.durationTextField autoSetDimension:ALDimensionHeight
+    [self.exportSpecificationButton autoPinEdgeToSuperviewEdge:ALEdgeLeft
+                                                     withInset:10.0f];
+    [self.exportSpecificationButton autoPinEdge:ALEdgeTop
+                                         toEdge:ALEdgeBottom
+                                         ofView:self.framesPerSecondTextField
+                                     withOffset:10.0f];
+    [self.exportSpecificationButton autoPinEdgeToSuperviewEdge:ALEdgeRight
+                                                     withInset:10.0f];
+    [self.exportSpecificationButton autoSetDimension:ALDimensionHeight
                                       toSize:35.0f];
 }
 

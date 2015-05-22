@@ -12,6 +12,7 @@
 
 @interface SUTDocument : NSDocument
 
+@property (nonatomic, assign) NSInteger duration;
 @property (nonatomic, strong) SUTSpriteLayout *layout;
 @property (nonatomic, strong) NSArray *sprites;
 

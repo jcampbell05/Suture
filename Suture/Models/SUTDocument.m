@@ -26,6 +26,18 @@
 
 @synthesize sprites = _sprites;
 
+- (instancetype)init
+{
+    self = [super init];
+    
+    if (self)
+    {
+        self.duration = 1.0f;
+    }
+    
+    return self;
+}
+
 #pragma mark - Data
 
 - (NSFileWrapper *)fileWrapper

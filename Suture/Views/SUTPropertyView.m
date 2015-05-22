@@ -8,6 +8,8 @@
 
 #import "SUTPropertyView.h"
 
+#import "SUTDocument.h"
+
 @interface SUTPropertyView ()
 
 @property (nonatomic, strong) NSTextField *specificationsTitleView;
@@ -51,6 +53,44 @@
     }
     
     return self;
+}
+
+#pragma mark - KVO
+
+- (void)observeValueForKeyPath:(NSString *)keyPath
+                      ofObject:(id)object
+                        change:(NSDictionary *)change
+                       context:(void *)context
+{
+    [self updateFrameSpecificationText];
+}
+
+#pragma mark - Document
+
+- (void)setDocument:(SUTDocument *)document
+{
+    if (![_document isEqualTo:document])
+    {
+        if (_document)
+        {
+            [_document removeObserver:self
+                           forKeyPath:NSStringFromSelector(@selector(sprites))];
+        }
+        
+        [self willChangeValueForKey:NSStringFromSelector(@selector(document))];
+        _document = document;
+        [self didChangeValueForKey:NSStringFromSelector(@selector(document))];
+        
+        if (_document)
+        {
+            [_document addObserver:self
+                        forKeyPath:NSStringFromSelector(@selector(sprites))
+                           options:nil
+                           context:NULL];
+        }
+        
+        [self updateFrameSpecificationText];
+    }
 }
 
 #pragma mark - Specifications
@@ -150,7 +190,7 @@
 
 - (void)updateFrameSpecificationText
 {
-    
+    self.framesTitleView.stringValue = [NSString stringWithFormat:@"Frames: %lu", [self.document.sprites count]];
 }
 
 @end

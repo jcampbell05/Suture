@@ -14,7 +14,6 @@
 
 @property (nonatomic, strong, readonly) SUTOutlineView *dropHighlightView;
 @property (nonatomic, strong, readonly) SUTEditorView *editorView;
-@property (nonatomic, strong, readonly) NSSplitView *splitView;
 @property (atomic, strong) NSView *contentView;
 
 + (instancetype)window;

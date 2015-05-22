@@ -19,7 +19,7 @@
     if (self)
     {
         self.wantsLayer = YES;
-        self.layer.backgroundColor = [NSColor redColor].CGColor;
+        self.layer.backgroundColor = [NSColor grayColor].CGColor;
     }
     
     return self;

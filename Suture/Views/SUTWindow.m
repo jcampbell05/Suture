@@ -66,10 +66,6 @@ static NSString * const SUTWindowTitleViewIdentifier = @"TitleView";
         self.toolbar = self.titleToolbar;
         
         [self.contentView addSubview:self.splitView];
-        [self.splitView addSubview:self.editorView];
-        [self.splitView addSubview:self.propertyView];
-        [self.splitView adjustSubviews];
-        
         [self.contentView addSubview:self.dropHighlightView];
     }
     
@@ -106,7 +102,18 @@ static NSString * const SUTWindowTitleViewIdentifier = @"TitleView";
     if (!_splitView)
     {
         _splitView = [[NSSplitView alloc] initWithFrame:self.contentView.bounds];
+        _splitView.vertical = YES;
+        _splitView.dividerStyle = NSSplitViewDividerStyleThin;
         _splitView.autoresizingMask = NSViewWidthSizable | NSViewHeightSizable;
+        
+        [_splitView addSubview:self.editorView];
+        [_splitView addSubview:self.propertyView];
+        
+        [_splitView adjustSubviews];
+        
+        CGFloat dividerPosition = CGRectGetMaxX(self.contentView.bounds) * 0.8;
+        [_splitView setPosition:dividerPosition
+               ofDividerAtIndex:0];
     }
     
     return _splitView;

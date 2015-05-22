@@ -57,9 +57,10 @@
 {
     if (!_specificationsTitleView)
     {
+        CGRect adjustedBounds = NSInsetRect(self.bounds, self.edgeInsets.left + self.edgeInsets.right, 0.0f);
         _specificationsTitleView = [[NSTextField alloc] initWithFrame:NSMakeRect(0.0f,
                                                                                  0.0f,
-                                                                                 CGRectGetWidth(self.bounds),
+                                                                                 CGRectGetWidth(adjustedBounds),
                                                                                  50.0f)];
         
         _specificationsTitleView.alignment = NSCenterTextAlignment;
@@ -104,9 +105,10 @@
 {
     if (!_framesTitleView)
     {
+        CGRect adjustedBounds = NSInsetRect(self.bounds, self.edgeInsets.left + self.edgeInsets.right, 0.0f);
         _framesTitleView = [[NSTextField alloc] initWithFrame:NSMakeRect(0.0f,
                                                                          0.0f,
-                                                                         CGRectGetWidth(self.bounds),
+                                                                         CGRectGetWidth(adjustedBounds),
                                                                          50.0f)];
         
         _framesTitleView.alignment = NSCenterTextAlignment;

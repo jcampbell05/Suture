@@ -45,6 +45,7 @@
         [self addSubview:self.framesTitleView];
         [self addSubview:self.frameSizeTitleView];
         [self addSubview:self.framesPerSecondTextField];
+        [self addSubview:self.durationTextField];
 
         [self createConstraints];
     }
@@ -81,7 +82,7 @@
     [self.frameSizeTitleView autoSetDimension:ALDimensionHeight
                                        toSize:20.0f];
     
-    //Duration Text Field
+    //Frames Per Second Text Field
     [self.framesPerSecondTextField autoPinEdgeToSuperviewEdge:ALEdgeLeft];
     [self.framesPerSecondTextField autoPinEdge:ALEdgeTop
                                         toEdge:ALEdgeBottom
@@ -91,7 +92,15 @@
     [self.framesPerSecondTextField autoSetDimension:ALDimensionHeight
                                              toSize:35.0f];
     
-    //Frames Per Second Text Field
+    //Duration Text Field
+    [self.durationTextField autoPinEdgeToSuperviewEdge:ALEdgeLeft];
+    [self.durationTextField autoPinEdge:ALEdgeTop
+                                 toEdge:ALEdgeBottom
+                                 ofView:self.framesPerSecondTextField
+                             withOffset:10.0f];
+    [self.durationTextField autoPinEdgeToSuperviewEdge:ALEdgeRight];
+    [self.durationTextField autoSetDimension:ALDimensionHeight
+                                      toSize:35.0f];
 }
 
 #pragma mark - KVO
@@ -213,7 +222,22 @@
 
 - (NSTextField *)durationTextField
 {
-    return nil;
+    if (!_durationTextField)
+    {
+        _durationTextField = [[NSTextField alloc] init];
+        
+        _durationTextField.focusRingType = NSFocusRingTypeNone;
+        _durationTextField.translatesAutoresizingMaskIntoConstraints = NO;
+        
+        _durationTextField.backgroundColor = [NSColor colorWithRed:67.0f/255.0f
+                                                                    green:70.0f/255.0f
+                                                                     blue:83.0f/255.0f
+                                                                    alpha:1.0f];
+        _durationTextField.bordered = NO;
+        _durationTextField.bezeled = NO;
+    }
+    
+    return _durationTextField;
 }
 
 #pragma mark - Events

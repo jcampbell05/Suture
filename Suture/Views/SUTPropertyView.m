@@ -61,7 +61,7 @@
         _specificationsTitleView = [[NSTextField alloc] initWithFrame:NSMakeRect(0.0f,
                                                                                  0.0f,
                                                                                  CGRectGetWidth(adjustedBounds),
-                                                                                 50.0f)];
+                                                                                 75.0f)];
         
         _specificationsTitleView.alignment = NSCenterTextAlignment;
         _specificationsTitleView.bezeled = NO;
@@ -119,8 +119,6 @@
         _framesTitleView.selectable = NO;
         
         _framesTitleView.stringValue = @"WOOOO";
-        
-        [_framesTitleView sizeToFit];
     }
     
     return _framesTitleView;

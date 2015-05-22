@@ -127,12 +127,12 @@
 
 - (void)didEnterVersionBrowser:(NSNotification *)notification
 {
-    self.window.editorView.enabled = NO;
+    self.window.ignoresMouseEvents = YES;
 }
 
 - (void)didExitVersionBrowser:(NSNotification *)notification
 {
-    self.window.editorView.enabled = YES;
+    self.window.ignoresMouseEvents = NO;
 }
 
 #pragma mark - SUTExporterDelegate

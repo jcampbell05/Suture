@@ -70,4 +70,19 @@
     return _specificationsTitleView;
 }
 
+- (NSTextField *)instructionsTitleView
+{
+    return nil;
+}
+
+- (NSTextField *)framesTitleView
+{
+    return nil;
+}
+
+- (NSTextField *)frameSizeTitleView
+{
+    return nil;
+}
+
 @end

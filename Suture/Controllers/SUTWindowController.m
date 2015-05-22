@@ -8,18 +8,15 @@
 
 #import "SUTWindowController.h"
 
-#import "SUTEditorView.h"
+
 #import "SUTExporter.h"
 #import "SUTExporterRegistry.h"
 #import "SUTExportPanel.h"
 #import "SUTProgressPanel.h"
-#import "SUTOutlineView.h"
 #import "SUTWindow.h"
 
 @interface SUTWindowController () <SUTExporterDelegate>
 
-@property (nonatomic, strong) SUTOutlineView *dropHighlightView;
-@property (nonatomic, strong) SUTEditorView *editorView;
 @property (nonatomic, strong) SUTProgressPanel *progressPanel;
 @property (nonatomic, strong) NSOperationQueue *exportingQueue;
 
@@ -37,10 +34,7 @@
     if (self)
     {
         self.window = [SUTWindow window];
-        
-        [self.window.contentView addSubview:self.editorView];
-        [self.window.contentView addSubview:self.dropHighlightView];
-        
+
         [[NSNotificationCenter defaultCenter] addObserver:self
                                                  selector:@selector(didEnterVersionBrowser:)
                                                      name:NSWindowDidEnterVersionBrowserNotification
@@ -72,32 +66,7 @@
 {
     [super setDocument:document];
     
-    self.editorView.document = document;
-}
-
-#pragma mark - Views
-
-- (SUTOutlineView *)dropHighlightView
-{
-    if (!_dropHighlightView)
-    {
-        _dropHighlightView = [[SUTOutlineView alloc] initWithFrame:((NSView*)self.window.contentView).bounds];
-        _dropHighlightView.hidden = YES;
-        _dropHighlightView.autoresizingMask = NSViewWidthSizable | NSViewHeightSizable;
-    }
-    
-    return _dropHighlightView;
-}
-
-- (SUTEditorView *)editorView
-{
-    if (!_editorView)
-    {
-        _editorView = [[SUTEditorView alloc] initWithFrame:((NSView*)self.window.contentView).bounds];
-        _editorView.autoresizingMask = NSViewWidthSizable | NSViewHeightSizable;
-    }
-    
-    return _editorView;
+    self.window.editorView.document = document;
 }
 
 #pragma mark - Menu Items
@@ -122,14 +91,14 @@
                 [spriteURLs addObject:url];
             }
             
-            [weakSelf.editorView addSpritesForURLS:spriteURLs];
+            [weakSelf.window.editorView addSpritesForURLS:spriteURLs];
         }
     }];
 }
 
 - (IBAction)delete:(NSMenuItem *)menuItem
 {
-    [self.editorView removeSelectedSprite];
+    [self.window.editorView removeSelectedSprite];
 }
 
 - (IBAction)export:(NSMenuItem *)menuItem
@@ -158,12 +127,12 @@
 
 - (void)didEnterVersionBrowser:(NSNotification *)notification
 {
-    self.editorView.enabled = NO;
+    self.window.editorView.enabled = NO;
 }
 
 - (void)didExitVersionBrowser:(NSNotification *)notification
 {
-    self.editorView.enabled = YES;
+    self.window.editorView.enabled = YES;
 }
 
 #pragma mark - SUTExporterDelegate

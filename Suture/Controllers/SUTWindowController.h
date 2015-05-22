@@ -7,8 +7,11 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "SUTWindow.h"
 
 @interface SUTWindowController : NSWindowController
+
+@property (atomic, strong) SUTWindow *window;
 
 #pragma mark - Menu Items
 

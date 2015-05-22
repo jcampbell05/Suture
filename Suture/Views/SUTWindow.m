@@ -16,6 +16,10 @@ static NSString * const SUTWindowTitleViewIdentifier = @"TitleView";
 
 @interface SUTWindow () <NSToolbarDelegate>
 
+@property (nonatomic, strong, readwrite) SUTOutlineView *dropHighlightView;
+@property (nonatomic, strong, readwrite) SUTEditorView *editorView;
+@property (nonatomic, strong, readwrite) NSSplitView *splitView;
+
 @property (nonatomic, strong) SUTWindowTitleView *titleView;
 @property (nonatomic, strong) NSToolbar *titleToolbar;
 
@@ -57,9 +61,49 @@ static NSString * const SUTWindowTitleViewIdentifier = @"TitleView";
     if (self)
     {
         self.toolbar = self.titleToolbar;
+        
+        [self.contentView addSubview:self.splitView];
+        [self.contentView addSubview:self.dropHighlightView];
     }
     
     return self;
+}
+
+#pragma mark - Views
+
+- (SUTOutlineView *)dropHighlightView
+{
+    if (!_dropHighlightView)
+    {
+        _dropHighlightView = [[SUTOutlineView alloc] initWithFrame:self.contentView.bounds];
+        _dropHighlightView.hidden = YES;
+        _dropHighlightView.autoresizingMask = NSViewWidthSizable | NSViewHeightSizable;
+    }
+    
+    return _dropHighlightView;
+}
+
+- (SUTEditorView *)editorView
+{
+    if (!_editorView)
+    {
+        _editorView = [[SUTEditorView alloc] initWithFrame:self.contentView.bounds];
+        _editorView.autoresizingMask = NSViewWidthSizable | NSViewHeightSizable;
+    }
+    
+    return _editorView;
+}
+
+- (NSSplitView *)splitView
+{
+    if (!_splitView)
+    {
+        _splitView = [[NSSplitView alloc] initWithFrame:self.contentView.bounds];
+        _splitView.autoresizingMask = NSViewWidthSizable | NSViewHeightSizable;
+        _splitView.subviews = @[self.editorView];
+    }
+    
+    return _splitView;
 }
 
 - (SUTWindowTitleView *)titleView

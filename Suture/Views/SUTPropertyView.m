@@ -15,6 +15,8 @@
 @property (nonatomic, strong) NSTextField *framesTitleView;
 @property (nonatomic, strong) NSTextField *frameSizeTitleView;
 
+- (void)updateFrameSpecificationText;
+
 @end
 
 @implementation SUTPropertyView
@@ -117,8 +119,6 @@
         _framesTitleView.drawsBackground = NO;
         _framesTitleView.editable = NO;
         _framesTitleView.selectable = NO;
-        
-        _framesTitleView.stringValue = @"WOOOO";
     }
     
     return _framesTitleView;
@@ -146,6 +146,11 @@
 //    return _specificationsTitleView;
     
     return nil;
+}
+
+- (void)updateFrameSpecificationText
+{
+    
 }
 
 @end

@@ -11,14 +11,15 @@
 #import <PureLayout/PureLayout.h>
 
 #import "SUTDocument.h"
+#import "SUTPropertyEntryField.h"
 
 @interface SUTPropertyView ()
 
 @property (nonatomic, strong) NSTextField *specificationsTitleView;
 @property (nonatomic, strong) NSTextField *framesTitleView;
 @property (nonatomic, strong) NSTextField *frameSizeTitleView;
-@property (nonatomic, strong) NSTextField *durationTextField;
-@property (nonatomic, strong) NSTextField *framesPerSecondTextField;
+@property (nonatomic, strong) SUTPropertyEntryField *durationTextField;
+@property (nonatomic, strong) SUTPropertyEntryField *framesPerSecondTextField;
 
 - (void)createConstraints;
 - (void)updateFrameSpecificationText;
@@ -200,41 +201,36 @@
     return _frameSizeTitleView;
 }
 
-- (NSTextField *)framesPerSecondTextField
+- (SUTPropertyEntryField *)framesPerSecondTextField
 {
     if (!_framesPerSecondTextField)
     {
-        _framesPerSecondTextField = [[NSTextField alloc] init];
-        
-        _framesPerSecondTextField.focusRingType = NSFocusRingTypeNone;
+        _framesPerSecondTextField = [[SUTPropertyEntryField alloc] init];
         _framesPerSecondTextField.translatesAutoresizingMaskIntoConstraints = NO;
         
-        _framesPerSecondTextField.backgroundColor = [NSColor colorWithRed:67.0f/255.0f
-                                                                    green:70.0f/255.0f
-                                                                     blue:83.0f/255.0f
-                                                                    alpha:1.0f];
-        _framesPerSecondTextField.bordered = NO;
-        _framesPerSecondTextField.bezeled = NO;
+//        _framesPerSecondTextField.focusRingType = NSFocusRingTypeNone;
+//        
+//        
+//
+//        _framesPerSecondTextField.bordered = NO;
+//        _framesPerSecondTextField.bezeled = NO;
     }
     
     return _framesPerSecondTextField;
 }
 
-- (NSTextField *)durationTextField
+- (SUTPropertyEntryField *)durationTextField
 {
     if (!_durationTextField)
     {
-        _durationTextField = [[NSTextField alloc] init];
-        
-        _durationTextField.focusRingType = NSFocusRingTypeNone;
+        _durationTextField = [[SUTPropertyEntryField alloc] init];
         _durationTextField.translatesAutoresizingMaskIntoConstraints = NO;
         
-        _durationTextField.backgroundColor = [NSColor colorWithRed:67.0f/255.0f
-                                                                    green:70.0f/255.0f
-                                                                     blue:83.0f/255.0f
-                                                                    alpha:1.0f];
-        _durationTextField.bordered = NO;
-        _durationTextField.bezeled = NO;
+//        _durationTextField.focusRingType = NSFocusRingTypeNone;
+//        
+//
+//        _durationTextField.bordered = NO;
+//        _durationTextField.bezeled = NO;
     }
     
     return _durationTextField;

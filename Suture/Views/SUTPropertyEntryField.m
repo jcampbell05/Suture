@@ -10,10 +10,21 @@
 
 @implementation SUTPropertyEntryField
 
-- (void)drawRect:(NSRect)dirtyRect {
-    [super drawRect:dirtyRect];
+- (instancetype)init
+{
+    self = [super init];
     
-    // Drawing code here.
+    if (self)
+    {
+        self.wantsLayer = YES;
+        
+        self.layer.backgroundColor = [NSColor colorWithRed:67.0f/255.0f
+                                                     green:70.0f/255.0f
+                                                      blue:83.0f/255.0f
+                                                     alpha:1.0f].CGColor;
+    }
+    
+    return self;
 }
 
 @end

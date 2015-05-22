@@ -11,6 +11,9 @@
 @interface SUTPropertyView ()
 
 @property (nonatomic, strong) NSTextField *specificationsTitleView;
+@property (nonatomic, strong) NSTextField *instructionsTitleView;
+@property (nonatomic, strong) NSTextField *framesTitleView;
+@property (nonatomic, strong) NSTextField *frameSizeTitleView;
 
 @end
 

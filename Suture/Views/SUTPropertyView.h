@@ -8,6 +8,10 @@
 
 #import <Cocoa/Cocoa.h>
 
+@class SUTDocument;
+
 @interface SUTPropertyView : NSStackView
+
+@property (nonatomic, strong) SUTDocument *document;
 
 @end

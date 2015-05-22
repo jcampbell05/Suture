@@ -8,6 +8,13 @@
 
 #import "SUTPropertyEntryField.h"
 
+@interface SUTPropertyEntryField ()
+
+@property (nonatomic, strong) NSTextField *labelTextField;
+@property (nonatomic, strong) NSTextField *entryTextField;
+
+@end
+
 @implementation SUTPropertyEntryField
 
 - (instancetype)init
@@ -22,6 +29,13 @@
                                                      green:70.0f/255.0f
                                                       blue:83.0f/255.0f
                                                      alpha:1.0f].CGColor;
+        
+        
+        //        _durationTextField.focusRingType = NSFocusRingTypeNone;
+        //
+        //
+        //        _durationTextField.bordered = NO;
+        //        _durationTextField.bezeled = NO;
     }
     
     return self;

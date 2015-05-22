@@ -207,13 +207,6 @@
     {
         _framesPerSecondTextField = [[SUTPropertyEntryField alloc] init];
         _framesPerSecondTextField.translatesAutoresizingMaskIntoConstraints = NO;
-        
-//        _framesPerSecondTextField.focusRingType = NSFocusRingTypeNone;
-//        
-//        
-//
-//        _framesPerSecondTextField.bordered = NO;
-//        _framesPerSecondTextField.bezeled = NO;
     }
     
     return _framesPerSecondTextField;
@@ -225,12 +218,6 @@
     {
         _durationTextField = [[SUTPropertyEntryField alloc] init];
         _durationTextField.translatesAutoresizingMaskIntoConstraints = NO;
-        
-//        _durationTextField.focusRingType = NSFocusRingTypeNone;
-//        
-//
-//        _durationTextField.bordered = NO;
-//        _durationTextField.bezeled = NO;
     }
     
     return _durationTextField;

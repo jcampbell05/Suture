@@ -17,6 +17,8 @@
 @property (nonatomic, strong) NSTextField *specificationsTitleView;
 @property (nonatomic, strong) NSTextField *framesTitleView;
 @property (nonatomic, strong) NSTextField *frameSizeTitleView;
+@property (nonatomic, strong) NSTextField *durationTextField;
+@property (nonatomic, strong) NSTextField *framesPerSecondTextField;
 
 - (void)createConstraints;
 - (void)updateFrameSpecificationText;

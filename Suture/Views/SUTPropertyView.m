@@ -13,7 +13,7 @@
 #import "SUTDocument.h"
 #import "SUTPropertyEntryField.h"
 
-@interface SUTPropertyView ()
+@interface SUTPropertyView () <NSTextFieldDelegate>
 
 @property (nonatomic, strong) NSTextField *specificationsTitleView;
 @property (nonatomic, strong) NSTextField *framesTitleView;
@@ -206,6 +206,7 @@
     if (!_framesPerSecondTextField)
     {
         _framesPerSecondTextField = [[SUTPropertyEntryField alloc] init];
+        _framesPerSecondTextField.delegate = self;
         _framesPerSecondTextField.translatesAutoresizingMaskIntoConstraints = NO;
         _framesPerSecondTextField.labelText = NSLocalizedString(@"frames_per_second_nav", nil);
     }
@@ -218,6 +219,7 @@
     if (!_durationTextField)
     {
         _durationTextField = [[SUTPropertyEntryField alloc] init];
+        _durationTextField.delegate = self;
         _durationTextField.translatesAutoresizingMaskIntoConstraints = NO;
         _durationTextField.labelText = NSLocalizedString(@"duration_nav", nil);
     }
@@ -233,6 +235,15 @@
     self.frameSizeTitleView.stringValue = [NSString stringWithFormat:@"Frame Size: %@", NSStringFromSize([self.document largestSpriteSize])];
     self.durationTextField.valueText = [NSString stringWithFormat:@"%lu", self.document.duration];
     self.framesPerSecondTextField.valueText = [NSString stringWithFormat:@"%lu", [self.document.sprites count] / self.document.duration];
+}
+
+#pragma mark - NSTextFieldDelegate
+
+- (void)controlTextDidChange:(NSNotification *)obj
+{
+    NSTextField *textfield = [obj object];
+    
+    
 }
 
 @end

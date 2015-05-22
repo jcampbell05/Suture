@@ -24,13 +24,15 @@
     
     if (self)
     {
+        self.orientation = NSUserInterfaceLayoutOrientationVertical;
         self.wantsLayer = YES;
         self.layer.backgroundColor = [NSColor colorWithRed:55.0f/255.0f
                                                      green:58.0f/255.0f
                                                       blue:71.0f/255.0f
                                                      alpha:1.0f].CGColor;
         
-        [self addSubview:self.specificationsTitleView];
+        [self addView:self.specificationsTitleView
+            inGravity:NSStackViewGravityTop];
     }
     
     return self;
@@ -55,10 +57,6 @@
                                                          nil);
         
         [_specificationsTitleView sizeToFit];
-        
-        CGRect frame = _specificationsTitleView.frame;
-        frame.size.width = self.bounds.size.width;
-        _specificationsTitleView.frame = frame;
     }
     
     return _specificationsTitleView;

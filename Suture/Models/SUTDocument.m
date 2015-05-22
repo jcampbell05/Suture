@@ -134,6 +134,24 @@
     return YES;
 }
 
+#pragma mark - Sprite
+
+- (CGSize)largestSpriteSize
+{
+    CGSize spriteSize = CGSizeZero;
+    
+    for (SUTSprite *sprite in self.sprites)
+    {
+        spriteSize = (CGSize)
+        {
+            MAX(sprite.size.width, spriteSize.width),
+            MAX(sprite.size.height, spriteSize.height)
+        };
+    }
+    
+    return spriteSize;
+}
+
 #pragma mark - Image
 
 - (NSImage *)imageForURL:(NSURL *)url

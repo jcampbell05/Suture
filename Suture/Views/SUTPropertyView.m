@@ -43,10 +43,9 @@
                                                      alpha:1.0f].CGColor;
         
         [self setViews:@[self.specificationsTitleView,
-                         self.framesTitleView]
+                         self.framesTitleView,
+                         self.frameSizeTitleView]
               inGravity:NSStackViewGravityTop];
-        [self addView:self.frameSizeTitleView
-            inGravity:NSStackViewGravityTop];
     }
     
     return self;
@@ -124,7 +123,7 @@
         _framesTitleView = [[NSTextField alloc] initWithFrame:NSMakeRect(0.0f,
                                                                          0.0f,
                                                                          CGRectGetWidth(adjustedBounds),
-                                                                         50.0f)];
+                                                                         75.0f)];
         
         _framesTitleView.alignment = NSCenterTextAlignment;
         _framesTitleView.bezeled = NO;
@@ -139,31 +138,29 @@
 
 - (NSTextField *)frameSizeTitleView
 {
-//    if (!_specificationsTitleView)
-//    {
-//        _specificationsTitleView = [[NSTextField alloc] init];
-//        
-//        _specificationsTitleView.alignment = NSCenterTextAlignment;
-//        _specificationsTitleView.bezeled = NO;
-//        _specificationsTitleView.textColor = [NSColor whiteColor];
-//        _specificationsTitleView.drawsBackground = NO;
-//        _specificationsTitleView.editable = NO;
-//        _specificationsTitleView.selectable = NO;
-//        
-//        _specificationsTitleView.stringValue = NSLocalizedString(@"specifications_nav",
-//                                                                 nil);
-//        
-//        [_specificationsTitleView sizeToFit];
-//    }
-//    
-//    return _specificationsTitleView;
+    if (!_frameSizeTitleView)
+    {
+        CGRect adjustedBounds = NSInsetRect(self.bounds, self.edgeInsets.left + self.edgeInsets.right, 0.0f);
+        _frameSizeTitleView = [[NSTextField alloc] initWithFrame:NSMakeRect(0.0f,
+                                                                         0.0f,
+                                                                         CGRectGetWidth(adjustedBounds),
+                                                                         75.0f)];
+        
+        _frameSizeTitleView.alignment = NSCenterTextAlignment;
+        _frameSizeTitleView.bezeled = NO;
+        _frameSizeTitleView.textColor = [NSColor whiteColor];
+        _frameSizeTitleView.drawsBackground = NO;
+        _frameSizeTitleView.editable = NO;
+        _frameSizeTitleView.selectable = NO;
+    }
     
-    return nil;
+    return _frameSizeTitleView;
 }
 
 - (void)updateFrameSpecificationText
 {
     self.framesTitleView.stringValue = [NSString stringWithFormat:@"Frames: %lu", [self.document.sprites count]];
+    self.framesTitleView.stringValue = [NSString stringWithFormat:@"Frame Size: %@", NSStringFromSize([self.document largestSpriteSize])];
 }
 
 @end

@@ -104,7 +104,7 @@
     if (direction == JNWCollectionViewDirectionUp ||
         direction == JNWCollectionViewDirectionLeft)
     {
-        newIndexPath  = [self.collectionView indexPathForNextSelectableItemBeforeIndexPath:currentIndexPath];
+        newIndexPath = [self.collectionView indexPathForNextSelectableItemBeforeIndexPath:currentIndexPath];
     }
     else if (direction == JNWCollectionViewDirectionDown ||
              direction == JNWCollectionViewDirectionRight)

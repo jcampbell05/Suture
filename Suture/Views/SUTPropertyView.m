@@ -20,6 +20,7 @@
 @property (nonatomic, strong) NSTextField *frameSizeTitleView;
 @property (nonatomic, strong) SUTPropertyEntryField *durationTextField;
 @property (nonatomic, strong) SUTPropertyEntryField *framesPerSecondTextField;
+@property (nonatomic, strong) NSButton *exportSpecificationButton;
 
 - (void)createConstraints;
 - (void)updateFrameSpecificationText;
@@ -47,6 +48,7 @@
         [self addSubview:self.frameSizeTitleView];
         [self addSubview:self.framesPerSecondTextField];
         [self addSubview:self.durationTextField];
+        [self addSubview:self.exportSpecificationButton];
 
         [self createConstraints];
     }
@@ -94,6 +96,16 @@
                                              toSize:35.0f];
     
     //Duration Text Field
+    [self.durationTextField autoPinEdgeToSuperviewEdge:ALEdgeLeft];
+    [self.durationTextField autoPinEdge:ALEdgeTop
+                                 toEdge:ALEdgeBottom
+                                 ofView:self.framesPerSecondTextField
+                             withOffset:10.0f];
+    [self.durationTextField autoPinEdgeToSuperviewEdge:ALEdgeRight];
+    [self.durationTextField autoSetDimension:ALDimensionHeight
+                                      toSize:35.0f];
+    
+    //Export Button
     [self.durationTextField autoPinEdgeToSuperviewEdge:ALEdgeLeft];
     [self.durationTextField autoPinEdge:ALEdgeTop
                                  toEdge:ALEdgeBottom
@@ -225,6 +237,17 @@
     }
     
     return _durationTextField;
+}
+
+- (NSButton *)exportSpecificationButton
+{
+    if (!_exportSpecificationButton)
+    {
+        _exportSpecificationButton = [[NSButton alloc] initForAutoLayout];
+        _exportSpecificationButton.title = @"Export Specification";
+    }
+    
+    return _exportSpecificationButton;
 }
 
 #pragma mark - Events

@@ -110,7 +110,7 @@
                                                      withInset:10.0f];
     [self.exportSpecificationButton autoPinEdge:ALEdgeTop
                                          toEdge:ALEdgeBottom
-                                         ofView:self.framesPerSecondTextField
+                                         ofView:self.durationTextField
                                      withOffset:10.0f];
     [self.exportSpecificationButton autoPinEdgeToSuperviewEdge:ALEdgeRight
                                                      withInset:10.0f];

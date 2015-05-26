@@ -27,4 +27,16 @@
     return @"png";
 }
 
+#pragma mark - Progress
+
+- (NSProgress *)progress
+{
+    if (!_progress)
+    {
+        _progress = [[NSProgress alloc] init];
+    }
+    
+    return _progress;
+}
+
 @end

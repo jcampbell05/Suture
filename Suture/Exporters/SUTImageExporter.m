@@ -38,18 +38,6 @@
     return self;
 }
 
-#pragma mark - Progress
-
-- (NSProgress *)progress
-{
-    if (!_progress)
-    {
-        _progress = [[NSProgress alloc] init];
-    }
-    
-    return _progress;
-}
-
 //TODO: Break this function down.
 - (void)exportDocument:(SUTDocument *)document
                    URL:(NSURL *)url

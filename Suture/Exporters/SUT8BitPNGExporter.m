@@ -12,7 +12,7 @@
 
 - (NSString *)name
 {
-    return NSLocalizedString(@"specification_exporter_nav",
+    return NSLocalizedString(@"png_8_image_exporter_nav",
                              nil);
 }
 

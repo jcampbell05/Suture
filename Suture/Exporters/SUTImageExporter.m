@@ -42,45 +42,6 @@
     return self;
 }
 
-#pragma mark - Exporter Info
-
-- (NSString *)name
-{
-    switch (self.type)
-    {
-        case SUTImageExporterPNG8Type:
-            return NSLocalizedString(@"png_8_image_exporter_nav",
-                                     nil);
-            break;
-            
-        case SUTImageExporterPNG32Type:
-            return NSLocalizedString(@"png_32_image_exporter_nav",
-                                     nil);
-            break;
-            
-        case SUTImageExporterJPEGType:
-            return NSLocalizedString(@"jpeg_image_exporter_nav",
-                                     nil);
-            break;
-    }
-}
-
-- (NSString *)extension
-{
-    NSString *extension = nil;
-    
-    if (self.type & SUTImageExporterPNGTypeBit)
-    {
-        extension = @"png";
-    }
-    else
-    {
-        extension = @"jpg";
-    }
-    
-    return extension;
-}
-
 #pragma mark - Progress
 
 - (NSProgress *)progress

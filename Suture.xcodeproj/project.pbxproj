@@ -12,6 +12,9 @@
 		743DA5871B14773500B8FEB8 /* SUTSpecificationExporter.h in Headers */ = {isa = PBXBuildFile; fileRef = 743DA5851B14773500B8FEB8 /* SUTSpecificationExporter.h */; };
 		743DA5881B14773500B8FEB8 /* SUTSpecificationExporter.m in Sources */ = {isa = PBXBuildFile; fileRef = 743DA5861B14773500B8FEB8 /* SUTSpecificationExporter.m */; };
 		743DA5891B14773500B8FEB8 /* SUTSpecificationExporter.m in Sources */ = {isa = PBXBuildFile; fileRef = 743DA5861B14773500B8FEB8 /* SUTSpecificationExporter.m */; };
+		743DA58C1B14810200B8FEB8 /* SUTJPEGExporter.m in Sources */ = {isa = PBXBuildFile; fileRef = 743DA58B1B14810200B8FEB8 /* SUTJPEGExporter.m */; };
+		743DA58F1B14811A00B8FEB8 /* SUT32BitPNGExporter.m in Sources */ = {isa = PBXBuildFile; fileRef = 743DA58E1B14811A00B8FEB8 /* SUT32BitPNGExporter.m */; };
+		743DA5921B14813200B8FEB8 /* SUT8BitPNGExporter.m in Sources */ = {isa = PBXBuildFile; fileRef = 743DA5911B14813200B8FEB8 /* SUT8BitPNGExporter.m */; };
 		744161971ADE9D0500747B1E /* blur.c in Sources */ = {isa = PBXBuildFile; fileRef = 74415F611ADE85AD00747B1E /* blur.c */; };
 		744161981ADE9D0500747B1E /* libimagequant.c in Sources */ = {isa = PBXBuildFile; fileRef = 74415F661ADE85AD00747B1E /* libimagequant.c */; };
 		744161991ADE9D0500747B1E /* mediancut.c in Sources */ = {isa = PBXBuildFile; fileRef = 74415F6A1ADE85AD00747B1E /* mediancut.c */; };
@@ -123,6 +126,12 @@
 		7428E6041ABEC94900116CA9 /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
 		743DA5851B14773500B8FEB8 /* SUTSpecificationExporter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUTSpecificationExporter.h; sourceTree = "<group>"; };
 		743DA5861B14773500B8FEB8 /* SUTSpecificationExporter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUTSpecificationExporter.m; sourceTree = "<group>"; };
+		743DA58A1B14810200B8FEB8 /* SUTJPEGExporter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUTJPEGExporter.h; sourceTree = "<group>"; };
+		743DA58B1B14810200B8FEB8 /* SUTJPEGExporter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUTJPEGExporter.m; sourceTree = "<group>"; };
+		743DA58D1B14811A00B8FEB8 /* SUT32BitPNGExporter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUT32BitPNGExporter.h; sourceTree = "<group>"; };
+		743DA58E1B14811A00B8FEB8 /* SUT32BitPNGExporter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUT32BitPNGExporter.m; sourceTree = "<group>"; };
+		743DA5901B14813200B8FEB8 /* SUT8BitPNGExporter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUT8BitPNGExporter.h; sourceTree = "<group>"; };
+		743DA5911B14813200B8FEB8 /* SUT8BitPNGExporter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUT8BitPNGExporter.m; sourceTree = "<group>"; };
 		74415F611ADE85AD00747B1E /* blur.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = blur.c; sourceTree = "<group>"; };
 		74415F621ADE85AD00747B1E /* blur.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = blur.h; sourceTree = "<group>"; };
 		74415F631ADE85AD00747B1E /* config.mk */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = config.mk; sourceTree = "<group>"; };
@@ -357,6 +366,12 @@
 				74CF98BA1AC3960F002F8DC5 /* SUTImageExporter.m */,
 				743DA5851B14773500B8FEB8 /* SUTSpecificationExporter.h */,
 				743DA5861B14773500B8FEB8 /* SUTSpecificationExporter.m */,
+				743DA58A1B14810200B8FEB8 /* SUTJPEGExporter.h */,
+				743DA58B1B14810200B8FEB8 /* SUTJPEGExporter.m */,
+				743DA58D1B14811A00B8FEB8 /* SUT32BitPNGExporter.h */,
+				743DA58E1B14811A00B8FEB8 /* SUT32BitPNGExporter.m */,
+				743DA5901B14813200B8FEB8 /* SUT8BitPNGExporter.h */,
+				743DA5911B14813200B8FEB8 /* SUT8BitPNGExporter.m */,
 			);
 			path = Exporters;
 			sourceTree = "<group>";
@@ -739,12 +754,14 @@
 				74F0FAE01AAF5224003F9454 /* AppDelegate.m in Sources */,
 				745D4EE91B0F307E00969535 /* SUTPropertyView.m in Sources */,
 				745D4EF71B0F704C00969535 /* SUTPropertyEntryField.m in Sources */,
+				743DA58C1B14810200B8FEB8 /* SUTJPEGExporter.m in Sources */,
 				74CF98E61AC3960F002F8DC5 /* SUTSpriteCollectionViewCell.m in Sources */,
 				743DA5881B14773500B8FEB8 /* SUTSpecificationExporter.m in Sources */,
 				7441619E1ADE9D0500747B1E /* rwpng.c in Sources */,
 				744161991ADE9D0500747B1E /* mediancut.c in Sources */,
 				74CF98E21AC3960F002F8DC5 /* SUTExportAccessoryView.m in Sources */,
 				744161A11ADE9D4900747B1E /* SUTPNGQuant.m in Sources */,
+				743DA5921B14813200B8FEB8 /* SUT8BitPNGExporter.m in Sources */,
 				7441619C1ADE9D0500747B1E /* pam.c in Sources */,
 				747A103B1AEE5D640097E6AB /* SUTWindow.m in Sources */,
 				7441619A1ADE9D0500747B1E /* mempool.c in Sources */,
@@ -760,6 +777,7 @@
 				74CF98E11AC3960F002F8DC5 /* SUTEmptySpriteSheetView.m in Sources */,
 				74CF98E51AC3960F002F8DC5 /* SUTProgressPanel.m in Sources */,
 				74CF98D81AC3960F002F8DC5 /* SUTWindowController.m in Sources */,
+				743DA58F1B14811A00B8FEB8 /* SUT32BitPNGExporter.m in Sources */,
 				74AF59271AF0EBF00013F9CD /* SUTWindowTitleView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

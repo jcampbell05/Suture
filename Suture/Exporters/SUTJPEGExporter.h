@@ -6,8 +6,8 @@
 //  Copyright (c) 2015 James Campbell. All rights reserved.
 //
 
-#import "SUTExporter.h"
+#import "SUTImageExporter.h"
 
-@interface SUTJPEGExporter : NSObject<SUTExporter>
+@interface SUTJPEGExporter : SUTImageExporter
 
 @end

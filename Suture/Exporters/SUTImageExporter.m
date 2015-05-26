@@ -42,34 +42,9 @@
 - (void)exportDocument:(SUTDocument *)document
                    URL:(NSURL *)url
 {
-    [self.delegate exporterWillExport:self];
     
-    NSInteger numberOfSprites = document.sprites.count;
-    self.progress.completedUnitCount = 0;
-    self.progress.totalUnitCount = numberOfSprites + 1;
     
-    CGSize contentSize = [document.layout contentSize];
-    CGContextRef context = [self createExportingImageContextWithSize:contentSize];
-
-    CGContextClearRect(context, NSMakeRect(0, 0, contentSize.width, contentSize.height));
-    CGContextSetStrokeColorWithColor(context, [[NSColor redColor] CGColor]);
     
-    for (NSInteger spriteIndex = 0; spriteIndex < numberOfSprites; spriteIndex ++)
-    {
-        CGRect spriteFrame = [document.layout frameForSpriteAtIndex:spriteIndex];
-        spriteFrame = SUTFlipCGRect(spriteFrame, contentSize);
-        
-        SUTSprite *sprite = document.sprites[spriteIndex];
-        CGImageRef image = sprite.image.CGImage;
-        
-        CGContextDrawImage(context,
-                           spriteFrame,
-                           image);
-        
-        CGImageRelease(image);
-        
-        self.progress.completedUnitCount ++;
-    }
     
     if (self.type & SUTImageExporterPNGTypeBit)
     {

@@ -30,6 +30,8 @@
 - (void)exportDocument:(SUTDocument *)document
                    URL:(NSURL *)url
 {
+    [self.delegate exporterWillExport:self];
+    
     NSInteger FPS = 1;
     
     if (document.duration > 0)

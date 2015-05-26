@@ -8,14 +8,6 @@
 
 #import "SUTJPEGExporter.h"
 
-@interface SUTJPEGExporter ()
-
-@property (nonatomic, strong, readwrite) NSProgress *progress;
-
-- (CGContextRef)createExportingImageContextWithSize:(CGSize)size;
-
-@end
-
 @implementation SUTJPEGExporter
 
 - (NSString *)name
@@ -27,18 +19,6 @@
 - (NSString *)extension
 {
     return @"jpeg";
-}
-
-#pragma mark - Progress
-
-- (NSProgress *)progress
-{
-    if (!_progress)
-    {
-        _progress = [[NSProgress alloc] init];
-    }
-    
-    return _progress;
 }
 
 @end

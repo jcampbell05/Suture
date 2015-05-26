@@ -11,7 +11,7 @@
 
 static CGFloat SUTExportAccessoryViewHeight = 50.0f;
 static CGFloat SUTExportAccessoryPopUpButtonViewHeight = 35.0f;
-static CGFloat SUTExportAccessoryPopUpButtonViewWidth = 125.0f;
+static CGFloat SUTExportAccessoryPopUpButtonViewWidth = 200.0f;
 static CGFloat SUTExportAccessoryPopUpButtonViewLeftMargin = 5.0f;
 
 @interface SUTExportAccessoryView () <NSMenuDelegate>

@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		6E161129761A7158BAFDD4E7 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6376226A7E16A3DFC4595580 /* libPods.a */; };
 		7405F5C41AB38AF4006694F1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7405F5C31AB38AF4006694F1 /* Localizable.strings */; };
+		743DA5871B14773500B8FEB8 /* SUTSpecificationExporter.h in Headers */ = {isa = PBXBuildFile; fileRef = 743DA5851B14773500B8FEB8 /* SUTSpecificationExporter.h */; };
+		743DA5881B14773500B8FEB8 /* SUTSpecificationExporter.m in Sources */ = {isa = PBXBuildFile; fileRef = 743DA5861B14773500B8FEB8 /* SUTSpecificationExporter.m */; };
+		743DA5891B14773500B8FEB8 /* SUTSpecificationExporter.m in Sources */ = {isa = PBXBuildFile; fileRef = 743DA5861B14773500B8FEB8 /* SUTSpecificationExporter.m */; };
 		744161971ADE9D0500747B1E /* blur.c in Sources */ = {isa = PBXBuildFile; fileRef = 74415F611ADE85AD00747B1E /* blur.c */; };
 		744161981ADE9D0500747B1E /* libimagequant.c in Sources */ = {isa = PBXBuildFile; fileRef = 74415F661ADE85AD00747B1E /* libimagequant.c */; };
 		744161991ADE9D0500747B1E /* mediancut.c in Sources */ = {isa = PBXBuildFile; fileRef = 74415F6A1ADE85AD00747B1E /* mediancut.c */; };
@@ -118,6 +121,8 @@
 		6376226A7E16A3DFC4595580 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		7405F5C31AB38AF4006694F1 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		7428E6041ABEC94900116CA9 /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
+		743DA5851B14773500B8FEB8 /* SUTSpecificationExporter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUTSpecificationExporter.h; sourceTree = "<group>"; };
+		743DA5861B14773500B8FEB8 /* SUTSpecificationExporter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUTSpecificationExporter.m; sourceTree = "<group>"; };
 		74415F611ADE85AD00747B1E /* blur.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = blur.c; sourceTree = "<group>"; };
 		74415F621ADE85AD00747B1E /* blur.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = blur.h; sourceTree = "<group>"; };
 		74415F631ADE85AD00747B1E /* config.mk */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = config.mk; sourceTree = "<group>"; };
@@ -350,6 +355,8 @@
 				74CF98B81AC3960F002F8DC5 /* SUTExporterRegistry.m */,
 				74CF98B91AC3960F002F8DC5 /* SUTImageExporter.h */,
 				74CF98BA1AC3960F002F8DC5 /* SUTImageExporter.m */,
+				743DA5851B14773500B8FEB8 /* SUTSpecificationExporter.h */,
+				743DA5861B14773500B8FEB8 /* SUTSpecificationExporter.m */,
 			);
 			path = Exporters;
 			sourceTree = "<group>";
@@ -506,6 +513,7 @@
 			files = (
 				747A103A1AEE5D640097E6AB /* SUTWindow.h in Headers */,
 				74AF59261AF0EBF00013F9CD /* SUTWindowTitleView.h in Headers */,
+				743DA5871B14773500B8FEB8 /* SUTSpecificationExporter.h in Headers */,
 				745D4EE81B0F307E00969535 /* SUTPropertyView.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -712,6 +720,7 @@
 				74AF59291AF0EBF00013F9CD /* SUTWindowTitleView.m in Sources */,
 				744A71EE1AB4421C00077AA7 /* GenerateThumbnailForURL.m in Sources */,
 				744A71F01AB4421C00077AA7 /* GeneratePreviewForURL.m in Sources */,
+				743DA5891B14773500B8FEB8 /* SUTSpecificationExporter.m in Sources */,
 				744A71F21AB4421C00077AA7 /* main.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -731,6 +740,7 @@
 				745D4EE91B0F307E00969535 /* SUTPropertyView.m in Sources */,
 				745D4EF71B0F704C00969535 /* SUTPropertyEntryField.m in Sources */,
 				74CF98E61AC3960F002F8DC5 /* SUTSpriteCollectionViewCell.m in Sources */,
+				743DA5881B14773500B8FEB8 /* SUTSpecificationExporter.m in Sources */,
 				7441619E1ADE9D0500747B1E /* rwpng.c in Sources */,
 				744161991ADE9D0500747B1E /* mediancut.c in Sources */,
 				74CF98E21AC3960F002F8DC5 /* SUTExportAccessoryView.m in Sources */,

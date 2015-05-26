@@ -21,7 +21,6 @@
 @property (nonatomic, strong) NSTextField *frameSizeTitleView;
 @property (nonatomic, strong) SUTPropertyEntryField *durationTextField;
 @property (nonatomic, strong) SUTPropertyEntryField *framesPerSecondTextField;
-@property (nonatomic, strong) NSButton *exportSpecificationButton;
 
 - (void)createConstraints;
 - (void)updateFrameSpecificationText;
@@ -50,7 +49,6 @@
         [self addSubview:self.frameSizeTitleView];
         [self addSubview:self.framesPerSecondTextField];
         [self addSubview:self.durationTextField];
-        [self addSubview:self.exportSpecificationButton];
 
         [self createConstraints];
     }
@@ -105,18 +103,6 @@
                              withOffset:10.0f];
     [self.durationTextField autoPinEdgeToSuperviewEdge:ALEdgeRight];
     [self.durationTextField autoSetDimension:ALDimensionHeight
-                                      toSize:35.0f];
-    
-    //Export Button
-    [self.exportSpecificationButton autoPinEdgeToSuperviewEdge:ALEdgeLeft
-                                                     withInset:10.0f];
-    [self.exportSpecificationButton autoPinEdge:ALEdgeTop
-                                         toEdge:ALEdgeBottom
-                                         ofView:self.durationTextField
-                                     withOffset:10.0f];
-    [self.exportSpecificationButton autoPinEdgeToSuperviewEdge:ALEdgeRight
-                                                     withInset:10.0f];
-    [self.exportSpecificationButton autoSetDimension:ALDimensionHeight
                                       toSize:35.0f];
 }
 
@@ -243,19 +229,6 @@
     return _durationTextField;
 }
 
-- (NSButton *)exportSpecificationButton
-{
-    if (!_exportSpecificationButton)
-    {
-        _exportSpecificationButton = [[NSButton alloc] initForAutoLayout];
-        _exportSpecificationButton.title = @"Export Specification";
-        [_exportSpecificationButton setAction:@selector(exportSpecification)];
-        [_exportSpecificationButton setTarget:self];
-    }
-    
-    return _exportSpecificationButton;
-}
-
 #pragma mark - Events
 
 - (void)updateFrameSpecificationText
@@ -268,22 +241,6 @@
     {
         self.framesPerSecondTextField.valueText = [NSString stringWithFormat:@"%lu", [self.document.sprites count] / self.document.duration];
     }
-}
-
-- (void)exportSpecification
-{
-    NSSavePanel *savePanel = [NSSavePanel savePanel];
-    savePanel.allowedFileTypes = @[@"txt"];
-    
-    [savePanel beginSheetModalForWindow:self.window
-                      completionHandler:^(NSInteger result)
-    {
-        
-        SUTSpecificationExporter *exporter = [[SUTSpecificationExporter alloc] init];
-        
-        [exporter exportDocument:self.document
-                             URL:savePanel.URL];
-    }];
 }
 
 #pragma mark - SUTPropertyEntryFieldDelegate

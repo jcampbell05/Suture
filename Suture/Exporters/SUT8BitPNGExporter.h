@@ -6,8 +6,8 @@
 //  Copyright (c) 2015 James Campbell. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import "SUTExporter.h"
 
-@interface SUT8BitPNGExporter : NSObject
+@interface SUT8BitPNGExporter : NSObject<SUTExporter>
 
 @end

@@ -18,7 +18,8 @@
 
 - (NSString *)name
 {
-    return @"Name TBC";
+    return NSLocalizedString(@"specification_exporter_nav",
+                             nil);
 }
 
 - (NSString *)extension

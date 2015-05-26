@@ -11,6 +11,7 @@
 "png_8_image_exporter_nav" = "8-Bit PNG Image";
 "png_32_image_exporter_nav" = "32-Bit PNG Image";
 "jpeg_image_exporter_nav" = "JPEG Image";
+"specification_exporter_nav" = "Specification";
 "new_document_nav" = "New Sprite Sheet";
 "specification_nav" = "Specification";
 "frames_per_second_nav" = "FPS:";

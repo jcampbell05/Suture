@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "SUTExporterRegistry.h"
 #import "SUTImageExporter.h"
+#import "SUTSpecificationExporter.h"
 
 @interface AppDelegate ()
 
@@ -28,6 +29,9 @@
     SUTImageExporter *jpegExporter = [[SUTImageExporter alloc] init];
     jpegExporter.type = SUTImageExporterJPEGType;
     [[SUTExporterRegistry sharedRegistry] registerExporter:jpegExporter];
+    
+    SUTSpecificationExporter *specificationExporter = [[SUTSpecificationExporter alloc] init];
+    [[SUTExporterRegistry sharedRegistry] registerExporter:specificationExporter];
 }
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification

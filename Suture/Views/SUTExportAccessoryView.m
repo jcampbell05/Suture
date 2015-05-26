@@ -74,7 +74,10 @@ static CGFloat SUTExportAccessoryPopUpButtonViewLeftMargin = 5.0f;
         
         [[SUTExporterRegistry sharedRegistry].exporters enumerateObjectsUsingBlock:^(id<SUTExporter> exporter, NSUInteger idx, BOOL *stop)
         {
-            [items addObject:[exporter name]];
+            NSString *itemName = [NSString stringWithFormat:@"%@ (.%@)",
+                                  [exporter name],
+                                  [exporter extension]];
+            [items addObject:itemName];
         }];
         
         [_formatPopUpButtonView addItemsWithTitles:items];

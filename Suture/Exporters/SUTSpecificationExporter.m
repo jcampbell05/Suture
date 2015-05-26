@@ -8,6 +8,12 @@
 
 #import "SUTSpecificationExporter.h"
 
+@interface SUTSpecificationExporter ()
+
+@property (nonatomic, strong, readwrite) NSProgress *progress;
+
+@end
+
 @implementation SUTSpecificationExporter
 
 - (NSString *)name
@@ -23,6 +29,15 @@
 - (void)exportDocument:(SUTDocument *)document
                    URL:(NSURL *)url
 {
+    NSString *contents = [NSString stringWithFormat:@"Frames: %lu\nFrame Size: %@\nDuration: %lu\nFrames Per Second: %lu",
+                          [self.document.sprites count],
+                          NSStringFromSize([self.document largestSpriteSize]),
+                          self.document.duration,
+                          FPS];
+    
+    [[NSFileManager defaultManager] createFileAtPath:[savePanel.URL path]
+                                            contents:[contents dataUsingEncoding:NSUTF8StringEncoding]
+                                          attributes:nil];
 }
 
 @end

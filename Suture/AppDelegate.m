@@ -8,7 +8,9 @@
 
 #import "AppDelegate.h"
 #import "SUTExporterRegistry.h"
-#import "SUTImageExporter.h"
+#import "SUT32BitPNGExporter.h"
+#import "SUT8BitPNGExporter.h"
+#import "SUTJPEGExporter.h"
 #import "SUTSpecificationExporter.h"
 
 @interface AppDelegate ()
@@ -19,15 +21,13 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-    SUTImageExporter *png32BitExporter = [[SUTImageExporter alloc] init];
-    png32BitExporter.type = SUTImageExporterPNG32Type;
+    SUT32BitPNGExporter *png32BitExporter = [[SUT32BitPNGExporter alloc] init];
     [[SUTExporterRegistry sharedRegistry] registerExporter:png32BitExporter];
     
-    SUTImageExporter *png8BitExporter = [[SUTImageExporter alloc] init];
+    SUT8BitPNGExporter *png8BitExporter = [[SUT8BitPNGExporter alloc] init];
     [[SUTExporterRegistry sharedRegistry] registerExporter:png8BitExporter];
     
-    SUTImageExporter *jpegExporter = [[SUTImageExporter alloc] init];
-    jpegExporter.type = SUTImageExporterJPEGType;
+    SUTJPEGExporter *jpegExporter = [[SUTJPEGExporter alloc] init];
     [[SUTExporterRegistry sharedRegistry] registerExporter:jpegExporter];
     
     SUTSpecificationExporter *specificationExporter = [[SUTSpecificationExporter alloc] init];

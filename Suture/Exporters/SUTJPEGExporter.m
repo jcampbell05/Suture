@@ -10,4 +10,15 @@
 
 @implementation SUTJPEGExporter
 
+- (NSString *)name
+{
+    return NSLocalizedString(@"specification_exporter_nav",
+                             nil);
+}
+
+- (NSString *)extension
+{
+    return @"jpeg";
+}
+
 @end

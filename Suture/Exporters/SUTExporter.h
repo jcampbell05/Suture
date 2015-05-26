@@ -18,6 +18,7 @@
 
 @end
 
+//TODO: Move into being concrete superclass ?
 @protocol SUTExporter <NSObject>
 
 @property (nonatomic, strong, readonly) NSString *name;

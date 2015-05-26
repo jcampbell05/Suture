@@ -29,13 +29,20 @@
 - (void)exportDocument:(SUTDocument *)document
                    URL:(NSURL *)url
 {
+    NSInteger FPS = 1;
+    
+    if (document.duration > 0)
+    {
+        FPS = [document.sprites count] / document.duration;
+    }
+    
     NSString *contents = [NSString stringWithFormat:@"Frames: %lu\nFrame Size: %@\nDuration: %lu\nFrames Per Second: %lu",
-                          [self.document.sprites count],
-                          NSStringFromSize([self.document largestSpriteSize]),
-                          self.document.duration,
+                          [document.sprites count],
+                          NSStringFromSize([document largestSpriteSize]),
+                          document.duration,
                           FPS];
     
-    [[NSFileManager defaultManager] createFileAtPath:[savePanel.URL path]
+    [[NSFileManager defaultManager] createFileAtPath:url.path
                                             contents:[contents dataUsingEncoding:NSUTF8StringEncoding]
                                           attributes:nil];
 }

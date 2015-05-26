@@ -51,7 +51,7 @@ static CGFloat SUTExportAccessoryPopUpButtonViewLeftMargin = 5.0f;
 
 #pragma mark - Selected Exporter
 
-- (id<SUTExporter>)selectedExporter
+- (SUTExporter *)selectedExporter
 {
     return [SUTExporterRegistry sharedRegistry].exporters[self.formatPopUpButtonView.indexOfSelectedItem];
 }
@@ -72,11 +72,11 @@ static CGFloat SUTExportAccessoryPopUpButtonViewLeftMargin = 5.0f;
         
         NSMutableArray *items = [[NSMutableArray alloc] init];
         
-        [[SUTExporterRegistry sharedRegistry].exporters enumerateObjectsUsingBlock:^(id<SUTExporter> exporter, NSUInteger idx, BOOL *stop)
+        [[SUTExporterRegistry sharedRegistry].exporters enumerateObjectsUsingBlock:^(SUTExporter *exporter, NSUInteger idx, BOOL *stop)
         {
             NSString *itemName = [NSString stringWithFormat:@"%@ (.%@)",
-                                  [exporter name],
-                                  [exporter extension]];
+                                  exporter.name,
+                                  exporter.extension];
             [items addObject:itemName];
         }];
         

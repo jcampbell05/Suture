@@ -8,8 +8,6 @@
 
 #import "SUTExporter.h"
 
-@interface SUTSpecificationExporter : NSObject<SUTExporter>
-
-@property (nonatomic, weak) id<SUTExporterDelegate> delegate;
+@interface SUTSpecificationExporter : SUTExporter
 
 @end

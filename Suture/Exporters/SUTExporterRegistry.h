@@ -13,6 +13,6 @@
 @property (nonatomic, strong, readonly) NSArray *exporters;
 
 + (instancetype)sharedRegistry;
-- (void)registerExporter:(id<SUTExporter>)exporter;
+- (void)registerExporter:(SUTExporter *)exporter;
 
 @end

@@ -15,6 +15,7 @@
 		743DA58C1B14810200B8FEB8 /* SUTJPEGExporter.m in Sources */ = {isa = PBXBuildFile; fileRef = 743DA58B1B14810200B8FEB8 /* SUTJPEGExporter.m */; };
 		743DA58F1B14811A00B8FEB8 /* SUT32BitPNGExporter.m in Sources */ = {isa = PBXBuildFile; fileRef = 743DA58E1B14811A00B8FEB8 /* SUT32BitPNGExporter.m */; };
 		743DA5921B14813200B8FEB8 /* SUT8BitPNGExporter.m in Sources */ = {isa = PBXBuildFile; fileRef = 743DA5911B14813200B8FEB8 /* SUT8BitPNGExporter.m */; };
+		743DA5941B14859F00B8FEB8 /* SUTExporter.m in Sources */ = {isa = PBXBuildFile; fileRef = 743DA5931B14859F00B8FEB8 /* SUTExporter.m */; };
 		744161971ADE9D0500747B1E /* blur.c in Sources */ = {isa = PBXBuildFile; fileRef = 74415F611ADE85AD00747B1E /* blur.c */; };
 		744161981ADE9D0500747B1E /* libimagequant.c in Sources */ = {isa = PBXBuildFile; fileRef = 74415F661ADE85AD00747B1E /* libimagequant.c */; };
 		744161991ADE9D0500747B1E /* mediancut.c in Sources */ = {isa = PBXBuildFile; fileRef = 74415F6A1ADE85AD00747B1E /* mediancut.c */; };
@@ -132,6 +133,7 @@
 		743DA58E1B14811A00B8FEB8 /* SUT32BitPNGExporter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUT32BitPNGExporter.m; sourceTree = "<group>"; };
 		743DA5901B14813200B8FEB8 /* SUT8BitPNGExporter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUT8BitPNGExporter.h; sourceTree = "<group>"; };
 		743DA5911B14813200B8FEB8 /* SUT8BitPNGExporter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUT8BitPNGExporter.m; sourceTree = "<group>"; };
+		743DA5931B14859F00B8FEB8 /* SUTExporter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUTExporter.m; sourceTree = "<group>"; };
 		74415F611ADE85AD00747B1E /* blur.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = blur.c; sourceTree = "<group>"; };
 		74415F621ADE85AD00747B1E /* blur.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = blur.h; sourceTree = "<group>"; };
 		74415F631ADE85AD00747B1E /* config.mk */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = config.mk; sourceTree = "<group>"; };
@@ -360,6 +362,7 @@
 			isa = PBXGroup;
 			children = (
 				74CF98B61AC3960F002F8DC5 /* SUTExporter.h */,
+				743DA5931B14859F00B8FEB8 /* SUTExporter.m */,
 				74CF98B71AC3960F002F8DC5 /* SUTExporterRegistry.h */,
 				74CF98B81AC3960F002F8DC5 /* SUTExporterRegistry.m */,
 				74CF98B91AC3960F002F8DC5 /* SUTImageExporter.h */,
@@ -777,6 +780,7 @@
 				74CF98E11AC3960F002F8DC5 /* SUTEmptySpriteSheetView.m in Sources */,
 				74CF98E51AC3960F002F8DC5 /* SUTProgressPanel.m in Sources */,
 				74CF98D81AC3960F002F8DC5 /* SUTWindowController.m in Sources */,
+				743DA5941B14859F00B8FEB8 /* SUTExporter.m in Sources */,
 				743DA58F1B14811A00B8FEB8 /* SUT32BitPNGExporter.m in Sources */,
 				74AF59271AF0EBF00013F9CD /* SUTWindowTitleView.m in Sources */,
 			);

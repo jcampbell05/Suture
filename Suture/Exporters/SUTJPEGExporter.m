@@ -21,4 +21,31 @@
     return @"jpeg";
 }
 
+- (void)writeContext:(CGContextRef)context
+                 url:(NSURL *)url
+{
+    CGImageRef image = CGBitmapContextCreateImage(context);
+    CGImageDestinationRef destination = CGImageDestinationCreateWithURL((__bridge CFURLRef)url,
+                                                                        kUTTypeJPEG,
+                                                                        1,
+                                                                        NULL);
+    if (!destination)
+    {
+        NSLog(@"Failed to create CGImageDestination for %@", url);
+    }
+    else
+    {
+        CGImageDestinationAddImage(destination, image, nil);
+        
+        if (!CGImageDestinationFinalize(destination))
+        {
+            NSLog(@"Failed to write image to %@", url);
+        }
+        
+        CFRelease(destination);
+    }
+    
+    CGImageRelease(image);
+}
+
 @end

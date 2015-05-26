@@ -15,12 +15,8 @@
 #import "SUTSpriteLayout.h"
 #import "NSImage+CGImage.h"
 
-#import "SUTPNGQuant.h"
-
 //TODO: Handle Errors in UI.
 @interface SUTImageExporter ()
-
-@property (nonatomic, strong, readwrite) NSProgress *progress;
 
 - (CGContextRef)createExportingImageContextWithSize:(CGSize)size;
 
@@ -28,37 +24,12 @@
 
 @implementation SUTImageExporter
 
-#pragma mark - Init
-
-- (instancetype)init
-{
-    self = [super init];
-    
-    if (self)
-    {
-        self.type = SUTImageExporterPNG8Type;
-    }
-    
-    return self;
-}
-
-#pragma mark - Progress
-
-- (NSProgress *)progress
-{
-    if (!_progress)
-    {
-        _progress = [[NSProgress alloc] init];
-    }
-    
-    return _progress;
-}
-
 //TODO: Break this function down.
 - (void)exportDocument:(SUTDocument *)document
                    URL:(NSURL *)url
 {
-    [self.delegate exporterWillExport:self];
+    [super exportDocument:document
+                      URL:url];
     
     NSInteger numberOfSprites = document.sprites.count;
     self.progress.completedUnitCount = 0;
@@ -87,21 +58,12 @@
         self.progress.completedUnitCount ++;
     }
     
-    if (self.type & SUTImageExporterPNGTypeBit)
-    {
-        [self writePNG:context
+    [self writeContext:context
                    url:url];
-    }
-    else
-    {
-        [self writeJPEG:context
-                    url:url];
-    }
     
     CGContextRelease(context);
     
     self.progress.completedUnitCount ++;
-    self.progress = nil;
     [self.delegate exporterDidExport:self];
 }
 
@@ -132,42 +94,10 @@
     CGImageRelease(image);
 }
 
-- (void)writePNG:(CGContextRef)context
-             url:(NSURL *)url
+- (void)writeContext:(CGContextRef)context
+                 url:(NSURL *)url
 {
-    if (self.type == SUTImageExporterPNG8Type)
-    {
-        png8_image outImage = SUTCreate8BitPNGImageFromContext(context);
-        
-        FILE *outfile = fopen([url.path UTF8String], "wb");
-        rwpng_write_image8(outfile, &outImage);
-        fclose(outfile);
-    }
-    else
-    {
-        CGImageRef image = CGBitmapContextCreateImage(context);
-        CGImageDestinationRef destination = CGImageDestinationCreateWithURL((__bridge CFURLRef)url,
-                                                                            kUTTypePNG,
-                                                                            1,
-                                                                            NULL);
-        if (!destination)
-        {
-            NSLog(@"Failed to create CGImageDestination for %@", url);
-        }
-        else
-        {
-            CGImageDestinationAddImage(destination, image, nil);
-            
-            if (!CGImageDestinationFinalize(destination))
-            {
-                NSLog(@"Failed to write image to %@", url);
-            }
-            
-            CFRelease(destination);
-        }
-        
-        CGImageRelease(image);
-    }
+    
 }
 
 - (CGContextRef)createExportingImageContextWithSize:(CGSize)size

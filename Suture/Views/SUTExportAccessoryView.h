@@ -12,7 +12,7 @@
 @interface SUTExportAccessoryView : NSView
 
 @property (nonatomic, strong, readonly) NSSavePanel *savePanel;
-@property (nonatomic, strong, readonly) id<SUTExporter> selectedExporter;
+@property (nonatomic, strong, readonly) SUTExporter *selectedExporter;
 
 - (instancetype)initWithSavePanel:(NSSavePanel *)savePanel;
 

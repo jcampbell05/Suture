@@ -9,17 +9,16 @@
 @import Foundation;
 #import "SUTDocument.h"
 
-@protocol SUTExporter;
+@class SUTExporter;
 
 @protocol SUTExporterDelegate <NSObject>
 
-- (void)exporterWillExport:(id<SUTExporter>)exporter;
-- (void)exporterDidExport:(id<SUTExporter>)exporter;
+- (void)exporterWillExport:(SUTExporter *)exporter;
+- (void)exporterDidExport:(SUTExporter *)exporter;
 
 @end
 
-//TODO: Move into being concrete superclass ?
-@protocol SUTExporter <NSObject>
+@interface SUTExporter : NSObject
 
 @property (nonatomic, strong, readonly) NSString *name;
 @property (nonatomic, strong, readonly) NSString *extension;

@@ -50,7 +50,7 @@ static SUTExporterRegistry *sharedRegistry = nil;
 
 #pragma mark - Register
 
-- (void)registerExporter:(id<SUTExporter>)exporter
+- (void)registerExporter:(SUTExporter *)exporter
 {
     [self.mutableExporters addObject:exporter];
 }

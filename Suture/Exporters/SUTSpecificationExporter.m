@@ -8,12 +8,6 @@
 
 #import "SUTSpecificationExporter.h"
 
-@interface SUTSpecificationExporter ()
-
-@property (nonatomic, strong, readwrite) NSProgress *progress;
-
-@end
-
 @implementation SUTSpecificationExporter
 
 - (NSString *)name
@@ -30,7 +24,8 @@
 - (void)exportDocument:(SUTDocument *)document
                    URL:(NSURL *)url
 {
-    [self.delegate exporterWillExport:self];
+    [super exportDocument:document
+                      URL:url];
     
     NSInteger FPS = 1;
     

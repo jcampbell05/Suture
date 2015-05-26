@@ -12,7 +12,6 @@
 
 #import "SUTDocument.h"
 #import "SUTPropertyEntryField.h"
-#import "SUTSpecificationExporter.h"
 
 @interface SUTPropertyView () <SUTPropertyEntryFieldDelegate>
 
@@ -24,7 +23,6 @@
 
 - (void)createConstraints;
 - (void)updateFrameSpecificationText;
-- (void)exportSpecification;
 
 @end
 

@@ -20,6 +20,10 @@
 //TODO: Handle Errors in UI.
 @interface SUTImageExporter ()
 
+@property (nonatomic, strong, readwrite) NSProgress *progress;
+
+- (CGContextRef)createExportingImageContextWithSize:(CGSize)size;
+
 @end
 
 @implementation SUTImageExporter
@@ -38,13 +42,89 @@
     return self;
 }
 
+#pragma mark - Exporter Info
+
+- (NSString *)name
+{
+    switch (self.type)
+    {
+        case SUTImageExporterPNG8Type:
+            return NSLocalizedString(@"png_8_image_exporter_nav",
+                                     nil);
+            break;
+            
+        case SUTImageExporterPNG32Type:
+            return NSLocalizedString(@"png_32_image_exporter_nav",
+                                     nil);
+            break;
+            
+        case SUTImageExporterJPEGType:
+            return NSLocalizedString(@"jpeg_image_exporter_nav",
+                                     nil);
+            break;
+    }
+}
+
+- (NSString *)extension
+{
+    NSString *extension = nil;
+    
+    if (self.type & SUTImageExporterPNGTypeBit)
+    {
+        extension = @"png";
+    }
+    else
+    {
+        extension = @"jpg";
+    }
+    
+    return extension;
+}
+
+#pragma mark - Progress
+
+- (NSProgress *)progress
+{
+    if (!_progress)
+    {
+        _progress = [[NSProgress alloc] init];
+    }
+    
+    return _progress;
+}
+
 //TODO: Break this function down.
 - (void)exportDocument:(SUTDocument *)document
                    URL:(NSURL *)url
 {
+    [self.delegate exporterWillExport:self];
     
+    NSInteger numberOfSprites = document.sprites.count;
+    self.progress.completedUnitCount = 0;
+    self.progress.totalUnitCount = numberOfSprites + 1;
     
+    CGSize contentSize = [document.layout contentSize];
+    CGContextRef context = [self createExportingImageContextWithSize:contentSize];
+
+    CGContextClearRect(context, NSMakeRect(0, 0, contentSize.width, contentSize.height));
+    CGContextSetStrokeColorWithColor(context, [[NSColor redColor] CGColor]);
     
+    for (NSInteger spriteIndex = 0; spriteIndex < numberOfSprites; spriteIndex ++)
+    {
+        CGRect spriteFrame = [document.layout frameForSpriteAtIndex:spriteIndex];
+        spriteFrame = SUTFlipCGRect(spriteFrame, contentSize);
+        
+        SUTSprite *sprite = document.sprites[spriteIndex];
+        CGImageRef image = sprite.image.CGImage;
+        
+        CGContextDrawImage(context,
+                           spriteFrame,
+                           image);
+        
+        CGImageRelease(image);
+        
+        self.progress.completedUnitCount ++;
+    }
     
     if (self.type & SUTImageExporterPNGTypeBit)
     {

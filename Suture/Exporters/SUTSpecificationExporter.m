@@ -46,6 +46,8 @@
     [[NSFileManager defaultManager] createFileAtPath:url.path
                                             contents:[contents dataUsingEncoding:NSUTF8StringEncoding]
                                           attributes:nil];
+    
+    [self.delegate exporterDidExport:self];
 }
 
 @end

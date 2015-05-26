@@ -20,10 +20,6 @@
 //TODO: Handle Errors in UI.
 @interface SUTImageExporter ()
 
-@property (nonatomic, strong, readwrite) NSProgress *progress;
-
-- (CGContextRef)createExportingImageContextWithSize:(CGSize)size;
-
 @end
 
 @implementation SUTImageExporter

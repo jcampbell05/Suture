@@ -8,6 +8,14 @@
 
 #import "SUT32BitPNGExporter.h"
 
+@interface SUT32BitPNGExporter ()
+
+@property (nonatomic, strong, readwrite) NSProgress *progress;
+
+- (CGContextRef)createExportingImageContextWithSize:(CGSize)size;
+
+@end
+
 @implementation SUT32BitPNGExporter
 
 - (NSString *)name

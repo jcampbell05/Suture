@@ -8,6 +8,12 @@
 
 #import "SUT8BitPNGExporter.h"
 
+@interface SUT8BitPNGExporter ()
+
+@property (nonatomic, strong, readwrite) NSProgress *progress;
+
+@end
+
 @implementation SUT8BitPNGExporter
 
 - (NSString *)name

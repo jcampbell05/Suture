@@ -13,5 +13,6 @@
 @interface SUTExportPanel : NSSavePanel
 
 @property (nonatomic, readonly) SUTExporter *selectedExporter;
+@property (nonatomic, readonly) NSDictionary *exportOptions;
 
 @end

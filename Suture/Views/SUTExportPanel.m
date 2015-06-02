@@ -39,4 +39,9 @@
     return self.exportAccessoryView.selectedExporter;
 }
 
+- (NSDictionary *)exportOptions
+{
+    return [self.exportAccessoryView.exportOptions copy];;
+}
+
 @end

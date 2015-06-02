@@ -123,7 +123,8 @@
              {
                  exportPanel.selectedExporter.delegate = self;
                  [exportPanel.selectedExporter exportDocument:self.document
-                                                          URL:exportPanel.URL];
+                                                          URL:exportPanel.URL
+                                                      options:exportPanel.exportOptions];
              }];
          }
      }];

@@ -28,7 +28,8 @@
 @property (nonatomic, strong, readonly) SUTExporterOptionsView *optionsView;
 
 - (void)exportDocument:(SUTDocument *)document
-                   URL:(NSURL *)url;
+                   URL:(NSURL *)url
+               options:(NSDictionary *)options;
 
 
 @end

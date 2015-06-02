@@ -35,9 +35,11 @@ NSString const * SUTImageExporterShouldExportSpecificationOptionKey = @"ShouldEx
 
 - (void)exportDocument:(SUTDocument *)document
                    URL:(NSURL *)url
+               options:(NSDictionary *)options
 {
     [super exportDocument:document
-                      URL:url];
+                      URL:url
+                  options:options];
     
     NSInteger numberOfSprites = document.sprites.count;
     self.progress.completedUnitCount = 0;

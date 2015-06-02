@@ -46,6 +46,7 @@
 
 - (void)exportDocument:(SUTDocument *)document
                    URL:(NSURL *)url
+               options:(NSDictionary *)options
 {
     self.progress = nil;
     [self.delegate exporterWillExport:self];

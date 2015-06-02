@@ -23,9 +23,11 @@
 
 - (void)exportDocument:(SUTDocument *)document
                    URL:(NSURL *)url
+               options:(NSDictionary *)options
 {
     [super exportDocument:document
-                      URL:url];
+                      URL:url
+                  options:options];
     
     NSInteger FPS = 1;
     

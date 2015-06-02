@@ -171,8 +171,8 @@
         _specificationsTitleView.editable = NO;
         _specificationsTitleView.selectable = NO;
         
-        _specificationsTitleView.stringValue = NSLocalizedString(@"specification_nav",
-                                                         nil);
+        _specificationsTitleView.stringValue = NSLocalizedString(@"specification_nav", nil);
+        _specificationsTitleView.font = [NSFont systemFontOfSize:15.0f];
     }
     
     return _specificationsTitleView;

@@ -108,7 +108,10 @@
                                       toSize:35.0f];
     
     //Export Button
-    [self.exportButton autoPinEdgesToSuperviewEdgesWithInsets:NSEdgeInsetsZero
+    [self.exportButton autoPinEdgesToSuperviewEdgesWithInsets:NSEdgeInsetsMake(5.0f,
+                                                                               10.0f,
+                                                                               5.0f,
+                                                                               10.0f)
                                                 excludingEdge:ALEdgeTop];
     [self.exportButton autoSetDimension:ALDimensionHeight
                                  toSize:50.0f];
@@ -244,6 +247,14 @@
         _exportButton = [[NSButton alloc] initForAutoLayout];
         
         _exportButton.title = NSLocalizedString(@"export_nav", nil);
+
+        NSColor *color = [NSColor colorWithCalibratedRed:73.0f / 255.0f
+                                                   green:92.0f / 255.0f
+                                                    blue:46.0f / 255.0f
+                                                   alpha:1.0f];
+        
+        _exportButton.bezelStyle = NSRoundedBezelStyle;
+        [_exportButton.cell setBackgroundColor:color];
         
         _exportButton.target = self;
         _exportButton.action = @selector(exportPressed);

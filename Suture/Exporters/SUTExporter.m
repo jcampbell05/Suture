@@ -8,14 +8,6 @@
 
 #import "SUTExporter.h"
 
-@interface SUTExporter ()
-
-@property (nonatomic, strong, readwrite) NSProgress *progress;
-
-- (CGContextRef)createExportingImageContextWithSize:(CGSize)size;
-
-@end
-
 @implementation SUTExporter
 
 #pragma mark - Name and Extension

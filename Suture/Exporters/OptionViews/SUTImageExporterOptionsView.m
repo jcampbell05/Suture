@@ -8,6 +8,14 @@
 
 #import "SUTImageExporterOptionsView.h"
 
+#import <PureLayout/PureLayout.h>
+
+@interface SUTImageExporterOptionsView ()
+
+@property (nonatomic, strong) NSButton *specificationCheckBox;
+
+@end
+
 @implementation SUTImageExporterOptionsView
 
 - (instancetype)init
@@ -16,16 +24,27 @@
     
     if (self)
     {
-        self.wantsLayer = YES;
-        self.layer.backgroundColor = [NSColor blackColor].CGColor;
+        [self addSubview:self.specificationCheckBox];
     }
     
     return self;
 }
 
+- (NSButton *)specificationCheckBox
+{
+    if (!_specificationCheckBox)
+    {
+        _specificationCheckBox = [[NSButton alloc] initForAutoLayout];
+        [_specificationCheckBox setButtonType:NSSwitchButton];
+        _specificationCheckBox.title = NSLocalizedString(@"export_specification_nav", nil);
+    }
+    
+    return _specificationCheckBox;
+}
+
 - (CGSize)preferredContentSize
 {
-    return CGSizeMake(300.0f, 200.0f);
+    return CGSizeMake(300.0f, 25.0f);
 }
 
 @end

@@ -8,6 +8,7 @@
 
 "empty_nav" = "Drop your images here.";
 "export_nav" = "Export";
+"export_specification_nav" = "Export Specification (.txt)";
 "format_nav" = "Format:";
 "png_8_image_exporter_nav" = "8-Bit PNG Image";
 "png_32_image_exporter_nav" = "32-Bit PNG Image";

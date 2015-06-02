@@ -10,6 +10,8 @@
 
 #import <PureLayout/PureLayout.h>
 
+#import "SUTImageExporter.h"
+
 @interface SUTImageExporterOptionsView ()
 
 @property (nonatomic, strong) NSButton *specificationCheckBox;
@@ -52,8 +54,16 @@
     return CGSizeMake(300.0f, 25.0f);
 }
 
+- (void)setExportOptions:(NSDictionary *)exportOptions
+{
+    [super setExportOptions:exportOptions];
+    
+    self.specificationCheckBox.state = [exportOptions[SUTImageExporterShouldExportSpecificationOptionKey] integerValue];
+}
+
 - (void)specificationCheckBoxPressed:(NSButton *)sender;
 {
+    self.exportOptions[SUTImageExporterShouldExportSpecificationOptionKey] = @(sender.state);
     //We need access to a shared options area.
     //sender.state
 }

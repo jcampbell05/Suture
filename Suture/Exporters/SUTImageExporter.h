@@ -8,6 +8,8 @@
 
 #import "SUTExporter.h"
 
+extern NSString const * SUTImageExporterShouldExportSpecificationOptionKey;
+
 @interface SUTImageExporter : SUTExporter
 
 - (void)writeContext:(CGContextRef)context

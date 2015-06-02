@@ -10,6 +10,8 @@
 
 @interface SUTExporterOptionsView : NSView
 
+@property (nonatomic, strong) NSMutableDictionary *exportOptions;
+
 - (CGSize)preferredContentSize;
 
 @end

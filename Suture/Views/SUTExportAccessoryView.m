@@ -21,6 +21,7 @@ static CGFloat SUTExportAccessoryPopUpButtonViewLeftMargin = 5.0f;
 @property (nonatomic, strong, readwrite) NSSavePanel *savePanel;
 @property (nonatomic, strong) NSPopUpButton *formatPopUpButtonView;
 @property (nonatomic, strong) NSTextField *formatTitleView;
+@property (nonatomic, strong) NSMutableDictionary *exportOptions;
 
 @property (nonatomic, strong) SUTExporterOptionsView *exporterOptionView;
 
@@ -40,6 +41,7 @@ static CGFloat SUTExportAccessoryPopUpButtonViewLeftMargin = 5.0f;
     
     if (self)
     {
+        self.exportOptions = [[NSMutableDictionary alloc] init];
         self.exporterOptionView.frame = NSMakeRect(0.0f,
                                                    0.0f,
                                                    400.0f,
@@ -157,6 +159,7 @@ static CGFloat SUTExportAccessoryPopUpButtonViewLeftMargin = 5.0f;
         self.frame = newFrame;
     }
     
+    self.exporterOptionView.exportOptions = self.exportOptions;
     self.exporterOptionView.frame = NSMakeRect(0.0f,
                                                20.0f,
                                                optionsSize.width,

@@ -16,6 +16,8 @@
 #import "NSImage+CGImage.h"
 #import "SUTImageExporterOptionsView.h"
 
+NSString const * SUTImageExporterShouldExportSpecificationOptionKey = @"ShouldExportSpecification";
+
 //TODO: Handle Errors in UI.
 @interface SUTImageExporter ()
 

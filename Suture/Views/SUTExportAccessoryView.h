@@ -13,6 +13,7 @@
 
 @property (nonatomic, strong, readonly) NSSavePanel *savePanel;
 @property (nonatomic, strong, readonly) SUTExporter *selectedExporter;
+@property (nonatomic, strong, readonly) NSMutableDictionary *exportOptions;
 
 - (instancetype)initWithSavePanel:(NSSavePanel *)savePanel;
 

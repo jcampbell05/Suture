@@ -1,14 +1,14 @@
 //
-//  SUTExporterOptionsView.m
+//  SUTImageExporterOptionsView.m
 //  Suture
 //
-//  Created by James Campbell on 01/06/2015.
+//  Created by James Campbell on 02/06/2015.
 //  Copyright (c) 2015 James Campbell. All rights reserved.
 //
 
-#import "SUTExporterOptionsView.h"
+#import "SUTImageExporterOptionsView.h"
 
-@implementation SUTExporterOptionsView
+@implementation SUTImageExporterOptionsView
 
 - (instancetype)init
 {

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		6E161129761A7158BAFDD4E7 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6376226A7E16A3DFC4595580 /* libPods.a */; };
 		7405F5C41AB38AF4006694F1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7405F5C31AB38AF4006694F1 /* Localizable.strings */; };
+		742AF8AE1B1CD35A00890C96 /* SUTExporterOptionsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 742AF8AD1B1CD35A00890C96 /* SUTExporterOptionsView.m */; };
 		743DA5871B14773500B8FEB8 /* SUTSpecificationExporter.h in Headers */ = {isa = PBXBuildFile; fileRef = 743DA5851B14773500B8FEB8 /* SUTSpecificationExporter.h */; };
 		743DA5881B14773500B8FEB8 /* SUTSpecificationExporter.m in Sources */ = {isa = PBXBuildFile; fileRef = 743DA5861B14773500B8FEB8 /* SUTSpecificationExporter.m */; };
 		743DA5891B14773500B8FEB8 /* SUTSpecificationExporter.m in Sources */ = {isa = PBXBuildFile; fileRef = 743DA5861B14773500B8FEB8 /* SUTSpecificationExporter.m */; };
@@ -125,6 +126,8 @@
 		6376226A7E16A3DFC4595580 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		7405F5C31AB38AF4006694F1 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		7428E6041ABEC94900116CA9 /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
+		742AF8AC1B1CD35A00890C96 /* SUTExporterOptionsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUTExporterOptionsView.h; sourceTree = "<group>"; };
+		742AF8AD1B1CD35A00890C96 /* SUTExporterOptionsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUTExporterOptionsView.m; sourceTree = "<group>"; };
 		743DA5851B14773500B8FEB8 /* SUTSpecificationExporter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUTSpecificationExporter.h; sourceTree = "<group>"; };
 		743DA5861B14773500B8FEB8 /* SUTSpecificationExporter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUTSpecificationExporter.m; sourceTree = "<group>"; };
 		743DA58A1B14810200B8FEB8 /* SUTJPEGExporter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUTJPEGExporter.h; sourceTree = "<group>"; };
@@ -412,22 +415,24 @@
 				74CF98CB1AC3960F002F8DC5 /* SUTEmptySpriteSheetView.m */,
 				74CF98CC1AC3960F002F8DC5 /* SUTExportAccessoryView.h */,
 				74CF98CD1AC3960F002F8DC5 /* SUTExportAccessoryView.m */,
+				742AF8AC1B1CD35A00890C96 /* SUTExporterOptionsView.h */,
+				742AF8AD1B1CD35A00890C96 /* SUTExporterOptionsView.m */,
 				74CF98CE1AC3960F002F8DC5 /* SUTExportPanel.h */,
 				74CF98CF1AC3960F002F8DC5 /* SUTExportPanel.m */,
 				74CF98D01AC3960F002F8DC5 /* SUTOutlineView.h */,
 				74CF98D11AC3960F002F8DC5 /* SUTOutlineView.m */,
 				74CF98D21AC3960F002F8DC5 /* SUTProgressPanel.h */,
 				74CF98D31AC3960F002F8DC5 /* SUTProgressPanel.m */,
+				745D4EF51B0F704C00969535 /* SUTPropertyEntryField.h */,
+				745D4EF61B0F704C00969535 /* SUTPropertyEntryField.m */,
+				745D4EE61B0F307E00969535 /* SUTPropertyView.h */,
+				745D4EE71B0F307E00969535 /* SUTPropertyView.m */,
 				74CF98D41AC3960F002F8DC5 /* SUTSpriteCollectionViewCell.h */,
 				74CF98D51AC3960F002F8DC5 /* SUTSpriteCollectionViewCell.m */,
 				747A10381AEE5D640097E6AB /* SUTWindow.h */,
 				747A10391AEE5D640097E6AB /* SUTWindow.m */,
 				74AF59241AF0EBF00013F9CD /* SUTWindowTitleView.h */,
 				74AF59251AF0EBF00013F9CD /* SUTWindowTitleView.m */,
-				745D4EE61B0F307E00969535 /* SUTPropertyView.h */,
-				745D4EE71B0F307E00969535 /* SUTPropertyView.m */,
-				745D4EF51B0F704C00969535 /* SUTPropertyEntryField.h */,
-				745D4EF61B0F704C00969535 /* SUTPropertyEntryField.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -774,6 +779,7 @@
 				74CF98DD1AC3960F002F8DC5 /* SUTDocument.m in Sources */,
 				74CF98DF1AC3960F002F8DC5 /* SUTCheckerboardView.m in Sources */,
 				74CF98DC1AC3960F002F8DC5 /* SUTSpriteLayout.m in Sources */,
+				742AF8AE1B1CD35A00890C96 /* SUTExporterOptionsView.m in Sources */,
 				74CF98D91AC3960F002F8DC5 /* SUTExporterRegistry.m in Sources */,
 				74CF98DE1AC3960F002F8DC5 /* SUTSprite.m in Sources */,
 				74CF98DB1AC3960F002F8DC5 /* SUTCollectionViewSpriteLayout.m in Sources */,

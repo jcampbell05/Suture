@@ -14,6 +14,7 @@
 #import "SUTSprite.h"
 #import "SUTSpriteLayout.h"
 #import "NSImage+CGImage.h"
+#import "SUTExporterOptionsView.h"
 
 //TODO: Handle Errors in UI.
 @interface SUTImageExporter ()
@@ -24,7 +25,12 @@
 
 @implementation SUTImageExporter
 
-//TODO: Break this function down.
+- (SUTExporterOptionsView *)optionsView
+{
+    SUTExporterOptionsView *optionsView = [[SUTExporterOptionsView alloc] init];
+    return optionsView;
+}
+
 - (void)exportDocument:(SUTDocument *)document
                    URL:(NSURL *)url
 {

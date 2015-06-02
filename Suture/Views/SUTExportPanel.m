@@ -34,7 +34,7 @@
 
 #pragma mark - Selected Exporter
 
-- (id<SUTExporter>)selectedExporter
+- (SUTExporter *)selectedExporter
 {
     return self.exportAccessoryView.selectedExporter;
 }

@@ -12,6 +12,6 @@
 
 @interface SUTExportPanel : NSSavePanel
 
-@property (nonatomic, readonly) id<SUTExporter> selectedExporter;
+@property (nonatomic, readonly) SUTExporter *selectedExporter;
 
 @end

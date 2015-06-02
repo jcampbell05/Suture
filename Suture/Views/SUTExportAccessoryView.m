@@ -8,6 +8,7 @@
 
 #import "SUTExportAccessoryView.h"
 #import "SUTExporterRegistry.h"
+#import "SUTExporterOptionsView.h"
 
 static CGFloat SUTExportAccessoryViewHeight = 50.0f;
 static CGFloat SUTExportAccessoryPopUpButtonViewHeight = 35.0f;
@@ -122,6 +123,10 @@ static CGFloat SUTExportAccessoryPopUpButtonViewLeftMargin = 5.0f;
 - (void)exporterWasSelected:(NSPopUpButton *)button;
 {
     [self.savePanel setAllowedFileTypes:@[[self.selectedExporter extension]]];
+    
+    SUTExporterOptionsView *optionsView = [self.selectedExporter optionsView];
+    optionsView.frame = self.bounds;
+    [self addSubview:optionsView];
 }
 
 @end

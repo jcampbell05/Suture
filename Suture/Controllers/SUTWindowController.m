@@ -27,6 +27,8 @@
 
 @implementation SUTWindowController
 
+@dynamic window;
+
 - (instancetype)init
 {
     self = [super init];
@@ -141,7 +143,7 @@
 
 #pragma mark - SUTExporterDelegate
 
-- (void)exporterWillExport:(id<SUTExporter>)exporter
+- (void)exporterWillExport:(SUTExporter *)exporter
 {
     self.progressPanel = [[SUTProgressPanel alloc] initWithContentRect:NSMakeRect(0.0f, 0.0f, 400.0f, 125.0f)
                                                              styleMask:NSDocModalWindowMask
@@ -153,7 +155,7 @@
           completionHandler:nil];
 }
 
-- (void)exporterDidExport:(id<SUTExporter>)exporter
+- (void)exporterDidExport:(SUTExporter *)exporter
 {
     [self.window endSheet:self.progressPanel];
     self.progressPanel = nil;

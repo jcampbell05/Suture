@@ -12,6 +12,7 @@
 
 #import "SUTDocument.h"
 #import "SUTPropertyEntryField.h"
+#import "SUTWindowController.h"
 
 @interface SUTPropertyView () <SUTPropertyEntryFieldDelegate>
 
@@ -20,9 +21,11 @@
 @property (nonatomic, strong) NSTextField *frameSizeTitleView;
 @property (nonatomic, strong) SUTPropertyEntryField *durationTextField;
 @property (nonatomic, strong) SUTPropertyEntryField *framesPerSecondTextField;
+@property (nonatomic, strong) NSButton *exportButton;
 
 - (void)createConstraints;
 - (void)updateFrameSpecificationText;
+- (void)exportPressed;
 
 @end
 
@@ -47,6 +50,7 @@
         [self addSubview:self.frameSizeTitleView];
         [self addSubview:self.framesPerSecondTextField];
         [self addSubview:self.durationTextField];
+        [self addSubview:self.exportButton];
 
         [self createConstraints];
     }
@@ -102,6 +106,12 @@
     [self.durationTextField autoPinEdgeToSuperviewEdge:ALEdgeRight];
     [self.durationTextField autoSetDimension:ALDimensionHeight
                                       toSize:35.0f];
+    
+    //Export Button
+    [self.exportButton autoPinEdgesToSuperviewEdgesWithInsets:NSEdgeInsetsZero
+                                                excludingEdge:ALEdgeTop];
+    [self.exportButton autoSetDimension:ALDimensionHeight
+                                 toSize:50.0f];
 }
 
 #pragma mark - KVO
@@ -227,6 +237,21 @@
     return _durationTextField;
 }
 
+- (NSButton *)exportButton
+{
+    if (!_exportButton)
+    {
+        _exportButton = [[NSButton alloc] initForAutoLayout];
+        
+        _exportButton.title = NSLocalizedString(@"export_nav", nil);
+        
+        _exportButton.target = self;
+        _exportButton.action = @selector(exportPressed);
+    }
+    
+    return _exportButton;
+}
+
 #pragma mark - Events
 
 - (void)updateFrameSpecificationText
@@ -239,6 +264,13 @@
     {
         self.framesPerSecondTextField.valueText = [NSString stringWithFormat:@"%lu", [self.document.sprites count] / self.document.duration];
     }
+}
+
+- (void)exportPressed
+{
+    [[NSApplication sharedApplication] sendAction:@selector(export:)
+                                               to:nil
+                                             from:nil];
 }
 
 #pragma mark - SUTPropertyEntryFieldDelegate
@@ -264,7 +296,7 @@
             self.document.duration = duration;
             [self updateFrameSpecificationText];
         }
-    }
+   }
 }
 
 @end

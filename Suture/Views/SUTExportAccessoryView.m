@@ -158,7 +158,7 @@ static CGFloat SUTExportAccessoryPopUpButtonViewLeftMargin = 5.0f;
     }
     
     self.exporterOptionView.frame = NSMakeRect(0.0f,
-                                               0.0f,
+                                               20.0f,
                                                optionsSize.width,
                                                optionsSize.height);
     

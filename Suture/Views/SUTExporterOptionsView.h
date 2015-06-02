@@ -10,4 +10,6 @@
 
 @interface SUTExporterOptionsView : NSView
 
+- (CGSize)preferredContentSize;
+
 @end

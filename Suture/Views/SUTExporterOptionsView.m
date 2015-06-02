@@ -23,4 +23,9 @@
     return self;
 }
 
+- (CGSize)preferredContentSize
+{
+    return CGSizeMake(300.0f, 200.0f);
+}
+
 @end

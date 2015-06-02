@@ -7,12 +7,13 @@
 //
 
 #import "SUTExportAccessoryView.h"
+
+#import <PureLayout/PureLayout.h>
+
 #import "SUTExporterRegistry.h"
 #import "SUTExporterOptionsView.h"
 
 static CGFloat SUTExportAccessoryViewHeight = 50.0f;
-static CGFloat SUTExportAccessoryPopUpButtonViewHeight = 35.0f;
-static CGFloat SUTExportAccessoryPopUpButtonViewWidth = 200.0f;
 static CGFloat SUTExportAccessoryPopUpButtonViewLeftMargin = 5.0f;
 
 @interface SUTExportAccessoryView () <NSMenuDelegate>
@@ -20,6 +21,8 @@ static CGFloat SUTExportAccessoryPopUpButtonViewLeftMargin = 5.0f;
 @property (nonatomic, strong, readwrite) NSSavePanel *savePanel;
 @property (nonatomic, strong) NSPopUpButton *formatPopUpButtonView;
 @property (nonatomic, strong) NSTextField *formatTitleView;
+
+@property (nonatomic, strong) SUTExporterOptionsView *exporterOptionView;
 
 - (void)exporterWasSelected:(NSPopUpButton *)button;
 
@@ -35,16 +38,33 @@ static CGFloat SUTExportAccessoryPopUpButtonViewLeftMargin = 5.0f;
     
     if (self)
     {
-        self.frame = NSMakeRect(0.0f,
-                                0.0f,
-                                400.0f,
-                                SUTExportAccessoryViewHeight);
+        self.exporterOptionView.frame = NSMakeRect(0.0f,
+                                                   0.0f,
+                                                   400.0f,
+                                                   SUTExportAccessoryViewHeight);
         
         self.savePanel = savePanel;
         self.savePanel.accessoryView = self;
         
         [self addSubview:self.formatTitleView];
         [self addSubview:self.formatPopUpButtonView];
+        
+        //Title View
+        [self.formatTitleView autoPinEdgeToSuperviewEdge:ALEdgeLeft];
+        [self.formatTitleView autoPinEdgeToSuperviewEdge:ALEdgeTop
+                                               withInset:10.0f];
+        
+        //Format picker
+        [self.formatPopUpButtonView autoPinEdge:ALEdgeLeft
+                                         toEdge:ALEdgeRight
+                                         ofView:self.formatTitleView
+                                     withOffset:SUTExportAccessoryPopUpButtonViewLeftMargin];
+        [self.formatPopUpButtonView autoPinEdge:ALEdgeTop
+                                         toEdge:ALEdgeTop
+                                         ofView:self.formatTitleView];
+        [self.formatPopUpButtonView autoPinEdge:ALEdgeBottom
+                                         toEdge:ALEdgeBottom
+                                         ofView:self.formatTitleView];
     }
     
     return self;
@@ -63,11 +83,7 @@ static CGFloat SUTExportAccessoryPopUpButtonViewLeftMargin = 5.0f;
 {
     if (!_formatPopUpButtonView)
     {
-        _formatPopUpButtonView = [[NSPopUpButton alloc] initWithFrame:NSMakeRect(NSMaxX(self.formatTitleView.frame) + SUTExportAccessoryPopUpButtonViewLeftMargin,
-                                                                                 (SUTExportAccessoryViewHeight / 2) -
-                                                                                 (SUTExportAccessoryPopUpButtonViewHeight / 2),
-                                                                                 SUTExportAccessoryPopUpButtonViewWidth,
-                                                                                 SUTExportAccessoryPopUpButtonViewHeight)];
+        _formatPopUpButtonView = [[NSPopUpButton alloc] initForAutoLayout];
         [_formatPopUpButtonView setTarget:self];
         [_formatPopUpButtonView setAction:@selector(exporterWasSelected:)];
         
@@ -95,7 +111,7 @@ static CGFloat SUTExportAccessoryPopUpButtonViewLeftMargin = 5.0f;
 {
     if (!_formatTitleView)
     {
-        _formatTitleView = [[NSTextField alloc] init];
+        _formatTitleView = [[NSTextField alloc] initForAutoLayout];
         
         _formatTitleView.alignment = NSCenterTextAlignment;
         _formatTitleView.bezeled = NO;
@@ -107,12 +123,6 @@ static CGFloat SUTExportAccessoryPopUpButtonViewLeftMargin = 5.0f;
                                                          nil);
         
         [_formatTitleView sizeToFit];
-        
-        _formatTitleView.frame = NSMakeRect(0.0f,
-                                            (SUTExportAccessoryViewHeight / 2) -
-                                            (_formatTitleView.frame.size.height / 2),
-                                            _formatTitleView.frame.size.width,
-                                            _formatTitleView.frame.size.height);
     }
     
     return _formatTitleView;
@@ -124,9 +134,24 @@ static CGFloat SUTExportAccessoryPopUpButtonViewLeftMargin = 5.0f;
 {
     [self.savePanel setAllowedFileTypes:@[[self.selectedExporter extension]]];
     
+    [self.exporterOptionView removeFromSuperview];
+    
     SUTExporterOptionsView *optionsView = [self.selectedExporter optionsView];
-    optionsView.frame = self.bounds;
-    [self addSubview:optionsView];
+    self.exporterOptionView = optionsView;
+    
+    CGSize optionsSize = [optionsView preferredContentSize];
+    
+    self.frame = NSMakeRect(0.0f,
+                            0.0f,
+                            400.0f,
+                            SUTExportAccessoryViewHeight + optionsSize.height);
+    
+    self.exporterOptionView.frame = NSMakeRect(0.0f,
+                                               0.0f,
+                                               optionsSize.width,
+                                               optionsSize.height);
+    
+    [self addSubview:self.exporterOptionView];
 }
 
 @end

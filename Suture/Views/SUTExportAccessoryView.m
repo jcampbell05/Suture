@@ -25,6 +25,8 @@ static CGFloat SUTExportAccessoryPopUpButtonViewLeftMargin = 5.0f;
 @property (nonatomic, strong) SUTExporterOptionsView *exporterOptionView;
 
 - (void)exporterWasSelected:(NSPopUpButton *)button;
+- (void)exporterWasSelected:(NSPopUpButton *)button
+                   animated:(BOOL)animated;
 
 @end
 
@@ -99,7 +101,8 @@ static CGFloat SUTExportAccessoryPopUpButtonViewLeftMargin = 5.0f;
         
         [_formatPopUpButtonView addItemsWithTitles:items];
         
-        [self exporterWasSelected:_formatPopUpButtonView];
+        [self exporterWasSelected:_formatPopUpButtonView
+                         animated:NO];
     }
     
     return _formatPopUpButtonView;
@@ -130,7 +133,8 @@ static CGFloat SUTExportAccessoryPopUpButtonViewLeftMargin = 5.0f;
 
 #pragma mark - Events
 
-- (void)exporterWasSelected:(NSPopUpButton *)button;
+- (void)exporterWasSelected:(NSPopUpButton *)button
+                   animated:(BOOL)animated
 {
     [self.savePanel setAllowedFileTypes:@[[self.selectedExporter extension]]];
     
@@ -140,11 +144,18 @@ static CGFloat SUTExportAccessoryPopUpButtonViewLeftMargin = 5.0f;
     self.exporterOptionView = optionsView;
     
     CGSize optionsSize = [optionsView preferredContentSize];
-    
-    [self animator].frame = NSMakeRect(0.0f,
-                                       0.0f,
-                                       400.0f,
-                                       SUTExportAccessoryViewHeight + optionsSize.height);
+    CGRect newFrame = NSMakeRect(0.0f,
+                                 0.0f,
+                                 400.0f,
+                                 SUTExportAccessoryViewHeight + optionsSize.height);
+    if (animated)
+    {
+        [self animator].frame = newFrame;
+    }
+    else
+    {
+        self.frame = newFrame;
+    }
     
     self.exporterOptionView.frame = NSMakeRect(0.0f,
                                                0.0f,
@@ -152,6 +163,12 @@ static CGFloat SUTExportAccessoryPopUpButtonViewLeftMargin = 5.0f;
                                                optionsSize.height);
     
     [self addSubview:self.exporterOptionView];
+}
+
+- (void)exporterWasSelected:(NSPopUpButton *)button;
+{
+    [self exporterWasSelected:button
+                     animated:YES];
 }
 
 @end

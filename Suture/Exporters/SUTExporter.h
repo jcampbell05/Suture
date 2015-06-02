@@ -24,7 +24,7 @@
 @property (nonatomic, strong, readonly) NSString *name;
 @property (nonatomic, strong, readonly) NSString *extension;
 @property (nonatomic, weak) id<SUTExporterDelegate> delegate;
-@property (nonatomic, strong, readonly) NSProgress *progress;
+@property (nonatomic, strong) NSProgress *progress;
 @property (nonatomic, strong, readonly) SUTExporterOptionsView *optionsView;
 
 - (void)exportDocument:(SUTDocument *)document

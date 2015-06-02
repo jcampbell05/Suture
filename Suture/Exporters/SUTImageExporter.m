@@ -15,6 +15,7 @@
 #import "SUTSpriteLayout.h"
 #import "NSImage+CGImage.h"
 #import "SUTImageExporterOptionsView.h"
+#import "SUTSpecificationExporter.h"
 
 NSString const * SUTImageExporterShouldExportSpecificationOptionKey = @"ShouldExportSpecification";
 
@@ -22,6 +23,9 @@ NSString const * SUTImageExporterShouldExportSpecificationOptionKey = @"ShouldEx
 @interface SUTImageExporter ()
 
 - (CGContextRef)createExportingImageContextWithSize:(CGSize)size;
+- (void)exportSpecificationIfNeededWithExportDocument:(SUTDocument *)document
+                                                  URL:(NSURL *)url
+                                              options:(NSDictionary *)options;
 
 @end
 
@@ -40,10 +44,19 @@ NSString const * SUTImageExporterShouldExportSpecificationOptionKey = @"ShouldEx
     [super exportDocument:document
                       URL:url
                   options:options];
-    
+
     NSInteger numberOfSprites = document.sprites.count;
+    
     self.progress.completedUnitCount = 0;
-    self.progress.totalUnitCount = numberOfSprites + 1;
+    self.progress.totalUnitCount = numberOfSprites + 2;
+    [self.progress becomeCurrentWithPendingUnitCount:self.progress.totalUnitCount];
+    
+    if ([options[SUTImageExporterShouldExportSpecificationOptionKey] boolValue])
+    {
+        [self exportSpecificationIfNeededWithExportDocument:document
+                                                        URL:url
+                                                    options:options];
+    }
     
     CGSize contentSize = [document.layout contentSize];
     CGContextRef context = [self createExportingImageContextWithSize:contentSize];
@@ -77,6 +90,21 @@ NSString const * SUTImageExporterShouldExportSpecificationOptionKey = @"ShouldEx
     [self.delegate exporterDidExport:self];
 }
 
+- (void)exportSpecificationIfNeededWithExportDocument:(SUTDocument *)document
+                                                  URL:(NSURL *)url
+                                              options:(NSDictionary *)options
+{
+    SUTSpecificationExporter *specificationExporter = [[SUTSpecificationExporter alloc] init];
+    specificationExporter.progress = [[NSProgress alloc] initWithParent:self.progress
+                                                               userInfo:nil];
+    
+    NSURL *specificationURL = [url URLByAppendingPathExtension:@"txt"];
+    
+    [specificationExporter exportDocument:document
+                                      URL:specificationURL
+                                  options:options];
+}
+
 - (void)writeJPEG:(CGContextRef)context
               url:(NSURL *)url
 {
@@ -107,7 +135,6 @@ NSString const * SUTImageExporterShouldExportSpecificationOptionKey = @"ShouldEx
 - (void)writeContext:(CGContextRef)context
                  url:(NSURL *)url
 {
-    
 }
 
 - (CGContextRef)createExportingImageContextWithSize:(CGSize)size

@@ -24,11 +24,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-ZKTextField.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>Pods.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -37,32 +32,27 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>11F919F7C4DE84215E2A8803</key>
+		<key>0F4CB80E6CB8FFBFC812507F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5C72FC750D5274792707D9E3</key>
+		<key>1EF488A3BC8E4D7FD5719D3A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>6CFE75A58E3AA970587490EB</key>
+		<key>2E88AD9BB2C47941885F1782</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8BBBD0EFE154C58AC2B4ECEF</key>
+		<key>8E881AC194DA5754129E95ED</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C8DDFE5E991DBB450A92CBB1</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>E70D6F8D72DE9965D711BC38</key>
+		<key>97A889DA1555C5DE9972D2F6</key>
 		<dict>
 			<key>primary</key>
 			<true/>

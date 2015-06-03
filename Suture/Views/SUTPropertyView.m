@@ -10,6 +10,7 @@
 
 #import <PureLayout/PureLayout.h>
 
+#import "KBButton.h"
 #import "SUTDocument.h"
 #import "SUTPropertyEntryField.h"
 #import "SUTWindowController.h"
@@ -21,7 +22,7 @@
 @property (nonatomic, strong) SUTPropertyEntryField *frameSizePropertyView;
 @property (nonatomic, strong) SUTPropertyEntryField *framesPerSecondPropertyField;
 @property (nonatomic, strong) SUTPropertyEntryField *durationPropertyField;
-@property (nonatomic, strong) NSButton *exportButton;
+@property (nonatomic, strong) KBButton *exportButton;
 
 - (void)createConstraints;
 - (void)updateFrameSpecificationText;
@@ -111,7 +112,7 @@
     //Export Button
     [self.exportButton autoPinEdgesToSuperviewEdgesWithInsets:NSEdgeInsetsMake(5.0f,
                                                                                10.0f,
-                                                                               5.0f,
+                                                                               10.0f,
                                                                                10.0f)
                                                 excludingEdge:ALEdgeTop];
     [self.exportButton autoSetDimension:ALDimensionHeight
@@ -233,11 +234,11 @@
     return _durationPropertyField;
 }
 
-- (NSButton *)exportButton
+- (KBButton *)exportButton
 {
     if (!_exportButton)
     {
-        _exportButton = [[NSButton alloc] initForAutoLayout];
+        _exportButton = [[KBButton alloc] initForAutoLayout];
         
         _exportButton.title = NSLocalizedString(@"export_nav", nil);
 
@@ -247,7 +248,9 @@
                                                    alpha:1.0f];
         
         _exportButton.bezelStyle = NSRoundedBezelStyle;
+        [[_exportButton cell] setKBButtonType:BButtonTypeSuccess];
         [_exportButton.cell setBackgroundColor:color];
+        
         
         _exportButton.target = self;
         _exportButton.action = @selector(exportPressed);

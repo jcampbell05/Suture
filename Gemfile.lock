@@ -50,3 +50,6 @@ PLATFORMS
 
 DEPENDENCIES
   cocoapods (= 0.34)
+
+BUNDLED WITH
+   1.10.2

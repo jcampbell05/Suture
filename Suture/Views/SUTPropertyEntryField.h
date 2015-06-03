@@ -19,6 +19,7 @@
 @interface SUTPropertyEntryField : NSView
 
 @property (nonatomic, weak) id<SUTPropertyEntryFieldDelegate> delegate;
+@property (getter=isEditable) BOOL editable;
 @property (nonatomic, copy) NSString *labelText;
 @property (nonatomic, copy) NSString *valueText;
 

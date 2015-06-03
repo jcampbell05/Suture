@@ -42,7 +42,7 @@
                                               withInset:10.0f];
         [self.labelTextField autoPinEdgeToSuperviewEdge:ALEdgeBottom];
         [self.labelTextField autoSetDimension:ALDimensionWidth
-                                       toSize:60.0f];
+                                       toSize:75.0f];
         
         [self.entryTextField autoPinEdgeToSuperviewEdge:ALEdgeTop
                                               withInset:10.0f];
@@ -55,6 +55,18 @@
     }
     
     return self;
+}
+
+#pragma mark - Editable
+
+- (void)setEditable:(BOOL)editable
+{
+    self.entryTextField.editable = editable;
+}
+
+- (BOOL)isEditable
+{
+    return self.entryTextField.editable;
 }
 
 #pragma mark - Text

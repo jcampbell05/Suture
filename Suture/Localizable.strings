@@ -16,5 +16,7 @@
 "specification_exporter_nav" = "Specification";
 "new_document_nav" = "New Sprite Sheet";
 "specification_nav" = "Specification";
+"frames_nav" = "Frames:";
+"frame_size_nav" = "Frame Size:";
 "frames_per_second_nav" = "FPS:";
 "duration_nav" = "Duration:";

@@ -185,6 +185,9 @@
     {
         _framesPropertyView = [[SUTPropertyEntryField alloc] init];
         _framesPropertyView.translatesAutoresizingMaskIntoConstraints = NO;
+        
+        _framesPropertyView.editable = NO;
+        _framesPropertyView.labelText = NSLocalizedString(@"frames_nav", nil);
     }
     
     return _framesPropertyView;
@@ -196,6 +199,9 @@
     {
         _frameSizePropertyView = [[SUTPropertyEntryField alloc] init];
         _frameSizePropertyView.translatesAutoresizingMaskIntoConstraints = NO;
+        
+        _frameSizePropertyView.editable = NO;
+        _frameSizePropertyView.labelText = NSLocalizedString(@"frame_size_nav", nil);
     }
     
     return _frameSizePropertyView;
@@ -254,14 +260,14 @@
 
 - (void)updateFrameSpecificationText
 {
-//    self.framesPropertyView.stringValue = [NSString stringWithFormat:@"Frames: %lu", [self.document.sprites count]];
-//    self.frameSizePropertyView.stringValue = [NSString stringWithFormat:@"Frame Size: %@", NSStringFromSize([self.document largestSpriteSize])];
-//    self.durationTextField.valueText = [NSString stringWithFormat:@"%lu", self.document.duration];
-//    
-//    if (self.document.duration > 0)
-//    {
-//        self.framesPerSecondTextField.valueText = [NSString stringWithFormat:@"%lu", [self.document.sprites count] / self.document.duration];
-//    }
+    self.framesPropertyView.valueText = [NSString stringWithFormat:@"%lu", [self.document.sprites count]];
+    self.frameSizePropertyView.valueText = NSStringFromSize([self.document largestSpriteSize]);
+    self.durationPropertyField.valueText = [NSString stringWithFormat:@"%lu", self.document.duration];
+    
+    if (self.document.duration > 0)
+    {
+        self.framesPerSecondPropertyField.valueText = [NSString stringWithFormat:@"%lu", [self.document.sprites count] / self.document.duration];
+    }
 }
 
 - (void)exportPressed
@@ -275,26 +281,26 @@
 
 - (void)propertyEntryFieldDidChange:(SUTPropertyEntryField *)propertyEntryField
 {
-//    if ([propertyEntryField isEqualTo:self.framesPerSecondTextField])
-//    {
-//        NSInteger framesPerSecond = [self.framesPerSecondTextField.valueText integerValue];
-//        
-//        if (framesPerSecond > 0)
-//        {
-//            self.document.duration = [self.document.sprites count] / framesPerSecond;
-//            [self updateFrameSpecificationText];
-//        }
-//    }
-//    else
-//    {
-//        NSInteger duration = [self.framesPerSecondTextField.valueText integerValue];
-//        
-//        if (duration > 0)
-//        {
-//            self.document.duration = duration;
-//            [self updateFrameSpecificationText];
-//        }
-//   }
+    if ([propertyEntryField isEqualTo:self.framesPerSecondPropertyField])
+    {
+        NSInteger framesPerSecond = [self.framesPerSecondPropertyField.valueText integerValue];
+        
+        if (framesPerSecond > 0)
+        {
+            self.document.duration = [self.document.sprites count] / framesPerSecond;
+            [self updateFrameSpecificationText];
+        }
+    }
+    else
+    {
+        NSInteger duration = [self.framesPerSecondPropertyField.valueText integerValue];
+        
+        if (duration > 0)
+        {
+            self.document.duration = duration;
+            [self updateFrameSpecificationText];
+        }
+   }
 }
 
 @end

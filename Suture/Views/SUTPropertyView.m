@@ -17,10 +17,10 @@
 @interface SUTPropertyView () <SUTPropertyEntryFieldDelegate>
 
 @property (nonatomic, strong) NSTextField *specificationsTitleView;
-@property (nonatomic, strong) NSTextField *framesTitleView;
-@property (nonatomic, strong) NSTextField *frameSizeTitleView;
-@property (nonatomic, strong) SUTPropertyEntryField *durationTextField;
-@property (nonatomic, strong) SUTPropertyEntryField *framesPerSecondTextField;
+@property (nonatomic, strong) SUTPropertyEntryField *framesPropertyView;
+@property (nonatomic, strong) SUTPropertyEntryField *frameSizePropertyView;
+@property (nonatomic, strong) SUTPropertyEntryField *framesPerSecondPropertyField;
+@property (nonatomic, strong) SUTPropertyEntryField *durationPropertyField;
 @property (nonatomic, strong) NSButton *exportButton;
 
 - (void)createConstraints;
@@ -46,10 +46,10 @@
                                                      alpha:1.0f].CGColor;
         
         [self addSubview:self.specificationsTitleView];
-        [self addSubview:self.framesTitleView];
-        [self addSubview:self.frameSizeTitleView];
-        [self addSubview:self.framesPerSecondTextField];
-        [self addSubview:self.durationTextField];
+        [self addSubview:self.framesPropertyView];
+        [self addSubview:self.frameSizePropertyView];
+        [self addSubview:self.framesPerSecondPropertyField];
+        [self addSubview:self.durationPropertyField];
         [self addSubview:self.exportButton];
 
         [self createConstraints];
@@ -178,29 +178,22 @@
     return _specificationsTitleView;
 }
 
-- (NSTextField *)framesTitleView
+- (SUTPropertyEntryField *)framesTitleView
 {
-    if (!_framesTitleView)
+    if (!_framesPropertyView)
     {
-        _framesTitleView = [[NSTextField alloc] init];
-        _framesTitleView.translatesAutoresizingMaskIntoConstraints = NO;
-        
-        _framesTitleView.alignment = NSCenterTextAlignment;
-        _framesTitleView.bezeled = NO;
-        _framesTitleView.textColor = [NSColor whiteColor];
-        _framesTitleView.drawsBackground = NO;
-        _framesTitleView.editable = NO;
-        _framesTitleView.selectable = NO;
+        _framesPropertyView = [[SUTPropertyEntryField alloc] init];
+        _framesPropertyView.translatesAutoresizingMaskIntoConstraints = NO;
     }
     
-    return _framesTitleView;
+    return _framesPropertyView;
 }
 
-- (NSTextField *)frameSizeTitleView
+- (SUTPropertyEntryField *)frameSizeTitleView
 {
     if (!_frameSizeTitleView)
     {
-        _frameSizeTitleView = [[NSTextField alloc] init];
+        _frameSizeTitleView = [[SUTPropertyEntryField alloc] init];
         _framesTitleView.translatesAutoresizingMaskIntoConstraints = NO;
         
         _frameSizeTitleView.alignment = NSCenterTextAlignment;

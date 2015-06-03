@@ -69,42 +69,43 @@
                                             toSize:30.0f];
     
     //Frames Title View
-    [self.framesTitleView autoPinEdgeToSuperviewEdge:ALEdgeLeft];
-    [self.framesTitleView autoPinEdge:ALEdgeTop
-                               toEdge:ALEdgeBottom
-                               ofView:self.specificationsTitleView
-                           withOffset:10.0f];
-    [self.framesTitleView autoPinEdgeToSuperviewEdge:ALEdgeRight];
-    [self.framesTitleView autoSetDimension:ALDimensionHeight
-                                            toSize:20.0f];
+    [self.framesPropertyView autoPinEdgeToSuperviewEdge:ALEdgeLeft];
+    [self.framesPropertyView autoPinEdge:ALEdgeTop
+                                  toEdge:ALEdgeBottom
+                                  ofView:self.specificationsTitleView
+                              withOffset:10.0f];
+    [self.framesPropertyView autoPinEdgeToSuperviewEdge:ALEdgeRight];
+    [self.framesPropertyView autoSetDimension:ALDimensionHeight
+                                       toSize:35.0f];
     
     //Frame Size Title View
-    [self.frameSizeTitleView autoPinEdgeToSuperviewEdge:ALEdgeLeft];
-    [self.frameSizeTitleView autoPinEdge:ALEdgeTop
-                                  toEdge:ALEdgeBottom
-                                  ofView:self.framesTitleView];
-    [self.frameSizeTitleView autoPinEdgeToSuperviewEdge:ALEdgeRight];
-    [self.frameSizeTitleView autoSetDimension:ALDimensionHeight
-                                       toSize:20.0f];
+    [self.frameSizePropertyView autoPinEdgeToSuperviewEdge:ALEdgeLeft];
+    [self.frameSizePropertyView autoPinEdge:ALEdgeTop
+                                     toEdge:ALEdgeBottom
+                                     ofView:self.framesPropertyView
+                                 withOffset:10.0f];
+    [self.frameSizePropertyView autoPinEdgeToSuperviewEdge:ALEdgeRight];
+    [self.frameSizePropertyView autoSetDimension:ALDimensionHeight
+                                          toSize:35.0f];
     
     //Frames Per Second Text Field
-    [self.framesPerSecondTextField autoPinEdgeToSuperviewEdge:ALEdgeLeft];
-    [self.framesPerSecondTextField autoPinEdge:ALEdgeTop
+    [self.framesPerSecondPropertyField autoPinEdgeToSuperviewEdge:ALEdgeLeft];
+    [self.framesPerSecondPropertyField autoPinEdge:ALEdgeTop
                                         toEdge:ALEdgeBottom
-                                        ofView:self.frameSizeTitleView
+                                        ofView:self.frameSizePropertyView
                                     withOffset:10.0f];
-    [self.framesPerSecondTextField autoPinEdgeToSuperviewEdge:ALEdgeRight];
-    [self.framesPerSecondTextField autoSetDimension:ALDimensionHeight
+    [self.framesPerSecondPropertyField autoPinEdgeToSuperviewEdge:ALEdgeRight];
+    [self.framesPerSecondPropertyField autoSetDimension:ALDimensionHeight
                                              toSize:35.0f];
     
     //Duration Text Field
-    [self.durationTextField autoPinEdgeToSuperviewEdge:ALEdgeLeft];
-    [self.durationTextField autoPinEdge:ALEdgeTop
+    [self.durationPropertyField autoPinEdgeToSuperviewEdge:ALEdgeLeft];
+    [self.durationPropertyField autoPinEdge:ALEdgeTop
                                  toEdge:ALEdgeBottom
-                                 ofView:self.framesPerSecondTextField
+                                 ofView:self.framesPerSecondPropertyField
                              withOffset:10.0f];
-    [self.durationTextField autoPinEdgeToSuperviewEdge:ALEdgeRight];
-    [self.durationTextField autoSetDimension:ALDimensionHeight
+    [self.durationPropertyField autoPinEdgeToSuperviewEdge:ALEdgeRight];
+    [self.durationPropertyField autoSetDimension:ALDimensionHeight
                                       toSize:35.0f];
     
     //Export Button
@@ -178,7 +179,7 @@
     return _specificationsTitleView;
 }
 
-- (SUTPropertyEntryField *)framesTitleView
+- (SUTPropertyEntryField *)framesPropertyView
 {
     if (!_framesPropertyView)
     {
@@ -189,48 +190,41 @@
     return _framesPropertyView;
 }
 
-- (SUTPropertyEntryField *)frameSizeTitleView
+- (SUTPropertyEntryField *)frameSizePropertyView
 {
-    if (!_frameSizeTitleView)
+    if (!_frameSizePropertyView)
     {
-        _frameSizeTitleView = [[SUTPropertyEntryField alloc] init];
-        _framesTitleView.translatesAutoresizingMaskIntoConstraints = NO;
-        
-        _frameSizeTitleView.alignment = NSCenterTextAlignment;
-        _frameSizeTitleView.bezeled = NO;
-        _frameSizeTitleView.textColor = [NSColor whiteColor];
-        _frameSizeTitleView.drawsBackground = NO;
-        _frameSizeTitleView.editable = NO;
-        _frameSizeTitleView.selectable = NO;
+        _frameSizePropertyView = [[SUTPropertyEntryField alloc] init];
+        _frameSizePropertyView.translatesAutoresizingMaskIntoConstraints = NO;
     }
     
-    return _frameSizeTitleView;
+    return _frameSizePropertyView;
 }
 
-- (SUTPropertyEntryField *)framesPerSecondTextField
+- (SUTPropertyEntryField *)framesPerSecondPropertyField
 {
-    if (!_framesPerSecondTextField)
+    if (!_framesPerSecondPropertyField)
     {
-        _framesPerSecondTextField = [[SUTPropertyEntryField alloc] init];
-        _framesPerSecondTextField.delegate = self;
-        _framesPerSecondTextField.translatesAutoresizingMaskIntoConstraints = NO;
-        _framesPerSecondTextField.labelText = NSLocalizedString(@"frames_per_second_nav", nil);
+        _framesPerSecondPropertyField = [[SUTPropertyEntryField alloc] init];
+        _framesPerSecondPropertyField.delegate = self;
+        _framesPerSecondPropertyField.translatesAutoresizingMaskIntoConstraints = NO;
+        _framesPerSecondPropertyField.labelText = NSLocalizedString(@"frames_per_second_nav", nil);
     }
     
-    return _framesPerSecondTextField;
+    return _framesPerSecondPropertyField;
 }
 
-- (SUTPropertyEntryField *)durationTextField
+- (SUTPropertyEntryField *)durationPropertyField
 {
-    if (!_durationTextField)
+    if (!_durationPropertyField)
     {
-        _durationTextField = [[SUTPropertyEntryField alloc] init];
-        _durationTextField.delegate = self;
-        _durationTextField.translatesAutoresizingMaskIntoConstraints = NO;
-        _durationTextField.labelText = NSLocalizedString(@"duration_nav", nil);
+        _durationPropertyField = [[SUTPropertyEntryField alloc] init];
+        _durationPropertyField.delegate = self;
+        _durationPropertyField.translatesAutoresizingMaskIntoConstraints = NO;
+        _durationPropertyField.labelText = NSLocalizedString(@"duration_nav", nil);
     }
     
-    return _durationTextField;
+    return _durationPropertyField;
 }
 
 - (NSButton *)exportButton
@@ -260,14 +254,14 @@
 
 - (void)updateFrameSpecificationText
 {
-    self.framesTitleView.stringValue = [NSString stringWithFormat:@"Frames: %lu", [self.document.sprites count]];
-    self.frameSizeTitleView.stringValue = [NSString stringWithFormat:@"Frame Size: %@", NSStringFromSize([self.document largestSpriteSize])];
-    self.durationTextField.valueText = [NSString stringWithFormat:@"%lu", self.document.duration];
-    
-    if (self.document.duration > 0)
-    {
-        self.framesPerSecondTextField.valueText = [NSString stringWithFormat:@"%lu", [self.document.sprites count] / self.document.duration];
-    }
+//    self.framesPropertyView.stringValue = [NSString stringWithFormat:@"Frames: %lu", [self.document.sprites count]];
+//    self.frameSizePropertyView.stringValue = [NSString stringWithFormat:@"Frame Size: %@", NSStringFromSize([self.document largestSpriteSize])];
+//    self.durationTextField.valueText = [NSString stringWithFormat:@"%lu", self.document.duration];
+//    
+//    if (self.document.duration > 0)
+//    {
+//        self.framesPerSecondTextField.valueText = [NSString stringWithFormat:@"%lu", [self.document.sprites count] / self.document.duration];
+//    }
 }
 
 - (void)exportPressed
@@ -281,26 +275,26 @@
 
 - (void)propertyEntryFieldDidChange:(SUTPropertyEntryField *)propertyEntryField
 {
-    if ([propertyEntryField isEqualTo:self.framesPerSecondTextField])
-    {
-        NSInteger framesPerSecond = [self.framesPerSecondTextField.valueText integerValue];
-        
-        if (framesPerSecond > 0)
-        {
-            self.document.duration = [self.document.sprites count] / framesPerSecond;
-            [self updateFrameSpecificationText];
-        }
-    }
-    else
-    {
-        NSInteger duration = [self.framesPerSecondTextField.valueText integerValue];
-        
-        if (duration > 0)
-        {
-            self.document.duration = duration;
-            [self updateFrameSpecificationText];
-        }
-   }
+//    if ([propertyEntryField isEqualTo:self.framesPerSecondTextField])
+//    {
+//        NSInteger framesPerSecond = [self.framesPerSecondTextField.valueText integerValue];
+//        
+//        if (framesPerSecond > 0)
+//        {
+//            self.document.duration = [self.document.sprites count] / framesPerSecond;
+//            [self updateFrameSpecificationText];
+//        }
+//    }
+//    else
+//    {
+//        NSInteger duration = [self.framesPerSecondTextField.valueText integerValue];
+//        
+//        if (duration > 0)
+//        {
+//            self.document.duration = duration;
+//            [self updateFrameSpecificationText];
+//        }
+//   }
 }
 
 @end

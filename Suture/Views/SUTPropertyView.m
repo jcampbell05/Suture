@@ -263,8 +263,12 @@
 
 - (void)updateFrameSpecificationText
 {
+    CGSize largestSpriteSize = [self.document largestSpriteSize];
+    
     self.framesPropertyView.valueText = [NSString stringWithFormat:@"%lu", [self.document.sprites count]];
-    self.frameSizePropertyView.valueText = NSStringFromSize([self.document largestSpriteSize]);
+    self.frameSizePropertyView.valueText = [NSString stringWithFormat:@"%lu x %lu",
+                                            (NSInteger)largestSpriteSize.width,
+                                            (NSInteger)largestSpriteSize.height];
     self.durationPropertyField.valueText = [NSString stringWithFormat:@"%lu", self.document.duration];
     
     if (self.document.duration > 0)

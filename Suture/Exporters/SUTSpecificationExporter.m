@@ -36,9 +36,12 @@
         FPS = [document.sprites count] / document.duration;
     }
     
-    NSString *contents = [NSString stringWithFormat:@"Frames: %lu\nFrame Size: %@\nDuration: %lu\nFrames Per Second: %lu",
+    CGSize largestSpriteSize = [document largestSpriteSize];
+    
+    NSString *contents = [NSString stringWithFormat:@"Frames: %lu\nFrame Size: %lu x %lu\nDuration: %lu\nFrames Per Second: %lu",
                           [document.sprites count],
-                          NSStringFromSize([document largestSpriteSize]),
+                          (NSInteger)largestSpriteSize.width,
+                          (NSInteger)largestSpriteSize.height,
                           document.duration,
                           FPS];
     

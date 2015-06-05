@@ -14,12 +14,17 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-PFAboutWindow.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-PureLayout.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-Sparkle.xcscheme</key>
+		<key>Pods-ReactiveCocoa.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -32,27 +37,32 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0F4CB80E6CB8FFBFC812507F</key>
+		<key>5AE1EF17FBA350DF232D5BCC</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>1EF488A3BC8E4D7FD5719D3A</key>
+		<key>5FD8A8BD30352E9A7620DB60</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>2E88AD9BB2C47941885F1782</key>
+		<key>B5A50E3775100FDCB0D450CB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8E881AC194DA5754129E95ED</key>
+		<key>C073390F65AC78D1D7A24D5C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>97A889DA1555C5DE9972D2F6</key>
+		<key>E4CC3FE61CFBBE70DCBEDB49</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F924A4E2019D4913EAFCC4AB</key>
 		<dict>
 			<key>primary</key>
 			<true/>

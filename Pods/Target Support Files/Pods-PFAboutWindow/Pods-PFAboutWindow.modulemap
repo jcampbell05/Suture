@@ -1,0 +1,6 @@
+framework module PFAboutWindow {
+  umbrella header "Pods-PFAboutWindow-umbrella.h"
+
+  export *
+  module * { export * }
+}

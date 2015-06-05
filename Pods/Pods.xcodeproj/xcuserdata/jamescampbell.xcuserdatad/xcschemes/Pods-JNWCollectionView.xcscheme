@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0510"
+   LastUpgradeVersion = "0640"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,8 +14,8 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "1EF488A3BC8E4D7FD5719D3A"
-               BuildableName = "libPods-JNWCollectionView.a"
+               BlueprintIdentifier = "C073390F65AC78D1D7A24D5C"
+               BuildableName = "JNWCollectionView.framework"
                BlueprintName = "Pods-JNWCollectionView"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>

@@ -14,8 +14,8 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C073390F65AC78D1D7A24D5C"
-               BuildableName = "JNWCollectionView.framework"
+               BlueprintIdentifier = "AA5E68E29A1AFAAD9C6E4460"
+               BuildableName = "libPods-JNWCollectionView.a"
                BlueprintName = "Pods-JNWCollectionView"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>

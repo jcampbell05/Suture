@@ -18,12 +18,6 @@
 #define COCOAPODS_VERSION_MINOR_JNWScrollView 1
 #define COCOAPODS_VERSION_PATCH_JNWScrollView 0
 
-// PFAboutWindow
-#define COCOAPODS_POD_AVAILABLE_PFAboutWindow
-#define COCOAPODS_VERSION_MAJOR_PFAboutWindow 1
-#define COCOAPODS_VERSION_MINOR_PFAboutWindow 0
-#define COCOAPODS_VERSION_PATCH_PFAboutWindow 1
-
 // PureLayout
 #define COCOAPODS_POD_AVAILABLE_PureLayout
 #define COCOAPODS_VERSION_MAJOR_PureLayout 2

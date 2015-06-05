@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		46F3D2CCDB8D659F41DC7384 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2155C0B5139753BD93376146 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		7405F5C41AB38AF4006694F1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7405F5C31AB38AF4006694F1 /* Localizable.strings */; };
 		743562951B1E0B9F0017C261 /* SUTExporterOptionsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 743562941B1E0B9F0017C261 /* SUTExporterOptionsView.m */; };
 		743562981B1E0BFF0017C261 /* SUTImageExporterOptionsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 743562971B1E0BFF0017C261 /* SUTImageExporterOptionsView.m */; };
@@ -68,6 +67,7 @@
 		74F0FAE21AAF5224003F9454 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 74F0FAE11AAF5224003F9454 /* main.m */; };
 		74F0FAEA1AAF5224003F9454 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74F0FAE91AAF5224003F9454 /* Images.xcassets */; };
 		74F0FAF91AAF5224003F9454 /* SutureTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 74F0FAF81AAF5224003F9454 /* SutureTests.m */; };
+		DE53C5B325280D6722FFABFD /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B682A0C94579DCAD6C6E0E1 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -126,7 +126,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		2155C0B5139753BD93376146 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		282BD91B47F4A2A4ADBE7FA8 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		7405F5C31AB38AF4006694F1 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		7428E6041ABEC94900116CA9 /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
@@ -235,6 +234,7 @@
 		74F0FAF71AAF5224003F9454 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		74F0FAF81AAF5224003F9454 /* SutureTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SutureTests.m; sourceTree = "<group>"; };
 		82C1004F014F0B89D63E6A15 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		9B682A0C94579DCAD6C6E0E1 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -250,7 +250,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				74E4EEE01AE1486E0038A10C /* libpng16.16.dylib in Frameworks */,
-				46F3D2CCDB8D659F41DC7384 /* Pods.framework in Frameworks */,
+				DE53C5B325280D6722FFABFD /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,7 +267,7 @@
 		47FCD93DB7A7332A0D546D8B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				2155C0B5139753BD93376146 /* Pods.framework */,
+				9B682A0C94579DCAD6C6E0E1 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -622,7 +622,6 @@
 				9DC4EEA31B38D6E037655F0E /* Copy Pods Resources */,
 				744A71FB1AB4492E00077AA7 /* Copy Files */,
 				74E4EEE31AE14B610038A10C /* Patch Install Name */,
-				B7488B38AC1192A80E965415 /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -777,21 +776,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B7488B38AC1192A80E965415 /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

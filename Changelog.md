@@ -1,3 +1,10 @@
+v1.9
+====
+- Fixes bug where JPEG would export PNG instead.
+- New Dark UI which gives focus to the content.
+- New Specification Feature, detail the FPS, Frame Size, Number Of Frames and Duration and export it as a text file for developers alongside the sprite sheet.
+- Fixes bug where you could interact with the sprite sheet in Time Machine.
+
 v1.8
 ====
 - Fixes crash upon launch if libPNG wasn't installed on the user's system.
@@ -24,7 +31,7 @@ v1.4
 v1.3
 ====
 - New Higher Resolution version of Icon.
-- Export will now only export when replacing a file when you allow it to do so.
+- Export will now only export when replacing a file if you allow it to do so.
 
 v1.2
 ====

@@ -66,7 +66,6 @@ NSString const * SUTImageExporterShouldExportSpecificationOptionKey = @"ShouldEx
     CGContextRef context = [self createExportingImageContextWithSize:contentSize];
 
     CGContextClearRect(context, NSMakeRect(0, 0, contentSize.width, contentSize.height));
-    CGContextSetStrokeColorWithColor(context, [[NSColor redColor] CGColor]);
     
     for (NSInteger spriteIndex = 0; spriteIndex < numberOfSprites; spriteIndex ++)
     {

@@ -9,12 +9,12 @@
 #import "SUTDocument.h"
 
 #import "SUTSprite.h"
-#import "SUTSpriteLayout.h"
+#import "SUTSpritesheetLayout.h"
 #import "SUTWindowController.h"
 
 #import <os/activity.h>
 
-@interface SUTDocument () <SUTSpriteLayoutDelegate>
+@interface SUTDocument () <SUTSpritesheetLayoutDelegate>
 
 @property (nonatomic, strong) NSFileWrapper *fileWrapper;
 
@@ -50,11 +50,11 @@
     return _fileWrapper;
 }
 
-- (SUTSpriteLayout *)layout
+- (SUTSpritesheetLayout *)layout
 {
     if (!_layout)
     {
-        _layout = [[SUTSpriteLayout alloc] init];
+        _layout = [[SUTSpritesheetLayout alloc] init];
         _layout.delegate = self;
         [_layout prepareLayout];
     }

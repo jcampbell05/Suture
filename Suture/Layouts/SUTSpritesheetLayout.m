@@ -1,12 +1,12 @@
 //
-//  SUTSpriteLayout.m
+//  SUTSpritesheetLayout.m
 //  Suture
 //
 //  Created by James Campbell on 16/03/2015.
 //  Copyright (c) 2015 James Campbell. All rights reserved.
 //
 
-#import "SUTSpriteLayout.h"
+#import "SUTSpritesheetLayout.h"
 
 @interface SUTSpriteLayoutAttribute : NSObject
 
@@ -19,7 +19,7 @@
 
 @end
 
-@interface SUTSpriteLayout ()
+@interface SUTSpritesheetLayout ()
 
 @property (nonatomic, strong) NSMutableArray *layoutAttributes;
 @property (nonatomic, assign, readwrite) CGSize contentSize;
@@ -29,7 +29,7 @@
 
 @end
 
-@implementation SUTSpriteLayout
+@implementation SUTSpritesheetLayout
 
 #pragma makk - Attributes
 

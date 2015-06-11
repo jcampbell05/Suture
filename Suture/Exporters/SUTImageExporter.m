@@ -12,7 +12,7 @@
 
 #import "SUTGeometry.h"
 #import "SUTSprite.h"
-#import "SUTSpriteLayout.h"
+#import "SUTSpritesheetLayout.h"
 #import "NSImage+CGImage.h"
 #import "SUTImageExporterOptionsView.h"
 #import "SUTSpecificationExporter.h"

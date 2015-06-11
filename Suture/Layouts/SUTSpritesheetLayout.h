@@ -1,5 +1,5 @@
 //
-//  SUTSpriteLayout.h
+//  SUTSpritesheetLayout.h
 //  Suture
 //
 //  Created by James Campbell on 16/03/2015.
@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@protocol SUTSpriteLayoutDelegate <NSObject>
+@protocol SUTSpritesheetLayoutDelegate <NSObject>
 
 - (NSInteger)numberOfSprites;
 - (CGSize)sizeForSpriteAtIndex:(NSInteger)index;
@@ -21,9 +21,9 @@ typedef enum : NSUInteger
     SUTSpriteLayoutOrientationHorizontal,
 } SUTSpriteLayoutOrientation;
 
-@interface SUTSpriteLayout : NSObject
+@interface SUTSpritesheetLayout : NSObject
 
-@property (nonatomic, weak) id<SUTSpriteLayoutDelegate> delegate;
+@property (nonatomic, weak) id<SUTSpritesheetLayoutDelegate> delegate;
 @property (nonatomic, assign) SUTSpriteLayoutOrientation orientation;
 @property (nonatomic, assign, readonly) CGSize contentSize;
 

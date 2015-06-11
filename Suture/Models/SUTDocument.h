@@ -8,12 +8,12 @@
 
 @import Cocoa;
 @class SUTSprite;
-@class SUTSpriteLayout;
+@class SUTSpritesheetLayout;
 
 @interface SUTDocument : NSDocument
 
 @property (nonatomic, assign) NSInteger duration;
-@property (nonatomic, strong) SUTSpriteLayout *layout;
+@property (nonatomic, strong) SUTSpritesheetLayout *layout;
 @property (nonatomic, strong) NSArray *sprites;
 
 /**

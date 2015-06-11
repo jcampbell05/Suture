@@ -38,6 +38,7 @@
 		745D4EE81B0F307E00969535 /* SUTPropertyView.h in Headers */ = {isa = PBXBuildFile; fileRef = 745D4EE61B0F307E00969535 /* SUTPropertyView.h */; };
 		745D4EE91B0F307E00969535 /* SUTPropertyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 745D4EE71B0F307E00969535 /* SUTPropertyView.m */; };
 		745D4EF71B0F704C00969535 /* SUTPropertyEntryField.m in Sources */ = {isa = PBXBuildFile; fileRef = 745D4EF61B0F704C00969535 /* SUTPropertyEntryField.m */; };
+		7476D56B1B29D1260030967D /* SUTSpritesheetRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7476D56A1B29D1260030967D /* SUTSpritesheetRenderer.m */; };
 		747A103A1AEE5D640097E6AB /* SUTWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = 747A10381AEE5D640097E6AB /* SUTWindow.h */; };
 		747A103B1AEE5D640097E6AB /* SUTWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 747A10391AEE5D640097E6AB /* SUTWindow.m */; };
 		74AF59261AF0EBF00013F9CD /* SUTWindowTitleView.h in Headers */ = {isa = PBXBuildFile; fileRef = 74AF59241AF0EBF00013F9CD /* SUTWindowTitleView.h */; };
@@ -47,7 +48,7 @@
 		74CF98D81AC3960F002F8DC5 /* SUTWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74CF98B41AC3960F002F8DC5 /* SUTWindowController.m */; };
 		74CF98D91AC3960F002F8DC5 /* SUTExporterRegistry.m in Sources */ = {isa = PBXBuildFile; fileRef = 74CF98B81AC3960F002F8DC5 /* SUTExporterRegistry.m */; };
 		74CF98DA1AC3960F002F8DC5 /* SUTImageExporter.m in Sources */ = {isa = PBXBuildFile; fileRef = 74CF98BA1AC3960F002F8DC5 /* SUTImageExporter.m */; };
-		74CF98DC1AC3960F002F8DC5 /* SUTSpriteLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 74CF98BF1AC3960F002F8DC5 /* SUTSpriteLayout.m */; };
+		74CF98DC1AC3960F002F8DC5 /* SUTSpritesheetLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 74CF98BF1AC3960F002F8DC5 /* SUTSpritesheetLayout.m */; };
 		74CF98DD1AC3960F002F8DC5 /* SUTDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 74CF98C21AC3960F002F8DC5 /* SUTDocument.m */; };
 		74CF98DE1AC3960F002F8DC5 /* SUTSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = 74CF98C41AC3960F002F8DC5 /* SUTSprite.m */; };
 		74CF98DF1AC3960F002F8DC5 /* SUTCheckerboardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 74CF98C71AC3960F002F8DC5 /* SUTCheckerboardView.m */; };
@@ -182,6 +183,8 @@
 		745D4EE71B0F307E00969535 /* SUTPropertyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUTPropertyView.m; sourceTree = "<group>"; };
 		745D4EF51B0F704C00969535 /* SUTPropertyEntryField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUTPropertyEntryField.h; sourceTree = "<group>"; };
 		745D4EF61B0F704C00969535 /* SUTPropertyEntryField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUTPropertyEntryField.m; sourceTree = "<group>"; };
+		7476D5691B29D1260030967D /* SUTSpritesheetRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUTSpritesheetRenderer.h; sourceTree = "<group>"; };
+		7476D56A1B29D1260030967D /* SUTSpritesheetRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUTSpritesheetRenderer.m; sourceTree = "<group>"; };
 		747A10381AEE5D640097E6AB /* SUTWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUTWindow.h; sourceTree = "<group>"; };
 		747A10391AEE5D640097E6AB /* SUTWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUTWindow.m; sourceTree = "<group>"; };
 		74AF59241AF0EBF00013F9CD /* SUTWindowTitleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUTWindowTitleView.h; sourceTree = "<group>"; };
@@ -195,8 +198,8 @@
 		74CF98B81AC3960F002F8DC5 /* SUTExporterRegistry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUTExporterRegistry.m; sourceTree = "<group>"; };
 		74CF98B91AC3960F002F8DC5 /* SUTImageExporter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUTImageExporter.h; sourceTree = "<group>"; };
 		74CF98BA1AC3960F002F8DC5 /* SUTImageExporter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUTImageExporter.m; sourceTree = "<group>"; };
-		74CF98BE1AC3960F002F8DC5 /* SUTSpriteLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUTSpriteLayout.h; sourceTree = "<group>"; };
-		74CF98BF1AC3960F002F8DC5 /* SUTSpriteLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUTSpriteLayout.m; sourceTree = "<group>"; };
+		74CF98BE1AC3960F002F8DC5 /* SUTSpritesheetLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUTSpritesheetLayout.h; sourceTree = "<group>"; };
+		74CF98BF1AC3960F002F8DC5 /* SUTSpritesheetLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUTSpritesheetLayout.m; sourceTree = "<group>"; };
 		74CF98C11AC3960F002F8DC5 /* SUTDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUTDocument.h; sourceTree = "<group>"; };
 		74CF98C21AC3960F002F8DC5 /* SUTDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUTDocument.m; sourceTree = "<group>"; };
 		74CF98C31AC3960F002F8DC5 /* SUTSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUTSprite.h; sourceTree = "<group>"; };
@@ -386,6 +389,15 @@
 			path = KBButton/KBButton;
 			sourceTree = "<group>";
 		};
+		7476D5681B29D0F50030967D /* Renderer */ = {
+			isa = PBXGroup;
+			children = (
+				7476D5691B29D1260030967D /* SUTSpritesheetRenderer.h */,
+				7476D56A1B29D1260030967D /* SUTSpritesheetRenderer.m */,
+			);
+			path = Renderer;
+			sourceTree = "<group>";
+		};
 		74CF98AF1AC3960F002F8DC5 /* Certificates */ = {
 			isa = PBXGroup;
 			children = (
@@ -429,8 +441,8 @@
 		74CF98BB1AC3960F002F8DC5 /* Layouts */ = {
 			isa = PBXGroup;
 			children = (
-				74CF98BE1AC3960F002F8DC5 /* SUTSpriteLayout.h */,
-				74CF98BF1AC3960F002F8DC5 /* SUTSpriteLayout.m */,
+				74CF98BE1AC3960F002F8DC5 /* SUTSpritesheetLayout.h */,
+				74CF98BF1AC3960F002F8DC5 /* SUTSpritesheetLayout.m */,
 			);
 			path = Layouts;
 			sourceTree = "<group>";
@@ -512,6 +524,7 @@
 		74F0FADB1AAF5224003F9454 /* Suture */ = {
 			isa = PBXGroup;
 			children = (
+				7476D5681B29D0F50030967D /* Renderer */,
 				7441619F1ADE9D4900747B1E /* Utilities */,
 				74CF98EB1AC39997002F8DC5 /* Catergories */,
 				74CF98AF1AC3960F002F8DC5 /* Certificates */,
@@ -819,9 +832,10 @@
 				74CF98DD1AC3960F002F8DC5 /* SUTDocument.m in Sources */,
 				744E98C21B1F91690007DB04 /* KBButtonCell.m in Sources */,
 				74CF98DF1AC3960F002F8DC5 /* SUTCheckerboardView.m in Sources */,
-				74CF98DC1AC3960F002F8DC5 /* SUTSpriteLayout.m in Sources */,
+				74CF98DC1AC3960F002F8DC5 /* SUTSpritesheetLayout.m in Sources */,
 				743562951B1E0B9F0017C261 /* SUTExporterOptionsView.m in Sources */,
 				744E98C11B1F91690007DB04 /* KBButton.m in Sources */,
+				7476D56B1B29D1260030967D /* SUTSpritesheetRenderer.m in Sources */,
 				744E98C31B1F91690007DB04 /* NSColor+ColorExtensions.m in Sources */,
 				74CF98D91AC3960F002F8DC5 /* SUTExporterRegistry.m in Sources */,
 				74CF98DE1AC3960F002F8DC5 /* SUTSprite.m in Sources */,

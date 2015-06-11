@@ -15,6 +15,7 @@
 #import "SUTSpritesheetLayout.h"
 #import "NSImage+CGImage.h"
 #import "SUTImageExporterOptionsView.h"
+#import "SUTSpritesheetRenderer.h"
 #import "SUTSpecificationExporter.h"
 
 NSString const * SUTImageExporterShouldExportSpecificationOptionKey = @"ShouldExportSpecification";

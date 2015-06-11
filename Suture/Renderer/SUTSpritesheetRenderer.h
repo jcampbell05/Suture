@@ -12,4 +12,6 @@
 
 @interface SUTSpritesheetRenderer : NSObject
 
+@property (nonatomic, strong) SUTSpriteLayout *layout;
+
 @end

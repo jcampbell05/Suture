@@ -4,16 +4,6 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Pods-JNWCollectionView.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Pods-JNWScrollView.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>Pods-PureLayout.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -32,57 +22,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>11F919F7C4DE84215E2A8803</key>
+		<key>1B9F2E6732460921658E741C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5B22FF058CE9CB584DC91046</key>
+		<key>30A12F1204FD1824CB206C3B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5C72FC750D5274792707D9E3</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>6CFE75A58E3AA970587490EB</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>8355C998A2E4C02972F5574D</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>8BBBD0EFE154C58AC2B4ECEF</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>AA5E68E29A1AFAAD9C6E4460</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>B8CC4657B763F1B5DEC7688C</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>C8DDFE5E991DBB450A92CBB1</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>E70D6F8D72DE9965D711BC38</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>EC8DAE65BCAEE02576D07B39</key>
+		<key>3EA84C8979FE791E638BB8C0</key>
 		<dict>
 			<key>primary</key>
 			<true/>

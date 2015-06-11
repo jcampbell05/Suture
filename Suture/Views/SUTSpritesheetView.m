@@ -18,4 +18,21 @@
 
 @implementation SUTSpritesheetView
 
+- (SUTSpritesheetRenderer *)renderer
+{
+    if (!_renderer)
+    {
+        _renderer = [[SUTSpritesheetRenderer alloc] init];
+    }
+    
+    return _renderer;
+}
+
+- (void)drawRect:(NSRect)dirtyRect
+{
+    CGContextRef context = [[NSGraphicsContext currentContext] CGContext];
+    [self.renderer renderSpriteRange:NSMakeRange(0, 1)
+                             context:context];
+}
+
 @end

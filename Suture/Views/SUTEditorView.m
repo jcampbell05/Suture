@@ -8,17 +8,16 @@
 
 #import "SUTEditorView.h"
 
-#import "SUTCollectionViewSpriteLayout.h"
 #import "SUTDocument.h"
 #import "SUTSprite.h"
 #import "SUTEmptySpriteSheetView.h"
 #import "SUTOutlineView.h"
+#import "SUTSpritesheetView.h"
 
-@interface SUTEditorView () <NSDraggingDestination, JNWCollectionViewDataSource, JNWCollectionViewDelegate>
+@interface SUTEditorView () <NSDraggingDestination>
 
 @property (nonatomic, strong) SUTEmptySpriteSheetView *emptySpriteView;
-@property (nonatomic, strong) JNWCollectionView *spriteCollectionView;
-@property (nonatomic, strong) SUTCollectionViewSpriteLayout *spriteCollectionViewLayout;
+@property (nonatomic, strong) SUTSpritesheetView *spriteCollectionView;
 
 @end
 
@@ -56,33 +55,15 @@
     return _emptySpriteView;
 }
 
-- (JNWCollectionView *)spriteCollectionView
+- (SUTSpritesheetView *)spriteCollectionView
 {
     if (!_spriteCollectionView)
     {
-        _spriteCollectionView = [[JNWCollectionView alloc] initWithFrame:self.bounds];
-        _spriteCollectionView.collectionViewLayout = self.spriteCollectionViewLayout;
-        _spriteCollectionView.dataSource = self;
-        _spriteCollectionView.delegate = self;
-        _spriteCollectionView.drawsBackground = NO;
+        _spriteCollectionView = [[SUTSpritesheetView alloc] initWithFrame:self.bounds];;
         _spriteCollectionView.autoresizingMask = NSViewWidthSizable | NSViewHeightSizable;
-        
-        [_spriteCollectionView registerClass:[SUTSpriteCollectionViewCell class]
-                  forCellWithReuseIdentifier:[SUTSpriteCollectionViewCell identifier]];
     }
     
     return _spriteCollectionView;
-}
-
-- (SUTCollectionViewSpriteLayout *)spriteCollectionViewLayout
-{
-    if (!_spriteCollectionViewLayout)
-    {
-        _spriteCollectionViewLayout = [[SUTCollectionViewSpriteLayout alloc] init];
-        _spriteCollectionViewLayout.layout = self.document.layout;
-    }
-
-    return _spriteCollectionViewLayout;
 }
 
 #pragma mark - Documents
@@ -95,9 +76,9 @@
         _document = document;
         [self didChangeValueForKey:NSStringFromSelector(@selector(document))];
         
-        self.spriteCollectionViewLayout.layout = document.layout;
-        [document.layout prepareLayout];
-        [self.spriteCollectionView reloadData];
+//        self.spriteCollectionViewLayout.layout = document.layout;
+//        [document.layout prepareLayout];
+//        [self.spriteCollectionView reloadData];
     }
 }
 
@@ -170,44 +151,17 @@
         [self.document addSprite:sprite];
     }];
     
-    [self.spriteCollectionView reloadData];
+    //[self.spriteCollectionView reloadData];
 }
 
 - (void)removeSelectedSprite
 {
-    for (NSIndexPath *indexPath in self.spriteCollectionView.indexPathsForSelectedItems)
-    {
-        [self.document removeObjectFromSpritesAtIndex:indexPath.jnw_item];
-    }
+//    for (NSIndexPath *indexPath in self.spriteCollectionView.indexPathsForSelectedItems)
+//    {
+//        [self.document removeObjectFromSpritesAtIndex:indexPath.jnw_item];
+//    }
     
-    [self.spriteCollectionView reloadData];
-}
-
-#pragma mark - JNWCollectionViewDataSource
-
-- (NSUInteger)collectionView:(JNWCollectionView *)collectionView
-      numberOfItemsInSection:(NSInteger)section
-{
-    collectionView.hidden = (self.document.sprites.count == 0);
-    return self.document.sprites.count;
-}
-
-- (JNWCollectionViewCell *)collectionView:(JNWCollectionView *)collectionView
-                   cellForItemAtIndexPath:(NSIndexPath *)indexPath
-{
-    SUTSpriteCollectionViewCell *cell = (SUTSpriteCollectionViewCell *)[collectionView dequeueReusableCellWithIdentifier:[SUTSpriteCollectionViewCell identifier]];
-    
-    cell.sprite = self.document.sprites[indexPath.jnw_item];
-    
-    return cell;
-}
-
-#pragma mark - JNWCollectionViewDelegate
-
-- (BOOL)collectionView:(JNWCollectionView *)collectionView
-shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath
-{
-    return self.enabled;
+    //[self.spriteCollectionView reloadData];
 }
 
 @end

@@ -8,6 +8,14 @@
 
 #import "SUTSpritesheetView.h"
 
+#import "SUTSpritesheetRenderer.h"
+
+@interface SUTSpritesheetView ()
+
+@property (nonatomic, strong) SUTSpritesheetRenderer *renderer;
+
+@end
+
 @implementation SUTSpritesheetView
 
 @end

@@ -17,7 +17,7 @@
 @interface SUTEditorView () <NSDraggingDestination>
 
 @property (nonatomic, strong) SUTEmptySpriteSheetView *emptySpriteView;
-@property (nonatomic, strong) SUTSpritesheetView *spriteCollectionView;
+@property (nonatomic, strong) SUTSpritesheetView *spriteSheetView;
 
 @end
 
@@ -36,7 +36,7 @@
         [self registerForDraggedTypes:@[NSFilenamesPboardType]];
         
         [self addSubview:self.emptySpriteView];
-        [self addSubview:self.spriteCollectionView];
+        [self addSubview:self.spriteSheetView];
     }
     
     return self;
@@ -55,15 +55,15 @@
     return _emptySpriteView;
 }
 
-- (SUTSpritesheetView *)spriteCollectionView
+- (SUTSpritesheetView *)spriteSheetView
 {
-    if (!_spriteCollectionView)
+    if (!_spriteSheetView)
     {
         _spriteCollectionView = [[SUTSpritesheetView alloc] initWithFrame:self.bounds];;
-        _spriteCollectionView.autoresizingMask = NSViewWidthSizable | NSViewHeightSizable;
+        _spriteSheetView.autoresizingMask = NSViewWidthSizable | NSViewHeightSizable;
     }
     
-    return _spriteCollectionView;
+    return _spriteSheetView;
 }
 
 #pragma mark - Documents

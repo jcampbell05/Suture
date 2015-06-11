@@ -57,7 +57,6 @@
 		74CF98E31AC3960F002F8DC5 /* SUTExportPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 74CF98CF1AC3960F002F8DC5 /* SUTExportPanel.m */; };
 		74CF98E41AC3960F002F8DC5 /* SUTOutlineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 74CF98D11AC3960F002F8DC5 /* SUTOutlineView.m */; };
 		74CF98E51AC3960F002F8DC5 /* SUTProgressPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 74CF98D31AC3960F002F8DC5 /* SUTProgressPanel.m */; };
-		74CF98E61AC3960F002F8DC5 /* SUTSpriteCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 74CF98D51AC3960F002F8DC5 /* SUTSpriteCollectionViewCell.m */; };
 		74CF98E91AC39644002F8DC5 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74F0FAEB1AAF5224003F9454 /* MainMenu.xib */; };
 		74CF98EE1AC399B8002F8DC5 /* NSImage+CGImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 74CF98ED1AC399B8002F8DC5 /* NSImage+CGImage.m */; };
 		74E3806A1B29BA880080BE71 /* SUTSpritesheetView.m in Sources */ = {isa = PBXBuildFile; fileRef = 74E380691B29BA880080BE71 /* SUTSpritesheetView.m */; };
@@ -216,8 +215,6 @@
 		74CF98D11AC3960F002F8DC5 /* SUTOutlineView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUTOutlineView.m; sourceTree = "<group>"; };
 		74CF98D21AC3960F002F8DC5 /* SUTProgressPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUTProgressPanel.h; sourceTree = "<group>"; };
 		74CF98D31AC3960F002F8DC5 /* SUTProgressPanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUTProgressPanel.m; sourceTree = "<group>"; };
-		74CF98D41AC3960F002F8DC5 /* SUTSpriteCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUTSpriteCollectionViewCell.h; sourceTree = "<group>"; };
-		74CF98D51AC3960F002F8DC5 /* SUTSpriteCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUTSpriteCollectionViewCell.m; sourceTree = "<group>"; };
 		74CF98EC1AC399B8002F8DC5 /* NSImage+CGImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSImage+CGImage.h"; sourceTree = "<group>"; };
 		74CF98ED1AC399B8002F8DC5 /* NSImage+CGImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSImage+CGImage.m"; sourceTree = "<group>"; };
 		74CF98EF1AC39A36002F8DC5 /* SUTGeometry.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SUTGeometry.h; sourceTree = "<group>"; };
@@ -470,8 +467,6 @@
 				745D4EF61B0F704C00969535 /* SUTPropertyEntryField.m */,
 				745D4EE61B0F307E00969535 /* SUTPropertyView.h */,
 				745D4EE71B0F307E00969535 /* SUTPropertyView.m */,
-				74CF98D41AC3960F002F8DC5 /* SUTSpriteCollectionViewCell.h */,
-				74CF98D51AC3960F002F8DC5 /* SUTSpriteCollectionViewCell.m */,
 				747A10381AEE5D640097E6AB /* SUTWindow.h */,
 				747A10391AEE5D640097E6AB /* SUTWindow.m */,
 				74AF59241AF0EBF00013F9CD /* SUTWindowTitleView.h */,
@@ -808,7 +803,6 @@
 				745D4EE91B0F307E00969535 /* SUTPropertyView.m in Sources */,
 				745D4EF71B0F704C00969535 /* SUTPropertyEntryField.m in Sources */,
 				743DA58C1B14810200B8FEB8 /* SUTJPEGExporter.m in Sources */,
-				74CF98E61AC3960F002F8DC5 /* SUTSpriteCollectionViewCell.m in Sources */,
 				743DA5881B14773500B8FEB8 /* SUTSpecificationExporter.m in Sources */,
 				743562981B1E0BFF0017C261 /* SUTImageExporterOptionsView.m in Sources */,
 				7441619E1ADE9D0500747B1E /* rwpng.c in Sources */,

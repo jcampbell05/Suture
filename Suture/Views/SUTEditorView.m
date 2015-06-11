@@ -8,12 +8,9 @@
 
 #import "SUTEditorView.h"
 
-#import <JNWCollectionView/JNWCollectionView.h>
-
 #import "SUTCollectionViewSpriteLayout.h"
 #import "SUTDocument.h"
 #import "SUTSprite.h"
-#import "SUTSpriteCollectionViewCell.h"
 #import "SUTEmptySpriteSheetView.h"
 #import "SUTOutlineView.h"
 

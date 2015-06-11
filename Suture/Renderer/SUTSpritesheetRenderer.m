@@ -10,4 +10,10 @@
 
 @implementation SUTSpritesheetRenderer
 
+- (void)renderSpriteRange:(NSRange)range
+                  context:(CGContextRef)context
+{
+    
+}
+
 @end

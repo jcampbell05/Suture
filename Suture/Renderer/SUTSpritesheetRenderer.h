@@ -15,4 +15,7 @@
 @property (nonatomic, strong) SUTDocument *document;
 @property (nonatomic, strong) SUTSpriteLayout *layout;
 
+- (void)renderSpriteRange:(NSRange)range
+                  context:(CGContextRef)context;
+
 @end

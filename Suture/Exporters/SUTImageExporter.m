@@ -52,6 +52,9 @@ NSString const * SUTImageExporterShouldExportSpecificationOptionKey = @"ShouldEx
     self.progress.totalUnitCount = numberOfSprites + 2;
     [self.progress becomeCurrentWithPendingUnitCount:self.progress.totalUnitCount];
     
+    /**
+     Was the export specification option selected ?
+     */
     if ([options[SUTImageExporterShouldExportSpecificationOptionKey] boolValue])
     {
         [self exportSpecificationIfNeededWithExportDocument:document

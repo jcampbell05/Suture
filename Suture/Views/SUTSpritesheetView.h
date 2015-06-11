@@ -6,6 +6,8 @@
 //  Copyright (c) 2015 James Campbell. All rights reserved.
 //
 
+//TODO: Share rendering from exporter.
+
 #import <Cocoa/Cocoa.h>
 
 @interface SUTSpritesheetView : NSView

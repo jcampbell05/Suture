@@ -34,8 +34,6 @@
                            image);
         
         CGImageRelease(image);
-        
-       // self.progress.completedUnitCount ++;
     }
 }
 

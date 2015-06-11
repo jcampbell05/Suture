@@ -76,9 +76,7 @@
         _document = document;
         [self didChangeValueForKey:NSStringFromSelector(@selector(document))];
         
-//        self.spriteCollectionViewLayout.layout = document.layout;
-//        [document.layout prepareLayout];
-//        [self.spriteCollectionView reloadData];
+        self.spriteSheetView.document = document;
     }
 }
 
@@ -151,7 +149,7 @@
         [self.document addSprite:sprite];
     }];
     
-    //[self.spriteCollectionView reloadData];
+    [self.spriteSheetView setNeedsDisplay:YES];
 }
 
 - (void)removeSelectedSprite
@@ -161,7 +159,7 @@
 //        [self.document removeObjectFromSpritesAtIndex:indexPath.jnw_item];
 //    }
     
-    //[self.spriteCollectionView reloadData];
+    [self.spriteSheetView setNeedsDisplay:YES];
 }
 
 @end

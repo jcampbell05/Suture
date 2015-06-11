@@ -18,6 +18,22 @@
 
 @implementation SUTSpritesheetView
 
+#pragma mark - Document
+
+- (void)setDocument:(SUTDocument *)document
+{
+    self.renderer.document = document;
+    
+    [self setNeedsDisplay:YES];
+}
+
+- (SUTDocument *)document
+{
+    return self.renderer.document;
+}
+
+#pragma mark - Rendering
+
 - (SUTSpritesheetRenderer *)renderer
 {
     if (!_renderer)

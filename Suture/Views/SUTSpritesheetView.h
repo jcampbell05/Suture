@@ -10,6 +10,10 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface SUTSpritesheetView : NSView
+@class SUTDocument;
+
+@interface SUTSpritesheetView : NSScrollView
+
+@property (nonatomic, strong) SUTDocument *document;
 
 @end

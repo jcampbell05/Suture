@@ -17,6 +17,7 @@
 @interface SUTEditorView () <NSDraggingDestination>
 
 @property (nonatomic, strong) SUTEmptySpriteSheetView *emptySpriteView;
+@property (nonatomic, strong) NSScrollView *scrollView;
 @property (nonatomic, strong) SUTSpritesheetView *spriteSheetView;
 
 @end
@@ -36,7 +37,7 @@
         [self registerForDraggedTypes:@[NSFilenamesPboardType]];
         
         [self addSubview:self.emptySpriteView];
-        [self addSubview:self.spriteSheetView];
+        [self addSubview:self.scrollView];
     }
     
     return self;
@@ -55,12 +56,23 @@
     return _emptySpriteView;
 }
 
+- (NSScrollView *)scrollView
+{
+    if (!_scrollView)
+    {
+        _scrollView = [[NSScrollView alloc] initWithFrame:self.bounds];
+        _scrollView.autoresizingMask = NSViewWidthSizable | NSViewHeightSizable;
+        _scrollView.documentView = self.spriteSheetView;
+    }
+    
+    return _scrollView;
+}
+
 - (SUTSpritesheetView *)spriteSheetView
 {
     if (!_spriteSheetView)
     {
-        _spriteSheetView = [[SUTSpritesheetView alloc] initWithFrame:self.bounds];;
-        _spriteSheetView.autoresizingMask = NSViewWidthSizable | NSViewHeightSizable;
+        _spriteSheetView = [[SUTSpritesheetView alloc] init];
     }
     
     return _spriteSheetView;

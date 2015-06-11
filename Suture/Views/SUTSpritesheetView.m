@@ -10,6 +10,7 @@
 
 #import "SUTDocument.h"
 #import "SUTSpritesheetRenderer.h"
+#import "SUTSpritesheetLayout.h"
 
 @interface SUTSpritesheetView ()
 
@@ -43,6 +44,17 @@
     }
     
     return _renderer;
+}
+
+- (void)setNeedsDisplay:(BOOL)needsDisplay
+{
+    [super setNeedsDisplay:needsDisplay];
+    
+    [self.document.layout prepareLayout];
+    
+    CGRect frame = self.frame;
+    frame.size = [self.document.layout contentSize];
+    self.frame = frame;
 }
 
 - (void)drawRect:(NSRect)dirtyRect

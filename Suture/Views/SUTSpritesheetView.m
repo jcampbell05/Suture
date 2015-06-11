@@ -8,6 +8,7 @@
 
 #import "SUTSpritesheetView.h"
 
+#import "SUTDocument.h"
 #import "SUTSpritesheetRenderer.h"
 
 @interface SUTSpritesheetView ()
@@ -47,7 +48,7 @@
 - (void)drawRect:(NSRect)dirtyRect
 {
     CGContextRef context = [[NSGraphicsContext currentContext] CGContext];
-    [self.renderer renderSpriteRange:NSMakeRange(0, 1)
+    [self.renderer renderSpriteRange:NSMakeRange(0, self.document.sprites.count)
                              context:context];
 }
 

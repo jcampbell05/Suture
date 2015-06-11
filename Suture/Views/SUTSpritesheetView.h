@@ -12,7 +12,7 @@
 
 @class SUTDocument;
 
-@interface SUTSpritesheetView : NSScrollView
+@interface SUTSpritesheetView : NSView
 
 @property (nonatomic, strong) SUTDocument *document;
 

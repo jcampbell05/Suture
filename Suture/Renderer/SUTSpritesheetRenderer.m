@@ -19,6 +19,7 @@
 - (void)renderSpriteRange:(NSRange)range
                   context:(CGContextRef)context
 {
+    [self.document.layout prepareLayout];
     CGSize contentSize = [self.document.layout contentSize];
     
     for (NSInteger spriteIndex = range.location; spriteIndex < range.length; spriteIndex ++)

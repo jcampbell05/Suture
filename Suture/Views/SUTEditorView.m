@@ -59,7 +59,7 @@
 {
     if (!_spriteSheetView)
     {
-        _spriteCollectionView = [[SUTSpritesheetView alloc] initWithFrame:self.bounds];;
+        _spriteSheetView = [[SUTSpritesheetView alloc] initWithFrame:self.bounds];;
         _spriteSheetView.autoresizingMask = NSViewWidthSizable | NSViewHeightSizable;
     }
     

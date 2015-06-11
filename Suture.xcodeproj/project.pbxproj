@@ -61,6 +61,7 @@
 		74CF98E61AC3960F002F8DC5 /* SUTSpriteCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 74CF98D51AC3960F002F8DC5 /* SUTSpriteCollectionViewCell.m */; };
 		74CF98E91AC39644002F8DC5 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74F0FAEB1AAF5224003F9454 /* MainMenu.xib */; };
 		74CF98EE1AC399B8002F8DC5 /* NSImage+CGImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 74CF98ED1AC399B8002F8DC5 /* NSImage+CGImage.m */; };
+		74E3806A1B29BA880080BE71 /* SUTSpritesheetView.m in Sources */ = {isa = PBXBuildFile; fileRef = 74E380691B29BA880080BE71 /* SUTSpritesheetView.m */; };
 		74E4EEE01AE1486E0038A10C /* libpng16.16.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7441615D1ADE85C800747B1E /* libpng16.16.dylib */; };
 		74E4EEE21AE148920038A10C /* libpng16.16.dylib in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7441615D1ADE85C800747B1E /* libpng16.16.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		74F0FAE01AAF5224003F9454 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 74F0FADF1AAF5224003F9454 /* AppDelegate.m */; };
@@ -223,6 +224,8 @@
 		74CF98EC1AC399B8002F8DC5 /* NSImage+CGImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSImage+CGImage.h"; sourceTree = "<group>"; };
 		74CF98ED1AC399B8002F8DC5 /* NSImage+CGImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSImage+CGImage.m"; sourceTree = "<group>"; };
 		74CF98EF1AC39A36002F8DC5 /* SUTGeometry.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SUTGeometry.h; sourceTree = "<group>"; };
+		74E380681B29BA880080BE71 /* SUTSpritesheetView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUTSpritesheetView.h; sourceTree = "<group>"; };
+		74E380691B29BA880080BE71 /* SUTSpritesheetView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUTSpritesheetView.m; sourceTree = "<group>"; };
 		74F0FAD91AAF5224003F9454 /* Suture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Suture.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		74F0FADD1AAF5224003F9454 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		74F0FADE1AAF5224003F9454 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -478,6 +481,8 @@
 				747A10391AEE5D640097E6AB /* SUTWindow.m */,
 				74AF59241AF0EBF00013F9CD /* SUTWindowTitleView.h */,
 				74AF59251AF0EBF00013F9CD /* SUTWindowTitleView.m */,
+				74E380681B29BA880080BE71 /* SUTSpritesheetView.h */,
+				74E380691B29BA880080BE71 /* SUTSpritesheetView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -837,6 +842,7 @@
 				74CF98D81AC3960F002F8DC5 /* SUTWindowController.m in Sources */,
 				743DA5941B14859F00B8FEB8 /* SUTExporter.m in Sources */,
 				743DA58F1B14811A00B8FEB8 /* SUT32BitPNGExporter.m in Sources */,
+				74E3806A1B29BA880080BE71 /* SUTSpritesheetView.m in Sources */,
 				74AF59271AF0EBF00013F9CD /* SUTWindowTitleView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

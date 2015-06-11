@@ -63,6 +63,8 @@
         _scrollView = [[NSScrollView alloc] initWithFrame:self.bounds];
         _scrollView.autoresizingMask = NSViewWidthSizable | NSViewHeightSizable;
         _scrollView.documentView = self.spriteSheetView;
+        _scrollView.hasHorizontalScroller = YES;
+        _scrollView.hasVerticalScroller = YES;
     }
     
     return _scrollView;

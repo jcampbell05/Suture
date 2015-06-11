@@ -10,10 +10,8 @@
 
 @import CoreServices;
 
-#import "SUTGeometry.h"
 #import "SUTSprite.h"
 #import "SUTSpritesheetLayout.h"
-#import "NSImage+CGImage.h"
 #import "SUTImageExporterOptionsView.h"
 #import "SUTSpritesheetRenderer.h"
 #import "SUTSpecificationExporter.h"
@@ -67,22 +65,12 @@ NSString const * SUTImageExporterShouldExportSpecificationOptionKey = @"ShouldEx
 
     CGContextClearRect(context, NSMakeRect(0, 0, contentSize.width, contentSize.height));
     
-    for (NSInteger spriteIndex = 0; spriteIndex < numberOfSprites; spriteIndex ++)
-    {
-        CGRect spriteFrame = [document.layout frameForSpriteAtIndex:spriteIndex];
-        spriteFrame = SUTFlipCGRect(spriteFrame, contentSize);
-        
-        SUTSprite *sprite = document.sprites[spriteIndex];
-        CGImageRef image = sprite.image.CGImage;
-        
-        CGContextDrawImage(context,
-                           spriteFrame,
-                           image);
-        
-        CGImageRelease(image);
-        
-        self.progress.completedUnitCount ++;
-    }
+    SUTSpritesheetRenderer *renderer = [[SUTSpritesheetRenderer alloc] init];
+    renderer.document = document;
+    
+    [renderer renderSpriteRange:NSMakeRange(0,
+                                            numberOfSprites)
+                        context:context];
     
     [self writeContext:context
                    url:url];

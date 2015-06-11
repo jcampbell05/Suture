@@ -8,12 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
+@class SUTDocument;
 @class SUTSpriteLayout;
 
 @interface SUTSpritesheetRenderer : NSObject
 
 @property (nonatomic, strong) SUTDocument *document;
-@property (nonatomic, strong) SUTSpriteLayout *layout;
 
 - (void)renderSpriteRange:(NSRange)range
                   context:(CGContextRef)context;

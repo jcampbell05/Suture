@@ -1,5 +1,5 @@
 //
-//  SUTSpritesheetRenderer.h
+//  SUTSpriteRenderer.h
 //  Suture
 //
 //  Created by James Campbell on 11/06/2015.
@@ -8,15 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-@class SUTDocument;
 @class SUTSprite;
-@class SUTSpriteLayout;
 
-@interface SUTSpritesheetRenderer : NSObject
-
-@property (nonatomic, strong) SUTDocument *document;
-
-- (void)renderInContext:(CGContextRef)context;
+@interface SUTSpriteRenderer : NSObject
 
 - (void)renderSprite:(SUTSprite *)sprite
              context:(CGContextRef)context;

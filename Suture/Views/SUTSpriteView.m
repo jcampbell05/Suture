@@ -10,7 +10,7 @@
 
 @interface SUTSpriteView ()
 
-@property (nonatomic, strong) SUTSpritesheetRenderer *renderer;
+@property (nonatomic, strong) SUTSpriteRenderer *renderer;
 @property (nonatomic, strong) SUTSprite *sprite;
 
 @end
@@ -20,7 +20,7 @@
 #pragma mark - Init
 
 - (instancetype)initWithSprite:(SUTSprite *)sprite
-                      renderer:(SUTSpritesheetRenderer *)renderer
+                      renderer:(SUTSpriteRenderer *)renderer
 {
     self = [super init];
     
@@ -45,7 +45,7 @@
 {
     CGContextRef context = [[NSGraphicsContext currentContext] CGContext];
     [self.renderer renderSprite:self.sprite
-                        contect:context];
+                        context:context];
 }
 
 @end

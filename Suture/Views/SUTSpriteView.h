@@ -9,11 +9,11 @@
 #import <Cocoa/Cocoa.h>
 
 #import "SUTSprite.h"
-#import "SUTSpritesheetRenderer.h"
+#import "SUTSpriteRenderer.h"
 
 @interface SUTSpriteView : NSView
 
 - (instancetype)initWithSprite:(SUTSprite *)sprite
-                      renderer:(SUTSpritesheetRenderer *)renderer;
+                      renderer:(SUTSpriteRenderer *)renderer;
 
 @end

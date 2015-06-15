@@ -13,7 +13,7 @@
 #import "SUTSprite.h"
 #import "SUTSpritesheetLayout.h"
 #import "SUTImageExporterOptionsView.h"
-#import "SUTSpritesheetRenderer.h"
+#import "SUTSpriteRenderer.h"
 #import "SUTSpecificationExporter.h"
 
 NSString const * SUTImageExporterShouldExportSpecificationOptionKey = @"ShouldExportSpecification";
@@ -66,8 +66,14 @@ NSString const * SUTImageExporterShouldExportSpecificationOptionKey = @"ShouldEx
     CGContextClearRect(context, NSMakeRect(0, 0, contentSize.width, contentSize.height));
     
     //TODO: Figure out how to render using layout system.
-    SUTSpritesheetRenderer *renderer = [[SUTSpritesheetRenderer alloc] init];
+    SUTSpriteRenderer *renderer = [[SUTSpriteRenderer alloc] init];
     renderer.document = document;
+    
+    for (SUTSprite *sprite in document.sprites)
+    {
+        
+    }
+    
     [renderer renderInContext:context];
     
     [self writeContext:context

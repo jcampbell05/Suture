@@ -40,8 +40,7 @@
 		745D4EE81B0F307E00969535 /* SUTPropertyView.h in Headers */ = {isa = PBXBuildFile; fileRef = 745D4EE61B0F307E00969535 /* SUTPropertyView.h */; };
 		745D4EE91B0F307E00969535 /* SUTPropertyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 745D4EE71B0F307E00969535 /* SUTPropertyView.m */; };
 		745D4EF71B0F704C00969535 /* SUTPropertyEntryField.m in Sources */ = {isa = PBXBuildFile; fileRef = 745D4EF61B0F704C00969535 /* SUTPropertyEntryField.m */; };
-		7476D56B1B29D1260030967D /* SUTSpritesheetRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7476D56A1B29D1260030967D /* SUTSpritesheetRenderer.m */; };
-		7476D5711B29EE3B0030967D /* SUTSpriteLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7476D5701B29EE3B0030967D /* SUTSpriteLayer.m */; };
+		7476D56B1B29D1260030967D /* SUTSpriteRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7476D56A1B29D1260030967D /* SUTSpriteRenderer.m */; };
 		747A103A1AEE5D640097E6AB /* SUTWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = 747A10381AEE5D640097E6AB /* SUTWindow.h */; };
 		747A103B1AEE5D640097E6AB /* SUTWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 747A10391AEE5D640097E6AB /* SUTWindow.m */; };
 		74AF59261AF0EBF00013F9CD /* SUTWindowTitleView.h in Headers */ = {isa = PBXBuildFile; fileRef = 74AF59241AF0EBF00013F9CD /* SUTWindowTitleView.h */; };
@@ -190,10 +189,8 @@
 		745D4EE71B0F307E00969535 /* SUTPropertyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUTPropertyView.m; sourceTree = "<group>"; };
 		745D4EF51B0F704C00969535 /* SUTPropertyEntryField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUTPropertyEntryField.h; sourceTree = "<group>"; };
 		745D4EF61B0F704C00969535 /* SUTPropertyEntryField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUTPropertyEntryField.m; sourceTree = "<group>"; };
-		7476D5691B29D1260030967D /* SUTSpritesheetRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUTSpritesheetRenderer.h; sourceTree = "<group>"; };
-		7476D56A1B29D1260030967D /* SUTSpritesheetRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUTSpritesheetRenderer.m; sourceTree = "<group>"; };
-		7476D56F1B29EE3B0030967D /* SUTSpriteLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUTSpriteLayer.h; sourceTree = "<group>"; };
-		7476D5701B29EE3B0030967D /* SUTSpriteLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUTSpriteLayer.m; sourceTree = "<group>"; };
+		7476D5691B29D1260030967D /* SUTSpriteRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUTSpriteRenderer.h; sourceTree = "<group>"; };
+		7476D56A1B29D1260030967D /* SUTSpriteRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUTSpriteRenderer.m; sourceTree = "<group>"; };
 		747A10381AEE5D640097E6AB /* SUTWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUTWindow.h; sourceTree = "<group>"; };
 		747A10391AEE5D640097E6AB /* SUTWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUTWindow.m; sourceTree = "<group>"; };
 		74AF59241AF0EBF00013F9CD /* SUTWindowTitleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUTWindowTitleView.h; sourceTree = "<group>"; };
@@ -401,10 +398,8 @@
 		7476D5681B29D0F50030967D /* Renderer */ = {
 			isa = PBXGroup;
 			children = (
-				7476D5691B29D1260030967D /* SUTSpritesheetRenderer.h */,
-				7476D56A1B29D1260030967D /* SUTSpritesheetRenderer.m */,
-				7476D56F1B29EE3B0030967D /* SUTSpriteLayer.h */,
-				7476D5701B29EE3B0030967D /* SUTSpriteLayer.m */,
+				7476D5691B29D1260030967D /* SUTSpriteRenderer.h */,
+				7476D56A1B29D1260030967D /* SUTSpriteRenderer.m */,
 			);
 			path = Renderer;
 			sourceTree = "<group>";
@@ -851,11 +846,10 @@
 				744636181B2F006E00BD6A15 /* SUTSpriteView.m in Sources */,
 				743562951B1E0B9F0017C261 /* SUTExporterOptionsView.m in Sources */,
 				744E98C11B1F91690007DB04 /* KBButton.m in Sources */,
-				7476D56B1B29D1260030967D /* SUTSpritesheetRenderer.m in Sources */,
+				7476D56B1B29D1260030967D /* SUTSpriteRenderer.m in Sources */,
 				744E98C31B1F91690007DB04 /* NSColor+ColorExtensions.m in Sources */,
 				74CF98D91AC3960F002F8DC5 /* SUTExporterRegistry.m in Sources */,
 				74CF98DE1AC3960F002F8DC5 /* SUTSprite.m in Sources */,
-				7476D5711B29EE3B0030967D /* SUTSpriteLayer.m in Sources */,
 				74CF98E11AC3960F002F8DC5 /* SUTEmptySpriteSheetView.m in Sources */,
 				74CF98E51AC3960F002F8DC5 /* SUTProgressPanel.m in Sources */,
 				744636151B2EFC9000BD6A15 /* SUTClipView.m in Sources */,

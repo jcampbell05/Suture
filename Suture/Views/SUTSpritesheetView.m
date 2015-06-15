@@ -9,14 +9,14 @@
 #import "SUTSpritesheetView.h"
 
 #import "SUTDocument.h"
-#import "SUTSpritesheetRenderer.h"
+#import "SUTSpriteRenderer.h"
 #import "SUTSpritesheetLayout.h"
 #import "SUTSpriteView.h"
 
 @interface SUTSpritesheetView ()
 
 @property (nonatomic, strong) NSMutableDictionary *spriteViewTable;
-@property (nonatomic, strong) SUTSpritesheetRenderer *renderer;
+@property (nonatomic, strong) SUTSpriteRenderer *renderer;
 
 - (SUTSpriteView *)createNewSpriteView:(SUTSprite *)sprite;
 
@@ -50,11 +50,11 @@
     return _spriteViewTable;
 }
 
-- (SUTSpritesheetRenderer *)renderer
+- (SUTSpriteRenderer *)renderer
 {
     if (!_renderer)
     {
-        _renderer = [[SUTSpritesheetRenderer alloc] init];
+        _renderer = [[SUTSpriteRenderer alloc] init];
     }
     
     return _renderer;
@@ -63,34 +63,28 @@
 - (void)reloadSprites
 {
     [self.document.layout prepareLayout];
-
-    [self.document.sprites enumerateObjectsUsingBlock:^(SUTSprite *sprite, NSUInteger idx, BOOL *stop)
-     {
-         SUTSpriteView *spriteView = self.spriteViewTable[sprite.fileURL];
-         
-         if (!spriteView)
-         {
-             spriteView = [self createNewSpriteView:sprite];
-             self.spriteViewTable[sprite.fileURL] = spriteView;
-         }
-         
-         CGRect frame = [self.document.layout frameForSpriteAtIndex:idx];
-         spriteView.frame = frame;
-         [spriteView setNeedsDisplay:YES];
-     }];
+    
+    NSInteger idx = 0;
+    
+    for (NSView *sv in self.subviews)
+    {
+        [sv removeFromSuperview];
+    }
+    
+    for (SUTSprite *sprite in self.document.sprites)
+    {
+        SUTSpriteView *spriteView = [[SUTSpriteView alloc] initWithSprite:sprite
+                                                                 renderer:self.renderer];
+        [self addSubview:spriteView];
+        
+        CGRect frame = [self.document.layout frameForSpriteAtIndex:idx++];
+        spriteView.frame = frame;
+        [spriteView setNeedsDisplay:YES];
+    }
     
     CGRect frame = self.frame;
     frame.size = [self.document.layout contentSize];
     self.frame = frame;
-}
-
-- (SUTSpriteView *)createNewSpriteView:(SUTSprite *)sprite
-{
-    SUTSpriteView *spriteView = [[SUTSpriteView alloc] initWithSprite:sprite
-                                                             renderer:self.renderer];
-    [self addSubview:spriteView];
-    
-    return spriteView;
 }
 
 @end

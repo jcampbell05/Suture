@@ -21,7 +21,7 @@ NSString const * SUTImageExporterShouldExportSpecificationOptionKey = @"ShouldEx
 //TODO: Handle Errors in UI.
 @interface SUTImageExporter ()
 
-- (CGContextRef)createExportingImageContextWithSize:(CGSize)size;
+- (CGContextRef)createImageContextWithSize:(CGSize)size;
 - (void)exportSpecificationIfNeededWithExportDocument:(SUTDocument *)document
                                                   URL:(NSURL *)url
                                               options:(NSDictionary *)options;
@@ -61,21 +61,31 @@ NSString const * SUTImageExporterShouldExportSpecificationOptionKey = @"ShouldEx
     }
     
     CGSize contentSize = [document.layout contentSize];
-    CGContextRef context = [self createExportingImageContextWithSize:contentSize];
+    CGContextRef context = [self createImageContextWithSize:contentSize];
 
     CGContextClearRect(context, NSMakeRect(0, 0, contentSize.width, contentSize.height));
     
     
     SUTSpriteRenderer *renderer = [[SUTSpriteRenderer alloc] init];
     
-    for (SUTSprite *sprite in document.sprites)
+    [document.sprites enumerateObjectsUsingBlock:^(SUTSprite *sprite, NSUInteger idx, BOOL *stop)
     {
+        CGRect spriteFrame = [document.layout frameForSpriteAtIndex:idx];
+        CGContextRef spriteContext = [self createImageContextWithSize:sprite.size];
+        
         //TODO: Figure out how to render using layout system.
         [renderer renderSprite:sprite
-                       context:context];
+                       context:spriteContext];
+        
+        CGImageRef spriteImage = CGBitmapContextCreateImage(spriteContext);
+        CGContextDrawImage(context,
+                           spriteFrame,
+                           spriteImage);
         
         self.progress.completedUnitCount++;
-    }
+        
+        CGContextRelease(spriteContext);
+    }];
     
     [self writeContext:context
                    url:url];
@@ -133,7 +143,7 @@ NSString const * SUTImageExporterShouldExportSpecificationOptionKey = @"ShouldEx
 {
 }
 
-- (CGContextRef)createExportingImageContextWithSize:(CGSize)size
+- (CGContextRef)createImageContextWithSize:(CGSize)size
 {
     CGColorSpaceRef colorSpace = CGColorSpaceCreateWithName(kCGColorSpaceGenericRGB);
     CGContextRef context = CGBitmapContextCreate(NULL,

@@ -65,6 +65,8 @@ NSString const * SUTImageExporterShouldExportSpecificationOptionKey = @"ShouldEx
 
     CGContextClearRect(context, NSMakeRect(0, 0, contentSize.width, contentSize.height));
     
+    //TODO Move to https://gist.github.com/shpakovski/7696268
+    
     SUTSpritesheetRenderer *renderer = [[SUTSpritesheetRenderer alloc] init];
     renderer.document = document;
     [renderer renderInContext:context];

@@ -74,7 +74,6 @@ NSString const * SUTImageExporterShouldExportSpecificationOptionKey = @"ShouldEx
          CGRect spriteFrame = [document.layout frameForSpriteAtIndex:idx];
          CGContextRef spriteContext = [self createImageContextWithSize:sprite.size];
          
-         //TODO: Figure out how to render using layout system.
          [renderer renderSprite:sprite
                         context:spriteContext];
          

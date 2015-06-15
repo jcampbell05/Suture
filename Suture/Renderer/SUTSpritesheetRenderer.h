@@ -19,6 +19,6 @@
 - (void)renderInContext:(CGContextRef)context;
 
 - (void)renderSprite:(SUTSprite *)sprite
-             contect:(CGContextRef)context;
+             context:(CGContextRef)context;
 
 @end

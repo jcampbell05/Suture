@@ -47,6 +47,7 @@
     
     CGContextFlush(context);
     
+    //TODO: Work on some optimizations
     [self.renderer renderSprite:self.sprite
                         context:context];
 }

@@ -44,6 +44,9 @@
 - (void)drawRect:(NSRect)dirtyRect
 {
     CGContextRef context = [[NSGraphicsContext currentContext] CGContext];
+    
+    CGContextFlush(context);
+    
     [self.renderer renderSprite:self.sprite
                         context:context];
 }

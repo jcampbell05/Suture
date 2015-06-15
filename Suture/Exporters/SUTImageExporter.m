@@ -65,23 +65,24 @@ NSString const * SUTImageExporterShouldExportSpecificationOptionKey = @"ShouldEx
 
     CGContextClearRect(context, NSMakeRect(0, 0, contentSize.width, contentSize.height));
     
-    //TODO: Figure out how to render using layout system.
+    
     SUTSpriteRenderer *renderer = [[SUTSpriteRenderer alloc] init];
-    renderer.document = document;
     
     for (SUTSprite *sprite in document.sprites)
     {
+        //TODO: Figure out how to render using layout system.
+        [renderer renderSprite:sprite
+                       context:context];
         
+        self.progress.completedUnitCount++;
     }
-    
-    [renderer renderInContext:context];
     
     [self writeContext:context
                    url:url];
     
     CGContextRelease(context);
     
-    self.progress.completedUnitCount ++;
+    self.progress.completedUnitCount++;
     [self.delegate exporterDidExport:self];
 }
 

@@ -18,25 +18,9 @@
 @property (nonatomic, strong) NSMutableDictionary *spriteViewTable;
 @property (nonatomic, strong) SUTSpriteRenderer *renderer;
 
-- (SUTSpriteView *)createNewSpriteView:(SUTSprite *)sprite;
-
 @end
 
 @implementation SUTSpritesheetView
-
-#pragma mark - Document
-
-- (void)setDocument:(SUTDocument *)document
-{
-    self.renderer.document = document;
-    
-    [self reloadSprites];
-}
-
-- (SUTDocument *)document
-{
-    return self.renderer.document;
-}
 
 #pragma mark - Rendering
 

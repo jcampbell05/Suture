@@ -27,6 +27,7 @@
 		7441619E1ADE9D0500747B1E /* rwpng.c in Sources */ = {isa = PBXBuildFile; fileRef = 74415F791ADE85AD00747B1E /* rwpng.c */; };
 		744161A11ADE9D4900747B1E /* SUTPNGQuant.m in Sources */ = {isa = PBXBuildFile; fileRef = 744161A01ADE9D4900747B1E /* SUTPNGQuant.m */; };
 		744636151B2EFC9000BD6A15 /* SUTClipView.m in Sources */ = {isa = PBXBuildFile; fileRef = 744636141B2EFC9000BD6A15 /* SUTClipView.m */; };
+		744636181B2F006E00BD6A15 /* SUTSpriteView.m in Sources */ = {isa = PBXBuildFile; fileRef = 744636171B2F006E00BD6A15 /* SUTSpriteView.m */; };
 		744A71EE1AB4421C00077AA7 /* GenerateThumbnailForURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 744A71ED1AB4421C00077AA7 /* GenerateThumbnailForURL.m */; };
 		744A71F01AB4421C00077AA7 /* GeneratePreviewForURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 744A71EF1AB4421C00077AA7 /* GeneratePreviewForURL.m */; };
 		744A71F21AB4421C00077AA7 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 744A71F11AB4421C00077AA7 /* main.c */; };
@@ -172,6 +173,8 @@
 		744161A21ADEA1B900747B1E /* SUTPNGQuant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SUTPNGQuant.h; sourceTree = "<group>"; };
 		744636131B2EFC9000BD6A15 /* SUTClipView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUTClipView.h; sourceTree = "<group>"; };
 		744636141B2EFC9000BD6A15 /* SUTClipView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUTClipView.m; sourceTree = "<group>"; };
+		744636161B2F006E00BD6A15 /* SUTSpriteView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUTSpriteView.h; sourceTree = "<group>"; };
+		744636171B2F006E00BD6A15 /* SUTSpriteView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUTSpriteView.m; sourceTree = "<group>"; };
 		744A71E91AB4421C00077AA7 /* SutureQuickLook.qlgenerator */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SutureQuickLook.qlgenerator; sourceTree = BUILT_PRODUCTS_DIR; };
 		744A71EC1AB4421C00077AA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		744A71ED1AB4421C00077AA7 /* GenerateThumbnailForURL.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GenerateThumbnailForURL.m; sourceTree = "<group>"; };
@@ -495,6 +498,8 @@
 				74E380691B29BA880080BE71 /* SUTSpritesheetView.m */,
 				744636131B2EFC9000BD6A15 /* SUTClipView.h */,
 				744636141B2EFC9000BD6A15 /* SUTClipView.m */,
+				744636161B2F006E00BD6A15 /* SUTSpriteView.h */,
+				744636171B2F006E00BD6A15 /* SUTSpriteView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -843,6 +848,7 @@
 				744E98C21B1F91690007DB04 /* KBButtonCell.m in Sources */,
 				74CF98DF1AC3960F002F8DC5 /* SUTCheckerboardView.m in Sources */,
 				74CF98DC1AC3960F002F8DC5 /* SUTSpritesheetLayout.m in Sources */,
+				744636181B2F006E00BD6A15 /* SUTSpriteView.m in Sources */,
 				743562951B1E0B9F0017C261 /* SUTExporterOptionsView.m in Sources */,
 				744E98C11B1F91690007DB04 /* KBButton.m in Sources */,
 				7476D56B1B29D1260030967D /* SUTSpritesheetRenderer.m in Sources */,

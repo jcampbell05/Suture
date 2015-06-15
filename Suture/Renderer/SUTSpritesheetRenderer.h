@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @class SUTDocument;
+@class SUTSprite;
 @class SUTSpriteLayout;
 
 @interface SUTSpritesheetRenderer : NSObject
@@ -16,5 +17,8 @@
 @property (nonatomic, strong) SUTDocument *document;
 
 - (void)renderInContext:(CGContextRef)context;
+
+- (void)renderSprite:(SUTSprite *)sprite
+             contect:(CGContextRef)context;
 
 @end

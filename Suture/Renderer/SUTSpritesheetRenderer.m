@@ -19,22 +19,30 @@
 - (void)renderInContext:(CGContextRef)context
 {
     [self.document.layout prepareLayout];
+    
+    [self.document.sprites enumerateObjectsUsingBlock:^(SUTSprite *sprite, NSUInteger idx, BOOL *stop)
+    {
+        [self renderSprite:sprite
+                   contect:context];
+    }];
+}
+
+- (void)renderSprite:(SUTSprite *)sprite
+             contect:(CGContextRef)context
+{
+    NSInteger spriteIndex = [self.document.sprites indexOfObject:sprite];
     CGSize contentSize = [self.document.layout contentSize];
     
-    for (NSInteger spriteIndex = 0; spriteIndex < [self.document.sprites count]; spriteIndex ++)
-    {
-        CGRect spriteFrame = [self.document.layout frameForSpriteAtIndex:spriteIndex];
-        spriteFrame = SUTFlipCGRect(spriteFrame, contentSize);
-        
-        SUTSprite *sprite = self.document.sprites[spriteIndex];
-        CGImageRef image = sprite.image.CGImage;
-        
-        CGContextDrawImage(context,
-                           spriteFrame,
-                           image);
-        
-        CGImageRelease(image);
-    }
+    CGRect spriteFrame = [self.document.layout frameForSpriteAtIndex:spriteIndex];
+    spriteFrame = SUTFlipCGRect(spriteFrame, contentSize);
+
+    CGImageRef image = sprite.image.CGImage;
+    
+    CGContextDrawImage(context,
+                       spriteFrame,
+                       image);
+    
+    CGImageRelease(image);
 }
 
 @end

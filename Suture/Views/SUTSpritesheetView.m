@@ -60,8 +60,7 @@
 - (void)drawRect:(NSRect)dirtyRect
 {
     CGContextRef context = [[NSGraphicsContext currentContext] CGContext];
-    [self.renderer renderSpriteRange:NSMakeRange(0, self.document.sprites.count)
-                             context:context];
+    [self.renderer renderInContext:context];
 }
 
 @end

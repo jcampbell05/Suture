@@ -14,10 +14,10 @@
 {
     [super drawRect:dirtyRect];
     
-    NSInteger cellsPerRow = (self.bounds.size.width / self.cellSize.width);
-    NSInteger cellsPerColumn = (self.bounds.size.height / self.cellSize.height);
-    NSInteger totalCells = cellsPerRow * cellsPerColumn;
-//    
+//    NSInteger cellsPerRow = (self.bounds.size.width / self.cellSize.width);
+//    NSInteger cellsPerColumn = (self.bounds.size.height / self.cellSize.height);
+//    NSInteger totalCells = cellsPerRow * cellsPerColumn;
+//
 //    for (NSInteger index = 0; index < totalCells; index++)
 //    {
 //        NSIndexPath *indexPath = [NSIndexPath jnw_indexPathForItem:index % cellsPerRow

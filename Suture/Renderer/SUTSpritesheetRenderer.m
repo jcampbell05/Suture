@@ -16,13 +16,12 @@
 
 @implementation SUTSpritesheetRenderer
 
-- (void)renderSpriteRange:(NSRange)range
-                  context:(CGContextRef)context
+- (void)renderInContext:(CGContextRef)context
 {
     [self.document.layout prepareLayout];
     CGSize contentSize = [self.document.layout contentSize];
     
-    for (NSInteger spriteIndex = range.location; spriteIndex < range.length; spriteIndex ++)
+    for (NSInteger spriteIndex = 0; spriteIndex < [self.document.sprites count]; spriteIndex ++)
     {
         CGRect spriteFrame = [self.document.layout frameForSpriteAtIndex:spriteIndex];
         spriteFrame = SUTFlipCGRect(spriteFrame, contentSize);

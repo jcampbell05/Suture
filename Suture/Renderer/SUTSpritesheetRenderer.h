@@ -15,7 +15,6 @@
 
 @property (nonatomic, strong) SUTDocument *document;
 
-- (void)renderSpriteRange:(NSRange)range
-                  context:(CGContextRef)context;
+- (void)renderInContext:(CGContextRef)context;
 
 @end

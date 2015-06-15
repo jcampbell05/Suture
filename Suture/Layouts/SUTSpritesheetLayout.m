@@ -10,7 +10,6 @@
 
 @interface SUTSpriteLayoutAttribute : NSObject
 
-@property (nonatomic, assign) CGRect cellFrame;
 @property (nonatomic, assign) CGRect spriteFrame;
 
 @end
@@ -83,7 +82,6 @@
         spritePosition.y += (self.cellSize.height / 2) - (spriteSize.height / 2);
         
         SUTSpriteLayoutAttribute *attribute = [[SUTSpriteLayoutAttribute alloc] init];
-        attribute.cellFrame = (CGRect){cellPosition, self.cellSize};
         attribute.spriteFrame = (CGRect){spritePosition, spriteSize};
         
         [self.layoutAttributes addObject:attribute];
@@ -106,12 +104,6 @@
 {
     SUTSpriteLayoutAttribute *attribute = self.layoutAttributes[index];
     return attribute.spriteFrame;
-}
-
-- (CGRect)frameForCellAtIndex:(NSInteger)index
-{
-    SUTSpriteLayoutAttribute *attribute = self.layoutAttributes[index];
-    return attribute.cellFrame;
 }
 
 @end

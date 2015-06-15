@@ -15,7 +15,10 @@
 
 @interface SUTSpritesheetView ()
 
+@property (nonatomic, strong) NSMutableDictionary *spriteViewTable;
 @property (nonatomic, strong) SUTSpritesheetRenderer *renderer;
+
+- (SUTSpriteView *)createNewSpriteView:(SUTSprite *)sprite;
 
 @end
 
@@ -37,6 +40,16 @@
 
 #pragma mark - Rendering
 
+- (NSMutableDictionary *)spriteViewTable
+{
+    if (_spriteViewTable)
+    {
+        _spriteViewTable = [[NSMutableDictionary alloc] init];
+    }
+    
+    return _spriteViewTable;
+}
+
 - (SUTSpritesheetRenderer *)renderer
 {
     if (!_renderer)
@@ -55,21 +68,28 @@
     frame.size = [self.document.layout contentSize];
     self.frame = frame;
     
-    for(NSView *subview in self.subviews)
-    {
-        [subview removeFromSuperview];
-    }
-    
     [self.document.sprites enumerateObjectsUsingBlock:^(SUTSprite *sprite, NSUInteger idx, BOOL *stop)
      {
+         SUTSpriteView *spriteView = self.spriteViewTable[sprite.fileURL];
+         
+         if (!spriteView)
+         {
+             spriteView = [self createNewSpriteView:sprite];
+             self.spriteViewTable[sprite.fileURL] = spriteView;
+         }
+         
          CGRect frame = [self.document.layout frameForSpriteAtIndex:idx];
-         
-         SUTSpriteView *spriteView = [[SUTSpriteView alloc] initWithSprite:sprite
-                                                                  renderer:self.renderer];
          spriteView.frame = frame;
-         
-         [self addSubview:spriteView];
      }];
+}
+
+- (SUTSpriteView *)createNewSpriteView:(SUTSprite *)sprite
+{
+    SUTSpriteView *spriteView = [[SUTSpriteView alloc] initWithSprite:sprite
+                                                             renderer:self.renderer];
+    [self addSubview:spriteView];
+    
+    return spriteView;
 }
 
 @end

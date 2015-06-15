@@ -8,6 +8,10 @@
 
 #import <Cocoa/Cocoa.h>
 
+#import "SUTsprite.h"
+
 @interface SUTSpriteView : NSView
+
+@property (nonatomic, strong) SUTSprite *sprite;
 
 @end

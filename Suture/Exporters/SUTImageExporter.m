@@ -68,24 +68,25 @@ NSString const * SUTImageExporterShouldExportSpecificationOptionKey = @"ShouldEx
     
     SUTSpriteRenderer *renderer = [[SUTSpriteRenderer alloc] init];
     
-    [document.sprites enumerateObjectsUsingBlock:^(SUTSprite *sprite, NSUInteger idx, BOOL *stop)
-    {
-        CGRect spriteFrame = [document.layout frameForSpriteAtIndex:idx];
-        CGContextRef spriteContext = [self createImageContextWithSize:sprite.size];
-        
-        //TODO: Figure out how to render using layout system.
-        [renderer renderSprite:sprite
-                       context:spriteContext];
-        
-        CGImageRef spriteImage = CGBitmapContextCreateImage(spriteContext);
-        CGContextDrawImage(context,
-                           spriteFrame,
-                           spriteImage);
-        
-        self.progress.completedUnitCount++;
-        
-        CGContextRelease(spriteContext);
-    }];
+    [document.sprites enumerateObjectsWithOptions:NSEnumerationConcurrent
+                                       usingBlock:^(SUTSprite *sprite, NSUInteger idx, BOOL *stop)
+     {
+         CGRect spriteFrame = [document.layout frameForSpriteAtIndex:idx];
+         CGContextRef spriteContext = [self createImageContextWithSize:sprite.size];
+         
+         //TODO: Figure out how to render using layout system.
+         [renderer renderSprite:sprite
+                        context:spriteContext];
+         
+         CGImageRef spriteImage = CGBitmapContextCreateImage(spriteContext);
+         CGContextDrawImage(context,
+                            spriteFrame,
+                            spriteImage);
+         
+         self.progress.completedUnitCount++;
+         
+         CGContextRelease(spriteContext);
+     }];
     
     [self writeContext:context
                    url:url];

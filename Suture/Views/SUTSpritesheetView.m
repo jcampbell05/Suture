@@ -63,11 +63,7 @@
 - (void)reloadSprites
 {
     [self.document.layout prepareLayout];
-    
-    CGRect frame = self.frame;
-    frame.size = [self.document.layout contentSize];
-    self.frame = frame;
-    
+
     [self.document.sprites enumerateObjectsUsingBlock:^(SUTSprite *sprite, NSUInteger idx, BOOL *stop)
      {
          SUTSpriteView *spriteView = self.spriteViewTable[sprite.fileURL];
@@ -80,7 +76,12 @@
          
          CGRect frame = [self.document.layout frameForSpriteAtIndex:idx];
          spriteView.frame = frame;
+         [spriteView setNeedsDisplay:YES];
      }];
+    
+    CGRect frame = self.frame;
+    frame.size = [self.document.layout contentSize];
+    self.frame = frame;
 }
 
 - (SUTSpriteView *)createNewSpriteView:(SUTSprite *)sprite

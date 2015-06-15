@@ -28,6 +28,12 @@
     {
         self.sprite = sprite;
         self.renderer = renderer;
+        self.wantsLayer = YES;
+        
+        if ([[NSProcessInfo processInfo] environment][@"SUTSpriteViewDebugBackground"])
+        {
+            self.layer.backgroundColor = [NSColor redColor].CGColor;
+        }
     }
     
     return self;

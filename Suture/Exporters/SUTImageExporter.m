@@ -82,9 +82,9 @@ NSString const * SUTImageExporterShouldExportSpecificationOptionKey = @"ShouldEx
                             spriteFrame,
                             spriteImage);
          
-         self.progress.completedUnitCount++;
-         
          CGContextRelease(spriteContext);
+         
+         self.progress.completedUnitCount++;
      }];
     
     [self writeContext:context

@@ -27,7 +27,7 @@
 {
     self.renderer.document = document;
     
-    [self setNeedsDisplay:YES];
+    [self reloadSprites];
 }
 
 - (SUTDocument *)document
@@ -47,30 +47,24 @@
     return _renderer;
 }
 
-- (void)setNeedsDisplay:(BOOL)needsDisplay
+- (void)reloadSprites
 {
-    [super setNeedsDisplay:needsDisplay];
-    
     [self.document.layout prepareLayout];
     
     CGRect frame = self.frame;
     frame.size = [self.document.layout contentSize];
     self.frame = frame;
-}
-
-- (void)drawRect:(NSRect)dirtyRect
-{
-    NSLog(@"RENDER");
+    
     [self.document.sprites enumerateObjectsUsingBlock:^(SUTSprite *sprite, NSUInteger idx, BOOL *stop)
-    {
-        CGRect frame = [self.document.layout frameForSpriteAtIndex:idx];
-        
-        SUTSpriteView *spriteView = [[SUTSpriteView alloc] initWithSprite:sprite
-                                                                 renderer:self.renderer];
-        spriteView.frame = frame;
-        
-        [self addSubview:spriteView];
-    }];
+     {
+         CGRect frame = [self.document.layout frameForSpriteAtIndex:idx];
+         
+         SUTSpriteView *spriteView = [[SUTSpriteView alloc] initWithSprite:sprite
+                                                                  renderer:self.renderer];
+         spriteView.frame = frame;
+         
+         [self addSubview:spriteView];
+     }];
 }
 
 @end

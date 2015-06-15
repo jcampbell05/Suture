@@ -16,4 +16,6 @@
 
 @property (nonatomic, strong) SUTDocument *document;
 
+- (void)reloadSprites;
+
 @end

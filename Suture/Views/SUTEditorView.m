@@ -178,7 +178,7 @@
         [self.document addSprite:sprite];
     }];
     
-    [self.spriteSheetView setNeedsDisplay:YES];
+    [self.spriteSheetView reloadSprites];
 }
 
 - (void)removeSelectedSprite
@@ -188,7 +188,7 @@
 //        [self.document removeObjectFromSpritesAtIndex:indexPath.jnw_item];
 //    }
     
-    [self.spriteSheetView setNeedsDisplay:YES];
+    [self.spriteSheetView reloadSprites];
 }
 
 @end

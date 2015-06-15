@@ -11,6 +11,7 @@
 #import "SUTDocument.h"
 #import "SUTSpritesheetRenderer.h"
 #import "SUTSpritesheetLayout.h"
+#import "SUTSpriteView.h"
 
 @interface SUTSpritesheetView ()
 
@@ -59,8 +60,17 @@
 
 - (void)drawRect:(NSRect)dirtyRect
 {
-    CGContextRef context = [[NSGraphicsContext currentContext] CGContext];
-    [self.renderer renderInContext:context];
+    NSLog(@"RENDER");
+    [self.document.sprites enumerateObjectsUsingBlock:^(SUTSprite *sprite, NSUInteger idx, BOOL *stop)
+    {
+        CGRect frame = [self.document.layout frameForSpriteAtIndex:idx];
+        
+        SUTSpriteView *spriteView = [[SUTSpriteView alloc] initWithSprite:sprite
+                                                                 renderer:self.renderer];
+        spriteView.frame = frame;
+        
+        [self addSubview:spriteView];
+    }];
 }
 
 @end

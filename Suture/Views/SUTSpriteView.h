@@ -8,10 +8,12 @@
 
 #import <Cocoa/Cocoa.h>
 
-#import "SUTsprite.h"
+#import "SUTSprite.h"
+#import "SUTSpritesheetRenderer.h"
 
 @interface SUTSpriteView : NSView
 
-@property (nonatomic, strong) SUTSprite *sprite;
+- (instancetype)initWithSprite:(SUTSprite *)sprite
+                      renderer:(SUTSpritesheetRenderer *)renderer;
 
 @end

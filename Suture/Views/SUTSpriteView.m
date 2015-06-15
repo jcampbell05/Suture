@@ -10,27 +10,36 @@
 
 @interface SUTSpriteView ()
 
-- (void)spriteDidChange;
+@property (nonatomic, strong) SUTSpritesheetRenderer *renderer;
+@property (nonatomic, strong) SUTSprite *sprite;
 
 @end
 
 @implementation SUTSpriteView
 
-- (void)setSprite:(SUTSprite *)sprite
+#pragma mark - Init
+
+- (instancetype)initWithSprite:(SUTSprite *)sprite
+                      renderer:(SUTSpritesheetRenderer *)renderer
 {
-    if (![_sprite isEqual:sprite])
+    self = [super init];
+    
+    if (self)
     {
-        [self willChangeValueForKey:NSStringFromSelector(@selector(sprite))];
-        _sprite = sprite;
-        [self didChangeValueForKey:NSStringFromSelector(@selector(sprite))];
-        
-        [self spriteDidChange];
+        self.sprite = sprite;
+        self.renderer = renderer;
     }
+    
+    return self;
 }
 
-- (void)spriteDidChange
+#pragma mark - Drawing
+
+- (void)drawRect:(NSRect)dirtyRect
 {
-    [self setNeedsDisplay:YES];
+    CGContextRef context = [[NSGraphicsContext currentContext] CGContext];
+    [self.renderer renderSprite:self.sprite
+                        contect:context];
 }
 
 @end

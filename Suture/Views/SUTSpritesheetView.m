@@ -55,6 +55,11 @@
     frame.size = [self.document.layout contentSize];
     self.frame = frame;
     
+    for(NSView *subview in self.subviews)
+    {
+        [subview removeFromSuperview];
+    }
+    
     [self.document.sprites enumerateObjectsUsingBlock:^(SUTSprite *sprite, NSUInteger idx, BOOL *stop)
      {
          CGRect frame = [self.document.layout frameForSpriteAtIndex:idx];

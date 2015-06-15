@@ -130,6 +130,17 @@
      }];
 }
 
+ //TODO: Figure out a way to not need so much chaining :).
+- (void)zoomIn:(id)sender
+{
+    [self.window.editorView.scrollView animator].magnification += 0.5;
+}
+
+- (void)zoomOut:(id)sender
+{
+    [self.window.editorView.scrollView animator].magnification -= 0.5;
+}
+
 #pragma mark - Time Machine
 
 - (void)didEnterVersionBrowser:(NSNotification *)notification

@@ -8,14 +8,16 @@
 
 #import "SUTEditorView.h"
 
+#import "SUTClipView.h"
 #import "SUTDocument.h"
-#import "SUTSprite.h"
 #import "SUTEmptySpriteSheetView.h"
 #import "SUTOutlineView.h"
+#import "SUTSprite.h"
 #import "SUTSpritesheetView.h"
 
 @interface SUTEditorView () <NSDraggingDestination>
 
+@property (nonatomic, strong) SUTClipView *clipView;
 @property (nonatomic, strong) SUTEmptySpriteSheetView *emptySpriteView;
 @property (nonatomic, strong) NSScrollView *scrollView;
 @property (nonatomic, strong) SUTSpritesheetView *spriteSheetView;
@@ -43,7 +45,17 @@
     return self;
 }
 
-#pragma mark - emptySpriteView
+#pragma mark - Subviews
+
+- (SUTClipView *)clipView
+{
+    if (!_clipView)
+    {
+        _clipView = [[SUTClipView alloc] init];
+    }
+    
+    return _clipView;
+}
 
 - (SUTEmptySpriteSheetView *)emptySpriteView
 {
@@ -63,6 +75,8 @@
         _scrollView = [[NSScrollView alloc] initWithFrame:self.bounds];
         
         _scrollView.autoresizingMask = NSViewWidthSizable | NSViewHeightSizable;
+        _scrollView.allowsMagnification = YES;
+        _scrollView.contentView = self.clipView;
         _scrollView.documentView = self.spriteSheetView;
         _scrollView.hasHorizontalScroller = YES;
         _scrollView.hasVerticalScroller = YES;

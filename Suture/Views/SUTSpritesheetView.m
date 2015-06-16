@@ -13,14 +13,39 @@
 #import "SUTSpritesheetLayout.h"
 #import "SUTSpriteView.h"
 
+static CGFloat SUTSpriteSheetTransparentBackgroundPixelSize = 25.0f;
+
 void SUTRenderSpriteSheetTransparentBackground(void *info, CGContextRef context)
 {
+    NSInteger numberOfCells = 8;
+    NSInteger cellsPerRow = 4;
     
+    for (NSInteger cellIndex = 0; cellIndex < numberOfCells; cellIndex ++)
+    {
+        CGPoint cellLocation = (CGPoint)
+        {
+            cellIndex,
+            cellIndex % cellsPerRow
+        };
+        
+        CGRect cellFrame = (CGRect)
+        {
+            cellLocation.x * SUTSpriteSheetTransparentBackgroundPixelSize,
+            cellLocation.y * SUTSpriteSheetTransparentBackgroundPixelSize,
+            SUTSpriteSheetTransparentBackgroundPixelSize,
+            SUTSpriteSheetTransparentBackgroundPixelSize
+        };
+        
+        CGContextSetFillColorWithColor(context,
+                                       [NSColor gridColor].CGColor);
+        
+        CGContextFillRect(context,
+                          cellFrame);
+    }
 }
 
 void SUTReleaseSpriteSheetTransparentBackground(void *info)
 {
-    
 }
 
 @interface SUTSpritesheetView ()

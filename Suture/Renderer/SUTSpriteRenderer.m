@@ -8,7 +8,6 @@
 
 #import "SUTSpriteRenderer.h"
 
-#import "NSImage+CGImage.h"
 #import "SUTSprite.h"
 
 @implementation SUTSpriteRenderer
@@ -19,7 +18,7 @@
     CGRect spriteFrame = CGRectZero;
     spriteFrame.size = sprite.size;
 
-    CGImageRef image = sprite.image.CGImage;
+    CGImageRef image = sprite.CGImage;
     
     CGContextDrawImage(context,
                        spriteFrame,

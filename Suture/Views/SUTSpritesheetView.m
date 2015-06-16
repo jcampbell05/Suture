@@ -13,6 +13,16 @@
 #import "SUTSpritesheetLayout.h"
 #import "SUTSpriteView.h"
 
+void SUTRenderSpriteSheetTransparentBackground(void *info, CGContextRef context)
+{
+    
+}
+
+void SUTReleaseSpriteSheetTransparentBackground(void *info)
+{
+    
+}
+
 @interface SUTSpritesheetView ()
 
 @property (nonatomic, strong) NSMutableDictionary *spriteViewTable;
@@ -31,6 +41,7 @@
     if (self)
     {
         self.canDrawSubviewsIntoLayer = YES;
+        self.wantsLayer = YES;
     }
     
     return self;
@@ -83,6 +94,30 @@
     CGRect frame = self.frame;
     frame.size = [self.document.layout contentSize];
     self.frame = frame;
+    
+    CGPatternCallbacks transparentBackgroundCallbacks =
+    {
+        0,
+        &SUTRenderSpriteSheetTransparentBackground,
+        &SUTReleaseSpriteSheetTransparentBackground
+    };
+    
+    CGPatternRef pattern = CGPatternCreate (NULL,
+                                            self.bounds,
+                                            CGAffineTransformIdentity,
+                                            self.bounds.size.width,
+                                            self.bounds.size.height,
+                                            kCGPatternTilingConstantSpacing,
+                                            true,
+                                            &transparentBackgroundCallbacks);
+    
+    CGColorSpaceRef space = CGColorSpaceCreatePattern(NULL);
+    CGFloat components[1] = {1.0};
+    CGColorRef color = CGColorCreateWithPattern(space, pattern, components);
+    CGColorSpaceRelease(space);
+    CGPatternRelease(pattern);
+    
+    self.layer.backgroundColor = color;
 }
 
 @end

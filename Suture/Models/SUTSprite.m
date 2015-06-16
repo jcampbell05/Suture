@@ -44,9 +44,15 @@
 
 #pragma mark - Image
 
-- (NSImage *)image
+- (CGImageRef)CGImage
 {
-    return  [self.document imageForURL:self.fileURL];
+    NSImage *image = [self.document imageForURL:self.fileURL];
+    NSData *imageData = [image TIFFRepresentation];
+
+    CGImageSourceRef imageSource = CGImageSourceCreateWithData((CFDataRef)imageData, NULL);
+    CGImageRef cgImage = CGImageSourceCreateImageAtIndex(imageSource, 0, NULL);
+    
+    return cgImage;
 }
 
 - (CGSize)size

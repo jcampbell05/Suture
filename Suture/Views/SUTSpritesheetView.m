@@ -65,8 +65,8 @@ void SUTReleaseSpriteSheetTransparentBackground(void *info)
     
     if (self)
     {
-        self.canDrawSubviewsIntoLayer = YES;
-        self.wantsLayer = YES;
+      //  self.canDrawSubviewsIntoLayer = YES;
+       // self.wantsLayer = YES;
     }
     
     return self;

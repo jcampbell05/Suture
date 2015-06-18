@@ -8,6 +8,8 @@
 
 #import "SUTSpriteView.h"
 
+#import <Quartz/Quartz.h>
+
 @interface SUTSpriteView ()
 
 @property (nonatomic, strong) SUTSpriteRenderer *renderer;
@@ -30,6 +32,11 @@
         self.renderer = renderer;
         self.wantsLayer = YES;
         
+        self.layer = [CATiledLayer layer];
+        self.layer.delegate = self;
+        
+        [self.layer setNeedsDisplay];
+
         if ([[NSProcessInfo processInfo] environment][@"SUTSpriteViewDebugBackground"])
         {
             self.layer.backgroundColor = [NSColor redColor].CGColor;
@@ -41,15 +48,12 @@
 
 #pragma mark - Drawing
 
-- (void)drawRect:(NSRect)dirtyRect
+- (void)drawLayer:(CALayer *)layer inContext:(CGContextRef)context
 {
-    CGContextRef context = [[NSGraphicsContext currentContext] CGContext];
-    
     CGContextFlush(context);
     
     //TODO: Work on some optimizations
     [self.renderer renderSprite:self.sprite
                         context:context];
 }
-
 @end

@@ -86,7 +86,7 @@
          <EnvironmentVariable
             key = "SUTSpriteViewDebugBackground"
             value = "1"
-            isEnabled = "NO">
+            isEnabled = "YES">
          </EnvironmentVariable>
       </EnvironmentVariables>
       <AdditionalOptions>

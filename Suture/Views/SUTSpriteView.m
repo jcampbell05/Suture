@@ -32,9 +32,11 @@
         self.renderer = renderer;
         self.wantsLayer = YES;
         
-        self.layer = [CATiledLayer layer];
-        self.layer.delegate = self;
+        CATiledLayer *tiledLayer = [CATiledLayer layer];
+        tiledLayer.delegate = self;
+        tiledLayer.levelsOfDetail = 5;
         
+        self.layer = tiledLayer;
         [self.layer setNeedsDisplay];
 
         if ([[NSProcessInfo processInfo] environment][@"SUTSpriteViewDebugBackground"])

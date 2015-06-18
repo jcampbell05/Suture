@@ -13,35 +13,20 @@
 #import "SUTSpritesheetLayout.h"
 #import "SUTSpriteView.h"
 
-static CGFloat SUTSpriteSheetTransparentBackgroundPixelSize = 25.0f;
+static CGFloat SUTSpriteSheetTransparentBackgroundCheckerboardSize = 25.0f;
 
 void SUTRenderSpriteSheetTransparentBackground(void *info, CGContextRef context)
 {
-    NSInteger numberOfCells = 8;
-    NSInteger cellsPerRow = 4;
+    CGColorRef alternateColor = CGColorCreateGenericRGB(1.0, 1.0, 1.0, 0.25);
+    CGContextSetFillColorWithColor(context, alternateColor);
     
-    for (NSInteger cellIndex = 0; cellIndex < numberOfCells; cellIndex ++)
-    {
-        CGPoint cellLocation = (CGPoint)
-        {
-            cellIndex,
-            cellIndex % cellsPerRow
-        };
-        
-        CGRect cellFrame = (CGRect)
-        {
-            cellLocation.x * SUTSpriteSheetTransparentBackgroundPixelSize,
-            cellLocation.y * SUTSpriteSheetTransparentBackgroundPixelSize,
-            SUTSpriteSheetTransparentBackgroundPixelSize,
-            SUTSpriteSheetTransparentBackgroundPixelSize
-        };
-        
-        CGContextSetFillColorWithColor(context,
-                                       [NSColor gridColor].CGColor);
-        
-        CGContextFillRect(context,
-                          cellFrame);
-    }
+    CGContextAddRect(context, CGRectMake(0.0f, 0.0f, SUTSpriteSheetTransparentBackgroundCheckerboardSize, SUTSpriteSheetTransparentBackgroundCheckerboardSize));
+    CGContextFillPath(context);
+    
+    CGContextAddRect(context, CGRectMake(SUTSpriteSheetTransparentBackgroundCheckerboardSize, SUTSpriteSheetTransparentBackgroundCheckerboardSize, SUTSpriteSheetTransparentBackgroundCheckerboardSize, SUTSpriteSheetTransparentBackgroundCheckerboardSize));
+    CGContextFillPath(context);
+    
+    CGColorRelease(alternateColor);
 }
 
 void SUTReleaseSpriteSheetTransparentBackground(void *info)
@@ -112,11 +97,20 @@ void SUTReleaseSpriteSheetTransparentBackground(void *info)
         &SUTReleaseSpriteSheetTransparentBackground
     };
     
+    CGRect patternSize =
+    {
+        CGPointZero,
+        (CGSize)
+        {
+            SUTSpriteSheetTransparentBackgroundCheckerboardSize * 2,
+            SUTSpriteSheetTransparentBackgroundCheckerboardSize * 2
+        }
+    };
     CGPatternRef pattern = CGPatternCreate (NULL,
-                                            self.bounds,
+                                            patternSize,
                                             CGAffineTransformIdentity,
-                                            self.bounds.size.width,
-                                            self.bounds.size.height,
+                                            patternSize.size.width,
+                                            patternSize.size.height,
                                             kCGPatternTilingConstantSpacing,
                                             true,
                                             &transparentBackgroundCallbacks);

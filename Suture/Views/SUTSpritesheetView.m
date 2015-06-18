@@ -57,21 +57,6 @@ void SUTReleaseSpriteSheetTransparentBackground(void *info)
 
 @implementation SUTSpritesheetView
 
-#pragma mark - Init
-
-- (instancetype)init
-{
-    self = [super init];
-    
-    if (self)
-    {
-      //  self.canDrawSubviewsIntoLayer = YES;
-       // self.wantsLayer = YES;
-    }
-    
-    return self;
-}
-
 #pragma mark - Rendering
 
 - (NSMutableDictionary *)spriteViewTable

@@ -13,18 +13,23 @@
 #import "SUTSpritesheetLayout.h"
 #import "SUTSpriteView.h"
 
-static CGFloat SUTSpriteSheetTransparentBackgroundCheckerboardSize = 25.0f;
+static CGFloat SUTSpriteSheetTransparentBackgroundCheckerboardSize = 10.0f;
+static CGFloat SUTSpriteSheetTransparentBackgroundCheckerboardCount = 2.0f;
 
 void SUTRenderSpriteSheetTransparentBackground(void *info, CGContextRef context)
 {
     CGColorRef alternateColor = CGColorCreateGenericRGB(1.0, 1.0, 1.0, 0.25);
     CGContextSetFillColorWithColor(context, alternateColor);
     
-    CGContextAddRect(context, CGRectMake(0.0f, 0.0f, SUTSpriteSheetTransparentBackgroundCheckerboardSize, SUTSpriteSheetTransparentBackgroundCheckerboardSize));
-    CGContextFillPath(context);
-    
-    CGContextAddRect(context, CGRectMake(SUTSpriteSheetTransparentBackgroundCheckerboardSize, SUTSpriteSheetTransparentBackgroundCheckerboardSize, SUTSpriteSheetTransparentBackgroundCheckerboardSize, SUTSpriteSheetTransparentBackgroundCheckerboardSize));
-    CGContextFillPath(context);
+    for (NSInteger i = 0; i < SUTSpriteSheetTransparentBackgroundCheckerboardCount; i ++)
+    {
+        CGRect checkerboardFrame = CGRectMake(SUTSpriteSheetTransparentBackgroundCheckerboardSize * i,
+                                              SUTSpriteSheetTransparentBackgroundCheckerboardSize * i,
+                                              SUTSpriteSheetTransparentBackgroundCheckerboardSize,
+                                              SUTSpriteSheetTransparentBackgroundCheckerboardSize);
+        CGContextAddRect(context, checkerboardFrame);
+        CGContextFillPath(context);
+    }
     
     CGColorRelease(alternateColor);
 }
@@ -102,8 +107,8 @@ void SUTReleaseSpriteSheetTransparentBackground(void *info)
         CGPointZero,
         (CGSize)
         {
-            SUTSpriteSheetTransparentBackgroundCheckerboardSize * 2,
-            SUTSpriteSheetTransparentBackgroundCheckerboardSize * 2
+            SUTSpriteSheetTransparentBackgroundCheckerboardSize * SUTSpriteSheetTransparentBackgroundCheckerboardCount,
+            SUTSpriteSheetTransparentBackgroundCheckerboardSize * SUTSpriteSheetTransparentBackgroundCheckerboardCount
         }
     };
     CGPatternRef pattern = CGPatternCreate (NULL,

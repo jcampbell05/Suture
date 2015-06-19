@@ -40,8 +40,10 @@ void SUTReleaseSpriteSheetTransparentBackground(void *info)
 
 @interface SUTSpritesheetView ()
 
-@property (nonatomic, strong) NSMutableDictionary *spriteViewTable;
+@property (nonatomic, strong) NSMutableArray *spriteViewQueue;
 @property (nonatomic, strong) SUTSpriteRenderer *renderer;
+
+- (SUTSpriteView *)dequeueSpriteViewForIndex:(NSInteger)index;
 
 @end
 
@@ -49,14 +51,14 @@ void SUTReleaseSpriteSheetTransparentBackground(void *info)
 
 #pragma mark - Rendering
 
-- (NSMutableDictionary *)spriteViewTable
+- (NSMutableArray *)spriteViewQueue
 {
-    if (_spriteViewTable)
+    if (_spriteViewQueue)
     {
-        _spriteViewTable = [[NSMutableDictionary alloc] init];
+        _spriteViewQueue = [[NSMutableArray alloc] init];
     }
     
-    return _spriteViewTable;
+    return _spriteViewQueue;
 }
 
 - (SUTSpriteRenderer *)renderer
@@ -69,22 +71,36 @@ void SUTReleaseSpriteSheetTransparentBackground(void *info)
     return _renderer;
 }
 
+- (SUTSpriteView *)dequeueSpriteViewForIndex:(NSInteger)index
+{
+    SUTSpriteView *spriteView;
+    
+    if ([self.spriteViewQueue count] < (index + 1))
+    {
+        SUTSpriteView *newSpriteView = [[SUTSpriteView alloc] initWithRenderer:self.renderer];
+        [self.spriteViewQueue addObject:newSpriteView];
+        [self addSubview:newSpriteView];
+        
+        spriteView = newSpriteView;
+    }
+    else
+    {
+        spriteView = self.spriteViewQueue[index];
+    }
+    
+    return spriteView;
+}
+
 - (void)reloadSprites
 {
     [self.document.layout prepareLayout];
     
     NSInteger idx = 0;
     
-    for (NSView *sv in self.subviews)
-    {
-        [sv removeFromSuperview];
-    }
-    
     for (SUTSprite *sprite in self.document.sprites)
     {
-        SUTSpriteView *spriteView = [[SUTSpriteView alloc] initWithSprite:sprite
-                                                                 renderer:self.renderer];
-        [self addSubview:spriteView];
+        SUTSpriteView *spriteView = [self dequeueSpriteViewForIndex:idx];
+        spriteView.sprite = sprite;
         
         CGRect frame = [self.document.layout frameForSpriteAtIndex:idx++];
         spriteView.frame = frame;

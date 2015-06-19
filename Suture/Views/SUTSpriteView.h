@@ -13,7 +13,8 @@
 
 @interface SUTSpriteView : NSView
 
-- (instancetype)initWithSprite:(SUTSprite *)sprite
-                      renderer:(SUTSpriteRenderer *)renderer;
+- (instancetype)initWithRenderer:(SUTSpriteRenderer *)renderer;
+
+@property (nonatomic, strong) SUTSprite *sprite;
 
 @end

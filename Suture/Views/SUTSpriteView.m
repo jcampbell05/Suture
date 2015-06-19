@@ -13,7 +13,6 @@
 @interface SUTSpriteView ()
 
 @property (nonatomic, strong) SUTSpriteRenderer *renderer;
-@property (nonatomic, strong) SUTSprite *sprite;
 
 @end
 
@@ -21,14 +20,12 @@
 
 #pragma mark - Init
 
-- (instancetype)initWithSprite:(SUTSprite *)sprite
-                      renderer:(SUTSpriteRenderer *)renderer
+- (instancetype)initWithRenderer:(SUTSpriteRenderer *)renderer
 {
     self = [super init];
     
     if (self)
     {
-        self.sprite = sprite;
         self.renderer = renderer;
         self.wantsLayer = YES;
         
@@ -46,6 +43,20 @@
     }
     
     return self;
+}
+
+#pragma mark - Sprite
+
+- (void)setSprite:(SUTSprite *)sprite
+{
+    if (![self.sprite isEqualTo:sprite])
+    {
+        [self willChangeValueForKey:NSStringFromSelector(@selector(sprite))];
+        _sprite = sprite;
+        [self didChangeValueForKey:NSStringFromSelector(@selector(sprite))];
+        
+        [self.layer setNeedsDisplay];
+    }
 }
 
 #pragma mark - Drawing

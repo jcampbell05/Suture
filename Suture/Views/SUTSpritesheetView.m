@@ -53,7 +53,7 @@ void SUTReleaseSpriteSheetTransparentBackground(void *info)
 
 - (NSMutableArray *)spriteViewQueue
 {
-    if (_spriteViewQueue)
+    if (!_spriteViewQueue)
     {
         _spriteViewQueue = [[NSMutableArray alloc] init];
     }
@@ -102,14 +102,14 @@ void SUTReleaseSpriteSheetTransparentBackground(void *info)
         SUTSpriteView *spriteView = [self dequeueSpriteViewForIndex:idx];
         spriteView.sprite = sprite;
         
-        CGRect frame = [self.document.layout frameForSpriteAtIndex:idx++];
-        spriteView.frame = frame;
+        CGRect spriteFrame = [self.document.layout frameForSpriteAtIndex:idx++];
+        spriteView.frame = spriteFrame;
         [spriteView setNeedsDisplay:YES];
     }
     
-    CGRect frame = self.frame;
-    frame.size = [self.document.layout contentSize];
-    self.frame = frame;
+    CGRect spriteSheetFrame = self.frame;
+    spriteSheetFrame.size = [self.document.layout contentSize];
+    self.frame = spriteSheetFrame;
     
     CGPatternCallbacks transparentBackgroundCallbacks =
     {
@@ -143,6 +143,20 @@ void SUTReleaseSpriteSheetTransparentBackground(void *info)
     CGPatternRelease(pattern);
     
     self.layer.backgroundColor = color;
+}
+
+- (void)mouseDown:(NSEvent *)event
+{
+    CGPoint locationInSpriteSheet = [self convertPoint:event.locationInWindow
+                                              fromView:nil];
+    
+    [self.spriteViewQueue enumerateObjectsUsingBlock:^(SUTSpriteView *spriteView, NSUInteger idx, BOOL *stop)
+    {
+        if (CGRectContainsPoint(spriteView.frame, locationInSpriteSheet))
+        {
+            spriteView.selected = !spriteView.selected;
+        }
+    }];
 }
 
 @end

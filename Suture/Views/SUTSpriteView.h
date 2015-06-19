@@ -15,6 +15,7 @@
 
 - (instancetype)initWithRenderer:(SUTSpriteRenderer *)renderer;
 
+@property (nonatomic, assign) BOOL selected;
 @property (nonatomic, strong) SUTSprite *sprite;
 
 @end

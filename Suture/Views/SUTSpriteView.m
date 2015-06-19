@@ -45,7 +45,20 @@
     return self;
 }
 
-#pragma mark - Sprite
+#pragma mark - Properties
+
+- (void)setSelected:(BOOL)selected
+{
+    if (_selected != selected)
+    {
+        [self willChangeValueForKey:NSStringFromSelector(@selector(selected))];
+        _selected = selected;
+        [self didChangeValueForKey:NSStringFromSelector(@selector(selected))];
+        
+        self.layer.borderWidth = 4 * selected;
+        self.layer.borderColor = (selected) ? [NSColor blueColor].CGColor : nil;
+    }
+}
 
 - (void)setSprite:(SUTSprite *)sprite
 {

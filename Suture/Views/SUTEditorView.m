@@ -78,6 +78,7 @@
         _scrollView.autoresizingMask = NSViewWidthSizable | NSViewHeightSizable;
         _scrollView.allowsMagnification = YES;
         _scrollView.contentView = self.clipView;
+        _scrollView.drawsBackground = NO;
         _scrollView.documentView = self.spriteSheetView;
         _scrollView.hasHorizontalScroller = YES;
         _scrollView.hasVerticalScroller = YES;
@@ -179,6 +180,8 @@
         [self.document addSprite:sprite];
     }];
     
+    self.emptySpriteView.hidden = ([self.document.sprites count] > 0);
+    
     [self.spriteSheetView reloadSprites];
 }
 
@@ -188,6 +191,8 @@
     {
         [self.document removeSprite:spriteView.sprite];
     }
+    
+    self.emptySpriteView.hidden = ([self.document.sprites count] > 0);
     
     [self.spriteSheetView reloadSprites];
 }

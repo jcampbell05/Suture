@@ -17,25 +17,9 @@
     CGSize _sizeCache;
 }
 
-@property (nonatomic, strong, readwrite) NSUUID *uuid;
-
 @end
 
 @implementation SUTSprite
-
-#pragma mark - Init
-
-- (instancetype)init
-{
-    self = [super init];
-    
-    if (self)
-    {
-        self.uuid = [NSUUID UUID];
-    }
-    
-    return self;
-}
 
 #pragma mark - NSCoding
 
@@ -46,7 +30,6 @@
     if (self)
     {
         self.fileURL = [aDecoder decodeObjectForKey:NSStringFromSelector(@selector(fileURL))];
-        self.uuid = [aDecoder decodeObjectForKey:NSStringFromSelector(@selector(uuid))];
         
         _sizeCache = CGSizeZero;
     }
@@ -58,9 +41,6 @@
 {
     [aCoder encodeObject:self.fileURL
                   forKey:NSStringFromSelector(@selector(fileURL))];
-    
-    [aCoder encodeObject:self.uuid
-                  forKey:NSStringFromSelector(@selector(uuid))];
 }
 
 #pragma mark - Image

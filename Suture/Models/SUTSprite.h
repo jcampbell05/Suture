@@ -12,8 +12,7 @@
 @interface SUTSprite : NSObject
 
 @property (nonatomic, weak) SUTDocument *document;
-@property (nonatomic, strong) NSURL *fileURL;
-@property (nonatomic, readonly) NSUUID *uuid;
+@property (nonatomic, strong) NSURL *file
 
 #pragma mark - Image
 

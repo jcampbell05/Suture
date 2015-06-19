@@ -49,6 +49,14 @@ void SUTReleaseSpriteSheetTransparentBackground(void *info)
 
 @implementation SUTSpritesheetView
 
+#pragma mark - SelectedSprites
+
+- (NSArray *)selectedSpriteViews
+{
+    NSPredicate *selectedViewPredicate = [NSPredicate predicateWithFormat:@"selected = YES"];
+    return [self.spriteViewQueue filteredArrayUsingPredicate:selectedViewPredicate];
+}
+
 #pragma mark - Rendering
 
 - (NSMutableArray *)spriteViewQueue

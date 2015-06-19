@@ -13,6 +13,7 @@
 #import "SUTEmptySpriteSheetView.h"
 #import "SUTOutlineView.h"
 #import "SUTSprite.h"
+#import "SUTSpriteView.h"
 #import "SUTSpritesheetView.h"
 
 @interface SUTEditorView () <NSDraggingDestination>
@@ -183,10 +184,10 @@
 
 - (void)removeSelectedSprite
 {
-//    for (NSIndexPath *indexPath in self.spriteCollectionView.indexPathsForSelectedItems)
-//    {
-//        [self.document removeObjectFromSpritesAtIndex:indexPath.jnw_item];
-//    }
+    for (SUTSpriteView *spriteView in self.spriteSheetView.selectedSpriteViews)
+    {
+        [self.document removeSprite:spriteView.sprite];
+    }
     
     [self.spriteSheetView reloadSprites];
 }

@@ -15,6 +15,7 @@
 @interface SUTSpritesheetView : NSView
 
 @property (nonatomic, strong) SUTDocument *document;
+@property (nonatomic, strong, readonly) NSArray *selectedSpriteViews;
 
 - (void)reloadSprites;
 

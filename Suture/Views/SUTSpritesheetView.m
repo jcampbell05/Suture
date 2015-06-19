@@ -165,7 +165,10 @@ void SUTReleaseSpriteSheetTransparentBackground(void *info)
             spriteView.selected = !spriteView.selected;
         }
     }];
-    
+}
+
+- (void)mouseDragged:(NSEvent *)theEvent
+{
     //TODO: Update app to show a preview on drag and drop.
     if ([self.selectedSpriteViews count] > 0)
     {

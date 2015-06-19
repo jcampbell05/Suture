@@ -38,7 +38,7 @@ void SUTReleaseSpriteSheetTransparentBackground(void *info)
 {
 }
 
-@interface SUTSpritesheetView ()
+@interface SUTSpritesheetView () <NSDraggingSource>
 
 @property (nonatomic, strong) NSMutableArray *spriteViewQueue;
 @property (nonatomic, strong) SUTSpriteRenderer *renderer;
@@ -165,6 +165,22 @@ void SUTReleaseSpriteSheetTransparentBackground(void *info)
             spriteView.selected = !spriteView.selected;
         }
     }];
+    
+    //TODO: Update app to show a preview on drag and drop.
+    if ([self.selectedSpriteViews count] > 0)
+    {
+        SUTSpriteView *spriteView = [self.selectedSpriteViews firstObject];
+        
+        [self dragFile:[spriteView.sprite.fileURL absoluteString]
+              fromRect:spriteView.frame slideBack:YES event:nil];
+    }
+}
+
+#pragma mark - NSDraggingSource
+
+- (NSDragOperation)draggingSession:(NSDraggingSession *)session sourceOperationMaskForDraggingContext:(NSDraggingContext)context
+{
+    return NSDragOperationMove;
 }
 
 @end

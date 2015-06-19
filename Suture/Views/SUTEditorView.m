@@ -171,6 +171,7 @@
 
 #pragma mark - Sprite 
 
+//TODO: Find way to bind hidden view state to number of g
 - (void)addSpritesForURLS:(NSArray *)urls
 {
     [urls enumerateObjectsUsingBlock:^(NSURL *url, NSUInteger idx, BOOL *stop)

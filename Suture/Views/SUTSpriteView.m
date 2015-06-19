@@ -50,11 +50,11 @@
 
 #pragma mark - Drawing
 
-- (void)drawLayer:(CALayer *)layer inContext:(CGContextRef)context
+- (void)drawLayer:(CALayer *)layer
+        inContext:(CGContextRef)context
 {
     CGContextFlush(context);
     
-    //TODO: Work on some optimizations
     [self.renderer renderSprite:self.sprite
                         context:context];
 }

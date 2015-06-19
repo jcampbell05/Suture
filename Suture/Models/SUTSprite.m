@@ -17,11 +17,27 @@
     CGSize _sizeCache;
 }
 
+@property (nonatomic, strong, readwrite) NSUUID *uuid;
+
 @end
 
 @implementation SUTSprite
 
-#pragma mark NSCoding
+#pragma mark - Init
+
+- (instancetype)init
+{
+    self = [super init];
+    
+    if (self)
+    {
+        self.uuid = [NSUUID UUID];
+    }
+    
+    return self;
+}
+
+#pragma mark - NSCoding
 
 - (id)initWithCoder:(NSCoder *)aDecoder
 {
@@ -30,6 +46,8 @@
     if (self)
     {
         self.fileURL = [aDecoder decodeObjectForKey:NSStringFromSelector(@selector(fileURL))];
+        self.uuid = [aDecoder decodeObjectForKey:NSStringFromSelector(@selector(uuid))];
+        
         _sizeCache = CGSizeZero;
     }
     
@@ -40,6 +58,9 @@
 {
     [aCoder encodeObject:self.fileURL
                   forKey:NSStringFromSelector(@selector(fileURL))];
+    
+    [aCoder encodeObject:self.uuid
+                  forKey:NSStringFromSelector(@selector(uuid))];
 }
 
 #pragma mark - Image
@@ -61,23 +82,26 @@
     {
         CGImageSourceRef imageSource = CGImageSourceCreateWithURL((CFURLRef)self.fileURL,
                                                                   NULL);
+        CFDictionaryRef imageProperties;
+        
         if (imageSource)
         {
-            CFDictionaryRef imageProperties = CGImageSourceCopyPropertiesAtIndex(imageSource,
-                                                                                 0,
-                                                                                 NULL);
-            if (imageProperties)
-            {
-                NSNumber *width  = CFDictionaryGetValue(imageProperties,
-                                                        kCGImagePropertyPixelWidth);
-                NSNumber *height  = CFDictionaryGetValue(imageProperties,
-                                                         kCGImagePropertyPixelHeight);
-                
-                _sizeCache.width = [width floatValue];
-                _sizeCache.height = [height floatValue];
-                
-                CFRelease(imageProperties);
-            }
+            imageProperties = CGImageSourceCopyPropertiesAtIndex(imageSource,
+                                                                 0,
+                                                                 NULL);
+        }
+        
+        if (imageProperties)
+        {
+            NSNumber *width  = CFDictionaryGetValue(imageProperties,
+                                                    kCGImagePropertyPixelWidth);
+            NSNumber *height = CFDictionaryGetValue(imageProperties,
+                                                    kCGImagePropertyPixelHeight);
+            
+            _sizeCache.width = [width floatValue];
+            _sizeCache.height = [height floatValue];
+            
+            CFRelease(imageProperties);
         }
     }
     

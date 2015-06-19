@@ -13,6 +13,7 @@
 
 @property (nonatomic, weak) SUTDocument *document;
 @property (nonatomic, strong) NSURL *fileURL;
+@property (nonatomic, readonly) NSUUID *uuid;
 
 #pragma mark - Image
 

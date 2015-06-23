@@ -190,7 +190,7 @@
 
 - (void)removeSprite:(SUTSprite *)sprite
 {
-    NSInteger indexOfSprite = [self.sprites indexOfObject:sprite];
+    NSInteger indexOfSprite = [self indexOfSprite:sprite];
     [self removeObjectFromSpritesAtIndex:indexOfSprite];
 }
 
@@ -207,7 +207,7 @@
     
     NSMutableArray *newSprites = [self.sprites mutableCopy];
     newSprites[index] = sprite;
-    _sprites = newSprites;
+    self.sprites = [newSprites copy];
 }
 
 - (void)removeObjectFromSpritesAtIndex:(NSUInteger)index
@@ -220,7 +220,21 @@
     
     NSMutableArray *newSprites = [self.sprites mutableCopy];
     [newSprites removeObjectAtIndex:index];
-    _sprites = newSprites;
+    self.sprites = [newSprites copy];
+}
+
+- (NSInteger)indexOfSprite:(SUTSprite *)sprite
+{
+    return [self.sprites indexOfObject:sprite];
+}
+
+- (void)exchangeSpriteAtIndex:(NSUInteger)idx1
+            withSpriteAtIndex:(NSUInteger)idx2
+{
+    NSMutableArray *newSprites = [self.sprites mutableCopy];
+    [newSprites exchangeObjectAtIndex:idx1
+                    withObjectAtIndex:idx2];
+    self.sprites = [newSprites copy];
 }
 
 #pragma mark - Sanaity

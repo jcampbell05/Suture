@@ -38,7 +38,11 @@ void SUTReleaseSpriteSheetTransparentBackground(void *info)
 {
 }
 
-@interface SUTSpritesheetView () <NSDraggingSource>
+@interface SUTSpritesheetView ()
+
+@property (nonatomic, assign, getter=isDragging) BOOL dragging;
+@property (nonatomic, assign) NSInteger targetDragSpriteIndex;
+@property (nonatomic, strong) SUTSpriteView *targetDragView;
 
 @property (nonatomic, strong) NSMutableArray *spriteViewQueue;
 @property (nonatomic, strong) SUTSpriteRenderer *renderer;
@@ -97,6 +101,11 @@ void SUTReleaseSpriteSheetTransparentBackground(void *info)
     }
     
     return spriteView;
+}
+
+- (BOOL)acceptsFirstResponder
+{
+    return YES;
 }
 
 - (void)reloadSprites
@@ -158,32 +167,69 @@ void SUTReleaseSpriteSheetTransparentBackground(void *info)
     CGPoint locationInSpriteSheet = [self convertPoint:event.locationInWindow
                                               fromView:nil];
     
-    [self.spriteViewQueue enumerateObjectsUsingBlock:^(SUTSpriteView *spriteView, NSUInteger idx, BOOL *stop)
-    {
-        if (CGRectContainsPoint(spriteView.frame, locationInSpriteSheet))
-        {
-            spriteView.selected = !spriteView.selected;
-        }
-    }];
+    self.targetDragView = (SUTSpriteView *)[self hitTest:locationInSpriteSheet];
+    self.targetDragSpriteIndex = [self.document indexOfSprite:self.targetDragView.sprite];
 }
 
-- (void)mouseDragged:(NSEvent *)theEvent
+- (void)mouseDragged:(NSEvent *)event
 {
-    //TODO: Update app to show a preview on drag and drop.
-    if ([self.selectedSpriteViews count] > 0)
+    if (self.targetDragView)
     {
-        SUTSpriteView *spriteView = [self.selectedSpriteViews firstObject];
+        self.dragging = YES;
         
-        [self dragFile:[spriteView.sprite.fileURL absoluteString]
-              fromRect:spriteView.frame slideBack:YES event:nil];
+        CGPoint locationInSpriteSheet = [self convertPoint:event.locationInWindow
+                                                  fromView:nil];
+        CGRect viewFrame = self.targetDragView.frame;
+        viewFrame.origin = locationInSpriteSheet;
+        
+        self.targetDragView.frame = viewFrame;
+        self.targetDragView.alphaValue = 0.5;
+        self.targetDragView.layer.zPosition = [self.document.sprites count];
+        
+        [self.spriteViewQueue enumerateObjectsUsingBlock:^(SUTSpriteView *spriteView, NSUInteger idx, BOOL *stop)
+        {
+            if (spriteView != self.targetDragView &&
+                CGRectContainsPoint(spriteView.frame, locationInSpriteSheet))
+            {
+                //Animate Sprite Sheet To Current targetDragSpriteIndex
+                CGRect viewFrame = [self.document.layout frameForSpriteAtIndex:self.targetDragSpriteIndex];
+                [[spriteView animator] setFrame:viewFrame];
+                
+                NSInteger newTargetDragSpriteIndex = [self.document indexOfSprite:spriteView.sprite];
+                
+                [self.document exchangeSpriteAtIndex:self.targetDragSpriteIndex
+                                   withSpriteAtIndex:newTargetDragSpriteIndex];
+                
+                self.targetDragSpriteIndex = newTargetDragSpriteIndex;
+                
+                NSLog(@"Index: %lu", self.targetDragSpriteIndex);
+                *stop = YES;
+            }
+        }];
     }
 }
 
-#pragma mark - NSDraggingSource
-
-- (NSDragOperation)draggingSession:(NSDraggingSession *)session sourceOperationMaskForDraggingContext:(NSDraggingContext)context
+-(void)mouseUp:(NSEvent *)event
 {
-    return NSDragOperationMove;
+    if (self.isDragging)
+    {
+        CGRect viewFrame = [self.document.layout frameForSpriteAtIndex:self.targetDragSpriteIndex];
+        
+         self.targetDragView.layer.zPosition = 0;
+        
+        [[self.targetDragView animator] setAlphaValue:1.0f];
+        [[self.targetDragView animator] setFrame:viewFrame];
+        
+        self.dragging = NO;
+        self.targetDragView = nil;
+    }
+    else
+    {
+        CGPoint locationInSpriteSheet = [self convertPoint:event.locationInWindow
+                                                  fromView:nil];
+        SUTSpriteView *spriteView = (SUTSpriteView *)[self hitTest:locationInSpriteSheet];
+        spriteView.selected = YES;
+    }
 }
 
 @end

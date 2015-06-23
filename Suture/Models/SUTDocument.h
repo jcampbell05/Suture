@@ -31,5 +31,9 @@
 - (void)insertObject:(SUTSprite *)sprite inSpritesAtIndex:(NSUInteger)index;
 - (void)removeObjectFromSpritesAtIndex:(NSUInteger)index;
 
+- (NSInteger)indexOfSprite:(SUTSprite *)sprite;
+- (void)exchangeSpriteAtIndex:(NSUInteger)idx1
+            withSpriteAtIndex:(NSUInteger)idx2;
+
 @end
 

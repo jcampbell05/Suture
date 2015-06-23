@@ -185,7 +185,7 @@
 - (void)addSprite:(SUTSprite *)sprite
 {
     [self insertObject:sprite
-      inSpritesAtIndex:_sprites.count];
+      inSpritesAtIndex:self.sprites.count];
 }
 
 - (void)removeSprite:(SUTSprite *)sprite

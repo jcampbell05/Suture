@@ -202,7 +202,6 @@ void SUTReleaseSpriteSheetTransparentBackground(void *info)
                 
                 self.targetDragSpriteIndex = newTargetDragSpriteIndex;
                 
-                NSLog(@"Index: %lu", self.targetDragSpriteIndex);
                 *stop = YES;
             }
         }];

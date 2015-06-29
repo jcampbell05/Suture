@@ -7,6 +7,7 @@
 //
 
 #import "SUTSpritesheetLayout.h"
+#import "SUTGeometry.h"
 
 @interface SUTSpriteLayoutAttribute : NSObject
 
@@ -103,6 +104,10 @@
 - (CGRect)frameForSpriteAtIndex:(NSInteger)index
 {
     SUTSpriteLayoutAttribute *attribute = self.layoutAttributes[index];
+    
+    attribute.spriteFrame = SUTFlipCGRect(attribute.spriteFrame,
+                                          self.contentSize);
+    
     return attribute.spriteFrame;
 }
 

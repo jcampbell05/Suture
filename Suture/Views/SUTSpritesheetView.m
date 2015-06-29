@@ -40,6 +40,8 @@ void SUTReleaseSpriteSheetTransparentBackground(void *info)
 
 @interface SUTSpritesheetView ()
 
+@property (nonatomic, assign) CGPoint dragStartLocation;
+
 @property (nonatomic, assign, getter=isDragging) BOOL dragging;
 @property (nonatomic, assign) NSInteger targetDragSpriteIndex;
 @property (nonatomic, strong) SUTSpriteView *targetDragView;
@@ -167,6 +169,7 @@ void SUTReleaseSpriteSheetTransparentBackground(void *info)
     CGPoint locationInSpriteSheet = [self convertPoint:event.locationInWindow
                                               fromView:nil];
     
+    self.dragStartLocation = locationInSpriteSheet;
     self.targetDragView = (SUTSpriteView *)[self hitTest:locationInSpriteSheet];
     self.targetDragSpriteIndex = [self.document indexOfSprite:self.targetDragView.sprite];
 }
@@ -179,11 +182,17 @@ void SUTReleaseSpriteSheetTransparentBackground(void *info)
         
         CGPoint locationInSpriteSheet = [self convertPoint:event.locationInWindow
                                                   fromView:nil];
-        CGRect viewFrame = self.targetDragView.frame;
-        viewFrame.origin = locationInSpriteSheet;
+        CGPoint mouseDelta =  (CGPoint)
+        {
+            locationInSpriteSheet.x - self.dragStartLocation.x,
+            self.dragStartLocation.y - locationInSpriteSheet.y
+        };
         
-        self.targetDragView.frame = viewFrame;
         self.targetDragView.alphaValue = 0.5;
+        self.targetDragView.layer.transform = CATransform3DTranslate(CATransform3DIdentity,
+                                                                     mouseDelta.x,
+                                                                     -mouseDelta.y,
+                                                                     0);
         self.targetDragView.layer.zPosition = [self.document.sprites count];
         
         [self.spriteViewQueue enumerateObjectsUsingBlock:^(SUTSpriteView *spriteView, NSUInteger idx, BOOL *stop)
@@ -191,14 +200,14 @@ void SUTReleaseSpriteSheetTransparentBackground(void *info)
             if (spriteView != self.targetDragView &&
                 CGRectContainsPoint(spriteView.frame, locationInSpriteSheet))
             {
-                //Animate Sprite Sheet To Current targetDragSpriteIndex
-                CGRect viewFrame = [self.document.layout frameForSpriteAtIndex:self.targetDragSpriteIndex];
-                [[spriteView animator] setFrame:viewFrame];
-                
                 NSInteger newTargetDragSpriteIndex = [self.document indexOfSprite:spriteView.sprite];
                 
                 [self.document exchangeSpriteAtIndex:self.targetDragSpriteIndex
                                    withSpriteAtIndex:newTargetDragSpriteIndex];
+                
+                //Animate Sprite Sheet To Current targetDragSpriteIndex
+                CGRect viewFrame = [self.document.layout frameForSpriteAtIndex:self.targetDragSpriteIndex];
+                [[spriteView animator] setFrame:viewFrame];
                 
                 self.targetDragSpriteIndex = newTargetDragSpriteIndex;
                 

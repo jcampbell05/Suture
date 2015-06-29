@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+//TODO: Make this cope with Mac's orientation
+
 @protocol SUTSpritesheetLayoutDelegate <NSObject>
 
 - (NSInteger)numberOfSprites;
@@ -15,19 +17,14 @@
 
 @end
 
-typedef enum : NSUInteger
-{
-    SUTSpriteLayoutOrientationVertical,
-    SUTSpriteLayoutOrientationHorizontal,
-} SUTSpriteLayoutOrientation;
-
 @interface SUTSpritesheetLayout : NSObject
 
 @property (nonatomic, weak) id<SUTSpritesheetLayoutDelegate> delegate;
-@property (nonatomic, assign) SUTSpriteLayoutOrientation orientation;
 @property (nonatomic, assign, readonly) CGSize contentSize;
 
 - (void)prepareLayout;
+
+
 - (CGRect)frameForSpriteAtIndex:(NSInteger)index;
 
 @end

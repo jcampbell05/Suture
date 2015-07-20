@@ -9,13 +9,20 @@
 #import "SUTSpritesheetLayout.h"
 #import "SUTGeometry.h"
 
-@interface SUTSpriteLayoutAttribute : NSObject
+@interface SUTSpriteLayoutAttribute : NSObject <NSCopying>
 
 @property (nonatomic, assign) CGRect spriteFrame;
 
 @end
 
 @implementation SUTSpriteLayoutAttribute
+
+- (id)copyWithZone:(NSZone *)zone
+{
+    SUTSpriteLayoutAttribute *newAttribute = [[SUTSpriteLayoutAttribute allocWithZone:zone] init];
+    newAttribute.spriteFrame = self.spriteFrame;
+    return newAttribute;
+}
 
 @end
 
@@ -102,7 +109,10 @@
 
 - (CGRect)frameForSpriteAtIndex:(NSInteger)index
 {
-    SUTSpriteLayoutAttribute *attribute = self.layoutAttributes[index];
+    SUTSpriteLayoutAttribute *attribute = [self.layoutAttributes[index] copy];
+    
+    attribute.spriteFrame = SUTFlipCGRect(attribute.spriteFrame, self.contentSize);
+    
     return attribute.spriteFrame;
 }
 

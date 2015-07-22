@@ -41,6 +41,7 @@
         
         [self addSubview:self.emptySpriteView];
         [self addSubview:self.scrollView];
+        [self addSubview:self.spriteSheetView];
     }
     
     return self;

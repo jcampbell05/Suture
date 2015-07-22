@@ -8,6 +8,8 @@
 
 #import "SUTSpritesheetView.h"
 
+#import <Quartz/Quartz.h>
+
 #import "SUTDocument.h"
 #import "SUTSpriteRenderer.h"
 #import "SUTSpritesheetLayout.h"
@@ -196,26 +198,24 @@ void SUTReleaseSpriteSheetTransparentBackground(void *info)
         self.targetDragView.layer.zPosition = [self.document.sprites count];
         
         [self.spriteViewQueue enumerateObjectsUsingBlock:^(SUTSpriteView *spriteView, NSUInteger idx, BOOL *stop)
-        {
-            if (spriteView != self.targetDragView &&
-                CGRectContainsPoint(spriteView.frame, locationInSpriteSheet))
-            {
-                NSInteger newTargetDragSpriteIndex = [self.document indexOfSprite:spriteView.sprite];
-                
-                [self.document exchangeSpriteAtIndex:self.targetDragSpriteIndex
-                                   withSpriteAtIndex:newTargetDragSpriteIndex];
-                
-                //Animate Sprite Sheet To Current targetDragSpriteIndex
-                CGRect viewFrame = [self.document.layout frameForSpriteAtIndex:self.targetDragSpriteIndex];
-                [[spriteView animator] setFrame:viewFrame];
-                
-                NSLog(@"New Index: %@", NSStringFromRect(viewFrame));
-                
-                self.targetDragSpriteIndex = newTargetDragSpriteIndex;
-                
-                *stop = YES;
-            }
-        }];
+         {
+             if (spriteView != self.targetDragView &&
+                 CGRectContainsPoint(spriteView.frame, locationInSpriteSheet))
+             {
+                 NSInteger newTargetDragSpriteIndex = [self.document indexOfSprite:spriteView.sprite];
+                 
+                 [self.document exchangeSpriteAtIndex:self.targetDragSpriteIndex
+                                    withSpriteAtIndex:newTargetDragSpriteIndex];
+                 
+                 //Animate Sprite Sheet To Current targetDragSpriteIndex
+                 CGRect viewFrame = [self.document.layout frameForSpriteAtIndex:self.targetDragSpriteIndex];
+                 [[spriteView animator] setFrame:viewFrame];
+                 
+                 self.targetDragSpriteIndex = newTargetDragSpriteIndex;
+                 
+                 *stop = YES;
+             }
+         }];
     }
 }
 
@@ -225,10 +225,8 @@ void SUTReleaseSpriteSheetTransparentBackground(void *info)
     {
         CGRect viewFrame = [self.document.layout frameForSpriteAtIndex:self.targetDragSpriteIndex];
         
-         self.targetDragView.layer.zPosition = 0;
-        
-        NSLog(@"New Index: %@", NSStringFromRect(viewFrame));
-        
+        self.targetDragView.layer.zPosition = 0;
+
         [[self.targetDragView animator] setAlphaValue:1.0f];
         [[self.targetDragView animator] setFrame:viewFrame];
         

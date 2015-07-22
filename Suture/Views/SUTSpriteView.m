@@ -32,7 +32,7 @@
         CATiledLayer *tiledLayer = [CATiledLayer layer];
         tiledLayer.delegate = self;
         tiledLayer.levelsOfDetail = 5;
-        
+  
         self.layer = tiledLayer;
         [self.layer setNeedsDisplay];
 

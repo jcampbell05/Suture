@@ -16,7 +16,7 @@
 
 #pragma mark - Image
 
-@property (nonatomic, readonly) NSImage *image;
+@property (nonatomic, readonly) CGImageRef CGImage;
 @property (nonatomic, readonly) CGSize size;
 
 @end

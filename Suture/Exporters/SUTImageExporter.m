@@ -10,11 +10,10 @@
 
 @import CoreServices;
 
-#import "SUTGeometry.h"
 #import "SUTSprite.h"
-#import "SUTSpriteLayout.h"
-#import "NSImage+CGImage.h"
+#import "SUTSpritesheetLayout.h"
 #import "SUTImageExporterOptionsView.h"
+#import "SUTSpriteRenderer.h"
 #import "SUTSpecificationExporter.h"
 
 NSString const * SUTImageExporterShouldExportSpecificationOptionKey = @"ShouldExportSpecification";
@@ -22,7 +21,7 @@ NSString const * SUTImageExporterShouldExportSpecificationOptionKey = @"ShouldEx
 //TODO: Handle Errors in UI.
 @interface SUTImageExporter ()
 
-- (CGContextRef)createExportingImageContextWithSize:(CGSize)size;
+- (CGContextRef)createImageContextWithSize:(CGSize)size;
 - (void)exportSpecificationIfNeededWithExportDocument:(SUTDocument *)document
                                                   URL:(NSURL *)url
                                               options:(NSDictionary *)options;
@@ -51,6 +50,9 @@ NSString const * SUTImageExporterShouldExportSpecificationOptionKey = @"ShouldEx
     self.progress.totalUnitCount = numberOfSprites + 2;
     [self.progress becomeCurrentWithPendingUnitCount:self.progress.totalUnitCount];
     
+    /**
+     Was the export specification option selected ?
+     */
     if ([options[SUTImageExporterShouldExportSpecificationOptionKey] boolValue])
     {
         [self exportSpecificationIfNeededWithExportDocument:document
@@ -59,34 +61,38 @@ NSString const * SUTImageExporterShouldExportSpecificationOptionKey = @"ShouldEx
     }
     
     CGSize contentSize = [document.layout contentSize];
-    CGContextRef context = [self createExportingImageContextWithSize:contentSize];
+    CGContextRef context = [self createImageContextWithSize:contentSize];
 
     CGContextClearRect(context, NSMakeRect(0, 0, contentSize.width, contentSize.height));
-    CGContextSetStrokeColorWithColor(context, [[NSColor redColor] CGColor]);
     
-    for (NSInteger spriteIndex = 0; spriteIndex < numberOfSprites; spriteIndex ++)
-    {
-        CGRect spriteFrame = [document.layout frameForSpriteAtIndex:spriteIndex];
-        spriteFrame = SUTFlipCGRect(spriteFrame, contentSize);
-        
-        SUTSprite *sprite = document.sprites[spriteIndex];
-        CGImageRef image = sprite.image.CGImage;
-        
-        CGContextDrawImage(context,
-                           spriteFrame,
-                           image);
-        
-        CGImageRelease(image);
-        
-        self.progress.completedUnitCount ++;
-    }
+    
+    SUTSpriteRenderer *renderer = [[SUTSpriteRenderer alloc] init];
+    
+    [document.sprites enumerateObjectsWithOptions:NSEnumerationConcurrent
+                                       usingBlock:^(SUTSprite *sprite, NSUInteger idx, BOOL *stop)
+     {
+         CGRect spriteFrame = [document.layout frameForSpriteAtIndex:idx];
+         CGContextRef spriteContext = [self createImageContextWithSize:sprite.size];
+         
+         [renderer renderSprite:sprite
+                        context:spriteContext];
+         
+         CGImageRef spriteImage = CGBitmapContextCreateImage(spriteContext);
+         CGContextDrawImage(context,
+                            spriteFrame,
+                            spriteImage);
+         
+         CGContextRelease(spriteContext);
+         
+         self.progress.completedUnitCount++;
+     }];
     
     [self writeContext:context
                    url:url];
     
     CGContextRelease(context);
     
-    self.progress.completedUnitCount ++;
+    self.progress.completedUnitCount++;
     [self.delegate exporterDidExport:self];
 }
 
@@ -137,7 +143,7 @@ NSString const * SUTImageExporterShouldExportSpecificationOptionKey = @"ShouldEx
 {
 }
 
-- (CGContextRef)createExportingImageContextWithSize:(CGSize)size
+- (CGContextRef)createImageContextWithSize:(CGSize)size
 {
     CGColorSpaceRef colorSpace = CGColorSpaceCreateWithName(kCGColorSpaceGenericRGB);
     CGContextRef context = CGBitmapContextCreate(NULL,

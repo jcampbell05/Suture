@@ -13,6 +13,7 @@
 
 @property (nonatomic, weak) SUTDocument *document;
 @property (nonatomic, assign) BOOL enabled;
+@property (nonatomic, strong, readonly) NSScrollView *scrollView;
 
 - (void)addSpritesForURLS:(NSArray *)urls;
 - (void)removeSelectedSprite;

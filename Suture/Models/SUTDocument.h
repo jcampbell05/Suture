@@ -8,12 +8,12 @@
 
 @import Cocoa;
 @class SUTSprite;
-@class SUTSpriteLayout;
+@class SUTSpritesheetLayout;
 
 @interface SUTDocument : NSDocument
 
 @property (nonatomic, assign) NSInteger duration;
-@property (nonatomic, strong) SUTSpriteLayout *layout;
+@property (nonatomic, strong) SUTSpritesheetLayout *layout;
 @property (nonatomic, strong) NSArray *sprites;
 
 /**
@@ -30,6 +30,10 @@
 - (void)removeSprite:(SUTSprite *)sprite;
 - (void)insertObject:(SUTSprite *)sprite inSpritesAtIndex:(NSUInteger)index;
 - (void)removeObjectFromSpritesAtIndex:(NSUInteger)index;
+
+- (NSInteger)indexOfSprite:(SUTSprite *)sprite;
+- (void)exchangeSpriteAtIndex:(NSUInteger)idx1
+            withSpriteAtIndex:(NSUInteger)idx2;
 
 @end
 

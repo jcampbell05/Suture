@@ -6,18 +6,6 @@
 // project.
 
 
-// JNWCollectionView
-#define COCOAPODS_POD_AVAILABLE_JNWCollectionView
-#define COCOAPODS_VERSION_MAJOR_JNWCollectionView 1
-#define COCOAPODS_VERSION_MINOR_JNWCollectionView 3
-#define COCOAPODS_VERSION_PATCH_JNWCollectionView 0
-
-// JNWScrollView
-#define COCOAPODS_POD_AVAILABLE_JNWScrollView
-#define COCOAPODS_VERSION_MAJOR_JNWScrollView 0
-#define COCOAPODS_VERSION_MINOR_JNWScrollView 1
-#define COCOAPODS_VERSION_PATCH_JNWScrollView 0
-
 // PureLayout
 #define COCOAPODS_POD_AVAILABLE_PureLayout
 #define COCOAPODS_VERSION_MAJOR_PureLayout 2

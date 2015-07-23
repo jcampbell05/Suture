@@ -56,7 +56,7 @@
 
 - (void)setExportOptions:(NSDictionary *)exportOptions
 {
-    [super setExportOptions:exportOptions];
+    [super setExportOptions:[exportOptions mutableCopy]];
     
     self.specificationCheckBox.state = [exportOptions[SUTImageExporterShouldExportSpecificationOptionKey] integerValue];
 }

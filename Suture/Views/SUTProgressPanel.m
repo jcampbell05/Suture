@@ -102,8 +102,6 @@ static CGFloat const SUTProgressIndicatorMargin = 20.0f;
         }
         
         self.progressIndicator.doubleValue = self.progress.completedUnitCount;
-        
-        NSLog(@"Progress: %f", self.progressIndicator.doubleValue);
     });
 }
 

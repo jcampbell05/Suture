@@ -8,20 +8,20 @@
 
 #import "SUTEditorView.h"
 
-#import <JNWCollectionView/JNWCollectionView.h>
-
-#import "SUTCollectionViewSpriteLayout.h"
+#import "SUTClipView.h"
 #import "SUTDocument.h"
-#import "SUTSprite.h"
-#import "SUTSpriteCollectionViewCell.h"
 #import "SUTEmptySpriteSheetView.h"
 #import "SUTOutlineView.h"
+#import "SUTSprite.h"
+#import "SUTSpriteView.h"
+#import "SUTSpritesheetView.h"
 
-@interface SUTEditorView () <NSDraggingDestination, JNWCollectionViewDataSource, JNWCollectionViewDelegate>
+@interface SUTEditorView () <NSDraggingDestination>
 
+@property (nonatomic, strong) SUTClipView *clipView;
 @property (nonatomic, strong) SUTEmptySpriteSheetView *emptySpriteView;
-@property (nonatomic, strong) JNWCollectionView *spriteCollectionView;
-@property (nonatomic, strong) SUTCollectionViewSpriteLayout *spriteCollectionViewLayout;
+@property (nonatomic, strong) NSScrollView *scrollView;
+@property (nonatomic, strong) SUTSpritesheetView *spriteSheetView;
 
 @end
 
@@ -40,13 +40,23 @@
         [self registerForDraggedTypes:@[NSFilenamesPboardType]];
         
         [self addSubview:self.emptySpriteView];
-        [self addSubview:self.spriteCollectionView];
+        [self addSubview:self.scrollView];
     }
     
     return self;
 }
 
-#pragma mark - emptySpriteView
+#pragma mark - Subviews
+
+- (SUTClipView *)clipView
+{
+    if (!_clipView)
+    {
+        _clipView = [[SUTClipView alloc] init];
+    }
+    
+    return _clipView;
+}
 
 - (SUTEmptySpriteSheetView *)emptySpriteView
 {
@@ -59,33 +69,32 @@
     return _emptySpriteView;
 }
 
-- (JNWCollectionView *)spriteCollectionView
+- (NSScrollView *)scrollView
 {
-    if (!_spriteCollectionView)
+    if (!_scrollView)
     {
-        _spriteCollectionView = [[JNWCollectionView alloc] initWithFrame:self.bounds];
-        _spriteCollectionView.collectionViewLayout = self.spriteCollectionViewLayout;
-        _spriteCollectionView.dataSource = self;
-        _spriteCollectionView.delegate = self;
-        _spriteCollectionView.drawsBackground = NO;
-        _spriteCollectionView.autoresizingMask = NSViewWidthSizable | NSViewHeightSizable;
+        _scrollView = [[NSScrollView alloc] initWithFrame:self.bounds];
         
-        [_spriteCollectionView registerClass:[SUTSpriteCollectionViewCell class]
-                  forCellWithReuseIdentifier:[SUTSpriteCollectionViewCell identifier]];
+        _scrollView.autoresizingMask = NSViewWidthSizable | NSViewHeightSizable;
+        _scrollView.allowsMagnification = YES;
+        _scrollView.contentView = self.clipView;
+        _scrollView.drawsBackground = NO;
+        _scrollView.documentView = self.spriteSheetView;
+        _scrollView.hasHorizontalScroller = YES;
+        _scrollView.hasVerticalScroller = YES;
     }
     
-    return _spriteCollectionView;
+    return _scrollView;
 }
 
-- (SUTCollectionViewSpriteLayout *)spriteCollectionViewLayout
+- (SUTSpritesheetView *)spriteSheetView
 {
-    if (!_spriteCollectionViewLayout)
+    if (!_spriteSheetView)
     {
-        _spriteCollectionViewLayout = [[SUTCollectionViewSpriteLayout alloc] init];
-        _spriteCollectionViewLayout.layout = self.document.layout;
+        _spriteSheetView = [[SUTSpritesheetView alloc] init];
     }
-
-    return _spriteCollectionViewLayout;
+    
+    return _spriteSheetView;
 }
 
 #pragma mark - Documents
@@ -98,9 +107,7 @@
         _document = document;
         [self didChangeValueForKey:NSStringFromSelector(@selector(document))];
         
-        self.spriteCollectionViewLayout.layout = document.layout;
-        [document.layout prepareLayout];
-        [self.spriteCollectionView reloadData];
+        self.spriteSheetView.document = document;
     }
 }
 
@@ -173,44 +180,21 @@
         [self.document addSprite:sprite];
     }];
     
-    [self.spriteCollectionView reloadData];
+    self.emptySpriteView.hidden = ([self.document.sprites count] > 0);
+    
+    [self.spriteSheetView reloadSprites];
 }
 
 - (void)removeSelectedSprite
 {
-    for (NSIndexPath *indexPath in self.spriteCollectionView.indexPathsForSelectedItems)
+    for (SUTSpriteView *spriteView in self.spriteSheetView.selectedSpriteViews)
     {
-        [self.document removeObjectFromSpritesAtIndex:indexPath.jnw_item];
+        [self.document removeSprite:spriteView.sprite];
     }
     
-    [self.spriteCollectionView reloadData];
-}
-
-#pragma mark - JNWCollectionViewDataSource
-
-- (NSUInteger)collectionView:(JNWCollectionView *)collectionView
-      numberOfItemsInSection:(NSInteger)section
-{
-    collectionView.hidden = (self.document.sprites.count == 0);
-    return self.document.sprites.count;
-}
-
-- (JNWCollectionViewCell *)collectionView:(JNWCollectionView *)collectionView
-                   cellForItemAtIndexPath:(NSIndexPath *)indexPath
-{
-    SUTSpriteCollectionViewCell *cell = (SUTSpriteCollectionViewCell *)[collectionView dequeueReusableCellWithIdentifier:[SUTSpriteCollectionViewCell identifier]];
+    self.emptySpriteView.hidden = ([self.document.sprites count] > 0);
     
-    cell.sprite = self.document.sprites[indexPath.jnw_item];
-    
-    return cell;
-}
-
-#pragma mark - JNWCollectionViewDelegate
-
-- (BOOL)collectionView:(JNWCollectionView *)collectionView
-shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath
-{
-    return self.enabled;
+    [self.spriteSheetView reloadSprites];
 }
 
 @end

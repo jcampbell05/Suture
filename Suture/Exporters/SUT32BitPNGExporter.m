@@ -7,7 +7,7 @@
 //
 
 #import "SUT32BitPNGExporter.h"
-#import "SUTSpriteLayout.h"
+#import "SUTSpritesheetLayout.h"
 
 @implementation SUT32BitPNGExporter
 

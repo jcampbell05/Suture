@@ -34,15 +34,15 @@
 		744A71F71AB444B400077AA7 /* SutureQuickLook.qlgenerator in CopyFiles */ = {isa = PBXBuildFile; fileRef = 744A71E91AB4421C00077AA7 /* SutureQuickLook.qlgenerator */; };
 		744A71FA1AB4491900077AA7 /* SutureQuickLook.qlgenerator in CopyFiles */ = {isa = PBXBuildFile; fileRef = 744A71E91AB4421C00077AA7 /* SutureQuickLook.qlgenerator */; };
 		744A71FC1AB4493F00077AA7 /* Suture.app in Copy Files */ = {isa = PBXBuildFile; fileRef = 74F0FAD91AAF5224003F9454 /* Suture.app */; };
-		744E98C11B1F91690007DB04 /* KBButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 744E98BC1B1F91690007DB04 /* KBButton.m */; };
-		744E98C21B1F91690007DB04 /* KBButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 744E98BE1B1F91690007DB04 /* KBButtonCell.m */; };
-		744E98C31B1F91690007DB04 /* NSColor+ColorExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 744E98C01B1F91690007DB04 /* NSColor+ColorExtensions.m */; };
 		745D4EE81B0F307E00969535 /* SUTPropertyView.h in Headers */ = {isa = PBXBuildFile; fileRef = 745D4EE61B0F307E00969535 /* SUTPropertyView.h */; };
 		745D4EE91B0F307E00969535 /* SUTPropertyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 745D4EE71B0F307E00969535 /* SUTPropertyView.m */; };
 		745D4EF71B0F704C00969535 /* SUTPropertyEntryField.m in Sources */ = {isa = PBXBuildFile; fileRef = 745D4EF61B0F704C00969535 /* SUTPropertyEntryField.m */; };
 		7476D56B1B29D1260030967D /* SUTSpriteRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7476D56A1B29D1260030967D /* SUTSpriteRenderer.m */; };
 		747A103A1AEE5D640097E6AB /* SUTWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = 747A10381AEE5D640097E6AB /* SUTWindow.h */; };
 		747A103B1AEE5D640097E6AB /* SUTWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 747A10391AEE5D640097E6AB /* SUTWindow.m */; };
+		747F82671B62290000C0F9E5 /* SUTButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 747F82661B62290000C0F9E5 /* SUTButton.m */; };
+		747F826A1B62292900C0F9E5 /* SUTButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 747F82691B62292900C0F9E5 /* SUTButtonCell.m */; };
+		747F826E1B622AE700C0F9E5 /* NSColor+ColorExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 747F826D1B622AE700C0F9E5 /* NSColor+ColorExtensions.m */; };
 		74AF59261AF0EBF00013F9CD /* SUTWindowTitleView.h in Headers */ = {isa = PBXBuildFile; fileRef = 74AF59241AF0EBF00013F9CD /* SUTWindowTitleView.h */; };
 		74AF59271AF0EBF00013F9CD /* SUTWindowTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 74AF59251AF0EBF00013F9CD /* SUTWindowTitleView.m */; };
 		74AF59291AF0EBF00013F9CD /* SUTWindowTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 74AF59251AF0EBF00013F9CD /* SUTWindowTitleView.m */; };
@@ -177,12 +177,6 @@
 		744A71ED1AB4421C00077AA7 /* GenerateThumbnailForURL.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GenerateThumbnailForURL.m; sourceTree = "<group>"; };
 		744A71EF1AB4421C00077AA7 /* GeneratePreviewForURL.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GeneratePreviewForURL.m; sourceTree = "<group>"; };
 		744A71F11AB4421C00077AA7 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
-		744E98BB1B1F91690007DB04 /* KBButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KBButton.h; sourceTree = "<group>"; };
-		744E98BC1B1F91690007DB04 /* KBButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KBButton.m; sourceTree = "<group>"; };
-		744E98BD1B1F91690007DB04 /* KBButtonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KBButtonCell.h; sourceTree = "<group>"; };
-		744E98BE1B1F91690007DB04 /* KBButtonCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KBButtonCell.m; sourceTree = "<group>"; };
-		744E98BF1B1F91690007DB04 /* NSColor+ColorExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSColor+ColorExtensions.h"; sourceTree = "<group>"; };
-		744E98C01B1F91690007DB04 /* NSColor+ColorExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSColor+ColorExtensions.m"; sourceTree = "<group>"; };
 		745D4EE61B0F307E00969535 /* SUTPropertyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUTPropertyView.h; sourceTree = "<group>"; };
 		745D4EE71B0F307E00969535 /* SUTPropertyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUTPropertyView.m; sourceTree = "<group>"; };
 		745D4EF51B0F704C00969535 /* SUTPropertyEntryField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUTPropertyEntryField.h; sourceTree = "<group>"; };
@@ -191,6 +185,12 @@
 		7476D56A1B29D1260030967D /* SUTSpriteRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUTSpriteRenderer.m; sourceTree = "<group>"; };
 		747A10381AEE5D640097E6AB /* SUTWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUTWindow.h; sourceTree = "<group>"; };
 		747A10391AEE5D640097E6AB /* SUTWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUTWindow.m; sourceTree = "<group>"; };
+		747F82651B62290000C0F9E5 /* SUTButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUTButton.h; sourceTree = "<group>"; };
+		747F82661B62290000C0F9E5 /* SUTButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUTButton.m; sourceTree = "<group>"; };
+		747F82681B62292900C0F9E5 /* SUTButtonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUTButtonCell.h; sourceTree = "<group>"; };
+		747F82691B62292900C0F9E5 /* SUTButtonCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUTButtonCell.m; sourceTree = "<group>"; };
+		747F826C1B622AE700C0F9E5 /* NSColor+ColorExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSColor+ColorExtensions.h"; sourceTree = "<group>"; };
+		747F826D1B622AE700C0F9E5 /* NSColor+ColorExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSColor+ColorExtensions.m"; sourceTree = "<group>"; };
 		74AF59241AF0EBF00013F9CD /* SUTWindowTitleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUTWindowTitleView.h; sourceTree = "<group>"; };
 		74AF59251AF0EBF00013F9CD /* SUTWindowTitleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUTWindowTitleView.m; sourceTree = "<group>"; };
 		74CF98B01AC3960F002F8DC5 /* dsa_priv.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_priv.pem; sourceTree = "<group>"; };
@@ -286,7 +286,6 @@
 		744159AF1ADE739500747B1E /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
-				744E98911B1F91520007DB04 /* KBButton */,
 				74415F8E1ADE85B600747B1E /* libpng */,
 				74415F591ADE85AD00747B1E /* pngquant */,
 			);
@@ -367,28 +366,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		744E98911B1F91520007DB04 /* KBButton */ = {
-			isa = PBXGroup;
-			children = (
-				744E98BA1B1F91690007DB04 /* KBButton */,
-			);
-			path = KBButton;
-			sourceTree = "<group>";
-		};
-		744E98BA1B1F91690007DB04 /* KBButton */ = {
-			isa = PBXGroup;
-			children = (
-				744E98BB1B1F91690007DB04 /* KBButton.h */,
-				744E98BC1B1F91690007DB04 /* KBButton.m */,
-				744E98BD1B1F91690007DB04 /* KBButtonCell.h */,
-				744E98BE1B1F91690007DB04 /* KBButtonCell.m */,
-				744E98BF1B1F91690007DB04 /* NSColor+ColorExtensions.h */,
-				744E98C01B1F91690007DB04 /* NSColor+ColorExtensions.m */,
-			);
-			name = KBButton;
-			path = KBButton/KBButton;
-			sourceTree = "<group>";
-		};
 		7476D5681B29D0F50030967D /* Renderer */ = {
 			isa = PBXGroup;
 			children = (
@@ -396,6 +373,15 @@
 				7476D56A1B29D1260030967D /* SUTSpriteRenderer.m */,
 			);
 			path = Renderer;
+			sourceTree = "<group>";
+		};
+		747F826B1B622AE700C0F9E5 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				747F826C1B622AE700C0F9E5 /* NSColor+ColorExtensions.h */,
+				747F826D1B622AE700C0F9E5 /* NSColor+ColorExtensions.m */,
+			);
+			path = Categories;
 			sourceTree = "<group>";
 		};
 		74CF98AF1AC3960F002F8DC5 /* Certificates */ = {
@@ -487,6 +473,10 @@
 				747A10391AEE5D640097E6AB /* SUTWindow.m */,
 				74AF59241AF0EBF00013F9CD /* SUTWindowTitleView.h */,
 				74AF59251AF0EBF00013F9CD /* SUTWindowTitleView.m */,
+				747F82651B62290000C0F9E5 /* SUTButton.h */,
+				747F82661B62290000C0F9E5 /* SUTButton.m */,
+				747F82681B62292900C0F9E5 /* SUTButtonCell.h */,
+				747F82691B62292900C0F9E5 /* SUTButtonCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -517,6 +507,7 @@
 		74F0FADB1AAF5224003F9454 /* Suture */ = {
 			isa = PBXGroup;
 			children = (
+				747F826B1B622AE700C0F9E5 /* Categories */,
 				7476D5681B29D0F50030967D /* Renderer */,
 				7441619F1ADE9D4900747B1E /* Utilities */,
 				74CF98AF1AC3960F002F8DC5 /* Certificates */,
@@ -805,6 +796,7 @@
 				74CF98E31AC3960F002F8DC5 /* SUTExportPanel.m in Sources */,
 				7441619D1ADE9D0500747B1E /* viter.c in Sources */,
 				74F0FAE01AAF5224003F9454 /* AppDelegate.m in Sources */,
+				747F82671B62290000C0F9E5 /* SUTButton.m in Sources */,
 				745D4EE91B0F307E00969535 /* SUTPropertyView.m in Sources */,
 				745D4EF71B0F704C00969535 /* SUTPropertyEntryField.m in Sources */,
 				743DA58C1B14810200B8FEB8 /* SUTJPEGExporter.m in Sources */,
@@ -821,14 +813,13 @@
 				744161981ADE9D0500747B1E /* libimagequant.c in Sources */,
 				7441619B1ADE9D0500747B1E /* nearest.c in Sources */,
 				74CF98DD1AC3960F002F8DC5 /* SUTDocument.m in Sources */,
-				744E98C21B1F91690007DB04 /* KBButtonCell.m in Sources */,
 				74CF98DC1AC3960F002F8DC5 /* SUTSpritesheetLayout.m in Sources */,
 				744636181B2F006E00BD6A15 /* SUTSpriteView.m in Sources */,
 				743562951B1E0B9F0017C261 /* SUTExporterOptionsView.m in Sources */,
-				744E98C11B1F91690007DB04 /* KBButton.m in Sources */,
+				747F826A1B62292900C0F9E5 /* SUTButtonCell.m in Sources */,
 				7476D56B1B29D1260030967D /* SUTSpriteRenderer.m in Sources */,
-				744E98C31B1F91690007DB04 /* NSColor+ColorExtensions.m in Sources */,
 				74CF98D91AC3960F002F8DC5 /* SUTExporterRegistry.m in Sources */,
+				747F826E1B622AE700C0F9E5 /* NSColor+ColorExtensions.m in Sources */,
 				74CF98DE1AC3960F002F8DC5 /* SUTSprite.m in Sources */,
 				74CF98E11AC3960F002F8DC5 /* SUTEmptySpriteSheetView.m in Sources */,
 				74CF98E51AC3960F002F8DC5 /* SUTProgressPanel.m in Sources */,

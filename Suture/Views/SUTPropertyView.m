@@ -10,7 +10,7 @@
 
 #import <PureLayout/PureLayout.h>
 
-#import "KBButton.h"
+#import "SUTButton.h"
 #import "SUTDocument.h"
 #import "SUTPropertyEntryField.h"
 #import "SUTWindowController.h"
@@ -22,7 +22,7 @@
 @property (nonatomic, strong) SUTPropertyEntryField *frameSizePropertyView;
 @property (nonatomic, strong) SUTPropertyEntryField *framesPerSecondPropertyField;
 @property (nonatomic, strong) SUTPropertyEntryField *durationPropertyField;
-@property (nonatomic, strong) KBButton *exportButton;
+@property (nonatomic, strong) SUTButton *exportButton;
 
 - (void)createConstraints;
 - (void)updateFrameSpecificationText;
@@ -234,11 +234,11 @@
     return _durationPropertyField;
 }
 
-- (KBButton *)exportButton
+- (SUTButton *)exportButton
 {
     if (!_exportButton)
     {
-        _exportButton = [[KBButton alloc] initForAutoLayout];
+        _exportButton = [[SUTButton alloc] initForAutoLayout];
         
         _exportButton.title = NSLocalizedString(@"export_nav", nil);
 
@@ -248,7 +248,7 @@
                                                    alpha:1.0f];
         
         _exportButton.bezelStyle = NSRoundedBezelStyle;
-        [[_exportButton cell] setKBButtonType:BButtonTypeSuccess];
+       // [[_exportButton cell] setKBButtonType:BButtonTypeSuccess];
         [_exportButton.cell setBackgroundColor:color];
         
         

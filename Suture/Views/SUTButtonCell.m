@@ -90,6 +90,8 @@
         titleColor = [NSColor whiteColor];
     }
     
+    titleColor = [titleColor colorWithAlphaComponent:0.5f];
+    
     [attrString addAttribute:NSForegroundColorAttributeName value:titleColor range:NSMakeRange(0, [[self title] length])];
     [attrString endEditing];
     

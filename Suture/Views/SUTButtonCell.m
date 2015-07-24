@@ -12,6 +12,18 @@
 
 @implementation SUTButtonCell
 
+- (instancetype)init
+{
+    self = [super init];
+    
+    if (self)
+    {
+        self.bezelStyle = NSRoundedBezelStyle;
+    }
+    
+    return self;
+}
+
 - (void)setBackgroundColor:(NSColor *)backgroundColor
 {
     if (![_backgroundColor isEqual:backgroundColor])
@@ -58,6 +70,34 @@
     NSRectFillUsingOperation(frame, NSCompositeSourceOver);
     
     [ctx restoreGraphicsState];
+}
+
+- (NSRect) drawTitle:(NSAttributedString *)title withFrame:(NSRect)frame inView:(NSView *)controlView
+{
+    NSGraphicsContext* ctx = [NSGraphicsContext currentContext];
+    
+    [ctx saveGraphicsState];
+    NSMutableAttributedString *attrString = [title mutableCopy];
+    [attrString beginEditing];
+    NSColor *titleColor;
+    
+    if ([self.backgroundColor isLightColor])
+    {
+        titleColor = [NSColor blackColor];
+    }
+    else
+    {
+        titleColor = [NSColor whiteColor];
+    }
+    
+    [attrString addAttribute:NSForegroundColorAttributeName value:titleColor range:NSMakeRange(0, [[self title] length])];
+    [attrString endEditing];
+    
+    NSRect r = [super drawTitle:attrString withFrame:frame inView:controlView];
+    // 5) Restore the graphics state
+    [ctx restoreGraphicsState];
+    
+    return r;
 }
 
 

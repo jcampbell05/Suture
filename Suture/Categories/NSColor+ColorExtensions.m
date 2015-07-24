@@ -10,7 +10,8 @@
 
 @implementation NSColor (ColorExtensions)
 
-- (NSColor *)lightenColorByValue:(float)value {
+- (NSColor *)lightenColorByValue:(float)value
+{
     float red = [self redComponent];
     red += value;
     
@@ -23,7 +24,8 @@
     return [NSColor colorWithCalibratedRed:red green:green blue:blue alpha:1.0f];
 }
 
-- (NSColor *)darkenColorByValue:(float)value {
+- (NSColor *)darkenColorByValue:(float)value
+{
     float red = [self redComponent];
     red -= value;
     
@@ -36,19 +38,23 @@
     return [NSColor colorWithCalibratedRed:red green:green blue:blue alpha:1.0f];
 }
 
-- (BOOL)isLightColor {
+- (BOOL)isLightColor
+{
     NSInteger   totalComponents = [self numberOfComponents];
     bool  isGreyscale     = totalComponents == 2 ? YES : NO;
     
     CGFloat sum;
     
-    if (isGreyscale) {
+    if (isGreyscale)
+    {
         sum = [self redComponent];
-    } else {
-        sum = ([self redComponent]+[self greenComponent]+[self blueComponent])/3.0;
+    }
+    else
+    {
+        sum = ([self redComponent] + [self greenComponent] + [self blueComponent]) / 3.0;
     }
     
-    return (sum > 0.8);
+    return (sum > 0.5);
 }
 
 @end

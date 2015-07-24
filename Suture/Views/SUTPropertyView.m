@@ -242,13 +242,11 @@
         
         _exportButton.title = NSLocalizedString(@"export_nav", nil);
 
-        NSColor *color = [NSColor colorWithCalibratedRed:73.0f / 255.0f
-                                                   green:92.0f / 255.0f
-                                                    blue:46.0f / 255.0f
+        NSColor *color = [NSColor colorWithCalibratedRed:64.0f / 255.0f
+                                                   green:204.0f / 255.0f
+                                                    blue:180.0f / 255.0f
                                                    alpha:1.0f];
         
-        _exportButton.bezelStyle = NSRoundedBezelStyle;
-       // [[_exportButton cell] setKBButtonType:BButtonTypeSuccess];
         [_exportButton.cell setBackgroundColor:color];
         
         

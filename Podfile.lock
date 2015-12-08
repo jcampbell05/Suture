@@ -1,22 +1,13 @@
 PODS:
-  - PureLayout (2.0.6)
-  - ReactiveCocoa (2.5):
-    - ReactiveCocoa/UI (= 2.5)
-  - ReactiveCocoa/Core (2.5):
-    - ReactiveCocoa/no-arc
-  - ReactiveCocoa/no-arc (2.5)
-  - ReactiveCocoa/UI (2.5):
-    - ReactiveCocoa/Core
-  - Sparkle (1.9.0)
+  - PureLayout (3.0.1)
+  - Sparkle (1.11.1)
 
 DEPENDENCIES:
   - PureLayout
-  - ReactiveCocoa
   - Sparkle (~> 1.9)
 
 SPEC CHECKSUMS:
-  PureLayout: f25f0bb904d5ccfe6e31da3cb869185259f02e0d
-  ReactiveCocoa: e2db045570aa97c695e7aa97c2bcab222ae51f4a
-  Sparkle: 75bbbc5ab2d666f7f77c241afe7fd28364a8f9f7
+  PureLayout: f35f5384c9c4e4479df041dbe33ad7577b71ddfb
+  Sparkle: 80198c37a54f8c29af89e5b9f985e730536ebfd5
 
-COCOAPODS: 0.37.0
+COCOAPODS: 0.39.0

@@ -1,0 +1,44 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "96BCE550C156CE7BA2EB3F8F3D63EC94218B39B6",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "96BCE550C156CE7BA2EB3F8F3D63EC94218B39B6" : 0,
+    "2E96C19C9A54E210ECE4E89D69774BAE295D7941" : 0,
+    "547A7CFBD5F0A850C99F405659B662B03DA54A62" : 0,
+    "02EC75C24037E05A184450D346C408084F916E59" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "27F2F683-8C31-4608-9BD8-142EFB7701B9",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "96BCE550C156CE7BA2EB3F8F3D63EC94218B39B6" : "Suture",
+    "2E96C19C9A54E210ECE4E89D69774BAE295D7941" : "Suture\/Vendor\/KBButton",
+    "547A7CFBD5F0A850C99F405659B662B03DA54A62" : "SutureVendor\/libpng",
+    "02EC75C24037E05A184450D346C408084F916E59" : "SutureVendor\/pngquant"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Suture",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Suture.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/pornel\/pngquant.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "02EC75C24037E05A184450D346C408084F916E59"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/kwbock\/KBButton.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "2E96C19C9A54E210ECE4E89D69774BAE295D7941"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "git:\/\/git.code.sf.net\/p\/libpng\/code",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "547A7CFBD5F0A850C99F405659B662B03DA54A62"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/jcampbell05\/Suture.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "96BCE550C156CE7BA2EB3F8F3D63EC94218B39B6"
+    }
+  ]
+}

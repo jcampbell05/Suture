@@ -243,4 +243,12 @@ void SUTReleaseSpriteSheetTransparentBackground(void *info)
     }
 }
 
+- (IBAction)selectAll:(NSMenuItem *)menuItem
+{
+    [self.spriteViewQueue enumerateObjectsUsingBlock:^(SUTSpriteView * _Nonnull view, NSUInteger idx, BOOL * _Nonnull stop)
+    {
+        view.selected = YES;
+    }];
+}
+
 @end

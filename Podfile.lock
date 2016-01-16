@@ -1,13 +1,16 @@
 PODS:
+  - libpng (1.6.18)
   - PureLayout (3.0.1)
-  - Sparkle (1.11.1)
+  - Sparkle (1.13.0)
 
 DEPENDENCIES:
+  - libpng
   - PureLayout
   - Sparkle (~> 1.9)
 
 SPEC CHECKSUMS:
+  libpng: 9c661ee692282485a9cf7fcf0159458c91b4f943
   PureLayout: f35f5384c9c4e4479df041dbe33ad7577b71ddfb
-  Sparkle: 80198c37a54f8c29af89e5b9f985e730536ebfd5
+  Sparkle: d04d17a32eaddab19471d0c3d9db15164afdbc6e
 
 COCOAPODS: 0.39.0

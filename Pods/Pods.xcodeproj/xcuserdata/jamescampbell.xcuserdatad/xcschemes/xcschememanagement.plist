@@ -14,15 +14,25 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>libpng.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>7D6A54D0BE4B5FAD8F9DEB20B6B60CB4</key>
+		<key>25BD604FF7ECF4A9CA0173C7E5BB5C99</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A90F56D3BDA295E6B301C95B611D83AA</key>
+		<key>7298659FC515545E5DD4A1DE4D309C8D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>7A51CE0E0E1C0D5BE9497804F2384FD4</key>
 		<dict>
 			<key>primary</key>
 			<true/>
